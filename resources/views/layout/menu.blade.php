@@ -61,7 +61,7 @@
                                     margin: 0px;
                                     padding: 100% 0px 0px;
                                   "></span><img alt="SLAWM"
-                                src="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=1900&amp;q=75"
+                                src="{{ asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=1900&amp;q=75') }}"
                                 decoding="async" data-nimg="responsive" style="
                                     position: absolute;
                                     inset: 0px;
@@ -79,14 +79,14 @@
                                   "
                                 sizes="(max-width: 767px) 24px, (max-width: 991px) 24px, (max-width: 1190px) 200px, 24px"
                                 srcset="
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=40&amp;q=75     40w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=80&amp;q=75     80w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=120&amp;q=75   120w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=240&amp;q=75   240w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=450&amp;q=75   450w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=992&amp;q=75   992w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=1200&amp;q=75 1200w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=1900&amp;q=75 1900w
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=40&amp;q=75')}} 40w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=80&amp;q=75')}} 80w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=120&amp;q=75')}} 120w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=240&amp;q=75')}} 240w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=450&amp;q=75')}} 450w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=992&amp;q=75')}}  992w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=1200&amp;q=75')}} 1200w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=1900&amp;q=75')}} 1900w
                                   " />
                               ></span>
                           </div>
@@ -118,7 +118,7 @@
                                     margin: 0px;
                                     padding: 100% 0px 0px;
                                   "></span><img alt="BANA-W"
-                                src="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=1900&amp;q=75"
+                                src="{{ asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=1900&amp;q=75') }}"
                                 decoding="async" data-nimg="responsive" style="
                                     position: absolute;
                                     inset: 0px;
@@ -136,14 +136,14 @@
                                   "
                                 sizes="(max-width: 767px) 24px, (max-width: 991px) 24px, (max-width: 1190px) 200px, 24px"
                                 srcset="
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=40&amp;q=75     40w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=80&amp;q=75     80w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=120&amp;q=75   120w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=240&amp;q=75   240w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=450&amp;q=75   450w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=992&amp;q=75   992w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=1200&amp;q=75 1200w,
-                                    /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=1900&amp;q=75 1900w
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=40&amp;q=75')}} 40w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=80&amp;q=75')}} 80w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=120&amp;q=75')}} 120w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=240&amp;q=75')}} 240w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=450&amp;q=75')}} 450w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=992&amp;q=75')}} 992w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=1200&amp;q=75')}} 1200w,
+                                    {{asset('_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=1900&amp;q=75')}} 1900w
                                   " />
                               ></span>
                           </div>

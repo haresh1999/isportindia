@@ -12,8 +12,8 @@
               style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                 style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
                 alt="logo" sizes="100vw"
-                srcset="/_next/static/media/search-icon.fe541e20.svg 450w, /_next/static/media/search-icon.fe541e20.svg 992w, /_next/static/media/search-icon.fe541e20.svg 1200w, /_next/static/media/search-icon.fe541e20.svg 1900w"
-                src="/_next/static/media/search-icon.fe541e20.svg" decoding="async" data-nimg="responsive"
+                srcset="{{asset('_next/static/media/search-icon.fe541e20.svg')}} 450w, {{asset('_next/static/media/search-icon.fe541e20.svg')}} 992w, {{asset('_next/static/media/search-icon.fe541e20.svg')}} 1200w, {{asset('_next/static/media/search-icon.fe541e20.svg')}} 1900w"
+                src="{{ asset('_next/static/media/search-icon.fe541e20.svg') }}" decoding="async" data-nimg="responsive"
                 style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></button>
           <div class="s-overlay"></div>
           <div class="s-active searchBox align-items-center">
@@ -24,9 +24,9 @@
                 <div class="icon hs-searchIcon searchBtn"><span
                     style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                       style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                      alt="logo" src="/_next/static/media/search-black-icon.b9c747f1.svg" decoding="async"
+                      alt="logo" src="{{ asset('_next/static/media/search-black-icon.b9c747f1.svg') }}" decoding="async"
                       data-nimg="responsive" sizes="100vw"
-                      srcset="/_next/static/media/search-black-icon.b9c747f1.svg 450w, /_next/static/media/search-black-icon.b9c747f1.svg 992w, /_next/static/media/search-black-icon.b9c747f1.svg 1200w, /_next/static/media/search-black-icon.b9c747f1.svg 1900w"
+                      srcset="{{ asset('_next/static/media/search-black-icon.b9c747f1.svg') }} 450w, {{ asset('_next/static/media/search-black-icon.b9c747f1.svg') }} 992w, {{ asset('_next/static/media/search-black-icon.b9c747f1.svg') }} 1200w, {{ asset('_next/static/media/search-black-icon.b9c747f1.svg') }} 1900w"
                       style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span>
                 </div><button type="submit"
                   class="icon hs-searchBtn theme-btn small-btn btn btn-primary">Search</button>
@@ -55,7 +55,7 @@
                       class="style_icon__PFlXL icon d-flex align-items-center justify-content-center"><span
                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                           style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                          sizes="100vw" src="/_next/static/media/medal.webp" decoding="async" data-nimg="responsive"
+                          sizes="100vw" src="{{ asset('_next/static/media/medal.webp') }}" decoding="async" data-nimg="responsive"
                           style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>Featured
                     Section</button>
                 </h2>
@@ -79,7 +79,7 @@
                       class="style_icon__PFlXL icon d-flex align-items-center justify-content-center"><span
                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                           style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                          sizes="100vw" src="/_next/static/media/cricket_series.webp" decoding="async"
+                          sizes="100vw" src="{{ asset('_next/static/media/cricket_series.webp') }}" decoding="async"
                           data-nimg="responsive"
                           style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>Current
                     Series</button></h2>
@@ -110,7 +110,7 @@
                       class="style_icon__PFlXL icon d-flex align-items-center justify-content-center"><span
                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                           style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                          sizes="100vw" src="/_next/static/media/fantasy.webp" decoding="async" data-nimg="responsive"
+                          sizes="100vw" src="{{ asset('_next/static/media/fantasy.webp') }}" decoding="async" data-nimg="responsive"
                           style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>Cricket
                     Fantasy Tips</button></h2>
                 <div class="accordion-collapse collapse">
@@ -135,7 +135,7 @@
                       class="style_icon__PFlXL icon d-flex align-items-center justify-content-center"><span
                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                           style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                          sizes="100vw" src="/_next/static/media/fantasy.webp" decoding="async" data-nimg="responsive"
+                          sizes="100vw" src="{{ asset('_next/static/media/fantasy.webp') }}" decoding="async" data-nimg="responsive"
                           style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>Cricket
                     Stats</button></h2>
                 <div class="accordion-collapse collapse">
@@ -154,7 +154,7 @@
                       class="style_icon__PFlXL icon d-flex align-items-center justify-content-center"><span
                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                           style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                          sizes="100vw" src="/_next/static/media/fantasy.webp" decoding="async" data-nimg="responsive"
+                          sizes="100vw" src="{{ asset('_next/static/media/fantasy.webp') }}" decoding="async" data-nimg="responsive"
                           style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>IPL
                     Teams</button></h2>
                 <div class="accordion-collapse collapse">
@@ -283,21 +283,21 @@
             <div class="style_otherLogo___JFVs"><a target="_blank" href="https://www.sports.info/"><span
                   style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                     style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 20.6897% 0px 0px;"></span><img
-                    alt="logo" sizes="100vw" src="/_next/static/media/sportsinfo.616260a7.svg" decoding="async"
+                    alt="logo" sizes="100vw" src="{{ asset('_next/static/media/sportsinfo.616260a7.svg') }}" decoding="async"
                     data-nimg="responsive"
                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></a>
             </div>
             <div class="style_crictrackerLogo__QP1wx"><a target="_blank" href="https://hindi.crictracker.com/"><span
                   style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                     style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 13.5294% 0px 0px;"></span><img
-                    alt="logo" sizes="100vw" src="/_next/static/media/crictracker-logo-bangla.webp" decoding="async"
+                    alt="logo" sizes="100vw" src="{{ asset('_next/static/media/crictracker-logo-bangla.webp') }}" decoding="async"
                     data-nimg="responsive"
                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
             </div>
             <div class="style_crictrackerLogo__QP1wx"><a target="_blank" href="https://bengali.crictracker.com/"><span
                   style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                     style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 11.33% 0px 0px;"></span><img
-                    alt="logo" sizes="100vw" src="/_next/static/media/crictracker-logo-hindi.webp" decoding="async"
+                    alt="logo" sizes="100vw" src="{{ asset('_next/static/media/crictracker-logo-hindi.webp') }}" decoding="async"
                     data-nimg="responsive"
                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
             </div>

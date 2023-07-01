@@ -21,7 +21,7 @@
                 margin: 0;
                 padding: 0;
                 padding-top: 15.68702290076336%;
-              "></span><img alt="logo" src="/_next/static/media/logo.9bce43e9.svg" decoding="async"
+              "></span><img alt="logo" src="{{ asset('_next/static/media/logo.9bce43e9.svg') }}" decoding="async"
             data-nimg="responsive" style="
                 position: absolute;
                 top: 0;
@@ -88,7 +88,7 @@
                         border: 0px;
                         margin: 0px;
                         padding: 0px;
-                      " /></span><img alt="dark mode" src="/_next/static/media/light-mode.6f89d25e.svg"
+                      " /></span><img alt="dark mode" src="{{ asset('_next/static/media/light-mode.6f89d25e.svg') }}"
                                         decoding="async" data-nimg="intrinsic" class="style_lightModeImg__2_YH4"
                                         style="
                       position: absolute;
@@ -105,8 +105,8 @@
                       min-height: 100%;
                       max-height: 100%;
                     " srcset="
-                      /_next/static/media/light-mode.6f89d25e.svg 1x,
-                      /_next/static/media/light-mode.6f89d25e.svg 2x
+                      {{ asset('_next/static/media/light-mode.6f89d25e.svg') }} 1x,
+                      {{ asset('_next/static/media/light-mode.6f89d25e.svg') }} 2x
                     " /></span></label>
                         </div>
                     </div> -->
@@ -134,7 +134,7 @@
                       border: 0px;
                       margin: 0px;
                       padding: 100% 0px 0px;
-                    "></span><img alt="logo" src="/_next/static/media/search-icon.fe541e20.svg" decoding="async"
+                    "></span><img alt="logo" src="{{ asset('_next/static/media/search-icon.fe541e20.svg') }}" decoding="async"
                   data-nimg="responsive" sizes="100vw" style="
                       position: absolute;
                       inset: 0px;
