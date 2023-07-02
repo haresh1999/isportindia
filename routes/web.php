@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
+    // dd(getSeasons()['response']['items']);
+
     return view('layout.main');
 });

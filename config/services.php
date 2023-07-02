@@ -30,4 +30,5 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'api' => 'https://rest.entitysport.com/v2/'
 ];
