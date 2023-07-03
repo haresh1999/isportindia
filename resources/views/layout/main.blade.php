@@ -54,24 +54,15 @@
 </head>
 
 <body id="body" data-mode="light">
+
   <div id="__next" data-reactroot="">
 
-    <header class="style_siteHeader__VeqhA undefined style_fixedAnimation__M5n2h position-sticky">
-      @include('layout.header')
-    </header>
+    @include('layout.header')
 
+    @yield('content')
 
-    @include('layout.header_menu')
+    @include('layout.footer')
 
-    @include('layout.menu')
-
-    <div style="min-height: 90px" class="d-none d-md-block mt-2 container"></div>
-
-    @include('layout.cric_special')
-
-    <footer class="style_siteFooter__lUfE_" id="footer">
-      @include('layout.footer')
-    </footer>
   </div>
 
   <div class="fade offcanvas-backdrop hide"></div>
@@ -126,7 +117,6 @@
         </svg>More</button></li>
   </ul>
 </body>
-
 @include('layout.script')
 
 </html>
