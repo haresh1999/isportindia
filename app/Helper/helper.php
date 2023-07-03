@@ -24,3 +24,9 @@ function getSeasonsDetails($url){
 
     return Http::get($url)->json();
 }
+
+function getMatch(){
+    
+    return Http::get(config('services.api'))->json();       
+
+}

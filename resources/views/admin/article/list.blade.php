@@ -612,7 +612,7 @@
             </div>
         </div>
     </div>
-    <div class="page-footer d-none d-md-block p-4 p-sm-5 px-xl-7 mx-n4 mx-sm-n5 mx-xl-n7 mt-auto">
+    {{-- <div class="page-footer d-none d-md-block p-4 p-sm-5 px-xl-7 mx-n4 mx-sm-n5 mx-xl-n7 mt-auto">
         <div class="container p-0 d-block d-sm-flex">
             <div class="d-flex align-items-center mb-4 mb-sm-0">
                 <svg class="icon icon-check-all fill-shades-2 me-3">
@@ -628,6 +628,6 @@
                 <button class="btn ms-2 flex-grow-1">Publish</button>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 @endsection

@@ -24,7 +24,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('admin.article.list');
+        return view('admin.article.create');
     }
 
     /**
@@ -35,7 +35,8 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect()->back();
+        // dd($request->all());
     }
 
     /**

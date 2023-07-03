@@ -51,7 +51,7 @@
   </div> --}}
   <div class="nav-item mb-2">
     <div
-      class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/article','article/create','article/edit/*') ? 'active' : '' }}"
+      class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/article','admin/article/create','admin/article/edit/*') ? 'active' : '' }}"
       data-bs-target="#sidebar-customers-collapse" data-bs-toggle="collapse">
       <svg class="icon icon-schedule">
         <use xlink:href="#icon-schedule"></use>
@@ -60,10 +60,10 @@
         <use xlink:href="#icon-cheveron"></use>
       </svg>
     </div>
-    <div class="collapse submenu" id="sidebar-customers-collapse" data-bs-parent=".sidebar">
+    <div class="collapse submenu {{ Request::is('admin/article','admin/article/create','admin/article/edit/*') ? 'show' : '' }}" id="sidebar-customers-collapse" data-bs-parent=".sidebar">
       <div class="wrapper">
-        <a class="nav-link d-flex align-items-center p-3" href="{{route('article.create')}}">Create</a>
-        <a class="nav-link d-flex align-items-center p-3" href="{{route('article')}}">List</a>
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article/create') ? 'text-dark' : '' }}" href="{{route('article.create')}}">Create</a>
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article') ? 'text-dark' : '' }}" href="{{route('article')}}">List</a>
       </div>
     </div>
   </div>
