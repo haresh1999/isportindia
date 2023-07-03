@@ -17,7 +17,7 @@
 <meta name="twitter:image" content="https://images.ui8.net/uploads/thumbnail_1636636019240.png">
 <meta property="og:title" content="Core – Dashboard Builder">
 <meta property="og:type"
-    content="Core is a clean and minimal dashboard UI Kit targeting a wide variety of use cases for desktop, tablet, and mobile applications in awesome light or dark mode 🔥">
+  content="Core is a clean and minimal dashboard UI Kit targeting a wide variety of use cases for desktop, tablet, and mobile applications in awesome light or dark mode 🔥">
 <meta property="og:url" content="https://ui8.net/ui8/products/core-dashboard-builder">
 <meta property="og:image" content="https://images.ui8.net/uploads/thumbnail_1636636019240.png">
 <meta property="og:description" content="Core – Dashboard Builder">
@@ -25,7 +25,7 @@
 <meta property="fb:admins" content="132951670226590">
 <link rel="stylesheet" media="all" href="{{ asset('admin/css/app.min.css') }}">
 <script>
-    var viewportmeta = document.querySelector('meta[name="viewport"]');
+  var viewportmeta = document.querySelector('meta[name="viewport"]');
       if (viewportmeta) {
         if (screen.width < 375) {
           var newScale = screen.width / 375;

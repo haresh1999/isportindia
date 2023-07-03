@@ -32,7 +32,7 @@
           .badge.large.green.ms-3 $98
         .preview-user.d-flex.align-items-center
           .preview-userpic.me-2
-            img(src="/img/content/user-1.jpg", alt="Hortense")
+            img(src="/{{ asset('admin/img/content/user-1.jpg') }}", alt="Hortense")
           span.me-1.text-shades-1 by 
           b Hortense
 
@@ -181,7 +181,7 @@
             .product-modal-info.mb-3 Elegant product mockup for your next project
             .product-modal-user.d-flex.align-items-center
               .product-modal-userpic.me-3
-                img(src="/img/content/user-1.jpg", alt="Hortense")
+                img(src="/{{ asset('admin/img/content/user-1.jpg') }}", alt="Hortense")
               span.me-1.text-shades-1 by
               b.me-3 Chelsie Haley
               +i('star-fill')(class="fill-yellow me-2")
@@ -223,7 +223,7 @@
 
             .product-modal-panel.p-5
               .panel-item.panel-userpic.d-flex.align-items-center.justify-content-center.mb-5
-                img(src="img/content/user-1.jpg", alt="")
+                img(src="{{ asset('admin/img/content/user-1.jpg') }}", alt="")
               .panel-item.panel-brand.d-flex.align-items-center.justify-content-center.position-relative.mb-5
                 .panel-number.position-absolute.d-flex.align-items-center.justify-content-center 3
                 img(src="img/content/figma.png", alt="")
@@ -272,7 +272,7 @@
                 .comment-reply.collapse#comment-modal-1
                   .d-flex.mt-5
                     .comment-reply-userpic.flex-shrink-0
-                      img.rounded-circle.w-100(src="img/content/user-1.jpg")
+                      img.rounded-circle.w-100(src="{{ asset('admin/img/content/user-1.jpg') }}")
                     .ms-4
                       textarea.textarea-transparent.mb-4(oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' placeholder="Leave something to reply")
                       button.btn.btn-small.me-2 Reply
@@ -280,7 +280,7 @@
 
             .border-bottom.d-flex.pb-6.pt-5.ps-4
               .comment-answer-userpic.flex-shrink-0.ms-8
-                img.rounded-circle.w-100(src="img/content/user-1.jpg")
+                img.rounded-circle.w-100(src="{{ asset('admin/img/content/user-1.jpg') }}")
               .ms-4.w-100
                 .d-flex.align-items-start.pb-3
                   .me-5
@@ -302,7 +302,7 @@
                 .comment-reply.collapse#comment-modal-2
                   .d-flex.mt-5
                     .comment-reply-userpic.flex-shrink-0
-                      img.rounded-circle.w-100(src="img/content/user-1.jpg")
+                      img.rounded-circle.w-100(src="{{ asset('admin/img/content/user-1.jpg') }}")
                     .ms-4
                       textarea.textarea-transparent.mb-4(oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' placeholder="Leave something to reply")
                       button.btn.btn-small.me-2 Reply
@@ -333,7 +333,7 @@
                 .comment-reply.collapse#comment-modal-3
                   .d-flex.mt-5
                     .comment-reply-userpic.flex-shrink-0
-                      img.rounded-circle.w-100(src="img/content/user-1.jpg")
+                      img.rounded-circle.w-100(src="{{ asset('admin/img/content/user-1.jpg') }}")
                     .ms-4
                       textarea.textarea-transparent.mb-4(oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' placeholder="Leave something to reply")
                       button.btn.btn-small.me-2 Reply
@@ -364,7 +364,7 @@
                 .comment-reply.collapse#comment-modal-4
                   .d-flex.mt-5
                     .comment-reply-userpic.flex-shrink-0
-                      img.rounded-circle.w-100(src="img/content/user-1.jpg")
+                      img.rounded-circle.w-100(src="{{ asset('admin/img/content/user-1.jpg') }}")
                     .ms-4
                       textarea.textarea-transparent.mb-4(oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' placeholder="Leave something to reply")
                       button.btn.btn-small.me-2 Reply
@@ -395,7 +395,7 @@
                 .comment-reply.collapse#comment-modal-5
                   .d-flex.mt-5
                     .comment-reply-userpic.flex-shrink-0
-                      img.rounded-circle.w-100(src="img/content/user-1.jpg")
+                      img.rounded-circle.w-100(src="{{ asset('admin/img/content/user-1.jpg') }}")
                     .ms-4
                       textarea.textarea-transparent.mb-4(oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' placeholder="Leave something to reply")
                       button.btn.btn-small.me-2 Reply
@@ -539,7 +539,7 @@
             .mb-3 “ I can’t download your item at all. Even tried to change the DNS or VNP, it still doesn’t work. 😢 “
             .d-flex.align-items-center.mb-5
               .refounds-userpic.me-3
-                img.rounded-circle.w-100(src="img/content/user-1.jpg", alt="Eldred Lockman")
+                img.rounded-circle.w-100(src="{{ asset('admin/img/content/user-1.jpg') }}", alt="Eldred Lockman")
               | Eldred Lockman
             .caption.d-flex.align-items-center.mb-3.text-reset.fs-8
               | Send message
@@ -572,11 +572,11 @@
       .card-body.p-0
         .d-flex.mb-5
           .social-userpic.position-relative.me-5
-            img.rounded-circle.w-100(src="img/content/user-1.jpg")
+            img.rounded-circle.w-100(src="{{ asset('admin/img/content/user-1.jpg') }}")
             .social-link.rounded-circle.d-flex.align-items-center.justify-content-center
               +i('min-facebook')
           .social-userpic.position-relative.me-5
-            img.rounded-circle.w-100(src="img/content/user-1.jpg")
+            img.rounded-circle.w-100(src="{{ asset('admin/img/content/user-1.jpg') }}")
             .social-link.rounded-circle.d-flex.align-items-center.justify-content-center
               +i('min-twitter')
         textarea.modal-post-textarea(placeholder="What you would like to share?")

@@ -336,7 +336,7 @@ mixin product_comments(comments)
                   .pt-4
                     .comment-reply.d-flex
                       .comment-reply-userpic.flex-shrink-0
-                        img.rounded-circle.w-100(src="img/content/user-1.jpg")
+                        img.rounded-circle.w-100(src="{{ asset('admin/img/content/user-1.jpg') }}")
                       .ms-4
                         textarea.textarea-transparent.mb-4(oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' placeholder="Leave something to reply")
                         button.btn.btn-small.me-2 Reply
@@ -786,7 +786,7 @@ mixin notification_table(notifications)
               .pt-4
                 .comment-reply.d-flex
                   .comment-reply-userpic.flex-shrink-0
-                    img.rounded-circle.w-100(src="img/content/user-1.jpg")
+                    img.rounded-circle.w-100(src="{{ asset('admin/img/content/user-1.jpg') }}")
                   .ms-4
                     textarea.textarea-transparent.mb-4(oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' placeholder="Leave something to reply")
                     button.btn.btn-small.me-2 Reply
