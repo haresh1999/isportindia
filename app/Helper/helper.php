@@ -24,4 +24,3 @@ function getSeasonsDetails($url){
 
     return Http::get($url)->json();
 }
-
