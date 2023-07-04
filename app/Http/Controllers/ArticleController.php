@@ -46,7 +46,7 @@ class ArticleController extends Controller
         $v = $request->validate([
             'title' => 'required|max:250|unique:articles',
             'description' => 'required',
-            'img' => 'required|mimes:jpg,jpeg,png',
+            'img' => 'required|image',
             'status' => 'required'
         ]);
 
@@ -86,7 +86,7 @@ class ArticleController extends Controller
         $v = $request->validate([
             'title' => 'required|max:250|unique:articles,title,'.$id,
             'description' => 'required',
-            'img' => 'nullable|mimes:jpg,jpeg,png',
+            'img' => 'required|image',
             'status' => 'required'
         ]);
 

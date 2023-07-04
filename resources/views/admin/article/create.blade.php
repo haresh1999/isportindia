@@ -38,7 +38,7 @@
                             @error('title')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
-                            <input class="form-control mb-5 mb-sm-6" type="text" name="title">
+                            <input class="form-control mb-5 mb-sm-6" type="text" name="title" value="{{ old('title') }}">
 
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Description
                                 <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
@@ -51,7 +51,7 @@
                             @error('description')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
-                            <textarea id="editor1" name="description" rows="10" cols="80"></textarea>
+                            <textarea id="editor1" name="description" rows="10" cols="80">{{ old('description') }}</textarea>
 
                             <br>
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Image
@@ -79,8 +79,8 @@
                             <span class="text-danger">{{$message}}</span>
                             @enderror
                             <select class="select select-wide" name="status">
-                                <option selected value="1">Active</option>
-                                <option value="2">InActive</option>
+                                <option {{ old('stauts') == 1 ? 'selected' : '' }} selected value="1">Active</option>
+                                <option {{ old('stauts') == 2 ? 'selected' : '' }} value="2">InActive</option>
                             </select>
 
                             <div class="w-100 text-center">
