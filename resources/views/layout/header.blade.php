@@ -179,7 +179,7 @@
 <div class="style_headerMenu__YNVcR xsmall-text d-flex text-nowrap">
   <ul class="d-flex mb-0 m-auto">
     <li><a class="style_navItem__o66ST  style_liveUpdate__l5Ln_ text-uppercase font-bold d-block" target="_self"
-        href="/live-scores/?ref=hm">Live Scores</a></li>
+        href="{{route('home')}}">Live Scores</a></li>
     <li><a class="style_navItem__o66ST   text-uppercase font-bold d-block" target="_self"
         href="/cricket-news/?ref=hm">Cricket News</a></li>
     <li>

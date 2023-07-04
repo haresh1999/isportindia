@@ -6,7 +6,7 @@
     <title>{{ env('APP_NAME') }} - @yield('title')</title>
 
     @include('admin.layout.css')
-
+    @yield('css')
 </head>
 
 <body>
@@ -35,9 +35,10 @@
     </main>
 
     @include('admin.layout.model')
-
+    
     @include('admin.layout.script')
-    </div>
+    
+    @yield('script')
 </body>
 
 </html>

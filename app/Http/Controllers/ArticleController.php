@@ -14,7 +14,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('admin.article.list');
+        $res = Article::orderBy('id','desc')->paginate(100);
+        
+        return view('admin.article.list',compact('res'));
     }
 
     /**
@@ -35,8 +37,20 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        return redirect()->back();
-        // dd($request->all());
+        $v = $request->validate([
+            'title' => 'required|max:250|unique:articles',
+            'description' => 'required',
+            'img' => 'required|mimes:jpg,jpeg,png',
+            'status' => 'required'
+        ]);
+
+        $v['img'] = uploadImage($v['img']);
+
+        $v['created_by'] = auth()->id();
+
+        Article::create($v);
+
+        return redirect()->route('article')->with('post.success','Article created successfully!');
     }
 
     /**

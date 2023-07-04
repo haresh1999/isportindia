@@ -2,6 +2,10 @@
 
 @section('title','Article Create')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+@endsection
+
 @section('content')
 <div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-7 px-xl-7">
     <div class="page-head">
@@ -19,7 +23,7 @@
                             </svg><span>Back</span></a>
                     </div>
 
-                    <form action="{{ route('article.store') }}" method="post">
+                    <form action="{{ route('article.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body p-0">
 
@@ -47,79 +51,9 @@
                             @error('description')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
-                            <div class="editor mb-5 mb-sm-6 position-relative">
-                                <div class="editor-toolbar d-flex p-3">
-                                    <button class="ql-bold">
-                                        <svg class="icon icon-bold">
-                                            <use xlink:href="#icon-bold"></use>
-                                        </svg>
-                                    </button>
-                                    <button class="ql-italic ms-5">
-                                        <svg class="icon icon-italic">
-                                            <use xlink:href="#icon-italic"></use>
-                                        </svg>
-                                    </button>
-                                    <button class="ql-underline ms-5">
-                                        <svg class="icon icon-underline">
-                                            <use xlink:href="#icon-underline"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="smileys-actions">
-                                        <button class="smileys-head ms-5">
-                                            <svg class="icon icon-double-smile">
-                                                <use class="fill" href="#icon-smile-fill"></use>
-                                                <use class="stroke" href="#icon-smile-stroke"></use>
-                                            </svg>
-                                        </button>
-                                        <div class="smileys-body d-flex rounded-1 p-1">
-                                            <button class="smileys-item rounded-circle"><img
-                                                    src="img/content/reaction/Blush.png" /></button>
-                                            <button class="smileys-item rounded-circle"><img
-                                                    src="img/content/reaction/Surprised.png" /></button>
-                                            <button class="smileys-item rounded-circle"><img
-                                                    src="img/content/reaction/SweatGrinning.png" /></button>
-                                            <button class="smileys-item rounded-circle"><img
-                                                    src="img/content/reaction/Cool.png" /></button>
-                                            <button class="smileys-item rounded-circle"><img
-                                                    src="img/content/reaction/Sleepy.png" /></button>
-                                            <button class="smileys-item rounded-circle"><img
-                                                    src="img/content/reaction/CryingWithLaughter.png" /></button>
-                                            <button class="smileys-item rounded-circle"><img
-                                                    src="img/content/reaction/HeartEyes.png" /></button>
-                                            <button class="smileys-item rounded-circle"><img
-                                                    src="img/content/reaction/SmileEyes.png" /></button>
-                                        </div>
-                                    </div>
-                                    <button class="ms-5">
-                                        <svg class="icon icon-link">
-                                            <use xlink:href="#icon-link"></use>
-                                        </svg>
-                                    </button>
-                                    <button class="ql-list ms-5">
-                                        <svg class="icon icon-list">
-                                            <use xlink:href="#icon-list"></use>
-                                        </svg>
-                                    </button>
-                                    <button class="d-none d-sm-block ql-align ms-5">
-                                        <svg class="icon icon-align">
-                                            <use xlink:href="#icon-align"></use>
-                                        </svg>
-                                    </button>
-                                    {{-- <button class="d-none d-sm-block ms-auto">
-                                        <svg class="icon icon-arrow-left">
-                                            <use xlink:href="#icon-arrow-left"></use>
-                                        </svg>
-                                    </button>
-                                    <button class="d-none d-sm-block ms-2">
-                                        <svg class="icon icon-arrow">
-                                            <use xlink:href="#icon-arrow"></use>
-                                        </svg>
-                                    </button> --}}
-                                </div>
-                                <textarea class="editor-container" name="description" id="description" cols="30"
-                                    rows="5"></textarea>
-                            </div>
+                            <textarea id="editor1" name="description" rows="10" cols="80"></textarea>
 
+                            <br>
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Image
                                 <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
                                     title="Maximum 100 characters. No HTML or emoji allowed">
@@ -128,10 +62,10 @@
                                     </svg>
                                 </div>
                             </div>
-                            @error('image')
+                            @error('img')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
-                            <input class="form-control mb-5 mb-sm-6" type="file" name="image">
+                            <input class="form-control mb-5 mb-sm-6" type="file" name="img">
 
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Status
                                 <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
@@ -204,4 +138,20 @@
         </div>
     </div> --}}
 </div>
+@endsection
+
+@section('script')
+<!-- CK Editor -->
+<script src="{{ asset('admin/ckeditor/ckeditor.js') }}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{{ asset('admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
+<script>
+    $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+})
+</script>
 @endsection
