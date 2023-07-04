@@ -63,7 +63,7 @@
     <div class="collapse submenu {{ Request::is('admin/article','admin/article/create','admin/article/edit/*') ? 'show' : '' }}" id="sidebar-customers-collapse" data-bs-parent=".sidebar">
       <div class="wrapper">
         <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article/create') ? 'text-dark' : '' }}" href="{{route('article.create')}}">Create</a>
-        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article') ? 'text-dark' : '' }}" href="{{route('article')}}">List</a>
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article','admin/article/edit/*') ? 'text-dark' : '' }}" href="{{route('article')}}">List</a>
       </div>
     </div>
   </div>

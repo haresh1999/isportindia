@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('post-details/{slug}', [HomeController::class, 'postDetails'])->name('post.details');
+Route::get('post-details/{id}/{slug}', [HomeController::class, 'postDetails'])->name('post.details');
 
 
 Route::prefix('admin')->group(function () {

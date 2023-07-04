@@ -30,10 +30,12 @@
             <div class="style_item__sjAWf p-2 mx-1 font-semi">
               <div class="position-relative">
                 <a class="style_scoreCardLink__Clpdb position-absolute top-0 start-0 opacity-0 w-100 h-100"
-                  href="/live-scores/slawm-vs-bana-w-match-5-woment20-womens-emerging-teams-asia-cup-14-jun-2023/">{{ $val['title'] }}</a>
+                  href="/live-scores/slawm-vs-bana-w-match-5-woment20-womens-emerging-teams-asia-cup-14-jun-2023/">{{
+                  $val['title'] }}</a>
                 <div class="d-flex justify-content-between align-items-center style_head__CLILr">
                   <p>
-                    <span class="danger-text text-capitalize">• {{$val['status_str']}} </span><span class="style_dark__duIOp"> -
+                    <span class="danger-text text-capitalize">• {{$val['status_str']}} </span><span
+                      class="style_dark__duIOp"> -
                       {{$val['subtitle']}}</span> -
                     {{$val['venue']['name']}}
                   </p>
@@ -65,9 +67,8 @@
                                     border: 0px;
                                     margin: 0px;
                                     padding: 100% 0px 0px;
-                                  "></span><img alt="SLAWM"
-                            src="{{ $val['teama']['logo_url'] }}"
-                            decoding="async" data-nimg="responsive" style="
+                                  "></span><img alt="SLAWM" src="{{ $val['teama']['logo_url'] }}" decoding="async"
+                            data-nimg="responsive" style="
                                     position: absolute;
                                     inset: 0px;
                                     padding: 0px;
@@ -121,9 +122,8 @@
                                     border: 0px;
                                     margin: 0px;
                                     padding: 100% 0px 0px;
-                                  "></span><img alt="BANA-W"
-                            src="{{ $val['teamb']['logo_url'] }}"
-                            decoding="async" data-nimg="responsive" style="
+                                  "></span><img alt="BANA-W" src="{{ $val['teamb']['logo_url'] }}" decoding="async"
+                            data-nimg="responsive" style="
                                     position: absolute;
                                     inset: 0px;
 
@@ -747,11 +747,11 @@
           <h4 class="line-title text-uppercase text-center overflow-hidden">
             <span class="rounded-pill position-relative d-inline-block">Latest Updates</span>
           </h4>
+          @foreach ($res as $re)
           <article id="6488a7f65099b3516f797afa" class="style_article__IayJx style_articleMedium__ME07j undefined">
             <div class="row-8 row">
               <div class="col-sm-6 col-5">
-                <a
-                  href="/cricket-news/mlc-2023-andre-russell-sunil-narine-among-four-kkr-players-roped-in-by-los-angeles-knight-riders/">
+                <a href="{{ route('post.details',[$re->id,$re->slug]) }}">
                   <div class="style_postimg__ftSiV undefined block-img">
                     <span style="
                             box-sizing: border-box;
@@ -777,8 +777,7 @@
                               padding: 0;
                               padding-top: 62.5%;
                             "></span>
-                      <img alt="Andre Russell and Sunil Narine"
-                        src="./images/LatestUpdates/1686677780911_Andre-Rusell-and-Narine.webp" decoding="async"
+                      <img alt="Andre Russell and Sunil Narine" src="{{getImageUrl($re->img)}}" decoding="async"
                         data-nimg="responsive" style="
                               position: absolute;
                               inset: 0px;
@@ -802,15 +801,11 @@
               <div class="d-flex flex-column justify-content-between col-sm-6 col-7">
                 <div>
                   <h3 class="small-head mb-1">
-                    <a href="{{ route('post.details','russell-narine-among-four-kkr-players-to-feature-for-lakr') }}">Russell,
-                      Narine among four KKR players to feature
-                      for LAKR</a>
+                    <a href="{{ route('post.details',[$re->id,$re->slug]) }}">{{
+                      $re->title }}</a>
                   </h3>
                   <p class="style_desc__jLYw_ style_desc__zP5qm">
-                    Los Angeles Knight Riders (LAKR), Kolkata Knight
-                    Riders' sister franchise, has roped in several
-                    high-profile names to their squad, including KKR stars
-                    Andre Russell, Sunil Narine, Lockie Ferguson and
+                    {!! Str::limit($re->description, 256, '...') !!}
                   </p>
                 </div>
                 <div class="style_articleInfo__WqisT undefined d-flex">
@@ -837,8 +832,9 @@
                                 margin: 0;
                                 padding: 0;
                                 padding-top: 100%;
-                              "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                          decoding="async" data-nimg="responsive" style="
+                              "></span>
+                        <img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg" decoding="async"
+                          data-nimg="responsive" style="
                                 position: absolute;
                                 top: 0;
                                 left: 0;
@@ -855,8 +851,9 @@
                                 max-width: 100%;
                                 min-height: 100%;
                                 max-height: 100%;
-                              " sizes="100vw" /> </span></span>13 Jun 2023</span><span
-                    class="d-flex align-items-center"><span class="style_icon__Ukkjh undefined d-block"><span style="
+                              " sizes="100vw" /> </span></span>{{ Carbon\Carbon::parse($re->created_at)->format('m M
+                    Y') }}</span><span class="d-flex align-items-center"><span
+                      class="style_icon__Ukkjh undefined d-block"><span style="
                               box-sizing: border-box;
                               display: block;
                               overflow: hidden;
@@ -905,333 +902,7 @@
               </div>
             </div>
           </article>
-          <article id="64889f061024650a1b8f581d" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
-            <div class="row-8 row">
-              <div class="col-sm-3 col-5">
-                <a class="style_postimg__ftSiV undefined d-block block-img"
-                  href="/social-tracker-cricket/harbhajan-singh-picks-youthful-15-member-squad-for-t20i-series-against-west-indies/"><span
-                    style="
-                          box-sizing: border-box;
-                          display: block;
-                          overflow: hidden;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          position: relative;
-                        "><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            padding-top: 62.5%;
-                          "></span><img alt="Harbhajan Singh and Hardik Pandya"
-                      src="./images/LatestUpdates/1686677780911_Andre-Rusell-and-Narine.webp" decoding="async"
-                      data-nimg="responsive" style="
-                            position: absolute;
-                            inset: 0px;
-                            box-sizing: border-box;
-                            padding: 0px;
-                            border: none;
-                            margin: auto;
-                            display: block;
-                            width: 0px;
-                            height: 0px;
-                            min-width: 100%;
-                            max-width: 100%;
-                            min-height: 100%;
-                            max-height: 100%;
-                          "
-                      sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px" />
-                  </span></a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
-                <div>
-                  <h4 class="small-head mb-2">
-                    <a href="{{route('post.details','harbhajan-singh-picks-youthful-15-member-squad-for-wi-t20is')}}">Harbhajan
-                      Singh picks youthful 15-member squad for
-                      WI T20Is</a>
-                  </h4>
-                </div>
-                <div class="style_articleInfo__WqisT d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                          decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " sizes="100vw" /></span></span>13 Jun 2023</span><span
-                    class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                          decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " sizes="100vw" /></span></span>2
-                    <!-- -->
-                    <!-- -->Min
-                  </span>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article id="648897a55099b3516f733ef4" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
-            <div class="row-8 row">
-              <div class="col-sm-3 col-5">
-                <a class="style_postimg__ftSiV undefined d-block block-img"
-                  href="/cricket-news/deodhar-trophy-to-take-place-after-four-years-in-puducherry-bangalore-to-host-duleep-trophy/"><span
-                    style="
-                          box-sizing: border-box;
-                          display: block;
-                          overflow: hidden;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          position: relative;
-                        "><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            padding-top: 62.5%;
-                          "></span><img alt="India Red"
-                      src="./images/LatestUpdates/1686677780911_Andre-Rusell-and-Narine.webp" decoding="async"
-                      data-nimg="responsive" style="
-                            position: absolute;
-                            inset: 0px;
-                            box-sizing: border-box;
-                            padding: 0px;
-                            border: none;
-                            margin: auto;
-                            display: block;
-                            width: 0px;
-                            height: 0px;
-                            min-width: 100%;
-                            max-width: 100%;
-                            min-height: 100%;
-                            max-height: 100%;
-                          "
-                      sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px" />
-                  </span></a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
-                <div>
-                  <h4 class="small-head mb-2">
-                    <a href="{{route('post.details','deodhar-trophy-to-take-place-after-four-years-in-puducherry')}}">Deodhar
-                      Trophy to take place after four years in
-                      Puducherry</a>
-                  </h4>
-                </div>
-                <div class="style_articleInfo__WqisT d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                          decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " sizes="100vw" /></span></span>13 Jun 2023</span><span
-                    class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                          decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " sizes="100vw" /></span></span>2
-                    <!-- -->
-                    <!-- -->Min
-                  </span>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="style_article__IayJx style_articleList__HOi_f py-0">
-            <h4 id="648881141024650a1b84c88b" class="small-head mb-0">
-              <a class="d-flex align-items-center"
-                href="/cricket-news/im-devastated-for-jofra-archer-eoin-morgan-reveals-his-support-extending-conversation-with-struggling-pacer/"><svg
-                  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M3.66667 2H15.3333C16.25 2 17 2.75 17 3.66667V12L12 17H3.66667C2.75 17 2 16.25 2 15.3333V3.66667C2 2.75 2.75 2 3.66667 2ZM15.3333 11.1667V3.66667H3.66667V15.3333H11.1667V11.1667H15.3333ZM9.5 11.1667H5.33333V9.5H9.5V11.1667ZM5.33333 7.83333H13.6667V6.16667H5.33333V7.83333Z"
-                    fill="#757A82"></path>
-                </svg><span class="style_textTruncate__R9wLD">I’m devastated for Jofra Archer: Eoin
-                  Morgan</span></a>
-            </h4>
-            <h4 id="648870811024650a1b7f4f42" class="small-head mb-0">
-              <a class="d-flex align-items-center"
-                href="/cricket-news/stokes-sent-me-a-message-saying-ashes-i-responded-with-lol-moeen-ali-reveals-short-retirement-conversation-with-ben-stokes-ahead-of-ashes-2023/"><svg
-                  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M3.66667 2H15.3333C16.25 2 17 2.75 17 3.66667V12L12 17H3.66667C2.75 17 2 16.25 2 15.3333V3.66667C2 2.75 2.75 2 3.66667 2ZM15.3333 11.1667V3.66667H3.66667V15.3333H11.1667V11.1667H15.3333ZM9.5 11.1667H5.33333V9.5H9.5V11.1667ZM5.33333 7.83333H13.6667V6.16667H5.33333V7.83333Z"
-                    fill="#757A82"></path>
-                </svg><span class="style_textTruncate__R9wLD">Ashes 2023: Ali reveals short conversation with Ben
-                  Stokes</span></a>
-            </h4>
-            <h4 id="64886e221024650a1b7e6b9d" class="small-head mb-0">
-              <a class="d-flex align-items-center"
-                href="/cricket-news/the-fact-that-it-is-ashes-and-its-such-a-big-series-to-be-part-of-it-would-be-amazing-moeen-ali/"><svg
-                  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M3.66667 2H15.3333C16.25 2 17 2.75 17 3.66667V12L12 17H3.66667C2.75 17 2 16.25 2 15.3333V3.66667C2 2.75 2.75 2 3.66667 2ZM15.3333 11.1667V3.66667H3.66667V15.3333H11.1667V11.1667H15.3333ZM9.5 11.1667H5.33333V9.5H9.5V11.1667ZM5.33333 7.83333H13.6667V6.16667H5.33333V7.83333Z"
-                    fill="#757A82"></path>
-                </svg><span class="style_textTruncate__R9wLD">Moeen Ali excited to play in Ashes 2023</span></a>
-            </h4>
-          </article>
+          @endforeach
         </section>
         <section id="t20/tnpl" class="style_homeArticles__4e_Na">
           <h4 class="line-title text-uppercase text-center overflow-hidden">
@@ -2993,14 +2664,10 @@
             </h3>
           </div>
           <div class="font-semi">
+            @foreach (getSeasons('seasons/2021/competitions') as $val)
             <a class="cs-item common-box d-block overflow-hidden text-nowrap mb-2"
-              href="/tests/world-test-championship/">ICC World Test Championship Final</a><a
-              class="cs-item common-box d-block overflow-hidden text-nowrap mb-2" href="/t20/tnpl/">Tamil Nadu
-              Premier League</a><a class="cs-item common-box d-block overflow-hidden text-nowrap mb-2"
-              href="/ashes/">The Ashes</a><a class="cs-item common-box d-block overflow-hidden text-nowrap mb-2"
-              href="/t20/t20-blast/">Vitality Blast</a><a
-              class="cs-item common-box d-block overflow-hidden text-nowrap mb-2" href="/womens-super-series/">Super
-              Series T20</a>
+              href="{{ getSeasonsDetailsUrl($val['matches_url']) }}">{{$val['title']}}</a>
+            @endforeach
           </div>
         </section>
         <section class="widget">

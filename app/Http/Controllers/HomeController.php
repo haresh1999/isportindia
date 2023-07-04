@@ -2,17 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function home()
     {
-        return view('home');
+        $res = Article::where('status', 1)->get();
+
+        return view('home', compact('res'));
     }
 
-    public function postDetails($slug)
+    public function postDetails($id, $slug)
     {
-        return view('blog_details');
+        $res = Article::with('user')->where('slug', $slug)->first();
+
+        return view('blog_details', compact('res'));
     }
 }

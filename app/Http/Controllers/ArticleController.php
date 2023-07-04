@@ -52,6 +52,8 @@ class ArticleController extends Controller
 
         $v['img'] = uploadImage($v['img'],'article');
 
+        $v['slug'] = \Str::slug($v['title']);
+
         $v['created_by'] = auth()->id();
 
         Article::create($v);
@@ -99,6 +101,8 @@ class ArticleController extends Controller
 
             unset($v['img']);
         }
+
+        $v['slug'] = \Str::slug($v['title']);
 
         Article::where('id',$id)->update($v);
 
