@@ -15,4 +15,9 @@ class Article extends Model
         'status',
         'img',
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class,'id','created_by');
+    }
 }

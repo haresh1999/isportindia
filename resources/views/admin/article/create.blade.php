@@ -17,7 +17,7 @@
                 <div class="card mb-2 p-4 p-sm-5">
                     <div class="card-head d-flex align-items-center justify-content-between mb-5 mb-sm-6">
                         <div class="title title-color green">Articles & News</div><a class="btn-stroke btn-small"
-                            href="{{route('dashboard')}}">
+                            href="{{route('article')}}">
                             <svg class="icon icon-arrow-left me-1">
                                 <use xlink:href="#icon-arrow-left"></use>
                             </svg><span>Back</span></a>
@@ -79,8 +79,7 @@
                             <span class="text-danger">{{$message}}</span>
                             @enderror
                             <select class="select select-wide" name="status">
-                                <option selected value="">Select status</option>
-                                <option value="1">Active</option>
+                                <option selected value="1">Active</option>
                                 <option value="2">InActive</option>
                             </select>
 
