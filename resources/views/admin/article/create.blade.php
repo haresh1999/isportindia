@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                             @error('title')
-                            <span class="text-danger">{{$message}}</span>
+                            <span class="text-red">{{$message}}</span>
                             @enderror
                             <input class="form-control mb-5 mb-sm-6" type="text" name="title" value="{{ old('title') }}">
 
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             @error('description')
-                            <span class="text-danger">{{$message}}</span>
+                            <span class="text-red">{{$message}}</span>
                             @enderror
                             <textarea id="editor1" name="description" rows="10" cols="80">{{ old('description') }}</textarea>
 
@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                             @error('img')
-                            <span class="text-danger">{{$message}}</span>
+                            <span class="text-red">{{$message}}</span>
                             @enderror
                             <input class="form-control mb-5 mb-sm-6" type="file" name="img">
 
@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                             @error('status')
-                            <span class="text-danger">{{$message}}</span>
+                            <span class="text-red">{{$message}}</span>
                             @enderror
                             <select class="select select-wide" name="status">
                                 <option {{ old('stauts') == 1 ? 'selected' : '' }} selected value="1">Active</option>

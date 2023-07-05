@@ -65,7 +65,6 @@
 
   </div>
 
-
   <div class="fade offcanvas-backdrop hide"></div>
 
   @include('layout.sidebar')

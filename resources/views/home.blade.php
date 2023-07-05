@@ -19,11 +19,154 @@
           </button>
         </div>
       </div>
-
       <div class="style_slider__UbtNO style_destroy__J7ab0 style_sliderMain__Q3_kE position-relative">
         <button style="display:none" onclick="scrollContent(-1)" id="scroll_1_prev"
           class="style_arrow__bXMF0 style_prev__wdbiv position-absolute top-50 start-0">Prev</button>
         <div class="style_inner__csGhV slider-track d-flex undefined" style="gap: 0" id="c-slider">
+          <div class="">
+            <div class="style_item__sjAWf p-2 mx-1 font-semi">
+              <div class="position-relative">
+                <a class="style_scoreCardLink__Clpdb position-absolute top-0 start-0 opacity-0 w-100 h-100"
+                  href="scoreCard.html">Sri
+                  Lanka A Women vs Bangladesh Women A</a>
+                <div class="d-flex justify-content-between align-items-center style_head__CLILr">
+                  <p>
+                    <span class="danger-text text-capitalize">• raindelay </span><span class="style_dark__duIOp"> -
+                      Match 5</span> -
+                    Mong Kok
+                  </p>
+                </div>
+                <p class="style_series__ggX10 font-medium text-nowrap overflow-hidden my-2">
+                  Womens Emerging Teams Asia Cup
+                </p>
+                <div class="style_head__CLILr">
+                  <div class="style_team__wJ2ZX d-flex justify-content-between position-relative xsmall-text">
+                    <div class="style_teamName__mcMHu d-flex align-items-center">
+                      <div class="style_teamFlag__yzzhu rounded-circle overflow-hidden">
+                        <span style="
+                              display: block;
+                              overflow: hidden;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0px;
+                              margin: 0px;
+                              padding: 0px;
+                              position: relative;
+                            "><span style="
+                                display: block;
+                                width: initial;
+                                height: initial;
+                                background: none;
+                                opacity: 1;
+                                border: 0px;
+                                margin: 0px;
+                                padding: 100% 0px 0px;
+                              "></span><img alt="SLAWM"
+                            src="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=1900&amp;q=75"
+                            decoding="async" data-nimg="responsive" style="
+                                position: absolute;
+                                inset: 0px;
+
+                                padding: 0px;
+                                border: none;
+                                margin: auto;
+                                display: block;
+                                width: 0px;
+                                height: 0px;
+                                min-width: 100%;
+                                max-width: 100%;
+                                min-height: 100%;
+                                max-height: 100%;
+                              "
+                            sizes="(max-width: 767px) 24px, (max-width: 991px) 24px, (max-width: 1190px) 200px, 24px"
+                            srcset="
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=40&amp;q=75     40w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=80&amp;q=75     80w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=120&amp;q=75   120w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=240&amp;q=75   240w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=450&amp;q=75   450w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=992&amp;q=75   992w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=1200&amp;q=75 1200w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=1900&amp;q=75 1900w
+                              " />
+                          ></span>
+                      </div>
+                      <span>SLAWM</span>
+                    </div>
+                    <p></p>
+                  </div>
+                  <div class="style_team__wJ2ZX d-flex justify-content-between position-relative xsmall-text">
+                    <div class="style_teamName__mcMHu d-flex align-items-center">
+                      <div class="style_teamFlag__yzzhu rounded-circle overflow-hidden">
+                        <span style="
+                              display: block;
+                              overflow: hidden;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0px;
+                              margin: 0px;
+                              padding: 0px;
+                              position: relative;
+                            "><span style="
+                                display: block;
+                                width: initial;
+                                height: initial;
+                                background: none;
+                                opacity: 1;
+                                border: 0px;
+                                margin: 0px;
+                                padding: 100% 0px 0px;
+                              "></span><img alt="BANA-W"
+                            src="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=1900&amp;q=75"
+                            decoding="async" data-nimg="responsive" style="
+                                position: absolute;
+                                inset: 0px;
+
+                                padding: 0px;
+                                border: none;
+                                margin: auto;
+                                display: block;
+                                width: 0px;
+                                height: 0px;
+                                min-width: 100%;
+                                max-width: 100%;
+                                min-height: 100%;
+                                max-height: 100%;
+                              "
+                            sizes="(max-width: 767px) 24px, (max-width: 991px) 24px, (max-width: 1190px) 200px, 24px"
+                            srcset="
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=40&amp;q=75     40w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=80&amp;q=75     80w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=120&amp;q=75   120w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=240&amp;q=75   240w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=450&amp;q=75   450w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=992&amp;q=75   992w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=1200&amp;q=75 1200w,
+                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=1900&amp;q=75 1900w
+                              " />
+                          ></span>
+                      </div>
+                      <span>BANA-W</span>
+                    </div>
+                    <p></p>
+                  </div>
+                </div>
+                <p class="style_result__gMwNw danger-text text-nowrap font-medium my-2 overflow-hidden">
+                  Rain Delay
+                </p>
+              </div>
+              <div class="style_btnList__BelA5 d-flex text-center text-uppercase">
+                <a class="mx-1 p-1 flex-grow-1 rounded-pill"
+                  href="/womens-emerging-teams-asia-cup/fixtures/">Fixtures</a><a
+                  class="mx-1 p-1 flex-grow-1 rounded-pill"
+                  href="/womens-emerging-teams-asia-cup/standings/">Standings</a>
+              </div>
+            </div>
+          </div>
 
           @foreach (getMatch() as $val)
           <div class="">
@@ -168,6 +311,7 @@
             </div>
           </div>
           @endforeach
+
         </div>
         <div id="scroll_1_next" onclick="scrollContent(1)"
           class="style_arrow__bXMF0 undefined position-absolute top-50 end-0">
@@ -188,55 +332,54 @@
           <h3
             class="small-head d-flex align-items-center text-uppercase justify-content-center justify-content-md-start">
             <span class="style_icon__5WxUf me-2"><span style="
+                    box-sizing: border-box;
+                    display: block;
+                    overflow: hidden;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0px;
+                    margin: 0px;
+                    padding: 0px;
+                    position: relative;
+                  "><span style="
                       box-sizing: border-box;
                       display: block;
-                      overflow: hidden;
                       width: initial;
                       height: initial;
                       background: none;
                       opacity: 1;
                       border: 0px;
                       margin: 0px;
-                      padding: 0px;
-                      position: relative;
-                    "><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0px;
-                        margin: 0px;
-                        padding: 100% 0px 0px;
-                      "></span><img alt="winner" sizes="100vw" srcset="
-                        /_next/static/media/star-fill-icon.b0baf1fe.svg  450w,
-                        /_next/static/media/star-fill-icon.b0baf1fe.svg  992w,
-                        /_next/static/media/star-fill-icon.b0baf1fe.svg 1200w,
-                        /_next/static/media/star-fill-icon.b0baf1fe.svg 1900w
-                      " src="/_next/static/media/star-fill-icon.b0baf1fe.svg" decoding="async" data-nimg="responsive"
+                      padding: 100% 0px 0px;
+                    "></span><img alt="winner" sizes="100vw" srcset="
+                      /_next/static/media/star-fill-icon.b0baf1fe.svg  450w,
+                      /_next/static/media/star-fill-icon.b0baf1fe.svg  992w,
+                      /_next/static/media/star-fill-icon.b0baf1fe.svg 1200w,
+                      /_next/static/media/star-fill-icon.b0baf1fe.svg 1900w
+                    " src="/_next/static/media/star-fill-icon.b0baf1fe.svg" decoding="async" data-nimg="responsive"
                   style="
-                        position: absolute;
-                        inset: 0px;
-                        box-sizing: border-box;
-                        padding: 0px;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0px;
-                        height: 0px;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " /></span></span><span>CricSpecial</span>
+                      position: absolute;
+                      inset: 0px;
+                      box-sizing: border-box;
+                      padding: 0px;
+                      border: none;
+                      margin: auto;
+                      display: block;
+                      width: 0px;
+                      height: 0px;
+                      min-width: 100%;
+                      max-width: 100%;
+                      min-height: 100%;
+                      max-height: 100%;
+                    " /></span></span><span>CricSpecial</span>
           </h3>
-
           <div class="style_slider__UbtNO process-arrow position-relative">
             <div id="carousel" class="style_inner__csGhV slider-track d-flex style_single__wL76r" id="c-slider"
               style="gap: 15px">
-              @foreach ($cric as $cri)
-              <div data-slick-index="1">
+              @foreach ($cric as $key => $cri)
+              <div data-slick-index="{{++$key}}">
                 <article class="style_item__CjFgl">
                   <div class="block-img">
                     <a href="{{route('cricspecial.details',[$cri->id,$cri->slug])}}"><span style="
@@ -348,9 +491,20 @@
             <button type="button"
               class="style_navLink__OPMT9 style_active__SJTCU w-100 nav-link position-relative rounded-0 d-flex align-items-center justify-content-center btn btn-primary">
               <span class="style_icon__Q0gNi me-1 me-lg-2 my-1"><span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
@@ -358,51 +512,51 @@
                         border: 0;
                         margin: 0;
                         padding: 0;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          padding-top: 100%;
-                        "></span><img alt="facebook" src="/_next/static/media/note-icon.772472aa.svg" decoding="async"
+                        padding-top: 100%;
+                      "></span><img alt="facebook" src="/_next/static/media/note-icon.772472aa.svg" decoding="async"
                     data-nimg="responsive" style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          bottom: 0;
-                          right: 0;
-                          box-sizing: border-box;
-                          padding: 0;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0;
-                          height: 0;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " sizes="100vw" srcset="
-                          /_next/static/media/note-icon.772472aa.svg  450w,
-                          /_next/static/media/note-icon.772472aa.svg  992w,
-                          /_next/static/media/note-icon.772472aa.svg 1200w,
-                          /_next/static/media/note-icon.772472aa.svg 1900w
-                        " /> </span></span><span>Articles</span>
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        box-sizing: border-box;
+                        padding: 0;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0;
+                        height: 0;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " sizes="100vw" srcset="
+                        /_next/static/media/note-icon.772472aa.svg  450w,
+                        /_next/static/media/note-icon.772472aa.svg  992w,
+                        /_next/static/media/note-icon.772472aa.svg 1200w,
+                        /_next/static/media/note-icon.772472aa.svg 1900w
+                      " /> </span></span><span>Articles</span>
             </button>
           </div>
           <div class="nav-item">
             <button type="button"
               class="style_navLink__OPMT9 false nav-link position-relative rounded-0 d-flex align-items-center justify-content-center w-100 btn btn-primary">
               <span class="style_icon__Q0gNi me-1 me-lg-2 my-1"><span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
@@ -410,51 +564,51 @@
                         border: 0;
                         margin: 0;
                         padding: 0;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          padding-top: 100%;
-                        "></span><img alt="facebook" src="/_next/static/media/fantasy-tips-icon.4c94a664.svg"
+                        padding-top: 100%;
+                      "></span><img alt="facebook" src="/_next/static/media/fantasy-tips-icon.4c94a664.svg"
                     decoding="async" data-nimg="responsive" style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          bottom: 0;
-                          right: 0;
-                          box-sizing: border-box;
-                          padding: 0;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0;
-                          height: 0;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " sizes="100vw" srcset="
-                          /_next/static/media/fantasy-tips-icon.4c94a664.svg  450w,
-                          /_next/static/media/fantasy-tips-icon.4c94a664.svg  992w,
-                          /_next/static/media/fantasy-tips-icon.4c94a664.svg 1200w,
-                          /_next/static/media/fantasy-tips-icon.4c94a664.svg 1900w
-                        " /> </span></span><span>Fantasy</span>
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        box-sizing: border-box;
+                        padding: 0;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0;
+                        height: 0;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " sizes="100vw" srcset="
+                        /_next/static/media/fantasy-tips-icon.4c94a664.svg  450w,
+                        /_next/static/media/fantasy-tips-icon.4c94a664.svg  992w,
+                        /_next/static/media/fantasy-tips-icon.4c94a664.svg 1200w,
+                        /_next/static/media/fantasy-tips-icon.4c94a664.svg 1900w
+                      " /> </span></span><span>Fantasy</span>
             </button>
           </div>
           <div class="nav-item">
             <button type="button"
               class="style_navLink__OPMT9 false nav-link position-relative rounded-0 d-flex align-items-center justify-content-center w-100 btn btn-primary">
               <span class="style_icon__Q0gNi me-1 me-lg-2 my-1"><span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
@@ -462,53 +616,41 @@
                         border: 0;
                         margin: 0;
                         padding: 0;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          padding-top: 100%;
-                        "></span><img alt="facebook" src="/_next/static/media/video-icon.c292e83c.svg" decoding="async"
+                        padding-top: 100%;
+                      "></span><img alt="facebook" src="/_next/static/media/video-icon.c292e83c.svg" decoding="async"
                     data-nimg="responsive" style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          bottom: 0;
-                          right: 0;
-                          box-sizing: border-box;
-                          padding: 0;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0;
-                          height: 0;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " sizes="100vw" srcset="
-                          /_next/static/media/video-icon.c292e83c.svg  450w,
-                          /_next/static/media/video-icon.c292e83c.svg  992w,
-                          /_next/static/media/video-icon.c292e83c.svg 1200w,
-                          /_next/static/media/video-icon.c292e83c.svg 1900w
-                        " /> </span></span><span>Videos</span>
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        box-sizing: border-box;
+                        padding: 0;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0;
+                        height: 0;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " sizes="100vw" srcset="
+                        /_next/static/media/video-icon.c292e83c.svg  450w,
+                        /_next/static/media/video-icon.c292e83c.svg  992w,
+                        /_next/static/media/video-icon.c292e83c.svg 1200w,
+                        /_next/static/media/video-icon.c292e83c.svg 1900w
+                      " /> </span></span><span>Videos</span>
             </button>
           </div>
         </div>
-
-
         <section class="style_homeArticles__4e_Na">
           <h4 class="line-title text-uppercase text-center overflow-hidden">
             <span class="rounded-pill position-relative d-inline-block">Latest Updates</span>
           </h4>
-          @foreach ($res as $re)
-          <article id="6488a7f65099b3516f797afa" class="style_article__IayJx style_articleMedium__ME07j undefined">
+
+          @foreach ($res as $key1 => $re)
+          <article id="{{++$key1}}" class="style_article__IayJx style_articleMedium__ME07j undefined">
             <div class="row-8 row">
               <div class="col-sm-6 col-5">
                 <a href="{{ route('post.details',[$re->id,$re->slug]) }}">
@@ -663,6 +805,7 @@
             </div>
           </article>
           @endforeach
+
         </section>
         <section id="t20/tnpl" class="style_homeArticles__4e_Na">
           <h4 class="line-title text-uppercase text-center overflow-hidden">
@@ -689,9 +832,20 @@
                     <div class="style_name__KSXfd d-flex align-items-center">
                       <div class="style_teamImg__LLq3Z flex-shrink-0 rounded-circle overflow-hidden">
                         <span style="
+                              box-sizing: border-box;
+                              display: block;
+                              overflow: hidden;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              position: relative;
+                            "><span style="
                                 box-sizing: border-box;
                                 display: block;
-                                overflow: hidden;
                                 width: initial;
                                 height: initial;
                                 background: none;
@@ -699,38 +853,27 @@
                                 border: 0;
                                 margin: 0;
                                 padding: 0;
-                                position: relative;
-                              "><span style="
-                                  box-sizing: border-box;
-                                  display: block;
-                                  width: initial;
-                                  height: initial;
-                                  background: none;
-                                  opacity: 1;
-                                  border: 0;
-                                  margin: 0;
-                                  padding: 0;
-                                  padding-top: 100%;
-                                "></span><img alt="DD"
+                                padding-top: 100%;
+                              "></span><img alt="DD"
                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             decoding="async" data-nimg="responsive" style="
-                                  position: absolute;
-                                  top: 0;
-                                  left: 0;
-                                  bottom: 0;
-                                  right: 0;
-                                  box-sizing: border-box;
-                                  padding: 0;
-                                  border: none;
-                                  margin: auto;
-                                  display: block;
-                                  width: 0;
-                                  height: 0;
-                                  min-width: 100%;
-                                  max-width: 100%;
-                                  min-height: 100%;
-                                  max-height: 100%;
-                                " />
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                box-sizing: border-box;
+                                padding: 0;
+                                border: none;
+                                margin: auto;
+                                display: block;
+                                width: 0;
+                                height: 0;
+                                min-width: 100%;
+                                max-width: 100%;
+                                min-height: 100%;
+                                max-height: 100%;
+                              " />
                         </span>
                       </div>
                       <div
@@ -763,9 +906,20 @@
                       </div>
                       <div class="style_teamImg__LLq3Z flex-shrink-0 rounded-circle overflow-hidden">
                         <span style="
+                              box-sizing: border-box;
+                              display: block;
+                              overflow: hidden;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              position: relative;
+                            "><span style="
                                 box-sizing: border-box;
                                 display: block;
-                                overflow: hidden;
                                 width: initial;
                                 height: initial;
                                 background: none;
@@ -773,38 +927,27 @@
                                 border: 0;
                                 margin: 0;
                                 padding: 0;
-                                position: relative;
-                              "><span style="
-                                  box-sizing: border-box;
-                                  display: block;
-                                  width: initial;
-                                  height: initial;
-                                  background: none;
-                                  opacity: 1;
-                                  border: 0;
-                                  margin: 0;
-                                  padding: 0;
-                                  padding-top: 100%;
-                                "></span><img alt="TRICHY"
+                                padding-top: 100%;
+                              "></span><img alt="TRICHY"
                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             decoding="async" data-nimg="responsive" style="
-                                  position: absolute;
-                                  top: 0;
-                                  left: 0;
-                                  bottom: 0;
-                                  right: 0;
-                                  box-sizing: border-box;
-                                  padding: 0;
-                                  border: none;
-                                  margin: auto;
-                                  display: block;
-                                  width: 0;
-                                  height: 0;
-                                  min-width: 100%;
-                                  max-width: 100%;
-                                  min-height: 100%;
-                                  max-height: 100%;
-                                " />
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                box-sizing: border-box;
+                                padding: 0;
+                                border: none;
+                                margin: auto;
+                                display: block;
+                                width: 0;
+                                height: 0;
+                                min-width: 100%;
+                                max-width: 100%;
+                                min-height: 100%;
+                                max-height: 100%;
+                              " />
                         </span>
                       </div>
                     </div>
@@ -816,617 +959,6 @@
           <article class="style_article__IayJx undefined" id="6485d42aa2ef417a258ac104">
             <a class="style_postimg__ftSiV d-block block-img mb-2 mb-md-3"
               href="/cricket-appeal/3-players-who-might-retire-after-the-upcoming-edition-of-tnpl-5245/"><span style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0;
-                      margin: 0;
-                      padding: 0;
-                      position: relative;
-                    "><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0;
-                        margin: 0;
-                        padding: 0;
-                        padding-top: 62.5%;
-                      "></span><img alt="Shijit Chandran."
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async"
-                  data-nimg="responsive" style="
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        bottom: 0;
-                        right: 0;
-                        box-sizing: border-box;
-                        padding: 0;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0;
-                        height: 0;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                        background-size: cover;
-                        background-position: 0% 0%;
-                        filter: blur(20px);
-                        background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                      " /> </span></a>
-            <h3 class="small-head mb-2">
-              <a href="/cricket-appeal/3-players-who-might-retire-after-the-upcoming-edition-of-tnpl-5245/">3
-                players who might retire after the upcoming TNPL
-                edition</a>
-            </h3>
-            <div class="style_articleInfo__WqisT d-flex">
-              <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          overflow: hidden;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          position: relative;
-                        "><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            padding-top: 100%;
-                          "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                      decoding="async" data-nimg="responsive" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            bottom: 0;
-                            right: 0;
-                            box-sizing: border-box;
-                            padding: 0;
-                            border: none;
-                            margin: auto;
-                            display: block;
-                            width: 0;
-                            height: 0;
-                            min-width: 100%;
-                            max-width: 100%;
-                            min-height: 100%;
-                            max-height: 100%;
-                          " /> </span></span>13 Jun 2023</span><span class="d-flex align-items-center"><span
-                  class="style_icon__Ukkjh d-block"><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          overflow: hidden;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          position: relative;
-                        "><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            padding-top: 100%;
-                          "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg" decoding="async"
-                      data-nimg="responsive" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            bottom: 0;
-                            right: 0;
-                            box-sizing: border-box;
-                            padding: 0;
-                            border: none;
-                            margin: auto;
-                            display: block;
-                            width: 0;
-                            height: 0;
-                            min-width: 100%;
-                            max-width: 100%;
-                            min-height: 100%;
-                            max-height: 100%;
-                          " /> </span></span>4
-                <!-- -->
-                <!-- -->Min
-              </span>
-            </div>
-          </article>
-          <article id="648832155099b3516f5143e5" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
-            <div class="row-8 row">
-              <div class="col-sm-3 col-5">
-                <a class="style_postimg__ftSiV undefined d-block block-img"
-                  href="/cricket-match-predictions/tnpl-2023-match-4-dd-vs-rtw-match-prediction-who-will-win-todays-tnpl-match-between-dindigul-dragons-and-ba11sy-trichy-9999/"><span
-                    style="
-                          box-sizing: border-box;
-                          display: block;
-                          overflow: hidden;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          position: relative;
-                        "><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            padding-top: 62.5%;
-                          "></span><img alt="Dindigul Dragons"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async" data-nimg="responsive" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            bottom: 0;
-                            right: 0;
-                            box-sizing: border-box;
-                            padding: 0;
-                            border: none;
-                            margin: auto;
-                            display: block;
-                            width: 0;
-                            height: 0;
-                            min-width: 100%;
-                            max-width: 100%;
-                            min-height: 100%;
-                            max-height: 100%;
-                            background-size: cover;
-                            background-position: 0% 0%;
-                            filter: blur(20px);
-                            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                          " /> </span></a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
-                <div>
-                  <h4 class="small-head mb-2">
-                    <a
-                      href="/cricket-match-predictions/tnpl-2023-match-4-dd-vs-rtw-match-prediction-who-will-win-todays-tnpl-match-between-dindigul-dragons-and-ba11sy-trichy-9999/">TNPL
-                      2023: Match 4, DD vs RTW Match Prediction</a>
-                  </h4>
-                </div>
-                <div class="style_articleInfo__WqisT d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                          decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /> </span></span>13 Jun 2023</span><span class="d-flex align-items-center"><span
-                      class="style_icon__Ukkjh d-block"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                          decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /> </span></span>2
-                    <!-- -->
-                    <!-- -->Min
-                  </span>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article id="648818c61024650a1b619c70" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
-            <div class="row-8 row">
-              <div class="col-sm-3 col-5">
-                <a class="style_postimg__ftSiV undefined d-block block-img"
-                  href="/cricket-news/tnpl-2023-shahrukh-khans-all-round-show-propels-lyca-kovai-kings-to-emphatic-victory-over-idream-tiruppur-tamizhans-in-opener/"><span
-                    style="
-                          box-sizing: border-box;
-                          display: block;
-                          overflow: hidden;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          position: relative;
-                        "><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            padding-top: 62.5%;
-                          "></span><img alt="Shahrukh Khan and Vijay Shankar"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async" data-nimg="responsive" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            bottom: 0;
-                            right: 0;
-                            box-sizing: border-box;
-                            padding: 0;
-                            border: none;
-                            margin: auto;
-                            display: block;
-                            width: 0;
-                            height: 0;
-                            min-width: 100%;
-                            max-width: 100%;
-                            min-height: 100%;
-                            max-height: 100%;
-                            background-size: cover;
-                            background-position: 0% 0%;
-                            filter: blur(20px);
-                            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                          " /> </span></a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
-                <div>
-                  <h4 class="small-head mb-2">
-                    <a
-                      href="/cricket-news/tnpl-2023-shahrukh-khans-all-round-show-propels-lyca-kovai-kings-to-emphatic-victory-over-idream-tiruppur-tamizhans-in-opener/">LKK
-                      beat ITT in inaugural TNPL 2023 match</a>
-                  </h4>
-                </div>
-                <div class="style_articleInfo__WqisT d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                          decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /> </span></span>13 Jun 2023</span><span class="d-flex align-items-center"><span
-                      class="style_icon__Ukkjh d-block"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                          decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /> </span></span>2
-                    <!-- -->
-                    <!-- -->Min
-                  </span>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article id="6488169a4f03743744ab6b54" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
-            <div class="row-8 row">
-              <div class="col-sm-3 col-5">
-                <a class="style_postimg__ftSiV undefined d-block block-img"
-                  href="/cricket-match-predictions/tnpl-2023-match-3-smp-vs-nrk-match-prediction-who-will-win-todays-tnpl-match-between-siechem-madurai-panthers-and-nellai-royal-kings/"><span
-                    style="
-                          box-sizing: border-box;
-                          display: block;
-                          overflow: hidden;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          position: relative;
-                        "><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            padding-top: 62.5%;
-                          "></span><img alt="Siechem Madurai Panthers"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async" data-nimg="responsive" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            bottom: 0;
-                            right: 0;
-                            box-sizing: border-box;
-                            padding: 0;
-                            border: none;
-                            margin: auto;
-                            display: block;
-                            width: 0;
-                            height: 0;
-                            min-width: 100%;
-                            max-width: 100%;
-                            min-height: 100%;
-                            max-height: 100%;
-                            background-size: cover;
-                            background-position: 0% 0%;
-                            filter: blur(20px);
-                            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                          " /> </span></a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
-                <div>
-                  <h4 class="small-head mb-2">
-                    <a
-                      href="/cricket-match-predictions/tnpl-2023-match-3-smp-vs-nrk-match-prediction-who-will-win-todays-tnpl-match-between-siechem-madurai-panthers-and-nellai-royal-kings/">TNPL
-                      2023: Match 3, SMP vs NRK Match Prediction</a>
-                  </h4>
-                </div>
-                <div class="style_articleInfo__WqisT d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                          decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /> </span></span>13 Jun 2023</span><span class="d-flex align-items-center"><span
-                      class="style_icon__Ukkjh d-block"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                          decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /> </span></span>2
-                    <!-- -->
-                    <!-- -->Min
-                  </span>
-                </div>
-              </div>
-            </div>
-          </article>
-          <a class="theme-btn full-btn btn btn-primary" href="/t20/tnpl/">More from
-            <!-- -->
-            <!-- -->TNPL 2023
-            <!-- -->
-            &gt;
-          </a>
-        </section>
-        <div
-          class="style_downloadBanner__koJYz w-100 d-flex flex-column align-items-center mb-2 mb-md-3 position-relative overflow-hidden text-center">
-          <div class="style_ctIcon__k4SaE overflow-hidden flex-shrink-0">
-            <span style="
                     box-sizing: border-box;
                     display: block;
                     overflow: hidden;
@@ -1448,10 +980,10 @@
                       border: 0;
                       margin: 0;
                       padding: 0;
-                      padding-top: 190.625%;
-                    "></span><img alt="CT"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async"
-                data-nimg="responsive" style="
+                      padding-top: 62.5%;
+                    "></span><img alt="Shijit Chandran."
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async"
+                  data-nimg="responsive" style="
                       position: absolute;
                       top: 0;
                       left: 0;
@@ -1468,7 +1000,618 @@
                       max-width: 100%;
                       min-height: 100%;
                       max-height: 100%;
-                    " />
+                      background-size: cover;
+                      background-position: 0% 0%;
+                      filter: blur(20px);
+                      background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
+                    " /> </span></a>
+            <h3 class="small-head mb-2">
+              <a href="/cricket-appeal/3-players-who-might-retire-after-the-upcoming-edition-of-tnpl-5245/">3
+                players who might retire after the upcoming TNPL
+                edition</a>
+            </h3>
+            <div class="style_articleInfo__WqisT d-flex">
+              <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                      "><span style="
+                          box-sizing: border-box;
+                          display: block;
+                          width: initial;
+                          height: initial;
+                          background: none;
+                          opacity: 1;
+                          border: 0;
+                          margin: 0;
+                          padding: 0;
+                          padding-top: 100%;
+                        "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
+                      decoding="async" data-nimg="responsive" style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          bottom: 0;
+                          right: 0;
+                          box-sizing: border-box;
+                          padding: 0;
+                          border: none;
+                          margin: auto;
+                          display: block;
+                          width: 0;
+                          height: 0;
+                          min-width: 100%;
+                          max-width: 100%;
+                          min-height: 100%;
+                          max-height: 100%;
+                        " /> </span></span>13 Jun 2023</span><span class="d-flex align-items-center"><span
+                  class="style_icon__Ukkjh d-block"><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                      "><span style="
+                          box-sizing: border-box;
+                          display: block;
+                          width: initial;
+                          height: initial;
+                          background: none;
+                          opacity: 1;
+                          border: 0;
+                          margin: 0;
+                          padding: 0;
+                          padding-top: 100%;
+                        "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg" decoding="async"
+                      data-nimg="responsive" style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          bottom: 0;
+                          right: 0;
+                          box-sizing: border-box;
+                          padding: 0;
+                          border: none;
+                          margin: auto;
+                          display: block;
+                          width: 0;
+                          height: 0;
+                          min-width: 100%;
+                          max-width: 100%;
+                          min-height: 100%;
+                          max-height: 100%;
+                        " /> </span></span>4
+                <!-- -->
+                <!-- -->Min
+              </span>
+            </div>
+          </article>
+          <article id="648832155099b3516f5143e5" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
+            <div class="row-8 row">
+              <div class="col-sm-3 col-5">
+                <a class="style_postimg__ftSiV undefined d-block block-img"
+                  href="/cricket-match-predictions/tnpl-2023-match-4-dd-vs-rtw-match-prediction-who-will-win-todays-tnpl-match-between-dindigul-dragons-and-ba11sy-trichy-9999/"><span
+                    style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                      "><span style="
+                          box-sizing: border-box;
+                          display: block;
+                          width: initial;
+                          height: initial;
+                          background: none;
+                          opacity: 1;
+                          border: 0;
+                          margin: 0;
+                          padding: 0;
+                          padding-top: 62.5%;
+                        "></span><img alt="Dindigul Dragons"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      decoding="async" data-nimg="responsive" style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          bottom: 0;
+                          right: 0;
+                          box-sizing: border-box;
+                          padding: 0;
+                          border: none;
+                          margin: auto;
+                          display: block;
+                          width: 0;
+                          height: 0;
+                          min-width: 100%;
+                          max-width: 100%;
+                          min-height: 100%;
+                          max-height: 100%;
+                          background-size: cover;
+                          background-position: 0% 0%;
+                          filter: blur(20px);
+                          background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
+                        " /> </span></a>
+              </div>
+              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
+                <div>
+                  <h4 class="small-head mb-2">
+                    <a
+                      href="/cricket-match-predictions/tnpl-2023-match-4-dd-vs-rtw-match-prediction-who-will-win-todays-tnpl-match-between-dindigul-dragons-and-ba11sy-trichy-9999/">TNPL
+                      2023: Match 4, DD vs RTW Match Prediction</a>
+                  </h4>
+                </div>
+                <div class="style_articleInfo__WqisT d-flex">
+                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
+                              box-sizing: border-box;
+                              display: block;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              padding-top: 100%;
+                            "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
+                          decoding="async" data-nimg="responsive" style="
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>13 Jun 2023</span><span class="d-flex align-items-center"><span
+                      class="style_icon__Ukkjh d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
+                              box-sizing: border-box;
+                              display: block;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              padding-top: 100%;
+                            "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
+                          decoding="async" data-nimg="responsive" style="
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>2
+                    <!-- -->
+                    <!-- -->Min
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article id="648818c61024650a1b619c70" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
+            <div class="row-8 row">
+              <div class="col-sm-3 col-5">
+                <a class="style_postimg__ftSiV undefined d-block block-img"
+                  href="/cricket-news/tnpl-2023-shahrukh-khans-all-round-show-propels-lyca-kovai-kings-to-emphatic-victory-over-idream-tiruppur-tamizhans-in-opener/"><span
+                    style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                      "><span style="
+                          box-sizing: border-box;
+                          display: block;
+                          width: initial;
+                          height: initial;
+                          background: none;
+                          opacity: 1;
+                          border: 0;
+                          margin: 0;
+                          padding: 0;
+                          padding-top: 62.5%;
+                        "></span><img alt="Shahrukh Khan and Vijay Shankar"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      decoding="async" data-nimg="responsive" style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          bottom: 0;
+                          right: 0;
+                          box-sizing: border-box;
+                          padding: 0;
+                          border: none;
+                          margin: auto;
+                          display: block;
+                          width: 0;
+                          height: 0;
+                          min-width: 100%;
+                          max-width: 100%;
+                          min-height: 100%;
+                          max-height: 100%;
+                          background-size: cover;
+                          background-position: 0% 0%;
+                          filter: blur(20px);
+                          background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
+                        " /> </span></a>
+              </div>
+              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
+                <div>
+                  <h4 class="small-head mb-2">
+                    <a
+                      href="/cricket-news/tnpl-2023-shahrukh-khans-all-round-show-propels-lyca-kovai-kings-to-emphatic-victory-over-idream-tiruppur-tamizhans-in-opener/">LKK
+                      beat ITT in inaugural TNPL 2023 match</a>
+                  </h4>
+                </div>
+                <div class="style_articleInfo__WqisT d-flex">
+                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
+                              box-sizing: border-box;
+                              display: block;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              padding-top: 100%;
+                            "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
+                          decoding="async" data-nimg="responsive" style="
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>13 Jun 2023</span><span class="d-flex align-items-center"><span
+                      class="style_icon__Ukkjh d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
+                              box-sizing: border-box;
+                              display: block;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              padding-top: 100%;
+                            "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
+                          decoding="async" data-nimg="responsive" style="
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>2
+                    <!-- -->
+                    <!-- -->Min
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article id="6488169a4f03743744ab6b54" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
+            <div class="row-8 row">
+              <div class="col-sm-3 col-5">
+                <a class="style_postimg__ftSiV undefined d-block block-img"
+                  href="/cricket-match-predictions/tnpl-2023-match-3-smp-vs-nrk-match-prediction-who-will-win-todays-tnpl-match-between-siechem-madurai-panthers-and-nellai-royal-kings/"><span
+                    style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                      "><span style="
+                          box-sizing: border-box;
+                          display: block;
+                          width: initial;
+                          height: initial;
+                          background: none;
+                          opacity: 1;
+                          border: 0;
+                          margin: 0;
+                          padding: 0;
+                          padding-top: 62.5%;
+                        "></span><img alt="Siechem Madurai Panthers"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      decoding="async" data-nimg="responsive" style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          bottom: 0;
+                          right: 0;
+                          box-sizing: border-box;
+                          padding: 0;
+                          border: none;
+                          margin: auto;
+                          display: block;
+                          width: 0;
+                          height: 0;
+                          min-width: 100%;
+                          max-width: 100%;
+                          min-height: 100%;
+                          max-height: 100%;
+                          background-size: cover;
+                          background-position: 0% 0%;
+                          filter: blur(20px);
+                          background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
+                        " /> </span></a>
+              </div>
+              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
+                <div>
+                  <h4 class="small-head mb-2">
+                    <a
+                      href="/cricket-match-predictions/tnpl-2023-match-3-smp-vs-nrk-match-prediction-who-will-win-todays-tnpl-match-between-siechem-madurai-panthers-and-nellai-royal-kings/">TNPL
+                      2023: Match 3, SMP vs NRK Match Prediction</a>
+                  </h4>
+                </div>
+                <div class="style_articleInfo__WqisT d-flex">
+                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
+                              box-sizing: border-box;
+                              display: block;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              padding-top: 100%;
+                            "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
+                          decoding="async" data-nimg="responsive" style="
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>13 Jun 2023</span><span class="d-flex align-items-center"><span
+                      class="style_icon__Ukkjh d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
+                              box-sizing: border-box;
+                              display: block;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              padding-top: 100%;
+                            "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
+                          decoding="async" data-nimg="responsive" style="
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>2
+                    <!-- -->
+                    <!-- -->Min
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <a class="theme-btn full-btn btn btn-primary" href="/t20/tnpl/">More from
+            <!-- -->
+            <!-- -->TNPL 2023
+            <!-- -->
+            &gt;
+          </a>
+        </section>
+        <div
+          class="style_downloadBanner__koJYz w-100 d-flex flex-column align-items-center mb-2 mb-md-3 position-relative overflow-hidden text-center">
+          <div class="style_ctIcon__k4SaE overflow-hidden flex-shrink-0">
+            <span style="
+                  box-sizing: border-box;
+                  display: block;
+                  overflow: hidden;
+                  width: initial;
+                  height: initial;
+                  background: none;
+                  opacity: 1;
+                  border: 0;
+                  margin: 0;
+                  padding: 0;
+                  position: relative;
+                "><span style="
+                    box-sizing: border-box;
+                    display: block;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    padding-top: 190.625%;
+                  "></span><img alt="CT"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async"
+                data-nimg="responsive" style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    box-sizing: border-box;
+                    padding: 0;
+                    border: none;
+                    margin: auto;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 100%;
+                    max-height: 100%;
+                  " />
             </span>
           </div>
           <div>
@@ -1479,103 +1622,103 @@
             <div class="d-flex justify-content-center">
               <a class="mx-1" href="https://apps.apple.com/in/app/crictracker/id6443913175" rel="noreferrer"
                 target="_blank"><span style="
-                        box-sizing: border-box;
-                        display: inline-block;
-                        overflow: hidden;
-                        width: 96px;
-                        height: 32px;
-                        background: none;
-                        opacity: 1;
-                        border: 0;
-                        margin: 0;
-                        padding: 0;
-                        position: relative;
-                      "><img alt="CT"
+                      box-sizing: border-box;
+                      display: inline-block;
+                      overflow: hidden;
+                      width: 96px;
+                      height: 32px;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "><img alt="CT"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                     decoding="async" data-nimg="fixed" style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          bottom: 0;
-                          right: 0;
-                          box-sizing: border-box;
-                          padding: 0;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0;
-                          height: 0;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " /> </span></a><a class="mx-1" rel="noreferrer"
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        box-sizing: border-box;
+                        padding: 0;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0;
+                        height: 0;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " /> </span></a><a class="mx-1" rel="noreferrer"
                 href="https://play.google.com/store/apps/details?id=com.app.crictracker" target="_blank"><span style="
-                        box-sizing: border-box;
-                        display: inline-block;
-                        overflow: hidden;
-                        width: 109px;
-                        height: 32px;
-                        background: none;
-                        opacity: 1;
-                        border: 0;
-                        margin: 0;
-                        padding: 0;
-                        position: relative;
-                      "><img alt="CT"
+                      box-sizing: border-box;
+                      display: inline-block;
+                      overflow: hidden;
+                      width: 109px;
+                      height: 32px;
+                      background: none;
+                      opacity: 1;
+                      border: 0;
+                      margin: 0;
+                      padding: 0;
+                      position: relative;
+                    "><img alt="CT"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                     decoding="async" data-nimg="fixed" style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          bottom: 0;
-                          right: 0;
-                          box-sizing: border-box;
-                          padding: 0;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0;
-                          height: 0;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " /> </span></a>
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        box-sizing: border-box;
+                        padding: 0;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0;
+                        height: 0;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " /> </span></a>
             </div>
           </div>
           <div class="style_pattern__SXNNg position-absolute">
             <span style="
-                    box-sizing: border-box;
-                    display: inline-block;
-                    overflow: hidden;
-                    width: 304px;
-                    height: 187px;
-                    background: none;
-                    opacity: 1;
-                    border: 0;
-                    margin: 0;
-                    padding: 0;
-                    position: relative;
-                  "><img alt="CT" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  box-sizing: border-box;
+                  display: inline-block;
+                  overflow: hidden;
+                  width: 304px;
+                  height: 187px;
+                  background: none;
+                  opacity: 1;
+                  border: 0;
+                  margin: 0;
+                  padding: 0;
+                  position: relative;
+                "><img alt="CT" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                 decoding="async" data-nimg="fixed" style="
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      bottom: 0;
-                      right: 0;
-                      box-sizing: border-box;
-                      padding: 0;
-                      border: none;
-                      margin: auto;
-                      display: block;
-                      width: 0;
-                      height: 0;
-                      min-width: 100%;
-                      max-width: 100%;
-                      min-height: 100%;
-                      max-height: 100%;
-                    " />
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    box-sizing: border-box;
+                    padding: 0;
+                    border: none;
+                    margin: auto;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 100%;
+                    max-height: 100%;
+                  " />
             </span>
           </div>
         </div>
@@ -1605,9 +1748,20 @@
                     <div class="style_name__KSXfd d-flex align-items-center">
                       <div class="style_teamImg__LLq3Z flex-shrink-0 rounded-circle overflow-hidden">
                         <span style="
+                              box-sizing: border-box;
+                              display: block;
+                              overflow: hidden;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              position: relative;
+                            "><span style="
                                 box-sizing: border-box;
                                 display: block;
-                                overflow: hidden;
                                 width: initial;
                                 height: initial;
                                 background: none;
@@ -1615,38 +1769,27 @@
                                 border: 0;
                                 margin: 0;
                                 padding: 0;
-                                position: relative;
-                              "><span style="
-                                  box-sizing: border-box;
-                                  display: block;
-                                  width: initial;
-                                  height: initial;
-                                  background: none;
-                                  opacity: 1;
-                                  border: 0;
-                                  margin: 0;
-                                  padding: 0;
-                                  padding-top: 100%;
-                                "></span><img alt="WOR"
+                                padding-top: 100%;
+                              "></span><img alt="WOR"
                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             decoding="async" data-nimg="responsive" style="
-                                  position: absolute;
-                                  top: 0;
-                                  left: 0;
-                                  bottom: 0;
-                                  right: 0;
-                                  box-sizing: border-box;
-                                  padding: 0;
-                                  border: none;
-                                  margin: auto;
-                                  display: block;
-                                  width: 0;
-                                  height: 0;
-                                  min-width: 100%;
-                                  max-width: 100%;
-                                  min-height: 100%;
-                                  max-height: 100%;
-                                " />
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                box-sizing: border-box;
+                                padding: 0;
+                                border: none;
+                                margin: auto;
+                                display: block;
+                                width: 0;
+                                height: 0;
+                                min-width: 100%;
+                                max-width: 100%;
+                                min-height: 100%;
+                                max-height: 100%;
+                              " />
                         </span>
                       </div>
                       <div
@@ -1679,9 +1822,20 @@
                       </div>
                       <div class="style_teamImg__LLq3Z flex-shrink-0 rounded-circle overflow-hidden">
                         <span style="
+                              box-sizing: border-box;
+                              display: block;
+                              overflow: hidden;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              position: relative;
+                            "><span style="
                                 box-sizing: border-box;
                                 display: block;
-                                overflow: hidden;
                                 width: initial;
                                 height: initial;
                                 background: none;
@@ -1689,38 +1843,27 @@
                                 border: 0;
                                 margin: 0;
                                 padding: 0;
-                                position: relative;
-                              "><span style="
-                                  box-sizing: border-box;
-                                  display: block;
-                                  width: initial;
-                                  height: initial;
-                                  background: none;
-                                  opacity: 1;
-                                  border: 0;
-                                  margin: 0;
-                                  padding: 0;
-                                  padding-top: 100%;
-                                "></span><img alt="WAS"
+                                padding-top: 100%;
+                              "></span><img alt="WAS"
                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             decoding="async" data-nimg="responsive" style="
-                                  position: absolute;
-                                  top: 0;
-                                  left: 0;
-                                  bottom: 0;
-                                  right: 0;
-                                  box-sizing: border-box;
-                                  padding: 0;
-                                  border: none;
-                                  margin: auto;
-                                  display: block;
-                                  width: 0;
-                                  height: 0;
-                                  min-width: 100%;
-                                  max-width: 100%;
-                                  min-height: 100%;
-                                  max-height: 100%;
-                                " />
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                box-sizing: border-box;
+                                padding: 0;
+                                border: none;
+                                margin: auto;
+                                display: block;
+                                width: 0;
+                                height: 0;
+                                min-width: 100%;
+                                max-width: 100%;
+                                min-height: 100%;
+                                max-height: 100%;
+                              " />
                         </span>
                       </div>
                     </div>
@@ -1736,9 +1879,20 @@
                   href="/social-tracker-cricket/t20-blast-2023-shaheen-afridi-sends-jos-buttlers-off-stump-flying-with-searing-yorker/">
                   <div class="style_postimg__ftSiV undefined block-img">
                     <span style="
+                          box-sizing: border-box;
+                          display: block;
+                          overflow: hidden;
+                          width: initial;
+                          height: initial;
+                          background: none;
+                          opacity: 1;
+                          border: 0;
+                          margin: 0;
+                          padding: 0;
+                          position: relative;
+                        "><span style="
                             box-sizing: border-box;
                             display: block;
-                            overflow: hidden;
                             width: initial;
                             height: initial;
                             background: none;
@@ -1746,42 +1900,31 @@
                             border: 0;
                             margin: 0;
                             padding: 0;
-                            position: relative;
-                          "><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              padding-top: 62.5%;
-                            "></span><img alt="Shaheen Afridi Dismissal."
+                            padding-top: 62.5%;
+                          "></span><img alt="Shaheen Afridi Dismissal."
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         decoding="async" data-nimg="responsive" style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              box-sizing: border-box;
-                              padding: 0;
-                              border: none;
-                              margin: auto;
-                              display: block;
-                              width: 0;
-                              height: 0;
-                              min-width: 100%;
-                              max-width: 100%;
-                              min-height: 100%;
-                              max-height: 100%;
-                              background-size: cover;
-                              background-position: 0% 0%;
-                              filter: blur(20px);
-                              background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                            " />
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            box-sizing: border-box;
+                            padding: 0;
+                            border: none;
+                            margin: auto;
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            min-width: 100%;
+                            max-width: 100%;
+                            min-height: 100%;
+                            max-height: 100%;
+                            background-size: cover;
+                            background-position: 0% 0%;
+                            filter: blur(20px);
+                            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
+                          " />
                     </span>
                   </div>
                 </a>
@@ -1803,9 +1946,20 @@
                 </div>
                 <div class="style_articleInfo__WqisT undefined d-flex">
                   <span class="d-flex align-items-center"><span class="style_icon__Ukkjh undefined d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
                               box-sizing: border-box;
                               display: block;
-                              overflow: hidden;
                               width: initial;
                               height: initial;
                               background: none;
@@ -1813,41 +1967,41 @@
                               border: 0;
                               margin: 0;
                               padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
+                              padding-top: 100%;
+                            "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
                           decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /> </span></span>5 Jun 2023</span><span class="d-flex align-items-center"><span
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>5 Jun 2023</span><span class="d-flex align-items-center"><span
                       class="style_icon__Ukkjh undefined d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
                               box-sizing: border-box;
                               display: block;
-                              overflow: hidden;
                               width: initial;
                               height: initial;
                               background: none;
@@ -1855,37 +2009,26 @@
                               border: 0;
                               margin: 0;
                               padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
+                              padding-top: 100%;
+                            "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
                           decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /> </span></span>2
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>2
                     <!-- -->
                     <!-- -->Min
                   </span>
@@ -1899,9 +2042,20 @@
                 <a class="style_postimg__ftSiV undefined d-block block-img"
                   href="/cricket-news/important-that-people-see-women-in-different-roles-throughout-sue-redfern-on-becoming-first-woman-to-umpire-t20-blast-clash-4703/"><span
                     style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                      "><span style="
                           box-sizing: border-box;
                           display: block;
-                          overflow: hidden;
                           width: initial;
                           height: initial;
                           background: none;
@@ -1909,42 +2063,31 @@
                           border: 0;
                           margin: 0;
                           padding: 0;
-                          position: relative;
-                        "><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            padding-top: 62.5%;
-                          "></span><img alt="Sue Redfern"
+                          padding-top: 62.5%;
+                        "></span><img alt="Sue Redfern"
                       src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                       decoding="async" data-nimg="responsive" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            bottom: 0;
-                            right: 0;
-                            box-sizing: border-box;
-                            padding: 0;
-                            border: none;
-                            margin: auto;
-                            display: block;
-                            width: 0;
-                            height: 0;
-                            min-width: 100%;
-                            max-width: 100%;
-                            min-height: 100%;
-                            max-height: 100%;
-                            background-size: cover;
-                            background-position: 0% 0%;
-                            filter: blur(20px);
-                            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                          " /> </span></a>
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          bottom: 0;
+                          right: 0;
+                          box-sizing: border-box;
+                          padding: 0;
+                          border: none;
+                          margin: auto;
+                          display: block;
+                          width: 0;
+                          height: 0;
+                          min-width: 100%;
+                          max-width: 100%;
+                          min-height: 100%;
+                          max-height: 100%;
+                          background-size: cover;
+                          background-position: 0% 0%;
+                          filter: blur(20px);
+                          background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
+                        " /> </span></a>
               </div>
               <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
                 <div>
@@ -1957,9 +2100,20 @@
                 </div>
                 <div class="style_articleInfo__WqisT d-flex">
                   <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
                               box-sizing: border-box;
                               display: block;
-                              overflow: hidden;
                               width: initial;
                               height: initial;
                               background: none;
@@ -1967,41 +2121,41 @@
                               border: 0;
                               margin: 0;
                               padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
+                              padding-top: 100%;
+                            "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
                           decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /> </span></span>4 Jun 2023</span><span class="d-flex align-items-center"><span
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>4 Jun 2023</span><span class="d-flex align-items-center"><span
                       class="style_icon__Ukkjh d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
                               box-sizing: border-box;
                               display: block;
-                              overflow: hidden;
                               width: initial;
                               height: initial;
                               background: none;
@@ -2009,37 +2163,26 @@
                               border: 0;
                               margin: 0;
                               padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
+                              padding-top: 100%;
+                            "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
                           decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /> </span></span>2
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>2
                     <!-- -->
                     <!-- -->Min
                   </span>
@@ -2053,9 +2196,20 @@
                 <a class="style_postimg__ftSiV undefined d-block block-img"
                   href="/cricket-news/it-is-very-easy-for-people-to-overcomplicate-t20-cricket-it-is-a-simple-game-mason-crane/"><span
                     style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                      "><span style="
                           box-sizing: border-box;
                           display: block;
-                          overflow: hidden;
                           width: initial;
                           height: initial;
                           background: none;
@@ -2063,42 +2217,31 @@
                           border: 0;
                           margin: 0;
                           padding: 0;
-                          position: relative;
-                        "><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            padding-top: 62.5%;
-                          "></span><img alt="Mason Crane"
+                          padding-top: 62.5%;
+                        "></span><img alt="Mason Crane"
                       src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                       decoding="async" data-nimg="responsive" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            bottom: 0;
-                            right: 0;
-                            box-sizing: border-box;
-                            padding: 0;
-                            border: none;
-                            margin: auto;
-                            display: block;
-                            width: 0;
-                            height: 0;
-                            min-width: 100%;
-                            max-width: 100%;
-                            min-height: 100%;
-                            max-height: 100%;
-                            background-size: cover;
-                            background-position: 0% 0%;
-                            filter: blur(20px);
-                            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                          " /> </span></a>
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          bottom: 0;
+                          right: 0;
+                          box-sizing: border-box;
+                          padding: 0;
+                          border: none;
+                          margin: auto;
+                          display: block;
+                          width: 0;
+                          height: 0;
+                          min-width: 100%;
+                          max-width: 100%;
+                          min-height: 100%;
+                          max-height: 100%;
+                          background-size: cover;
+                          background-position: 0% 0%;
+                          filter: blur(20px);
+                          background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
+                        " /> </span></a>
               </div>
               <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
                 <div>
@@ -2110,9 +2253,20 @@
                 </div>
                 <div class="style_articleInfo__WqisT d-flex">
                   <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
                               box-sizing: border-box;
                               display: block;
-                              overflow: hidden;
                               width: initial;
                               height: initial;
                               background: none;
@@ -2120,41 +2274,41 @@
                               border: 0;
                               margin: 0;
                               padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
+                              padding-top: 100%;
+                            "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
                           decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /> </span></span>2 Jun 2023</span><span class="d-flex align-items-center"><span
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>2 Jun 2023</span><span class="d-flex align-items-center"><span
                       class="style_icon__Ukkjh d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
                               box-sizing: border-box;
                               display: block;
-                              overflow: hidden;
                               width: initial;
                               height: initial;
                               background: none;
@@ -2162,37 +2316,26 @@
                               border: 0;
                               margin: 0;
                               padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
+                              padding-top: 100%;
+                            "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
                           decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /> </span></span>2
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>2
                     <!-- -->
                     <!-- -->Min
                   </span>
@@ -2246,48 +2389,48 @@
             <h3
               class="widget-title small-head mb-0 d-flex align-items-center text-uppercase justify-content-center justify-content-md-start">
               <span class="style_icon__GYJGs icon me-1"><span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
-                        padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="winner" sizes="100vw" srcset="
-                          /_next/static/media/rank-icon-dark.1d932f7d.svg  450w,
-                          /_next/static/media/rank-icon-dark.1d932f7d.svg  992w,
-                          /_next/static/media/rank-icon-dark.1d932f7d.svg 1200w,
-                          /_next/static/media/rank-icon-dark.1d932f7d.svg 1900w
-                        " src="/_next/static/media/rank-icon-dark.1d932f7d.svg" decoding="async" data-nimg="responsive"
+                        padding: 100% 0px 0px;
+                      "></span><img alt="winner" sizes="100vw" srcset="
+                        /_next/static/media/rank-icon-dark.1d932f7d.svg  450w,
+                        /_next/static/media/rank-icon-dark.1d932f7d.svg  992w,
+                        /_next/static/media/rank-icon-dark.1d932f7d.svg 1200w,
+                        /_next/static/media/rank-icon-dark.1d932f7d.svg 1900w
+                      " src="/_next/static/media/rank-icon-dark.1d932f7d.svg" decoding="async" data-nimg="responsive"
                     style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " /></span></span><span>Ranking</span>
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " /></span></span><span>Ranking</span>
             </h3>
             <a class="theme-text font-semi" href="/icc-rankings/">Visit All</a>
           </div>
@@ -2379,48 +2522,48 @@
           <div class="widget-title">
             <h3 class="small-head d-flex align-items-center text-uppercase mb-0">
               <span class="icon me-1"><span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
-                        padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="winner" sizes="100vw" srcset="
-                          /_next/static/media/cup-dark-icon.133e379b.svg  450w,
-                          /_next/static/media/cup-dark-icon.133e379b.svg  992w,
-                          /_next/static/media/cup-dark-icon.133e379b.svg 1200w,
-                          /_next/static/media/cup-dark-icon.133e379b.svg 1900w
-                        " src="/_next/static/media/cup-dark-icon.133e379b.svg" decoding="async" data-nimg="responsive"
+                        padding: 100% 0px 0px;
+                      "></span><img alt="winner" sizes="100vw" srcset="
+                        /_next/static/media/cup-dark-icon.133e379b.svg  450w,
+                        /_next/static/media/cup-dark-icon.133e379b.svg  992w,
+                        /_next/static/media/cup-dark-icon.133e379b.svg 1200w,
+                        /_next/static/media/cup-dark-icon.133e379b.svg 1900w
+                      " src="/_next/static/media/cup-dark-icon.133e379b.svg" decoding="async" data-nimg="responsive"
                     style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " /></span></span><span>Current Series</span>
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " /></span></span><span>Current Series</span>
             </h3>
           </div>
           <div class="font-semi">
@@ -2434,43 +2577,43 @@
           <div class="widget-title">
             <h3 class="small-head d-flex align-items-center text-uppercase mb-0">
               <span class="icon me-1"><span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
-                        padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="winner" src="./_next/static/media/earth-dark-icon.3958b272.svg"
+                        padding: 100% 0px 0px;
+                      "></span><img alt="winner" src="./_next/static/media/earth-dark-icon.3958b272.svg"
                     decoding="async" data-nimg="responsive" style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " /></span></span>Top Teams
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " /></span></span>Top Teams
             </h3>
           </div>
           <div class="undefined d-flex flex-wrap font-semi text-center justify-content-between">
@@ -2478,43 +2621,43 @@
               href="/cricket-teams/australia/">
               <div class="style_flag__W_wsf position-absolute">
                 <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async"
+                    data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
                         padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp"
-                    decoding="async" data-nimg="responsive" style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " /></span>
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " /></span>
               </div>
               <span class="style_name__cp86h position-relative">Australia</span>
             </a><a
@@ -2522,43 +2665,43 @@
               href="/cricket-teams/pakistan/">
               <div class="style_flag__W_wsf position-absolute">
                 <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
-                        padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
                     data-nimg="responsive" style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " />
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
                   ></span>
               </div>
               <span class="style_name__cp86h position-relative">Pakistan</span>
@@ -2567,43 +2710,43 @@
               href="/cricket-teams/india/">
               <div class="style_flag__W_wsf position-absolute">
                 <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
-                        padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
                     data-nimg="responsive" style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " />
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
                   ></span>
               </div>
               <span class="style_name__cp86h position-relative">India</span>
@@ -2612,43 +2755,43 @@
               href="/cricket-teams/new-zealand/">
               <div class="style_flag__W_wsf position-absolute">
                 <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
-                        padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
                     data-nimg="responsive" style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " />
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
                   ></span>
               </div>
               <span class="style_name__cp86h position-relative">New Zealand</span>
@@ -2657,43 +2800,43 @@
               href="/cricket-teams/england/">
               <div class="style_flag__W_wsf position-absolute">
                 <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
-                        padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
                     data-nimg="responsive" style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " />
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
                   ></span>
               </div>
               <span class="style_name__cp86h position-relative">England</span>
@@ -2702,43 +2845,43 @@
               href="/cricket-teams/south-africa/">
               <div class="style_flag__W_wsf position-absolute">
                 <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
-                        padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
                     data-nimg="responsive" style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " />
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
                   ></span>
               </div>
               <span class="style_name__cp86h position-relative">South Africa</span>
@@ -2747,43 +2890,43 @@
               href="/cricket-teams/bangladesh/">
               <div class="style_flag__W_wsf position-absolute">
                 <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async"
+                    data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
                         padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp"
-                    decoding="async" data-nimg="responsive" style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " /></span>
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " /></span>
               </div>
               <span class="style_name__cp86h position-relative">Bangladesh</span>
             </a><a
@@ -2791,43 +2934,43 @@
               href="/cricket-teams/afghanistan/">
               <div class="style_flag__W_wsf position-absolute">
                 <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async"
+                    data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
                         padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp"
-                    decoding="async" data-nimg="responsive" style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " /></span>
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " /></span>
               </div>
               <span class="style_name__cp86h position-relative">Afghanistan</span>
             </a><a
@@ -2835,43 +2978,43 @@
               href="/cricket-teams/sri-lanka/">
               <div class="style_flag__W_wsf position-absolute">
                 <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
-                        padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
                     data-nimg="responsive" style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " />
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
                   ></span>
               </div>
               <span class="style_name__cp86h position-relative">Sri Lanka</span>
@@ -2880,43 +3023,43 @@
               href="/cricket-teams/west-indies/">
               <div class="style_flag__W_wsf position-absolute">
                 <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
                         box-sizing: border-box;
                         display: block;
-                        overflow: hidden;
                         width: initial;
                         height: initial;
                         background: none;
                         opacity: 1;
                         border: 0px;
                         margin: 0px;
-                        padding: 0px;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0px;
-                          margin: 0px;
-                          padding: 100% 0px 0px;
-                        "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
                     data-nimg="responsive" style="
-                          position: absolute;
-                          inset: 0px;
-                          box-sizing: border-box;
-                          padding: 0px;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0px;
-                          height: 0px;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " />
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
                   ></span>
               </div>
               <span class="style_name__cp86h position-relative">West Indies</span>
@@ -2926,4 +3069,7 @@
       </div>
     </div>
   </div>
-  @endsection
+</div>
+
+
+@endsection

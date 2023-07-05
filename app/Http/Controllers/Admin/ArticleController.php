@@ -17,14 +17,14 @@ class ArticleController extends Controller
     public function index(Request $request)
     {
         $res = Article::with('user')
-            ->when(isset($request->search),function($q) use ($request){
-                $q->where('title','like',"%{$request->search}%");
-                $q->Orwhere('description','like',"%{$request->search}%");
+            ->when(isset($request->search), function ($q) use ($request) {
+                $q->where('title', 'like', "%{$request->search}%");
+                $q->Orwhere('description', 'like', "%{$request->search}%");
             })
-            ->orderBy('id','desc')
+            ->orderBy('id', 'desc')
             ->paginate(100);
 
-        return view('admin.article.list',compact('res'));
+        return view('admin.article.list', compact('res'));
     }
 
     /**
@@ -52,7 +52,7 @@ class ArticleController extends Controller
             'status' => 'required'
         ]);
 
-        $v['img'] = uploadImage($v['img'],'article');
+        $v['img'] = uploadImage($v['img'], 'article');
 
         $v['slug'] = \Str::slug($v['title']);
 
@@ -60,7 +60,7 @@ class ArticleController extends Controller
 
         Article::create($v);
 
-        return redirect()->route('article')->with('post.success','Article created successfully!');
+        return redirect()->route('article')->with('post.success', 'Article created successfully!');
     }
 
     /**
@@ -72,8 +72,8 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::find($id);
-        
-        return view('admin.article.edit',compact('article'));
+
+        return view('admin.article.edit', compact('article'));
     }
 
     /**
@@ -83,32 +83,32 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $v = $request->validate([
-            'title' => 'required|max:250|unique:articles,title,'.$id,
+            'title' => 'required|max:250|unique:articles,title,' . $id,
             'description' => 'required',
-            'img' => 'required|image',
+            'img' => 'nullable|image',
             'status' => 'required'
         ]);
 
         if (isset($v['img'])) {
-            
-            $v['img'] = uploadImage($v['img'],'article');
+
+            $v['img'] = uploadImage($v['img'], 'article');
 
             $article = Article::find($id);
 
             deleteImage($article->img);
-        }else{
+        } else {
 
             unset($v['img']);
         }
 
         $v['slug'] = \Str::slug($v['title']);
 
-        Article::where('id',$id)->update($v);
+        Article::where('id', $id)->update($v);
 
-        return redirect()->route('article')->with('post.success','Article updated successfully!');
+        return redirect()->route('article')->with('post.success', 'Article updated successfully!');
     }
 
     /**
@@ -121,6 +121,6 @@ class ArticleController extends Controller
     {
         // Article::destroy($id);
 
-        return redirect()->back()->with('article.success','Article deleted successfully!');
+        return redirect()->back()->with('article.success', 'Article deleted successfully!');
     }
 }
