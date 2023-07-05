@@ -32,6 +32,12 @@ function getMatch(){
     return $response['response']['items'];
 }
 
+function getMatchDetails($matchId){
+	
+    $response = Http::get(config('services.api')."matches/".$matchId."/info?token=".token())->json();
+
+    return $response['response'];
+}
 
 function uploadImage($image, $upath = '', $prefix = '')
 {

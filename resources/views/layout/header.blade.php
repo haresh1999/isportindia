@@ -22,14 +22,12 @@
                 margin: 0;
                 padding: 0;
                 padding-top: 15.68702290076336%;
-              "></span><img alt="logo" src="/_next/static/media/logo.9bce43e9.svg" decoding="async"
-            data-nimg="responsive" style="
+              "></span><img alt="logo" src="{{ asset('logo.png') }}" decoding="async" data-nimg="responsive" style="
                 position: absolute;
                 top: 0;
                 left: 0;
                 bottom: 0;
                 right: 0;
-
                 padding: 0;
                 border: none;
                 margin: auto;

@@ -3,60 +3,6 @@
 * Copyright 2011-2021 Twitter, Inc.
 * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)*/
 
-:root {
-    --bs-blue: #0d6efd;
-    --bs-indigo: #6610f2;
-    --bs-purple: #6f42c1;
-    --bs-pink: #d63384;
-    --bs-red: #dc3545;
-    --bs-orange: #fd7e14;
-    --bs-yellow: #ffc107;
-    --bs-green: #198754;
-    --bs-teal: #20c997;
-    --bs-cyan: #0dcaf0;
-    --bs-white: #fff;
-    --bs-gray: #6c757d;
-    --bs-gray-dark: #343a40;
-    --bs-gray-100: #f8f9fa;
-    --bs-gray-200: #e9ecef;
-    --bs-gray-300: #dee2e6;
-    --bs-gray-400: #ced4da;
-    --bs-gray-500: #adb5bd;
-    --bs-gray-600: #6c757d;
-    --bs-gray-700: #495057;
-    --bs-gray-800: #343a40;
-    --bs-gray-900: #212529;
-    --bs-primary: var(--theme-color-light);
-    --bs-secondary: #50555d;
-    --bs-success: #14b305;
-    --bs-info: #e7f0ff;
-    --bs-warning: #ffc107;
-    --bs-danger: #f14f4f;
-    --bs-light: #f8f9fa;
-    --bs-dark: #23272e;
-    --bs-primary-rgb: 4, 93, 233;
-    --bs-secondary-rgb: 80, 85, 93;
-    --bs-success-rgb: 20, 179, 5;
-    --bs-info-rgb: 231, 240, 255;
-    --bs-warning-rgb: 255, 193, 7;
-    --bs-danger-rgb: 241, 79, 79;
-    --bs-light-rgb: 248, 249, 250;
-    --bs-dark-rgb: 35, 39, 46;
-    --bs-white-rgb: 255, 255, 255;
-    --bs-black-rgb: 0, 0, 0;
-    --bs-body-color-rgb: 33, 37, 41;
-    --bs-body-bg-rgb: 255, 255, 255;
-    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --bs-gradient: linear-gradient(180deg, hsla(0, 0%, 100%, .15), hsla(0, 0%, 100%, 0));
-    --bs-body-font-family: var(--bs-font-sans-serif);
-    --bs-body-font-size: 1rem;
-    --bs-body-font-weight: 400;
-    --bs-body-line-height: 1.5;
-    --bs-body-color: #212529;
-    --bs-body-bg: #fff
-}
-
 *,
 :after,
 :before {
@@ -8062,48 +8008,6 @@ fieldset:disabled .btn {
 
 
 :root {
-    --font-color: #d2d5d9;
-    --font-color-dark: #23272e;
-    --font-color-light: #fff;
-    --font-secondary: #d2d5d9;
-    --theme-bg: #0d121a;
-    --light-mode-bg: #23272e;
-    --theme-color: #23272e;
-    --theme-color-light: #fff;
-    --theme-color-medium: #a6c8ff;
-    --theme-dark2: #a7acb4;
-    --font-dark: #50545d;
-    --border-color: #a7acb4;
-    --border-medium: #323842;
-    --font-light: #a7acb4;
-    --light: #323842;
-    --light-bg: #0d121a;
-    --theme-medium: #a7acb4;
-    --theme-light: #323842;
-    --theme-light2: #0d121a;
-    --theme-light-medium: #50555d;
-    --theme-light-dark: #0d121a;
-    --border-light: #50555d;
-    --border-dark2: #0d121a;
-    --border-input: #50555d;
-    --light-color: #0d121a;
-    --light-color-medium: #23272e;
-    --theme-medium2: #a7acb4;
-    --border-light2: #50555d;
-    --danger: #ff7c7c;
-    --bs-dark-rgb: 210, 213, 217;
-    --bs-secondary-rgb: 117, 122, 130;
-    --bs-info-rgb: 80, 85, 93;
-    --bs-light-rgb: 13, 18, 26;
-    --bs-primary-rgb: 166, 200, 255;
-    --bs-white-rgb: 35, 39, 46
-}
-
-/* var(--theme-color-light) */
-
-
-
-[data-mode=light] {
     --font-color: #23272e;
     --font-color-dark: #23272e;
     --font-color-light: #23272e;
@@ -8140,6 +8044,12 @@ fieldset:disabled .btn {
     --bs-primary-rgb: 4, 93, 233;
     --bs-white-rgb: 255, 255, 255
 }
+
+/* var(--theme-color-light) */
+
+
+
+
 
 :root {
     scroll-behavior: auto

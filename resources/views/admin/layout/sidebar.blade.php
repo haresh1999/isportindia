@@ -60,13 +60,41 @@
         <use xlink:href="#icon-cheveron"></use>
       </svg>
     </div>
-    <div class="collapse submenu {{ Request::is('admin/article','admin/article/create','admin/article/edit/*') ? 'show' : '' }}" id="sidebar-customers-collapse" data-bs-parent=".sidebar">
+    <div
+      class="collapse submenu {{ Request::is('admin/article','admin/article/create','admin/article/edit/*') ? 'show' : '' }}"
+      id="sidebar-customers-collapse" data-bs-parent=".sidebar">
       <div class="wrapper">
-        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article/create') ? 'text-dark' : '' }}" href="{{route('article.create')}}">Create</a>
-        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article','admin/article/edit/*') ? 'text-dark' : '' }}" href="{{route('article')}}">List</a>
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article/create') ? 'text-dark' : '' }}"
+          href="{{route('article.create')}}">Create</a>
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article','admin/article/edit/*') ? 'text-dark' : '' }}"
+          href="{{route('article')}}">List</a>
       </div>
     </div>
   </div>
+
+  <div class="nav-item mb-2">
+    <div
+      class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/cricspecial','admin/cricspecial/create','admin/cricspecial/edit/*') ? 'active' : '' }}"
+      data-bs-target="#sidebar-customers-collapse" data-bs-toggle="collapse">
+      <svg class="icon icon-star-stroke">
+        <use xlink:href="#icon-star-stroke"></use>
+      </svg>&nbsp;&nbsp; CricSpecial
+      <svg class="icon icon-cheveron ms-auto arrow">
+        <use xlink:href="#icon-cheveron"></use>
+      </svg>
+    </div>
+    <div
+      class="collapse submenu {{ Request::is('admin/cricspecial','admin/cricspecial/create','admin/cricspecial/edit/*') ? 'show' : '' }}"
+      id="sidebar-customers-collapse" data-bs-parent=".sidebar">
+      <div class="wrapper">
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/cricspecial/create') ? 'text-dark' : '' }}"
+          href="{{route('cricspecial.create')}}">Create</a>
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/cricspecial','admin/cricspecial/edit/*') ? 'text-dark' : '' }}"
+          href="{{route('cricspecial')}}">List</a>
+      </div>
+    </div>
+  </div>
+
   {{--<div class="nav-item mb-2"><a class="nav-link d-flex align-items-center p-3" href="shop.html">
       <svg class="icon icon-double-store icon-item">
         <use class="fill" href="#icon-store-fill"></use>

@@ -30,8 +30,7 @@
             <div class="style_item__sjAWf p-2 mx-1 font-semi">
               <div class="position-relative">
                 <a class="style_scoreCardLink__Clpdb position-absolute top-0 start-0 opacity-0 w-100 h-100"
-                  href="/live-scores/slawm-vs-bana-w-match-5-woment20-womens-emerging-teams-asia-cup-14-jun-2023/">{{
-                  $val['title'] }}</a>
+                  href="{{ route('score.card',$val['match_id']) }}">{{$val['title'] }}</a>
                 <div class="d-flex justify-content-between align-items-center style_head__CLILr">
                   <p>
                     <span class="danger-text text-capitalize">• {{$val['status_str']}} </span><span
@@ -232,14 +231,15 @@
                         max-height: 100%;
                       " /></span></span><span>CricSpecial</span>
           </h3>
+
           <div class="style_slider__UbtNO process-arrow position-relative">
             <div id="carousel" class="style_inner__csGhV slider-track d-flex style_single__wL76r" id="c-slider"
               style="gap: 15px">
+              @foreach ($cric as $cri)
               <div data-slick-index="1">
                 <article class="style_item__CjFgl">
                   <div class="block-img">
-                    <a href="/cricket-appeal/3-players-who-might-retire-after-the-upcoming-edition-of-tnpl-5245/"><span
-                        style="
+                    <a href="{{route('cricspecial.details',[$cri->id,$cri->slug])}}"><span style="
                               box-sizing: border-box;
                               display: block;
                               overflow: hidden;
@@ -263,7 +263,7 @@
                                 padding: 62.5% 0px 0px;
                               "></span><img alt="Shijit Chandran."
                           sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                          src="/images/carousel/crick.webp" decoding="async" data-nimg="responsive"
+                          src="{{ getImageUrl($cri->img) }}" decoding="async" data-nimg="responsive"
                           class="style_postimg__rYHSo" style="
                                 position: absolute;
                                 inset: 0px;
@@ -282,251 +282,11 @@
                   </div>
                   <span class="undefined my-2 badge bg-secondary">Cricket Appeal</span>
                   <h4 class="small-head mb-0 overflow-hidden">
-                    <a href="/cricket-appeal/3-players-who-might-retire-after-the-upcoming-edition-of-tnpl-5245/">3
-                      players who might retire after the upcoming
-                      edition of TNPL</a>
+                    <a href="{{route('cricspecial.details',[$cri->id,$cri->slug])}}">{{ $cri->short_description }} </a>
                   </h4>
                 </article>
               </div>
-              <div data-slick-index="2">
-                <article class="style_item__CjFgl">
-                  <div class="block-img">
-                    <a href="/cricket-appeal/ind-vs-aus-combined-xi-from-wtc-final-2023-4054/"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0px;
-                              margin: 0px;
-                              padding: 0px;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0px;
-                                margin: 0px;
-                                padding: 62.5% 0px 0px;
-                              "></span><img alt="Travis Head, Pat Cummins and Ajinkya Rahane."
-                          sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                          srcset="
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686654353571_Travis-Head%2C-Pat-Cummins-and-Ajinkya-Rahane.jpeg&amp;w=40&amp;q=75     40w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686654353571_Travis-Head%2C-Pat-Cummins-and-Ajinkya-Rahane.jpeg&amp;w=80&amp;q=75     80w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686654353571_Travis-Head%2C-Pat-Cummins-and-Ajinkya-Rahane.jpeg&amp;w=120&amp;q=75   120w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686654353571_Travis-Head%2C-Pat-Cummins-and-Ajinkya-Rahane.jpeg&amp;w=240&amp;q=75   240w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686654353571_Travis-Head%2C-Pat-Cummins-and-Ajinkya-Rahane.jpeg&amp;w=450&amp;q=75   450w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686654353571_Travis-Head%2C-Pat-Cummins-and-Ajinkya-Rahane.jpeg&amp;w=992&amp;q=75   992w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686654353571_Travis-Head%2C-Pat-Cummins-and-Ajinkya-Rahane.jpeg&amp;w=1200&amp;q=75 1200w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686654353571_Travis-Head%2C-Pat-Cummins-and-Ajinkya-Rahane.jpeg&amp;w=1900&amp;q=75 1900w
-                              "
-                          src="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686654353571_Travis-Head%2C-Pat-Cummins-and-Ajinkya-Rahane.jpeg&amp;w=1900&amp;q=75"
-                          decoding="async" data-nimg="responsive" class="style_postimg__rYHSo" style="
-                                position: absolute;
-                                inset: 0px;
-                                box-sizing: border-box;
-                                padding: 0px;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0px;
-                                height: 0px;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /></span></a>
-                  </div>
-                  <span class="undefined my-2 badge bg-secondary">Cricket Appeal</span>
-                  <h4 class="small-head mb-0 overflow-hidden">
-                    <a href="/cricket-appeal/ind-vs-aus-combined-xi-from-wtc-final-2023-4054/">IND vs AUS: Combined
-                      XI from WTC Final 2023</a>
-                  </h4>
-                </article>
-              </div>
-              <div data-slick-index="3">
-                <article class="style_item__CjFgl">
-                  <div class="block-img">
-                    <a href="/cricket-appeal/10-unsung-heroes-of-tnpl-6139/"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0px;
-                              margin: 0px;
-                              padding: 0px;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0px;
-                                margin: 0px;
-                                padding: 62.5% 0px 0px;
-                              "></span><img alt="Baba Aparajith, R Sai Kishore and Shahrukh Khan"
-                          sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                          srcset="
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686468636812_Baba-Aparajith%2C-R-Sai-Kishore-and-Shahrukh-Khan.jpeg&amp;w=40&amp;q=75     40w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686468636812_Baba-Aparajith%2C-R-Sai-Kishore-and-Shahrukh-Khan.jpeg&amp;w=80&amp;q=75     80w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686468636812_Baba-Aparajith%2C-R-Sai-Kishore-and-Shahrukh-Khan.jpeg&amp;w=120&amp;q=75   120w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686468636812_Baba-Aparajith%2C-R-Sai-Kishore-and-Shahrukh-Khan.jpeg&amp;w=240&amp;q=75   240w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686468636812_Baba-Aparajith%2C-R-Sai-Kishore-and-Shahrukh-Khan.jpeg&amp;w=450&amp;q=75   450w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686468636812_Baba-Aparajith%2C-R-Sai-Kishore-and-Shahrukh-Khan.jpeg&amp;w=992&amp;q=75   992w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686468636812_Baba-Aparajith%2C-R-Sai-Kishore-and-Shahrukh-Khan.jpeg&amp;w=1200&amp;q=75 1200w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686468636812_Baba-Aparajith%2C-R-Sai-Kishore-and-Shahrukh-Khan.jpeg&amp;w=1900&amp;q=75 1900w
-                              "
-                          src="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686468636812_Baba-Aparajith%2C-R-Sai-Kishore-and-Shahrukh-Khan.jpeg&amp;w=1900&amp;q=75"
-                          decoding="async" data-nimg="responsive" class="style_postimg__rYHSo" style="
-                                position: absolute;
-                                inset: 0px;
-                                box-sizing: border-box;
-                                padding: 0px;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0px;
-                                height: 0px;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /></span></a>
-                  </div>
-                  <span class="undefined my-2 badge bg-secondary">Cricket Appeal</span>
-                  <h4 class="small-head mb-0 overflow-hidden">
-                    <a href="/cricket-appeal/10-unsung-heroes-of-tnpl-6139/">TNPL: 10 unsung heroes of all time</a>
-                  </h4>
-                </article>
-              </div>
-              <div data-slick-index="4">
-                <article class="style_item__CjFgl">
-                  <div class="block-img">
-                    <a
-                      href="/cricket-appeal/10-scandals-involving-match-fixing-spot-fixing-and-corruption-that-rocked-cricket/"><span
-                        style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0px;
-                              margin: 0px;
-                              padding: 0px;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0px;
-                                margin: 0px;
-                                padding: 62.5% 0px 0px;
-                              "></span><img alt="Shakib Al Hasan"
-                          sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                          src="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Ffeatureimage%2FShakib-Al-Hasan-5.jpg&amp;w=1900&amp;q=75"
-                          decoding="async" data-nimg="responsive" class="style_postimg__rYHSo" style="
-                                position: absolute;
-                                inset: 0px;
-                                box-sizing: border-box;
-                                padding: 0px;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0px;
-                                height: 0px;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /></span></a>
-                  </div>
-                  <span class="undefined my-2 badge bg-secondary">Cricket Appeal</span>
-                  <h4 class="small-head mb-0 overflow-hidden">
-                    <a
-                      href="/cricket-appeal/10-scandals-involving-match-fixing-spot-fixing-and-corruption-that-rocked-cricket/">10
-                      Scandals involving Match-Fixing, Spot-Fixing,
-                      and Corruption that rocked Cricket</a>
-                  </h4>
-                </article>
-              </div>
-              <div data-slick-index="5">
-                <article class="style_item__CjFgl">
-                  <div class="block-img">
-                    <a href="/cricket-appeal/virat-kohlis-tattoos-from-gods-eye-to-japanese-samurai-warrior/"><span
-                        style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0px;
-                              margin: 0px;
-                              padding: 0px;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0px;
-                                margin: 0px;
-                                padding: 62.5% 0px 0px;
-                              "></span><img alt="Virat Kohli"
-                          sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                          srcset="
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1678606955353_Virat-Kohli.jpeg&amp;w=40&amp;q=75     40w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1678606955353_Virat-Kohli.jpeg&amp;w=80&amp;q=75     80w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1678606955353_Virat-Kohli.jpeg&amp;w=120&amp;q=75   120w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1678606955353_Virat-Kohli.jpeg&amp;w=240&amp;q=75   240w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1678606955353_Virat-Kohli.jpeg&amp;w=450&amp;q=75   450w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1678606955353_Virat-Kohli.jpeg&amp;w=992&amp;q=75   992w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1678606955353_Virat-Kohli.jpeg&amp;w=1200&amp;q=75 1200w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1678606955353_Virat-Kohli.jpeg&amp;w=1900&amp;q=75 1900w
-                              "
-                          src="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1678606955353_Virat-Kohli.jpeg&amp;w=1900&amp;q=75"
-                          decoding="async" data-nimg="responsive" class="style_postimg__rYHSo" style="
-                                position: absolute;
-                                inset: 0px;
-                                box-sizing: border-box;
-                                padding: 0px;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0px;
-                                height: 0px;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /></span></a>
-                  </div>
-                  <span class="undefined my-2 badge bg-secondary">Cricket Appeal</span>
-                  <h4 class="small-head mb-0 overflow-hidden">
-                    <a href="/cricket-appeal/virat-kohlis-tattoos-from-gods-eye-to-japanese-samurai-warrior/">Virat
-                      Kohli's tattoos: From God's eye to Japanese
-                      Samurai warrior</a>
-                  </h4>
-                </article>
-              </div>
+              @endforeach
             </div>
 
           </div>
@@ -3166,5 +2926,4 @@
       </div>
     </div>
   </div>
-</div>
-@endsection
+  @endsection

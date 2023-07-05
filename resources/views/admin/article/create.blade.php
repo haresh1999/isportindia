@@ -29,7 +29,7 @@
 
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Title
                                 <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                    title="Maximum 100 characters. No HTML or emoji allowed">
+                                    title="Maximum 100 characters">
                                     <svg class="icon icon-info">
                                         <use xlink:href="#icon-info"></use>
                                     </svg>
@@ -42,7 +42,7 @@
 
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Description
                                 <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                    title="Maximum 100 characters. No HTML or emoji allowed">
+                                    title="Article Details Description">
                                     <svg class="icon icon-info">
                                         <use xlink:href="#icon-info"></use>
                                     </svg>
@@ -56,7 +56,7 @@
                             <br>
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Image
                                 <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                    title="Maximum 100 characters. No HTML or emoji allowed">
+                                    title="Image">
                                     <svg class="icon icon-info">
                                         <use xlink:href="#icon-info"></use>
                                     </svg>
@@ -69,7 +69,7 @@
 
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Status
                                 <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                    title="Maximum 100 characters. No HTML or emoji allowed">
+                                    title="Status Of Publish">
                                     <svg class="icon icon-info">
                                         <use xlink:href="#icon-info"></use>
                                     </svg>

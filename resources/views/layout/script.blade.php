@@ -1,6 +1,5 @@
 <script>
-
-    const toggleSideMenu = () => {
+  const toggleSideMenu = () => {
       let sidemenu = $('.style_sidemenu__zyjXz')
       let backDrop = $('.offcanvas-backdrop')
       if (sidemenu.hasClass('hide')) {
@@ -65,5 +64,4 @@
     }
   
   
-  </script>
-  
+</script>

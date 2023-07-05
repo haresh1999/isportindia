@@ -19,9 +19,10 @@
 </script>
 <meta name="theme-color" content="var(--theme-color-light)" />
 {{-- <link rel="manifest" href="/manifest.json" /> --}}
-<link rel="apple-touch-icon" sizes="180x180" href="https://www.crictracker.com/images/icons/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.crictracker.com/images/icons/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.crictracker.com/images/icons/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{asset('favicon.png')}}" />
+<link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicon.png')}}" />
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset('favicon.png')}}" />
+
 <script>
     var googletag = googletag || {};
   googletag.cmd = googletag.cmd || [];
@@ -40,12 +41,14 @@
 
 <link rel="stylesheet" href="/_next/static/css/main.css"/>
 <link rel="stylesheet" href="/_next/static/css/8f21a21501824ed6.css" data-n-g="" media="print"
-    onload="this.media='all'" />
+onload="this.media='all'" />
 <noscript>
     <link rel="stylesheet" href="/_next/static/css/8f21a21501824ed6.css"/>
 </noscript>
 
 <link rel="stylesheet" href="/_next/static/css/all.css" />
+<link rel="stylesheet" href="/_next/static/css/main.css"/>
+<link rel="stylesheet" href="/_next/static/css/score-card.css">
 
 <link rel="preload" as="font" crossorigin="anonymous" href="/_next/static/media/noto-sans.cfd97686.woff2" />
 <script src="/jquery-2.2.4.min.js"></script>

@@ -65,6 +65,7 @@
 
   </div>
 
+
   <div class="fade offcanvas-backdrop hide"></div>
 
   @include('layout.sidebar')
@@ -116,7 +117,7 @@
           </g>
         </svg>More</button></li>
   </ul>
+  @include('layout.script')
 </body>
-@include('layout.script')
 
 </html>
