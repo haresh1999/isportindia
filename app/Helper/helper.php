@@ -39,6 +39,13 @@ function getMatchDetails($matchId){
     return $response['response'];
 }
 
+function getIccRanking(){
+	
+	$response = Http::get(config('services.api')."iccranks?token=".token())->json();
+
+    return $response['response'];
+}
+
 function uploadImage($image, $upath = '', $prefix = '')
 {
 	if ($image != null || isset($image)) {

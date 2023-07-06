@@ -2456,9 +2456,6 @@
               <div class="nav-item">
                 <a role="button" class="false nav-link nav-link" tabindex="0">Bowling</a>
               </div>
-              <div class="nav-item">
-                <a role="button" class="false nav-link nav-link" tabindex="0">ALR</a>
-              </div>
             </div>
             <div class="table-item_itemCard__qI76x">
               <div class="table-item_item__nbsco table-item_head___plQ3 d-flex align-items-center">
@@ -2466,62 +2463,135 @@
                 <p class="mb-0 flex-grow-1">Team</p>
                 <p class="mb-0">Rating</p>
               </div>
-              <div class="table-item_item__nbsco d-flex align-items-center">
-                <p class="mb-0 flex-shrink-0">1.</p>
+
+              {{-- TEST TEAM RANKING START--}}
+
+              {{-- TEAM --}}
+              @php $rank = getIccRanking() @endphp
+
+              @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+                <p class="mb-0 flex-shrink-0">{{$rank['teams']['tests'][$i]['rank']}}</p>
                 <div class="undefined d-flex align-items-center flex-grow-1">
                   <div>
-                    <p class="mb-0">India</p>
+                    <p class="mb-0">{{$rank['teams']['tests'][$i]['team']}}</p>
                   </div>
                 </div>
-                <p class="mb-0 flex-shrink-0">121</p>
-              </div>
-              <div class="table-item_item__nbsco d-flex align-items-center">
-                <p class="mb-0 flex-shrink-0">2.</p>
-                <div class="undefined d-flex align-items-center flex-grow-1">
-                  <div>
-                    <p class="mb-0">Australia</p>
-                  </div>
+                <p class="mb-0 flex-shrink-0">{{$rank['teams']['tests'][$i]['rating']}}</p>
+            </div>
+            @endfor
+
+            {{-- Batting --}}
+            @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+              <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['tests'][$i]['rank']}}</p>
+              <div class="undefined d-flex align-items-center flex-grow-1">
+                <div>
+                  <p class="mb-0">{{$rank['batsmen']['tests'][$i]['player']}}</p>
                 </div>
-                <p class="mb-0 flex-shrink-0">116</p>
               </div>
-              <div class="table-item_item__nbsco d-flex align-items-center">
-                <p class="mb-0 flex-shrink-0">3.</p>
-                <div class="undefined d-flex align-items-center flex-grow-1">
-                  <div>
-                    <p class="mb-0">England</p>
-                  </div>
-                </div>
-                <p class="mb-0 flex-shrink-0">114</p>
+              <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['tests'][$i]['rating']}}</p>
+          </div>
+          @endfor
+          {{-- Bowling --}}
+          @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+            <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['tests'][$i]['rank']}}</p>
+            <div class="undefined d-flex align-items-center flex-grow-1">
+              <div>
+                <p class="mb-0">{{$rank['bowlers']['tests'][$i]['player']}}</p>
               </div>
-              <div class="table-item_item__nbsco d-flex align-items-center">
-                <p class="mb-0 flex-shrink-0">4.</p>
-                <div class="undefined d-flex align-items-center flex-grow-1">
-                  <div>
-                    <p class="mb-0">South Africa</p>
-                  </div>
-                </div>
-                <p class="mb-0 flex-shrink-0">104</p>
-              </div>
-              <div class="table-item_item__nbsco d-flex align-items-center">
-                <p class="mb-0 flex-shrink-0">5.</p>
-                <div class="undefined d-flex align-items-center flex-grow-1">
-                  <div>
-                    <p class="mb-0">New Zealand</p>
-                  </div>
-                </div>
-                <p class="mb-0 flex-shrink-0">100</p>
-              </div>
-              <p class="card-footer-note text-center">
-                Last Updated On Jun 13, 2023, 21:30 IST
-              </p>
+            </div>
+            <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['tests'][$i]['rating']}}</p>
+        </div>
+        @endfor
+
+        {{-- TEST TEAM RANKING END --}}
+
+        {{-- ODI TEAM RANKING START --}}
+
+        @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+          <p class="mb-0 flex-shrink-0">{{$rank['teams']['odis'][$i]['rank']}}</p>
+          <div class="undefined d-flex align-items-center flex-grow-1">
+            <div>
+              <p class="mb-0">{{$rank['teams']['odis'][$i]['team']}}</p>
             </div>
           </div>
-        </div>
+          <p class="mb-0 flex-shrink-0">{{$rank['teams']['odis'][$i]['rating']}}</p>
+      </div>
+      @endfor
 
-        <section class="widget">
-          <div class="widget-title">
-            <h3 class="small-head d-flex align-items-center text-uppercase mb-0">
-              <span class="icon me-1"><span style="
+      {{-- Batting --}}
+      @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+        <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['odis'][$i]['rank']}}</p>
+        <div class="undefined d-flex align-items-center flex-grow-1">
+          <div>
+            <p class="mb-0">{{$rank['batsmen']['odis'][$i]['player']}}</p>
+          </div>
+        </div>
+        <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['odis'][$i]['rating']}}</p>
+    </div>
+    @endfor
+    {{-- Bowling --}}
+    @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+      <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['odis'][$i]['rank']}}</p>
+      <div class="undefined d-flex align-items-center flex-grow-1">
+        <div>
+          <p class="mb-0">{{$rank['bowlers']['odis'][$i]['player']}}</p>
+        </div>
+      </div>
+      <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['odis'][$i]['rating']}}</p>
+  </div>
+  @endfor
+  {{-- ODI TEAM RANKING END --}}
+
+  {{-- T20 TEAM RANKING START --}}
+
+  @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+    <p class="mb-0 flex-shrink-0">{{$rank['teams']['t20s'][$i]['rank']}}</p>
+    <div class="undefined d-flex align-items-center flex-grow-1">
+      <div>
+        <p class="mb-0">{{$rank['teams']['t20s'][$i]['team']}}</p>
+      </div>
+    </div>
+    <p class="mb-0 flex-shrink-0">{{$rank['teams']['t20s'][$i]['rating']}}</p>
+</div>
+@endfor
+
+{{-- Batting --}}
+@for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+  <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['t20s'][$i]['rank']}}</p>
+  <div class="undefined d-flex align-items-center flex-grow-1">
+    <div>
+      <p class="mb-0">{{$rank['batsmen']['t20s'][$i]['player']}}</p>
+    </div>
+  </div>
+  <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['t20s'][$i]['rating']}}</p>
+  </div>
+  @endfor
+  {{-- Bowling --}}
+  @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+    <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['t20s'][$i]['rank']}}</p>
+    <div class="undefined d-flex align-items-center flex-grow-1">
+      <div>
+        <p class="mb-0">{{$rank['bowlers']['t20s'][$i]['player']}}</p>
+      </div>
+    </div>
+    <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['t20s'][$i]['rating']}}</p>
+    </div>
+    @endfor
+    {{-- T20 TEAM RANKING END --}}
+
+
+
+    <p class="card-footer-note text-center">
+      Last Updated On {{ \Carbon\Carbon::parse($rank['modified'])->format('M d, Y, H:m') }} IST
+    </p>
+    </div>
+    </div>
+    </div>
+
+    <section class="widget">
+      <div class="widget-title">
+        <h3 class="small-head d-flex align-items-center text-uppercase mb-0">
+          <span class="icon me-1"><span style="
                       box-sizing: border-box;
                       display: block;
                       overflow: hidden;
@@ -2549,7 +2619,7 @@
                         /_next/static/media/cup-dark-icon.133e379b.svg 1200w,
                         /_next/static/media/cup-dark-icon.133e379b.svg 1900w
                       " src="/_next/static/media/cup-dark-icon.133e379b.svg" decoding="async" data-nimg="responsive"
-                    style="
+                style="
                         position: absolute;
                         inset: 0px;
                         box-sizing: border-box;
@@ -2564,19 +2634,19 @@
                         min-height: 100%;
                         max-height: 100%;
                       " /></span></span><span>Current Series</span>
-            </h3>
-          </div>
-          <div class="font-semi">
-            @foreach (getSeasons('seasons/2021/competitions') as $val)
-            <a class="cs-item common-box d-block overflow-hidden text-nowrap mb-2"
-              href="{{ getSeasonsDetailsUrl($val['matches_url']) }}">{{$val['title']}}</a>
-            @endforeach
-          </div>
-        </section>
-        <section class="widget">
-          <div class="widget-title">
-            <h3 class="small-head d-flex align-items-center text-uppercase mb-0">
-              <span class="icon me-1"><span style="
+        </h3>
+      </div>
+      <div class="font-semi">
+        @foreach (getSeasons('seasons/2021/competitions') as $val)
+        <a class="cs-item common-box d-block overflow-hidden text-nowrap mb-2"
+          href="{{ getSeasonsDetailsUrl($val['matches_url']) }}">{{$val['title']}}</a>
+        @endforeach
+      </div>
+    </section>
+    <section class="widget">
+      <div class="widget-title">
+        <h3 class="small-head d-flex align-items-center text-uppercase mb-0">
+          <span class="icon me-1"><span style="
                       box-sizing: border-box;
                       display: block;
                       overflow: hidden;
@@ -2599,7 +2669,7 @@
                         margin: 0px;
                         padding: 100% 0px 0px;
                       "></span><img alt="winner" src="./_next/static/media/earth-dark-icon.3958b272.svg"
-                    decoding="async" data-nimg="responsive" style="
+                decoding="async" data-nimg="responsive" style="
                         position: absolute;
                         inset: 0px;
                         box-sizing: border-box;
@@ -2614,462 +2684,453 @@
                         min-height: 100%;
                         max-height: 100%;
                       " /></span></span>Top Teams
-            </h3>
-          </div>
-          <div class="undefined d-flex flex-wrap font-semi text-center justify-content-between">
-            <a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-              href="/cricket-teams/australia/">
-              <div class="style_flag__W_wsf position-absolute">
-                <span style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px;
-                      margin: 0px;
-                      padding: 0px;
-                      position: relative;
-                    "><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0px;
-                        margin: 0px;
-                        padding: 100% 0px 0px;
-                      "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async"
-                    data-nimg="responsive" style="
-                        position: absolute;
-                        inset: 0px;
-                        box-sizing: border-box;
-                        padding: 0px;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0px;
-                        height: 0px;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " /></span>
-              </div>
-              <span class="style_name__cp86h position-relative">Australia</span>
-            </a><a
-              class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-              href="/cricket-teams/pakistan/">
-              <div class="style_flag__W_wsf position-absolute">
-                <span style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px;
-                      margin: 0px;
-                      padding: 0px;
-                      position: relative;
-                    "><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0px;
-                        margin: 0px;
-                        padding: 100% 0px 0px;
-                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
-                    data-nimg="responsive" style="
-                        position: absolute;
-                        inset: 0px;
-                        box-sizing: border-box;
-                        padding: 0px;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0px;
-                        height: 0px;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " />
-                  ></span>
-              </div>
-              <span class="style_name__cp86h position-relative">Pakistan</span>
-            </a><a
-              class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-              href="/cricket-teams/india/">
-              <div class="style_flag__W_wsf position-absolute">
-                <span style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px;
-                      margin: 0px;
-                      padding: 0px;
-                      position: relative;
-                    "><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0px;
-                        margin: 0px;
-                        padding: 100% 0px 0px;
-                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
-                    data-nimg="responsive" style="
-                        position: absolute;
-                        inset: 0px;
-                        box-sizing: border-box;
-                        padding: 0px;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0px;
-                        height: 0px;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " />
-                  ></span>
-              </div>
-              <span class="style_name__cp86h position-relative">India</span>
-            </a><a
-              class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-              href="/cricket-teams/new-zealand/">
-              <div class="style_flag__W_wsf position-absolute">
-                <span style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px;
-                      margin: 0px;
-                      padding: 0px;
-                      position: relative;
-                    "><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0px;
-                        margin: 0px;
-                        padding: 100% 0px 0px;
-                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
-                    data-nimg="responsive" style="
-                        position: absolute;
-                        inset: 0px;
-                        box-sizing: border-box;
-                        padding: 0px;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0px;
-                        height: 0px;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " />
-                  ></span>
-              </div>
-              <span class="style_name__cp86h position-relative">New Zealand</span>
-            </a><a
-              class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-              href="/cricket-teams/england/">
-              <div class="style_flag__W_wsf position-absolute">
-                <span style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px;
-                      margin: 0px;
-                      padding: 0px;
-                      position: relative;
-                    "><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0px;
-                        margin: 0px;
-                        padding: 100% 0px 0px;
-                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
-                    data-nimg="responsive" style="
-                        position: absolute;
-                        inset: 0px;
-                        box-sizing: border-box;
-                        padding: 0px;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0px;
-                        height: 0px;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " />
-                  ></span>
-              </div>
-              <span class="style_name__cp86h position-relative">England</span>
-            </a><a
-              class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-              href="/cricket-teams/south-africa/">
-              <div class="style_flag__W_wsf position-absolute">
-                <span style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px;
-                      margin: 0px;
-                      padding: 0px;
-                      position: relative;
-                    "><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0px;
-                        margin: 0px;
-                        padding: 100% 0px 0px;
-                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
-                    data-nimg="responsive" style="
-                        position: absolute;
-                        inset: 0px;
-                        box-sizing: border-box;
-                        padding: 0px;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0px;
-                        height: 0px;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " />
-                  ></span>
-              </div>
-              <span class="style_name__cp86h position-relative">South Africa</span>
-            </a><a
-              class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-              href="/cricket-teams/bangladesh/">
-              <div class="style_flag__W_wsf position-absolute">
-                <span style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px;
-                      margin: 0px;
-                      padding: 0px;
-                      position: relative;
-                    "><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0px;
-                        margin: 0px;
-                        padding: 100% 0px 0px;
-                      "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async"
-                    data-nimg="responsive" style="
-                        position: absolute;
-                        inset: 0px;
-                        box-sizing: border-box;
-                        padding: 0px;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0px;
-                        height: 0px;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " /></span>
-              </div>
-              <span class="style_name__cp86h position-relative">Bangladesh</span>
-            </a><a
-              class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-              href="/cricket-teams/afghanistan/">
-              <div class="style_flag__W_wsf position-absolute">
-                <span style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px;
-                      margin: 0px;
-                      padding: 0px;
-                      position: relative;
-                    "><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0px;
-                        margin: 0px;
-                        padding: 100% 0px 0px;
-                      "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async"
-                    data-nimg="responsive" style="
-                        position: absolute;
-                        inset: 0px;
-                        box-sizing: border-box;
-                        padding: 0px;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0px;
-                        height: 0px;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " /></span>
-              </div>
-              <span class="style_name__cp86h position-relative">Afghanistan</span>
-            </a><a
-              class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-              href="/cricket-teams/sri-lanka/">
-              <div class="style_flag__W_wsf position-absolute">
-                <span style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px;
-                      margin: 0px;
-                      padding: 0px;
-                      position: relative;
-                    "><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0px;
-                        margin: 0px;
-                        padding: 100% 0px 0px;
-                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
-                    data-nimg="responsive" style="
-                        position: absolute;
-                        inset: 0px;
-                        box-sizing: border-box;
-                        padding: 0px;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0px;
-                        height: 0px;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " />
-                  ></span>
-              </div>
-              <span class="style_name__cp86h position-relative">Sri Lanka</span>
-            </a><a
-              class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-              href="/cricket-teams/west-indies/">
-              <div class="style_flag__W_wsf position-absolute">
-                <span style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px;
-                      margin: 0px;
-                      padding: 0px;
-                      position: relative;
-                    "><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0px;
-                        margin: 0px;
-                        padding: 100% 0px 0px;
-                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
-                    data-nimg="responsive" style="
-                        position: absolute;
-                        inset: 0px;
-                        box-sizing: border-box;
-                        padding: 0px;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0px;
-                        height: 0px;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " />
-                  ></span>
-              </div>
-              <span class="style_name__cp86h position-relative">West Indies</span>
-            </a>
-          </div>
-        </section>
+        </h3>
       </div>
+      <div class="undefined d-flex flex-wrap font-semi text-center justify-content-between">
+        <a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
+          href="/cricket-teams/australia/">
+          <div class="style_flag__W_wsf position-absolute">
+            <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async"
+                data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " /></span>
+          </div>
+          <span class="style_name__cp86h position-relative">Australia</span>
+        </a><a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
+          href="/cricket-teams/pakistan/">
+          <div class="style_flag__W_wsf position-absolute">
+            <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
+              ></span>
+          </div>
+          <span class="style_name__cp86h position-relative">Pakistan</span>
+        </a><a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
+          href="/cricket-teams/india/">
+          <div class="style_flag__W_wsf position-absolute">
+            <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
+              ></span>
+          </div>
+          <span class="style_name__cp86h position-relative">India</span>
+        </a><a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
+          href="/cricket-teams/new-zealand/">
+          <div class="style_flag__W_wsf position-absolute">
+            <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
+              ></span>
+          </div>
+          <span class="style_name__cp86h position-relative">New Zealand</span>
+        </a><a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
+          href="/cricket-teams/england/">
+          <div class="style_flag__W_wsf position-absolute">
+            <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
+              ></span>
+          </div>
+          <span class="style_name__cp86h position-relative">England</span>
+        </a><a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
+          href="/cricket-teams/south-africa/">
+          <div class="style_flag__W_wsf position-absolute">
+            <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
+              ></span>
+          </div>
+          <span class="style_name__cp86h position-relative">South Africa</span>
+        </a><a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
+          href="/cricket-teams/bangladesh/">
+          <div class="style_flag__W_wsf position-absolute">
+            <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async"
+                data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " /></span>
+          </div>
+          <span class="style_name__cp86h position-relative">Bangladesh</span>
+        </a><a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
+          href="/cricket-teams/afghanistan/">
+          <div class="style_flag__W_wsf position-absolute">
+            <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async"
+                data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " /></span>
+          </div>
+          <span class="style_name__cp86h position-relative">Afghanistan</span>
+        </a><a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
+          href="/cricket-teams/sri-lanka/">
+          <div class="style_flag__W_wsf position-absolute">
+            <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
+              ></span>
+          </div>
+          <span class="style_name__cp86h position-relative">Sri Lanka</span>
+        </a><a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
+          href="/cricket-teams/west-indies/">
+          <div class="style_flag__W_wsf position-absolute">
+            <span style="
+                      box-sizing: border-box;
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="team" src="./images/country/country_flag.webp" decoding="async"
+                data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        box-sizing: border-box;
+                        padding: 0px;
+                        border: none;
+                        margin: auto;
+                        display: block;
+                        width: 0px;
+                        height: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                      " />
+              ></span>
+          </div>
+          <span class="style_name__cp86h position-relative">West Indies</span>
+        </a>
+      </div>
+    </section>
     </div>
-  </div>
-</div>
+    </div>
+    </div>
+    </div>
 
 
-@endsection
+    @endsection
