@@ -26,6 +26,41 @@
                     <form action="{{ route('article.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body p-0">
+                            
+                            <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Category
+                                <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                    title="Category of article select from below">
+                                    <svg class="icon icon-info">
+                                        <use xlink:href="#icon-info"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            @error('category')
+                            <span class="text-red">{{$message}}</span>
+                            @enderror
+                            <select class="select select-wide" name="category">
+                                <option value="" selected disabled>Select Category</option>
+                                <option {{ old('category') == 'latest_update' ? 'selected' : '' }} value="latest_update">Latest Update</option>
+                                <option {{ old('category') == 'series_update' ? 'selected' : '' }} value="series_update">Series Update</option>
+                            </select>
+                            
+                            <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Type
+                                <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                    title="Type of article select from below">
+                                    <svg class="icon icon-info">
+                                        <use xlink:href="#icon-info"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            @error('type')
+                            <span class="text-red">{{$message}}</span>
+                            @enderror
+                            <select class="select select-wide" name="type">
+                                <option value="" selected disabled>Select type</option>
+                                <option {{ old('type') == 'highlighter' ? 'selected' : '' }} value="highlighter">Highlighter</option>
+                                <option {{ old('type') == 'normal' ? 'selected' : '' }} value="normal">Normal</option>
+                                <option {{ old('type') == 'one_liner' ? 'selected' : '' }} value="one_liner">One Liner</option>
+                            </select>
 
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Title
                                 <div class="info-tooltip ms-1" data-bs-toggle="tooltip"

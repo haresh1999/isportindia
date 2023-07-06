@@ -39,6 +39,15 @@ function getMatchDetails($matchId){
     return $response['response'];
 }
 
+function getTopTeam(){
+	
+    return  $response = Http::get(config('services.api')."teams&format=1,2,3,4&token=".token())->json();
+
+    return $response['response'];
+}
+
+
+
 function uploadImage($image, $upath = '', $prefix = '')
 {
 	if ($image != null || isset($image)) {
