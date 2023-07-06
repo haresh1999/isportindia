@@ -21,14 +21,18 @@ class HomeController extends Controller
     {
         $res = Article::with('user')->where('slug', $slug)->first();
 
-        return view('blog_details', compact('res'));
+        $cric = CricSpecial::where('status', 1)->orderBy('id','desc')->limit(5)->get();
+
+        return view('blog_details', compact('res','cric'));
     }
 
     public function cricspecialDetails($id, $slug)
     {
         $res = CricSpecial::with('user')->where('slug', $slug)->first();
 
-        return view('cricspecial_details', compact('res'));
+        $cric = CricSpecial::where('status', 1)->orderBy('id','desc')->limit(5)->get();
+
+        return view('cricspecial_details', compact('res','cric'));
     }
 
     public function scoreCard($matchId)
