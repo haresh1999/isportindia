@@ -2467,7 +2467,9 @@
               {{-- TEST TEAM RANKING START--}}
 
               {{-- TEAM --}}
-              @php $rank = getIccRanking() @endphp
+              @php $data = getIccRanking() @endphp
+              @php $lastUpdate = \Carbon\Carbon::parse($data['modified'])->format('M d, Y, H:m') @endphp
+              @php $rank = $data['response']['ranks'] @endphp
 
               @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
                 <p class="mb-0 flex-shrink-0">{{$rank['teams']['tests'][$i]['rank']}}</p>
@@ -2582,7 +2584,7 @@
 
 
     <p class="card-footer-note text-center">
-      Last Updated On {{ \Carbon\Carbon::parse($rank['modified'])->format('M d, Y, H:m') }} IST
+      Last Updated On {{ $lastUpdate }} IST
     </p>
     </div>
     </div>
