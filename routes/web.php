@@ -22,6 +22,8 @@ use App\Http\Controllers\Admin\CricSpecialController;
 |
 */
 
+// dd(getSeasons('seasons/2021/competitions'));
+
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('post-details/{id}/{slug}', [HomeController::class, 'postDetails'])->name('post.details');
 Route::get('cricspecial-details/{id}/{slug}', [HomeController::class, 'cricspecialDetails'])->name('cricspecial.details');

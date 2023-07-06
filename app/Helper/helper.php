@@ -8,7 +8,7 @@ function token(){
 }
 
 function getSeasons($url){
-
+	
     $response = Http::get(config('services.api').$url.'?token='.token())
         ->json();
     
@@ -41,7 +41,6 @@ function getMatchDetails($matchId){
 
 function uploadImage($image, $upath = '', $prefix = '')
 {
-
 	if ($image != null || isset($image)) {
 
 		$path = ($upath == '') ? 'images/' : $upath;

@@ -979,7 +979,7 @@ hr {
     }
 }
 
-@media(min-width: 992px)and (max-width:1400px) {
+@media(min-width: 992px){
     .common-sidebar:not(.bt-width) {
         width: calc(310px + var(--bs-gutter-x)*1)
     }
