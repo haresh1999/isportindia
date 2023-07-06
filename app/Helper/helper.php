@@ -42,6 +42,11 @@ function getMatchDetails($matchId){
 function getIccRanking(){
 	
 	$response = Http::get(config('services.api')."iccranks?token=".token())->json();
+}
+
+function getTopTeam(){
+	
+    return  $response = Http::get(config('services.api')."teams&format=1,2,3,4&token=".token())->json();
 
     return $response['response'];
 }
