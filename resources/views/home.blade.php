@@ -984,11 +984,11 @@
         {{-- LATEST UPDATE HIGHLIGHTER START --}}
         @foreach ($seasonsUpdateHighlighter as $suh)
         @php $match = getCompetitionsMatches($suh->cid) @endphp
-        <section id="t20/tnpl" class="style_homeArticles__4e_Na">
+        <section id="{{route('post.details',[$suh->id,$suh->slug])}}" class="style_homeArticles__4e_Na">
           <h4 class="line-title text-uppercase text-center overflow-hidden">
-            <a class="rounded-pill position-relative d-inline-block" href="/t20/tnpl/"><span
-                class="d-none d-md-block text-nowrap overflow-hidden">{{$match['title']}}</span><span
-                class="d-block d-md-none text-nowrap overflow-hidden">{{$match['short_title']}}</span></a>
+            <a class="rounded-pill position-relative d-inline-block" href="{{route('post.details',[$suh->id,$suh->slug])}}"><span
+                class="d-none d-md-block text-nowrap overflow-hidden">{{$match['short_title']}}</span><span
+                class="d-block d-md-none text-nowrap overflow-hidden">{{$match['title']}}</span></a>
           </h4>
           <div class="style_seriesInfo__LBbez text-center">
             <p>{{$match['competition']['title']}}</p>
