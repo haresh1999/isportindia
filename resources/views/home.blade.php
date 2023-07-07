@@ -651,6 +651,7 @@
 
           {{-- LATEST UPDATE START --}}
           {{-- LATEST UPDATE HIGHLIGHTER START--}}
+          @if ($latestUpdateHighlighter)
           <article id="{{$latestUpdateHighlighter->id}}"
             class="style_article__IayJx style_articleMedium__ME07j undefined">
             <div class="row-8 row">
@@ -803,7 +804,9 @@
                 </div>
               </div>
             </div>
-          </article>
+          </article>    
+          @endif
+          
           {{-- LATEST UPDATE HIGHLIGHTER END --}}
 
           {{-- LATEST UPDATE NORMAL START --}}
