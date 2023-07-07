@@ -120,6 +120,12 @@
                                 </div>
                                 @endforeach
                             </div>
+                            <p></p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{ $res->links('pagination::bootstrap-5') }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

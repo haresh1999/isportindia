@@ -59,8 +59,8 @@
                                     <div class="d-table-cell pb-4 px-3 caption">Edit</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Delete</div>
                                 </div>
+                                @foreach ($res as $key => $re)
                                 <div class="border-bottom sheet-row position-relative d-block d-md-table-row pb-4 mb-4">
-                                    @foreach ($res as $key => $re)
                                     <div class="checkbox-cell sheet-cell d-none d-md-table-cell py-2 py-md-4 px-3">
                                         {{ ++$key }}
                                     </div>
@@ -98,7 +98,13 @@
                                             </svg>
                                         </a>
                                     </div>
-                                    @endforeach
+                                </div>
+                                @endforeach
+                            </div>
+                            <p></p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{ $res->links('pagination::bootstrap-5') }}
                                 </div>
                             </div>
                         </div>

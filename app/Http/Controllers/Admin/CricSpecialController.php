@@ -23,7 +23,7 @@ class CricSpecialController extends Controller
                 $q->Orwhere('description', 'like', "%{$request->search}%");
             })
             ->orderBy('id', 'desc')
-            ->paginate(100);
+            ->paginate(10);
 
         return view('admin.cricspecial.list', compact('res'));
     }
