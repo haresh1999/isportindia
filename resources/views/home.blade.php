@@ -1065,7 +1065,7 @@
                       <!-- -->{{$match['venue']['name']}}
                     </p>
                     <p class="d-inline d-sm-block">
-                      Match starts at {{ Carbon\Carbon::parse($match['date_start'])->format('d M Y, D, h:i:A') }} IST
+                      Match starts at {{ Carbon\Carbon::parse($match['date_start'])->format('d M Y, D, h:i A') }} IST
                     </p>
                   </div>
                   <div class="style_team__SgPqc flex-shrink-0 text-end mb-2 mb-sm-0">
@@ -1265,6 +1265,192 @@
                             " /> </span></span>{{ $suh->min }} Min</span>
             </div>
           </article>
+          {{-- NORMAL --}}
+          @php $articles = DB::table('articles')
+          ->where('cid',$suh->cid)
+          ->where('category', 'seasons_update')
+          ->where('type', 'normal')
+          ->where('status', 1)
+          ->latest()
+          ->limit(3)
+          ->get();
+          @endphp
+
+          @foreach ($articles as $article)
+          <article id="{{$article->id}}" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
+            <div class="row-8 row">
+              <div class="col-sm-3 col-5">
+                <a class="style_postimg__ftSiV undefined d-block block-img"
+                  href="{{route('post.details',[$article->id,$article->slug])}}"><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                      "><span style="
+                          box-sizing: border-box;
+                          display: block;
+                          width: initial;
+                          height: initial;
+                          background: none;
+                          opacity: 1;
+                          border: 0;
+                          margin: 0;
+                          padding: 0;
+                          padding-top: 62.5%;
+                        "></span><img alt="Dindigul Dragons" src="{{getImageUrl($article->img)}}" decoding="async"
+                      data-nimg="responsive" style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          bottom: 0;
+                          right: 0;
+                          box-sizing: border-box;
+                          padding: 0;
+                          border: none;
+                          margin: auto;
+                          display: block;
+                          width: 0;
+                          height: 0;
+                          min-width: 100%;
+                          max-width: 100%;
+                          min-height: 100%;
+                          max-height: 100%;
+                          background-size: cover;
+                          background-position: 0% 0%;
+                          filter: blur(20px);
+                          background-image: url('{{getImageUrl($article->img)}}');
+                        " /> </span></a>
+              </div>
+              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
+                <div>
+                  <h4 class="small-head mb-2">
+                    <a href="{{route('post.details',[$article->id,$article->slug])}}">{{ $article->title }}</a>
+                  </h4>
+                </div>
+                <div class="style_articleInfo__WqisT d-flex">
+                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
+                              box-sizing: border-box;
+                              display: block;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              padding-top: 100%;
+                            "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
+                          decoding="async" data-nimg="responsive" style="
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>{{Carbon\Carbon::parse($article->created_at)->format('d M
+                    Y')}}</span><span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span
+                        style="
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            width: initial;
+                            height: initial;
+                            background: none;
+                            opacity: 1;
+                            border: 0;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                          "><span style="
+                              box-sizing: border-box;
+                              display: block;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              padding-top: 100%;
+                            "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
+                          decoding="async" data-nimg="responsive" style="
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              bottom: 0;
+                              right: 0;
+                              box-sizing: border-box;
+                              padding: 0;
+                              border: none;
+                              margin: auto;
+                              display: block;
+                              width: 0;
+                              height: 0;
+                              min-width: 100%;
+                              max-width: 100%;
+                              min-height: 100%;
+                              max-height: 100%;
+                            " /> </span></span>{{$article->min}} Min</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          @endforeach
+
+          {{-- ONE LINER --}}
+          @php $articlesOneLiner = DB::table('articles')
+          ->where('cid',$suh->cid)
+          ->where('category', 'seasons_update')
+          ->where('type', 'one_liner')
+          ->where('status', 1)
+          ->latest()
+          ->limit(3)
+          ->get();
+          @endphp
+
+          <article class="style_article__IayJx style_articleList__HOi_f py-0">
+            @foreach ($articlesOneLiner as $aOL)
+              <h4 id="{{$aOL->id}}" class="small-head mb-0">
+                <a class="d-flex align-items-center"
+                  href="{{route('post.details',[$aOL->id,$aOL->slug])}}"><svg width="20"
+                    height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M3.66667 2H15.3333C16.25 2 17 2.75 17 3.66667V12L12 17H3.66667C2.75 17 2 16.25 2 15.3333V3.66667C2 2.75 2.75 2 3.66667 2ZM15.3333 11.1667V3.66667H3.66667V15.3333H11.1667V11.1667H15.3333ZM9.5 11.1667H5.33333V9.5H9.5V11.1667ZM5.33333 7.83333H13.6667V6.16667H5.33333V7.83333Z"
+                      fill="#757A82"></path>
+                  </svg><span class="style_textTruncate__R9wLD">{{$aOL->title}}</span></a>
+              </h4>
+            @endforeach
+          </article>
+
         </section>
         @endforeach
         {{-- LATEST UPDATE HIGHLIGHTER END --}}
