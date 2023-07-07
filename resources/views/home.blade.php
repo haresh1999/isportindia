@@ -987,11 +987,11 @@
         <section id="{{route('post.details',[$suh->id,$suh->slug])}}" class="style_homeArticles__4e_Na">
           <h4 class="line-title text-uppercase text-center overflow-hidden">
             <a class="rounded-pill position-relative d-inline-block" href="{{route('post.details',[$suh->id,$suh->slug])}}"><span
-                class="d-none d-md-block text-nowrap overflow-hidden">{{$match['short_title']}}</span><span
-                class="d-block d-md-none text-nowrap overflow-hidden">{{$match['title']}}</span></a>
+                class="d-none d-md-block text-nowrap overflow-hidden">{{$match['competition']['title']}}</span><span
+                class="d-block d-md-none text-nowrap overflow-hidden">{{$match['competition']['title']}}</span></a>
           </h4>
           <div class="style_seriesInfo__LBbez text-center">
-            <p>{{$match['competition']['title']}}</p>
+            <p>{{$match['title']}}</p>
             <div class="style_btnList__6CLwB text-nowrap scroll-list d-flex">
               <nav class="font-semi d-flex me-auto ms-auto text-uppercase">
                 <a href="/t20/tnpl/fixtures/">Fixtures</a>
