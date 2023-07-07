@@ -26,98 +26,142 @@
                     <form action="{{ route('article.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body p-0">
-                            
-                            <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Category
-                                <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                    title="Category of article select from below">
-                                    <svg class="icon icon-info">
-                                        <use xlink:href="#icon-info"></use>
-                                    </svg>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Category
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Category of article select from below">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('category')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <select class="select select-wide category" name="category">
+                                        <option value="" selected disabled>Select Category</option>
+                                        <option {{ old('category')=='latest_update' ? 'selected' : '' }}
+                                            value="latest_update">Latest Update</option>
+                                        <option {{ old('category')=='seasons_update' ? 'selected' : '' }}
+                                            value="seasons_update">Seasons Update</option>
+                                    </select>
                                 </div>
-                            </div>
-                            @error('category')
-                            <span class="text-red">{{$message}}</span>
-                            @enderror
-                            <select class="select select-wide" name="category">
-                                <option value="" selected disabled>Select Category</option>
-                                <option {{ old('category') == 'latest_update' ? 'selected' : '' }} value="latest_update">Latest Update</option>
-                                <option {{ old('category') == 'series_update' ? 'selected' : '' }} value="series_update">Series Update</option>
-                            </select>
-                            
-                            <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Type
-                                <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                    title="Type of article select from below">
-                                    <svg class="icon icon-info">
-                                        <use xlink:href="#icon-info"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            @error('type')
-                            <span class="text-red">{{$message}}</span>
-                            @enderror
-                            <select class="select select-wide" name="type">
-                                <option value="" selected disabled>Select type</option>
-                                <option {{ old('type') == 'highlighter' ? 'selected' : '' }} value="highlighter">Highlighter</option>
-                                <option {{ old('type') == 'normal' ? 'selected' : '' }} value="normal">Normal</option>
-                                <option {{ old('type') == 'one_liner' ? 'selected' : '' }} value="one_liner">One Liner</option>
-                            </select>
+                                
+                                <div class="col-md-12 mt-4 d-none seasons">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Select Seasons
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Select seasons related to article">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('cid')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <select class="select select-wide" name="cid">
+                                        <option value="" selected disabled>Select Seasons</option>
+                                        @foreach (getSeasons('seasons/2021/competitions') as $val)
+                                        <option {{ old('cid')==$val['cid'] ? 'selected' : '' }} value="{{$val['cid']}}">
+                                            {{$val['title']}}</option>
 
-                            <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Title
-                                <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                    title="Maximum 100 characters">
-                                    <svg class="icon icon-info">
-                                        <use xlink:href="#icon-info"></use>
-                                    </svg>
+                                        @endforeach
+                                        <option {{ old('type')=='normal' ? 'selected' : '' }} value="normal">Normal
+                                        </option>
+                                        <option {{ old('type')=='one_liner' ? 'selected' : '' }} value="one_liner">One
+                                            Liner</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 mt-4">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Type
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Type of article select from below">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('type')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <select class="select select-wide" name="type">
+                                        <option value="" selected disabled>Select type</option>
+                                        <option {{ old('type')=='highlighter' ? 'selected' : '' }} value="highlighter">
+                                            Highlighter</option>
+                                        <option {{ old('type')=='normal' ? 'selected' : '' }} value="normal">Normal
+                                        </option>
+                                        <option {{ old('type')=='one_liner' ? 'selected' : '' }} value="one_liner">One
+                                            Liner</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-12 mt-4">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Title
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Maximum 100 characters">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('title')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <input class="form-control" type="text" name="title"
+                                        value="{{ old('title') }}">
+                                </div>
+
+                                <div class="col-md-12 mt-4">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Description
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Article Details Description">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('description')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <textarea id="editor1" name="description" rows="10"
+                                        cols="80">{{ old('description') }}</textarea>
+                                </div>
+
+                                <div class="col-md-12 mt-4">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Image
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip" title="Image">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('img')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <input class="form-control" type="file" name="img">
+                                </div>
+
+                                <div class="col-md-12 mt-4">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Status
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Status Of Publish">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('status')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <select class="select select-wide" name="status">
+                                        <option {{ old('stauts')==1 ? 'selected' : '' }} selected value="1">Active
+                                        </option>
+                                        <option {{ old('stauts')==2 ? 'selected' : '' }} value="2">InActive</option>
+                                    </select>
                                 </div>
                             </div>
-                            @error('title')
-                            <span class="text-red">{{$message}}</span>
-                            @enderror
-                            <input class="form-control mb-5 mb-sm-6" type="text" name="title" value="{{ old('title') }}">
-
-                            <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Description
-                                <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                    title="Article Details Description">
-                                    <svg class="icon icon-info">
-                                        <use xlink:href="#icon-info"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            @error('description')
-                            <span class="text-red">{{$message}}</span>
-                            @enderror
-                            <textarea id="editor1" name="description" rows="10" cols="80">{{ old('description') }}</textarea>
-
-                            <br>
-                            <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Image
-                                <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                    title="Image">
-                                    <svg class="icon icon-info">
-                                        <use xlink:href="#icon-info"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            @error('img')
-                            <span class="text-red">{{$message}}</span>
-                            @enderror
-                            <input class="form-control mb-5 mb-sm-6" type="file" name="img">
-
-                            <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Status
-                                <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                    title="Status Of Publish">
-                                    <svg class="icon icon-info">
-                                        <use xlink:href="#icon-info"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            @error('status')
-                            <span class="text-red">{{$message}}</span>
-                            @enderror
-                            <select class="select select-wide" name="status">
-                                <option {{ old('stauts') == 1 ? 'selected' : '' }} selected value="1">Active</option>
-                                <option {{ old('stauts') == 2 ? 'selected' : '' }} value="2">InActive</option>
-                            </select>
-
                             <div class="w-100 text-center">
                                 <button class="btn mt-3">Save</button>
                             </div>
@@ -186,6 +230,17 @@
     CKEDITOR.replace('editor1')
     //bootstrap WYSIHTML5 - text editor
     $('.textarea').wysihtml5()
+})
+</script>
+<script>
+$('.category').change(function(){
+    if ($(this).val() == 'seasons_update') {
+        $('.seasons').removeClass('d-none')
+        $('.seasons').addClass('d-block')
+    }else{
+        $('.seasons').removeClass('d-block')
+        $('.seasons').addClass('d-none')
+    }
 })
 </script>
 @endsection

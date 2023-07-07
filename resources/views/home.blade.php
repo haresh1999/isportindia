@@ -648,6 +648,184 @@
           <h4 class="line-title text-uppercase text-center overflow-hidden">
             <span class="rounded-pill position-relative d-inline-block">Latest Updates</span>
           </h4>
+          
+              {{-- LATEST UPDATE START --}}
+            
+              {{-- LATEST UPDATE HIGHLIGHTER START --}}
+              <article id="{{$latestUpdateHighlighter->id}}" class="style_article__IayJx style_articleMedium__ME07j undefined">
+                <div class="row-8 row">
+                  <div class="col-sm-6 col-5">
+                    <a href="{{ route('post.details',[$latestUpdateHighlighter->id,$latestUpdateHighlighter->slug]) }}">
+                      <div class="style_postimg__ftSiV undefined block-img">
+                        <span style="
+                                box-sizing: border-box;
+                                display: block;
+                                overflow: hidden;
+                                width: initial;
+                                height: initial;
+                                background: none;
+                                opacity: 1;
+                                border: 0;
+                                margin: 0;
+                                padding: 0;
+                                position: relative;
+                              "><span style="
+                                  box-sizing: border-box;
+                                  display: block;
+                                  width: initial;
+                                  height: initial;
+                                  background: none;
+                                  opacity: 1;
+                                  border: 0;
+                                  margin: 0;
+                                  padding: 0;
+                                  padding-top: 62.5%;
+                                "></span>
+                          <img alt="Andre Russell and Sunil Narine" src="{{getImageUrl($latestUpdateHighlighter->img)}}" decoding="async"
+                            data-nimg="responsive" style="
+                                  position: absolute;
+                                  inset: 0px;
+                                  box-sizing: border-box;
+                                  padding: 0px;
+                                  border: none;
+                                  margin: auto;
+                                  display: block;
+                                  width: 0px;
+                                  height: 0px;
+                                  min-width: 100%;
+                                  max-width: 100%;
+                                  min-height: 100%;
+                                  max-height: 100%;
+                                "
+                            sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px" />
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="d-flex flex-column justify-content-between col-sm-6 col-7">
+                    <div>
+                      <h3 class="small-head mb-1">
+                        <a href="{{ route('post.details',[$latestUpdateHighlighter->id,$latestUpdateHighlighter->slug]) }}">{{
+                          $latestUpdateHighlighter->title }}</a>
+                      </h3>
+                      <p class="style_desc__jLYw_ style_desc__zP5qm">
+                        {!! Str::limit($latestUpdateHighlighter->description, 256, '...') !!}
+                      </p>
+                    </div>
+                    <div class="style_articleInfo__WqisT undefined d-flex">
+                      <span class="d-flex align-items-center"><span class="style_icon__Ukkjh undefined d-block"><span style="
+                                  box-sizing: border-box;
+                                  display: block;
+                                  overflow: hidden;
+                                  width: initial;
+                                  height: initial;
+                                  background: none;
+                                  opacity: 1;
+                                  border: 0;
+                                  margin: 0;
+                                  padding: 0;
+                                  position: relative;
+                                "><span style="
+                                    box-sizing: border-box;
+                                    display: block;
+                                    width: initial;
+                                    height: initial;
+                                    background: none;
+                                    opacity: 1;
+                                    border: 0;
+                                    margin: 0;
+                                    padding: 0;
+                                    padding-top: 100%;
+                                  "></span>
+                            <img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg" decoding="async"
+                              data-nimg="responsive" style="
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    box-sizing: border-box;
+                                    padding: 0;
+                                    border: none;
+                                    margin: auto;
+                                    display: block;
+                                    width: 0;
+                                    height: 0;
+                                    min-width: 100%;
+                                    max-width: 100%;
+                                    min-height: 100%;
+                                    max-height: 100%;
+                                  " sizes="100vw" /> </span></span>{{ Carbon\Carbon::parse($latestUpdateHighlighter->created_at)->format('m M
+                        Y') }}</span><span class="d-flex align-items-center"><span
+                          class="style_icon__Ukkjh undefined d-block"><span style="
+                                  box-sizing: border-box;
+                                  display: block;
+                                  overflow: hidden;
+                                  width: initial;
+                                  height: initial;
+                                  background: none;
+                                  opacity: 1;
+                                  border: 0;
+                                  margin: 0;
+                                  padding: 0;
+                                  position: relative;
+                                "><span style="
+                                    box-sizing: border-box;
+                                    display: block;
+                                    width: initial;
+                                    height: initial;
+                                    background: none;
+                                    opacity: 1;
+                                    border: 0;
+                                    margin: 0;
+                                    padding: 0;
+                                    padding-top: 100%;
+                                  "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
+                              decoding="async" data-nimg="responsive" style="
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    box-sizing: border-box;
+                                    padding: 0;
+                                    border: none;
+                                    margin: auto;
+                                    display: block;
+                                    width: 0;
+                                    height: 0;
+                                    min-width: 100%;
+                                    max-width: 100%;
+                                    min-height: 100%;
+                                    max-height: 100%;
+                                  " sizes="100vw" /> </span></span>2
+                        <!-- -->
+                        <!-- -->Min
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              {{-- LATEST UPDATE HIGHLIGHTER END --}}
+              
+              {{-- LATEST UPDATE NORMAL START --}}
+              @foreach ($latestUpdateNormal as $lun)
+                  
+              @endforeach
+              {{-- LATEST UPDATE NORMAL END --}}
+
+              {{-- LATEST UPDATE ONE LINER START --}}
+              @foreach ($latestUpdateOneLiner as $luol)
+                  
+              @endforeach
+              {{-- LATEST UPDATE ONE LINER END --}}
+
+              {{-- LATEST UPDATE END --}}
+              
+              {{-- SEASON UPDATE START --}}
+                
+              {{-- SEASON UPDATE END --}}
+              
 
           @foreach ($res as $key1 => $re)
           <article id="{{++$key1}}" class="style_article__IayJx style_articleMedium__ME07j undefined">

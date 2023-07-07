@@ -10,11 +10,50 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $res = Article::where('status', 1)->orderBy('id','desc')->limit(5)->get();
+        $latestUpdateHighlighter = Article::where('status', 1)
+            ->where('category','latest_update')
+            ->where('type','highlighter')
+            ->latest()
+            ->first();
+        
+        $latestUpdateNormal = Article::where('status', 1)
+            ->where('category','latest_update')
+            ->where('type','normal')
+            ->latest()
+            ->limit(3)
+            ->get();
+        
+        $latestUpdateOneLiner = Article::where('status', 1)
+            ->where('category','latest_update')
+            ->where('type','one_liner')
+            ->latest()
+            ->limit(3)
+            ->get();
+        
+        $seasonsUpdateHighlighter = Article::where('status', 1)
+            ->where('category','seasons_update')
+            ->where('type','highlighter')
+            ->latest()
+            ->limit(5)
+            ->get();
+
+        $seasonsUpdateNormal = Article::where('status', 1)
+            ->where('category','seasons_update')
+            ->where('type','normal')
+            ->latest()
+            ->limit(5)
+            ->get();
+
+        $seasonsUpdateOneLiner = Article::where('status', 1)
+            ->where('category','seasons_update')
+            ->where('type','one_liner')
+            ->latest()
+            ->limit(3)
+            ->get();
 
         $cric = CricSpecial::where('status', 1)->orderBy('id','desc')->limit(5)->get();
 
-        return view('home', compact('res','cric'));
+        return view('home', compact('latestUpdateHighlighter','latestUpdateNormal','latestUpdateOneLiner','cric'));
     }
 
     public function postDetails($id, $slug)

@@ -49,7 +49,10 @@ class ArticleController extends Controller
             'title' => 'required|max:250|unique:articles',
             'description' => 'required',
             'img' => 'required|image',
-            'status' => 'required'
+            'status' => 'required',
+            'category' => 'required',
+            'cid' => 'required_if:category,==,seasons_update',
+            'type' => 'required'
         ]);
 
         $v['img'] = uploadImage($v['img'], 'article');
@@ -89,7 +92,10 @@ class ArticleController extends Controller
             'title' => 'required|max:250|unique:articles,title,' . $id,
             'description' => 'required',
             'img' => 'nullable|image',
-            'status' => 'required'
+            'status' => 'required',
+            'category' => 'required',
+            'cid' => 'required_if:category,==,seasons_update',
+            'type' => 'required'
         ]);
 
         if (isset($v['img'])) {
