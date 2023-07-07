@@ -17,7 +17,8 @@ class Article extends Model
         'slug',
         'category',
         'type',
-        'cid'
+        'cid',
+        'min'
     ];
 
     public function user()

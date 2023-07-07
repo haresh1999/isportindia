@@ -144,6 +144,22 @@
                                 </div>
 
                                 <div class="col-md-12 mt-4">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Read Min
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="add number of min to read this article">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('min')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <input class="form-control" type="text" name="min"
+                                        value="{{ old('min') }}">
+                                </div>
+
+                                <div class="col-md-12 mt-4">
                                     <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Status
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
                                             title="Status Of Publish">

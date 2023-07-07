@@ -52,7 +52,8 @@ class ArticleController extends Controller
             'status' => 'required',
             'category' => 'required',
             'cid' => 'required_if:category,==,seasons_update',
-            'type' => 'required'
+            'type' => 'required',
+            'min' => 'required|numeric'
         ]);
 
         $v['img'] = uploadImage($v['img'], 'article');
@@ -95,7 +96,8 @@ class ArticleController extends Controller
             'status' => 'required',
             'category' => 'required',
             'cid' => 'required_if:category,==,seasons_update',
-            'type' => 'required'
+            'type' => 'required',
+            'min' => 'required|numeric'
         ]);
 
         if (isset($v['img'])) {

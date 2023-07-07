@@ -67,13 +67,7 @@
                                         <option {{ $article->cid ==$val['cid'] ? 'selected' : '' }}
                                             value="{{$val['cid']}}">
                                             {{$val['title']}}</option>
-
                                         @endforeach
-                                        <option {{ $article->type=='normal' ? 'selected' : '' }} value="normal">Normal
-                                        </option>
-                                        <option {{ $article->type=='one_liner' ? 'selected' : '' }}
-                                            value="one_liner">One
-                                            Liner</option>
                                     </select>
                                 </div>
 
@@ -148,6 +142,22 @@
                                     <a target="_blank" href="{{ getImageUrl($article->img) }}">View</a>
                                     @endif
                                     <input class="form-control" type="file" name="img">
+                                </div>
+
+                                <div class="col-md-12 mt-4">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Read Min
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="add number of min to read this article">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('min')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <input class="form-control" type="text" name="min"
+                                        value="{{ $article->min }}">
                                 </div>
 
                                 <div class="col-md-12 mt-4">

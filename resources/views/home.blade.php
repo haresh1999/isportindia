@@ -648,30 +648,19 @@
           <h4 class="line-title text-uppercase text-center overflow-hidden">
             <span class="rounded-pill position-relative d-inline-block">Latest Updates</span>
           </h4>
-          
-              {{-- LATEST UPDATE START --}}
-            
-              {{-- LATEST UPDATE HIGHLIGHTER START --}}
-              <article id="{{$latestUpdateHighlighter->id}}" class="style_article__IayJx style_articleMedium__ME07j undefined">
-                <div class="row-8 row">
-                  <div class="col-sm-6 col-5">
-                    <a href="{{ route('post.details',[$latestUpdateHighlighter->id,$latestUpdateHighlighter->slug]) }}">
-                      <div class="style_postimg__ftSiV undefined block-img">
-                        <span style="
-                                box-sizing: border-box;
-                                display: block;
-                                overflow: hidden;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                position: relative;
-                              "><span style="
+
+          {{-- LATEST UPDATE START --}}
+          {{-- LATEST UPDATE HIGHLIGHTER START--}}
+          <article id="{{$latestUpdateHighlighter->id}}"
+            class="style_article__IayJx style_articleMedium__ME07j undefined">
+            <div class="row-8 row">
+              <div class="col-sm-6 col-5">
+                <a href="{{ route('post.details',[$latestUpdateHighlighter->id,$latestUpdateHighlighter->slug]) }}">
+                  <div class="style_postimg__ftSiV undefined block-img">
+                    <span style="
                                   box-sizing: border-box;
                                   display: block;
+                                  overflow: hidden;
                                   width: initial;
                                   height: initial;
                                   background: none;
@@ -679,41 +668,202 @@
                                   border: 0;
                                   margin: 0;
                                   padding: 0;
-                                  padding-top: 62.5%;
-                                "></span>
-                          <img alt="Andre Russell and Sunil Narine" src="{{getImageUrl($latestUpdateHighlighter->img)}}" decoding="async"
-                            data-nimg="responsive" style="
-                                  position: absolute;
-                                  inset: 0px;
-                                  box-sizing: border-box;
-                                  padding: 0px;
-                                  border: none;
-                                  margin: auto;
-                                  display: block;
-                                  width: 0px;
-                                  height: 0px;
-                                  min-width: 100%;
-                                  max-width: 100%;
-                                  min-height: 100%;
-                                  max-height: 100%;
-                                "
-                            sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px" />
-                        </span>
-                      </div>
-                    </a>
+                                  position: relative;
+                                "><span style="
+                                    box-sizing: border-box;
+                                    display: block;
+                                    width: initial;
+                                    height: initial;
+                                    background: none;
+                                    opacity: 1;
+                                    border: 0;
+                                    margin: 0;
+                                    padding: 0;
+                                    padding-top: 62.5%;
+                                  "></span>
+                      <img alt="Andre Russell and Sunil Narine" src="{{getImageUrl($latestUpdateHighlighter->img)}}"
+                        decoding="async" data-nimg="responsive" style="
+                                    position: absolute;
+                                    inset: 0px;
+                                    box-sizing: border-box;
+                                    padding: 0px;
+                                    border: none;
+                                    margin: auto;
+                                    display: block;
+                                    width: 0px;
+                                    height: 0px;
+                                    min-width: 100%;
+                                    max-width: 100%;
+                                    min-height: 100%;
+                                    max-height: 100%;
+                                  "
+                        sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px" />
+                    </span>
                   </div>
-                  <div class="d-flex flex-column justify-content-between col-sm-6 col-7">
-                    <div>
-                      <h3 class="small-head mb-1">
-                        <a href="{{ route('post.details',[$latestUpdateHighlighter->id,$latestUpdateHighlighter->slug]) }}">{{
-                          $latestUpdateHighlighter->title }}</a>
-                      </h3>
-                      <p class="style_desc__jLYw_ style_desc__zP5qm">
-                        {!! Str::limit($latestUpdateHighlighter->description, 256, '...') !!}
-                      </p>
-                    </div>
-                    <div class="style_articleInfo__WqisT undefined d-flex">
-                      <span class="d-flex align-items-center"><span class="style_icon__Ukkjh undefined d-block"><span style="
+                </a>
+              </div>
+              <div class="d-flex flex-column justify-content-between col-sm-6 col-7">
+                <div>
+                  <h3 class="small-head mb-1">
+                    <a href="{{ route('post.details',[$latestUpdateHighlighter->id,$latestUpdateHighlighter->slug]) }}">{{
+                      $latestUpdateHighlighter->title }}</a>
+                  </h3>
+                  <p class="style_desc__jLYw_ style_desc__zP5qm">
+                    {!! Str::limit($latestUpdateHighlighter->description, 256, '...') !!}
+                  </p>
+                </div>
+                <div class="style_articleInfo__WqisT undefined d-flex">
+                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh undefined d-block"><span style="
+                                    box-sizing: border-box;
+                                    display: block;
+                                    overflow: hidden;
+                                    width: initial;
+                                    height: initial;
+                                    background: none;
+                                    opacity: 1;
+                                    border: 0;
+                                    margin: 0;
+                                    padding: 0;
+                                    position: relative;
+                                  "><span style="
+                                      box-sizing: border-box;
+                                      display: block;
+                                      width: initial;
+                                      height: initial;
+                                      background: none;
+                                      opacity: 1;
+                                      border: 0;
+                                      margin: 0;
+                                      padding: 0;
+                                      padding-top: 100%;
+                                    "></span>
+                        <img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg" decoding="async"
+                          data-nimg="responsive" style="
+                                      position: absolute;
+                                      top: 0;
+                                      left: 0;
+                                      bottom: 0;
+                                      right: 0;
+                                      box-sizing: border-box;
+                                      padding: 0;
+                                      border: none;
+                                      margin: auto;
+                                      display: block;
+                                      width: 0;
+                                      height: 0;
+                                      min-width: 100%;
+                                      max-width: 100%;
+                                      min-height: 100%;
+                                      max-height: 100%;
+                                    " sizes="100vw" /> </span></span>{{
+                    Carbon\Carbon::parse($latestUpdateHighlighter->created_at)->format('m M
+                    Y') }}</span><span class="d-flex align-items-center"><span
+                      class="style_icon__Ukkjh undefined d-block"><span style="
+                                    box-sizing: border-box;
+                                    display: block;
+                                    overflow: hidden;
+                                    width: initial;
+                                    height: initial;
+                                    background: none;
+                                    opacity: 1;
+                                    border: 0;
+                                    margin: 0;
+                                    padding: 0;
+                                    position: relative;
+                                  "><span style="
+                                      box-sizing: border-box;
+                                      display: block;
+                                      width: initial;
+                                      height: initial;
+                                      background: none;
+                                      opacity: 1;
+                                      border: 0;
+                                      margin: 0;
+                                      padding: 0;
+                                      padding-top: 100%;
+                                    "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
+                          decoding="async" data-nimg="responsive" style="
+                                      position: absolute;
+                                      top: 0;
+                                      left: 0;
+                                      bottom: 0;
+                                      right: 0;
+                                      box-sizing: border-box;
+                                      padding: 0;
+                                      border: none;
+                                      margin: auto;
+                                      display: block;
+                                      width: 0;
+                                      height: 0;
+                                      min-width: 100%;
+                                      max-width: 100%;
+                                      min-height: 100%;
+                                      max-height: 100%;
+                                    " sizes="100vw" /> </span></span>{{ $latestUpdateHighlighter->min }} Min </span>
+                </div>
+              </div>
+            </div>
+          </article>
+          {{-- LATEST UPDATE HIGHLIGHTER END --}}
+
+          {{-- LATEST UPDATE NORMAL START --}}
+          @foreach ($latestUpdateNormal as $lun)
+          <article id="{{$lun->id}}" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
+            <div class="row-8 row">
+              <div class="col-sm-3 col-5">
+                <a class="style_postimg__ftSiV undefined d-block block-img"
+                  href="{{route('post.details',[$lun->id,$lun->slug])}}"><span style="
+                              box-sizing: border-box;
+                              display: block;
+                              overflow: hidden;
+                              width: initial;
+                              height: initial;
+                              background: none;
+                              opacity: 1;
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              position: relative;
+                            "><span style="
+                                box-sizing: border-box;
+                                display: block;
+                                width: initial;
+                                height: initial;
+                                background: none;
+                                opacity: 1;
+                                border: 0;
+                                margin: 0;
+                                padding: 0;
+                                padding-top: 62.5%;
+                              "></span><img alt="India Red" src="{{ getImageUrl($lun->img) }}" decoding="async"
+                      data-nimg="responsive" style="
+                                position: absolute;
+                                inset: 0px;
+                                box-sizing: border-box;
+                                padding: 0px;
+                                border: none;
+                                margin: auto;
+                                display: block;
+                                width: 0px;
+                                height: 0px;
+                                min-width: 100%;
+                                max-width: 100%;
+                                min-height: 100%;
+                                max-height: 100%;
+                              "
+                      sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px" />
+                  </span></a>
+              </div>
+              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
+                <div>
+                  <h4 class="small-head mb-2">
+                    <a href="{{ route('post.details',[$lun->id,$lun->slug]) }}">
+                      {{ $lun->title }}
+                    </a>
+                  </h4>
+                </div>
+                <div class="style_articleInfo__WqisT d-flex">
+                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
                                   box-sizing: border-box;
                                   display: block;
                                   overflow: hidden;
@@ -736,9 +886,8 @@
                                     margin: 0;
                                     padding: 0;
                                     padding-top: 100%;
-                                  "></span>
-                            <img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg" decoding="async"
-                              data-nimg="responsive" style="
+                                  "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
+                          decoding="async" data-nimg="responsive" style="
                                     position: absolute;
                                     top: 0;
                                     left: 0;
@@ -755,9 +904,10 @@
                                     max-width: 100%;
                                     min-height: 100%;
                                     max-height: 100%;
-                                  " sizes="100vw" /> </span></span>{{ Carbon\Carbon::parse($latestUpdateHighlighter->created_at)->format('m M
-                        Y') }}</span><span class="d-flex align-items-center"><span
-                          class="style_icon__Ukkjh undefined d-block"><span style="
+                                  " sizes="100vw" /></span></span>{{ Carbon\Carbon::parse($lun->created_at)->format('d
+                    M
+                    Y') }}</span><span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span
+                        style="
                                   box-sizing: border-box;
                                   display: block;
                                   overflow: hidden;
@@ -781,7 +931,7 @@
                                     padding: 0;
                                     padding-top: 100%;
                                   "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                              decoding="async" data-nimg="responsive" style="
+                          decoding="async" data-nimg="responsive" style="
                                     position: absolute;
                                     top: 0;
                                     left: 0;
@@ -798,206 +948,53 @@
                                     max-width: 100%;
                                     min-height: 100%;
                                     max-height: 100%;
-                                  " sizes="100vw" /> </span></span>2
-                        <!-- -->
-                        <!-- -->Min
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              {{-- LATEST UPDATE HIGHLIGHTER END --}}
-              
-              {{-- LATEST UPDATE NORMAL START --}}
-              @foreach ($latestUpdateNormal as $lun)
-                  
-              @endforeach
-              {{-- LATEST UPDATE NORMAL END --}}
-
-              {{-- LATEST UPDATE ONE LINER START --}}
-              @foreach ($latestUpdateOneLiner as $luol)
-                  
-              @endforeach
-              {{-- LATEST UPDATE ONE LINER END --}}
-
-              {{-- LATEST UPDATE END --}}
-              
-              {{-- SEASON UPDATE START --}}
-                
-              {{-- SEASON UPDATE END --}}
-              
-
-          @foreach ($res as $key1 => $re)
-          <article id="{{++$key1}}" class="style_article__IayJx style_articleMedium__ME07j undefined">
-            <div class="row-8 row">
-              <div class="col-sm-6 col-5">
-                <a href="{{ route('post.details',[$re->id,$re->slug]) }}">
-                  <div class="style_postimg__ftSiV undefined block-img">
-                    <span style="
-                            box-sizing: border-box;
-                            display: block;
-                            overflow: hidden;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                          "><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              padding-top: 62.5%;
-                            "></span>
-                      <img alt="Andre Russell and Sunil Narine" src="{{getImageUrl($re->img)}}" decoding="async"
-                        data-nimg="responsive" style="
-                              position: absolute;
-                              inset: 0px;
-                              box-sizing: border-box;
-                              padding: 0px;
-                              border: none;
-                              margin: auto;
-                              display: block;
-                              width: 0px;
-                              height: 0px;
-                              min-width: 100%;
-                              max-width: 100%;
-                              min-height: 100%;
-                              max-height: 100%;
-                            "
-                        sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px" />
-                    </span>
-                  </div>
-                </a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-6 col-7">
-                <div>
-                  <h3 class="small-head mb-1">
-                    <a href="{{ route('post.details',[$re->id,$re->slug]) }}">{{
-                      $re->title }}</a>
-                  </h3>
-                  <p class="style_desc__jLYw_ style_desc__zP5qm">
-                    {!! Str::limit($re->description, 256, '...') !!}
-                  </p>
-                </div>
-                <div class="style_articleInfo__WqisT undefined d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh undefined d-block"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span>
-                        <img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg" decoding="async"
-                          data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " sizes="100vw" /> </span></span>{{ Carbon\Carbon::parse($re->created_at)->format('m M
-                    Y') }}</span><span class="d-flex align-items-center"><span
-                      class="style_icon__Ukkjh undefined d-block"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                          decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " sizes="100vw" /> </span></span>2
-                    <!-- -->
-                    <!-- -->Min
+                                  " sizes="100vw" /></span></span>{{ $lun->min }} Min
                   </span>
                 </div>
               </div>
             </div>
           </article>
           @endforeach
+          {{-- LATEST UPDATE NORMAL END --}}
 
+          {{-- LATEST UPDATE ONE LINER START --}}
+          <article class="style_article__IayJx style_articleList__HOi_f py-0">
+            @foreach ($latestUpdateOneLiner as $luol)
+            <h4 id="648881141024650a1b84c88b" class="small-head mb-0">
+              <a class="d-flex align-items-center" href="{{route('post.details',[$luol->id,$luol->slug])}}"><svg
+                  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M3.66667 2H15.3333C16.25 2 17 2.75 17 3.66667V12L12 17H3.66667C2.75 17 2 16.25 2 15.3333V3.66667C2 2.75 2.75 2 3.66667 2ZM15.3333 11.1667V3.66667H3.66667V15.3333H11.1667V11.1667H15.3333ZM9.5 11.1667H5.33333V9.5H9.5V11.1667ZM5.33333 7.83333H13.6667V6.16667H5.33333V7.83333Z"
+                    fill="#757A82"></path>
+                </svg><span class="style_textTruncate__R9wLD">{{ $luol->title }}</span></a>
+            </h4>
+            @endforeach
+          </article>
+          {{-- LATEST UPDATE ONE LINER END --}}
+          {{-- LATEST UPDATE END --}}
         </section>
+
+
+
+        {{-- SEASON UPDATE START --}}
+
+        {{-- LATEST UPDATE HIGHLIGHTER START --}}
+        @foreach ($seasonsUpdateHighlighter as $suh)
+        @php $match = getCompetitionsMatches($suh->cid) @endphp
         <section id="t20/tnpl" class="style_homeArticles__4e_Na">
           <h4 class="line-title text-uppercase text-center overflow-hidden">
             <a class="rounded-pill position-relative d-inline-block" href="/t20/tnpl/"><span
-                class="d-none d-md-block text-nowrap overflow-hidden">TNPL 2023</span><span
-                class="d-block d-md-none text-nowrap overflow-hidden">TNPL</span></a>
+                class="d-none d-md-block text-nowrap overflow-hidden">{{$match['title']}}</span><span
+                class="d-block d-md-none text-nowrap overflow-hidden">{{$match['short_title']}}</span></a>
           </h4>
           <div class="style_seriesInfo__LBbez text-center">
-            <p>Tamil Nadu Premier League</p>
+            <p>{{$match['competition']['title']}}</p>
             <div class="style_btnList__6CLwB text-nowrap scroll-list d-flex">
               <nav class="font-semi d-flex me-auto ms-auto text-uppercase">
-                <a href="/t20/tnpl/fixtures/">Fixtures</a><a href="/t20/tnpl/standings/">Standings</a><a
-                  href="/t20/tnpl/stats/">Stats</a><a href="/t20/tnpl/squads/">Squads</a><a
-                  href="/t20/tnpl/fantasy-tips/">Fantasy Tips</a>
+                <a href="/t20/tnpl/fixtures/">Fixtures</a>
+                <a href="/t20/tnpl/standings/">Standings</a>
+                <a href="/t20/tnpl/stats/">Stats</a><a href="/t20/tnpl/squads/">Squads</a>
+                <a href="/t20/tnpl/fantasy-tips/">Fantasy Tips</a>
               </nav>
             </div>
             <div class="">
@@ -1010,53 +1007,52 @@
                     <div class="style_name__KSXfd d-flex align-items-center">
                       <div class="style_teamImg__LLq3Z flex-shrink-0 rounded-circle overflow-hidden">
                         <span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="DD"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                  box-sizing: border-box;
+                                  display: block;
+                                  overflow: hidden;
+                                  width: initial;
+                                  height: initial;
+                                  background: none;
+                                  opacity: 1;
+                                  border: 0;
+                                  margin: 0;
+                                  padding: 0;
+                                  position: relative;
+                                "><span style="
+                                    box-sizing: border-box;
+                                    display: block;
+                                    width: initial;
+                                    height: initial;
+                                    background: none;
+                                    opacity: 1;
+                                    border: 0;
+                                    margin: 0;
+                                    padding: 0;
+                                    padding-top: 100%;
+                                  "></span><img alt="{{$match['teama']['name']}}" src="{{$match['teama']['logo_url']}}"
                             decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " />
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    box-sizing: border-box;
+                                    padding: 0;
+                                    border: none;
+                                    margin: auto;
+                                    display: block;
+                                    width: 0;
+                                    height: 0;
+                                    min-width: 100%;
+                                    max-width: 100%;
+                                    min-height: 100%;
+                                    max-height: 100%;
+                                  " />
                         </span>
                       </div>
                       <div
                         class="d-flex align-items-center align-items-sm-start flex-sm-column flex-grow-1 flex-sm-grow-0 justify-content-between justify-content-sm-start">
-                        <b class="mx-1">DD</b>
+                        <b class="mx-1">{{$match['teama']['name']}}</b>
                         <p class="style_score__yQMk7 font-semi"></p>
                       </div>
                     </div>
@@ -1064,14 +1060,12 @@
                   <div class="style_info__5CTrf text-start text-sm-center">
                     <span class="style_badge__q5297 live mb-1 badge bg-primary"><span>Upcoming</span></span>
                     <p class="d-inline d-sm-block">
-                      Match 4
+                      Match {{$match['match_number']}}
                       <!-- -->,
-                      <!-- -->Coimbatore
+                      <!-- -->{{$match['venue']['name']}}
                     </p>
                     <p class="d-inline d-sm-block">
-                      Match starts at
-                      <!-- -->
-                      <!-- -->14 Jun 2023, Wed, 7:15 PM IST
+                      Match starts at {{ Carbon\Carbon::parse($match['date_start'])->format('d M Y, D, h:i:A') }} IST
                     </p>
                   </div>
                   <div class="style_team__SgPqc flex-shrink-0 text-end mb-2 mb-sm-0">
@@ -1079,53 +1073,53 @@
                       class="style_name__KSXfd d-flex align-items-center justify-content-end flex-row-reverse flex-sm-row">
                       <div
                         class="d-flex align-items-center align-items-sm-end flex-sm-column flex-grow-1 flex-sm-grow-0 justify-content-between justify-content-sm-center">
-                        <b class="mx-1">TRICHY</b>
+                        <b class="mx-1">{{$match['teamb']['name']}}</b>
                         <p class="style_score__yQMk7 font-semi"></p>
                       </div>
                       <div class="style_teamImg__LLq3Z flex-shrink-0 rounded-circle overflow-hidden">
                         <span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="TRICHY"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                  box-sizing: border-box;
+                                  display: block;
+                                  overflow: hidden;
+                                  width: initial;
+                                  height: initial;
+                                  background: none;
+                                  opacity: 1;
+                                  border: 0;
+                                  margin: 0;
+                                  padding: 0;
+                                  position: relative;
+                                "><span style="
+                                    box-sizing: border-box;
+                                    display: block;
+                                    width: initial;
+                                    height: initial;
+                                    background: none;
+                                    opacity: 1;
+                                    border: 0;
+                                    margin: 0;
+                                    padding: 0;
+                                    padding-top: 100%;
+                                  "></span>
+                          <img alt="{{$match['teamb']['name']}}" src="{{ $match['teamb']['logo_url']  }}"
                             decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " />
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    box-sizing: border-box;
+                                    padding: 0;
+                                    border: none;
+                                    margin: auto;
+                                    display: block;
+                                    width: 0;
+                                    height: 0;
+                                    min-width: 100%;
+                                    max-width: 100%;
+                                    min-height: 100%;
+                                    max-height: 100%;
+                                  " />
                         </span>
                       </div>
                     </div>
@@ -1134,213 +1128,58 @@
               </div>
             </div>
           </div>
-          <article class="style_article__IayJx undefined" id="6485d42aa2ef417a258ac104">
+          <article class="style_article__IayJx undefined" id="{{$suh->cid}}">
             <a class="style_postimg__ftSiV d-block block-img mb-2 mb-md-3"
-              href="/cricket-appeal/3-players-who-might-retire-after-the-upcoming-edition-of-tnpl-5245/"><span style="
-                    box-sizing: border-box;
-                    display: block;
-                    overflow: hidden;
-                    width: initial;
-                    height: initial;
-                    background: none;
-                    opacity: 1;
-                    border: 0;
-                    margin: 0;
-                    padding: 0;
-                    position: relative;
-                  "><span style="
-                      box-sizing: border-box;
-                      display: block;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0;
-                      margin: 0;
-                      padding: 0;
-                      padding-top: 62.5%;
-                    "></span><img alt="Shijit Chandran."
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async"
-                  data-nimg="responsive" style="
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      bottom: 0;
-                      right: 0;
-                      box-sizing: border-box;
-                      padding: 0;
-                      border: none;
-                      margin: auto;
-                      display: block;
-                      width: 0;
-                      height: 0;
-                      min-width: 100%;
-                      max-width: 100%;
-                      min-height: 100%;
-                      max-height: 100%;
-                      background-size: cover;
-                      background-position: 0% 0%;
-                      filter: blur(20px);
-                      background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                    " /> </span></a>
+              href="{{route('post.details',[$suh->id,$suh->slug])}}"><span style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                      "><span style="
+                          box-sizing: border-box;
+                          display: block;
+                          width: initial;
+                          height: initial;
+                          background: none;
+                          opacity: 1;
+                          border: 0;
+                          margin: 0;
+                          padding: 0;
+                          padding-top: 62.5%;
+                        "></span><img alt="{{$suh->cid}}" src="{{getImageUrl($suh->img)}}" decoding="async"
+                  data-nimg="responsive" style="position: absolute;
+                          top: 0;
+                          left: 0;
+                          bottom: 0;
+                          right: 0;
+                          box-sizing: border-box;
+                          padding: 0;
+                          border: none;
+                          margin: auto;
+                          display: block;
+                          width: 0;
+                          height: 0;
+                          min-width: 100%;
+                          max-width: 100%;
+                          min-height: 100%;
+                          max-height: 100%;
+                          background-size: cover;
+                          background-position: 0% 0%;
+                          filter: blur(20px);
+                          background-image: url('{{getImageUrl($suh->img)}}');
+                        " /> </span></a>
             <h3 class="small-head mb-2">
-              <a href="/cricket-appeal/3-players-who-might-retire-after-the-upcoming-edition-of-tnpl-5245/">3
-                players who might retire after the upcoming TNPL
-                edition</a>
+              <a href="{{route('post.details',[$suh->id,$suh->slug])}}">{{ $suh->title }} </a>
             </h3>
             <div class="style_articleInfo__WqisT d-flex">
               <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        overflow: hidden;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0;
-                        margin: 0;
-                        padding: 0;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          padding-top: 100%;
-                        "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                      decoding="async" data-nimg="responsive" style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          bottom: 0;
-                          right: 0;
-                          box-sizing: border-box;
-                          padding: 0;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0;
-                          height: 0;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " /> </span></span>13 Jun 2023</span><span class="d-flex align-items-center"><span
-                  class="style_icon__Ukkjh d-block"><span style="
-                        box-sizing: border-box;
-                        display: block;
-                        overflow: hidden;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0;
-                        margin: 0;
-                        padding: 0;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          padding-top: 100%;
-                        "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg" decoding="async"
-                      data-nimg="responsive" style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          bottom: 0;
-                          right: 0;
-                          box-sizing: border-box;
-                          padding: 0;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0;
-                          height: 0;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                        " /> </span></span>4
-                <!-- -->
-                <!-- -->Min
-              </span>
-            </div>
-          </article>
-          <article id="648832155099b3516f5143e5" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
-            <div class="row-8 row">
-              <div class="col-sm-3 col-5">
-                <a class="style_postimg__ftSiV undefined d-block block-img"
-                  href="/cricket-match-predictions/tnpl-2023-match-4-dd-vs-rtw-match-prediction-who-will-win-todays-tnpl-match-between-dindigul-dragons-and-ba11sy-trichy-9999/"><span
-                    style="
-                        box-sizing: border-box;
-                        display: block;
-                        overflow: hidden;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0;
-                        margin: 0;
-                        padding: 0;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          padding-top: 62.5%;
-                        "></span><img alt="Dindigul Dragons"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async" data-nimg="responsive" style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          bottom: 0;
-                          right: 0;
-                          box-sizing: border-box;
-                          padding: 0;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0;
-                          height: 0;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                          background-size: cover;
-                          background-position: 0% 0%;
-                          filter: blur(20px);
-                          background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                        " /> </span></a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
-                <div>
-                  <h4 class="small-head mb-2">
-                    <a
-                      href="/cricket-match-predictions/tnpl-2023-match-4-dd-vs-rtw-match-prediction-who-will-win-todays-tnpl-match-between-dindigul-dragons-and-ba11sy-trichy-9999/">TNPL
-                      2023: Match 4, DD vs RTW Match Prediction</a>
-                  </h4>
-                </div>
-                <div class="style_articleInfo__WqisT d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
                             box-sizing: border-box;
                             display: block;
                             overflow: hidden;
@@ -1364,160 +1203,7 @@
                               padding: 0;
                               padding-top: 100%;
                             "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                          decoding="async" data-nimg="responsive" style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              box-sizing: border-box;
-                              padding: 0;
-                              border: none;
-                              margin: auto;
-                              display: block;
-                              width: 0;
-                              height: 0;
-                              min-width: 100%;
-                              max-width: 100%;
-                              min-height: 100%;
-                              max-height: 100%;
-                            " /> </span></span>13 Jun 2023</span><span class="d-flex align-items-center"><span
-                      class="style_icon__Ukkjh d-block"><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            overflow: hidden;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                          "><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              padding-top: 100%;
-                            "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                          decoding="async" data-nimg="responsive" style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              box-sizing: border-box;
-                              padding: 0;
-                              border: none;
-                              margin: auto;
-                              display: block;
-                              width: 0;
-                              height: 0;
-                              min-width: 100%;
-                              max-width: 100%;
-                              min-height: 100%;
-                              max-height: 100%;
-                            " /> </span></span>2
-                    <!-- -->
-                    <!-- -->Min
-                  </span>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article id="648818c61024650a1b619c70" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
-            <div class="row-8 row">
-              <div class="col-sm-3 col-5">
-                <a class="style_postimg__ftSiV undefined d-block block-img"
-                  href="/cricket-news/tnpl-2023-shahrukh-khans-all-round-show-propels-lyca-kovai-kings-to-emphatic-victory-over-idream-tiruppur-tamizhans-in-opener/"><span
-                    style="
-                        box-sizing: border-box;
-                        display: block;
-                        overflow: hidden;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0;
-                        margin: 0;
-                        padding: 0;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          padding-top: 62.5%;
-                        "></span><img alt="Shahrukh Khan and Vijay Shankar"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                       decoding="async" data-nimg="responsive" style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          bottom: 0;
-                          right: 0;
-                          box-sizing: border-box;
-                          padding: 0;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0;
-                          height: 0;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                          background-size: cover;
-                          background-position: 0% 0%;
-                          filter: blur(20px);
-                          background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                        " /> </span></a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
-                <div>
-                  <h4 class="small-head mb-2">
-                    <a
-                      href="/cricket-news/tnpl-2023-shahrukh-khans-all-round-show-propels-lyca-kovai-kings-to-emphatic-victory-over-idream-tiruppur-tamizhans-in-opener/">LKK
-                      beat ITT in inaugural TNPL 2023 match</a>
-                  </h4>
-                </div>
-                <div class="style_articleInfo__WqisT d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            overflow: hidden;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                          "><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              padding-top: 100%;
-                            "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                          decoding="async" data-nimg="responsive" style="
                               position: absolute;
                               top: 0;
                               left: 0;
@@ -1534,8 +1220,8 @@
                               max-width: 100%;
                               min-height: 100%;
                               max-height: 100%;
-                            " /> </span></span>13 Jun 2023</span><span class="d-flex align-items-center"><span
-                      class="style_icon__Ukkjh d-block"><span style="
+                            " /> </span></span>{{ Carbon\Carbon::parse($suh->created_at)->format('d M Y')
+                }}</span><span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
                             box-sizing: border-box;
                             display: block;
                             overflow: hidden;
@@ -1559,118 +1245,7 @@
                               padding: 0;
                               padding-top: 100%;
                             "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                          decoding="async" data-nimg="responsive" style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              box-sizing: border-box;
-                              padding: 0;
-                              border: none;
-                              margin: auto;
-                              display: block;
-                              width: 0;
-                              height: 0;
-                              min-width: 100%;
-                              max-width: 100%;
-                              min-height: 100%;
-                              max-height: 100%;
-                            " /> </span></span>2
-                    <!-- -->
-                    <!-- -->Min
-                  </span>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article id="6488169a4f03743744ab6b54" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
-            <div class="row-8 row">
-              <div class="col-sm-3 col-5">
-                <a class="style_postimg__ftSiV undefined d-block block-img"
-                  href="/cricket-match-predictions/tnpl-2023-match-3-smp-vs-nrk-match-prediction-who-will-win-todays-tnpl-match-between-siechem-madurai-panthers-and-nellai-royal-kings/"><span
-                    style="
-                        box-sizing: border-box;
-                        display: block;
-                        overflow: hidden;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0;
-                        margin: 0;
-                        padding: 0;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          padding-top: 62.5%;
-                        "></span><img alt="Siechem Madurai Panthers"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                       decoding="async" data-nimg="responsive" style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          bottom: 0;
-                          right: 0;
-                          box-sizing: border-box;
-                          padding: 0;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0;
-                          height: 0;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                          background-size: cover;
-                          background-position: 0% 0%;
-                          filter: blur(20px);
-                          background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                        " /> </span></a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
-                <div>
-                  <h4 class="small-head mb-2">
-                    <a
-                      href="/cricket-match-predictions/tnpl-2023-match-3-smp-vs-nrk-match-prediction-who-will-win-todays-tnpl-match-between-siechem-madurai-panthers-and-nellai-royal-kings/">TNPL
-                      2023: Match 3, SMP vs NRK Match Prediction</a>
-                  </h4>
-                </div>
-                <div class="style_articleInfo__WqisT d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            overflow: hidden;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                          "><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              padding-top: 100%;
-                            "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                          decoding="async" data-nimg="responsive" style="
                               position: absolute;
                               top: 0;
                               left: 0;
@@ -1687,879 +1262,13 @@
                               max-width: 100%;
                               min-height: 100%;
                               max-height: 100%;
-                            " /> </span></span>13 Jun 2023</span><span class="d-flex align-items-center"><span
-                      class="style_icon__Ukkjh d-block"><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            overflow: hidden;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                          "><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              padding-top: 100%;
-                            "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                          decoding="async" data-nimg="responsive" style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              box-sizing: border-box;
-                              padding: 0;
-                              border: none;
-                              margin: auto;
-                              display: block;
-                              width: 0;
-                              height: 0;
-                              min-width: 100%;
-                              max-width: 100%;
-                              min-height: 100%;
-                              max-height: 100%;
-                            " /> </span></span>2
-                    <!-- -->
-                    <!-- -->Min
-                  </span>
-                </div>
-              </div>
+                            " /> </span></span>{{ $suh->min }} Min</span>
             </div>
           </article>
-          <a class="theme-btn full-btn btn btn-primary" href="/t20/tnpl/">More from
-            <!-- -->
-            <!-- -->TNPL 2023
-            <!-- -->
-            &gt;
-          </a>
         </section>
-        <div
-          class="style_downloadBanner__koJYz w-100 d-flex flex-column align-items-center mb-2 mb-md-3 position-relative overflow-hidden text-center">
-          <div class="style_ctIcon__k4SaE overflow-hidden flex-shrink-0">
-            <span style="
-                  box-sizing: border-box;
-                  display: block;
-                  overflow: hidden;
-                  width: initial;
-                  height: initial;
-                  background: none;
-                  opacity: 1;
-                  border: 0;
-                  margin: 0;
-                  padding: 0;
-                  position: relative;
-                "><span style="
-                    box-sizing: border-box;
-                    display: block;
-                    width: initial;
-                    height: initial;
-                    background: none;
-                    opacity: 1;
-                    border: 0;
-                    margin: 0;
-                    padding: 0;
-                    padding-top: 190.625%;
-                  "></span><img alt="CT"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async"
-                data-nimg="responsive" style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    box-sizing: border-box;
-                    padding: 0;
-                    border: none;
-                    margin: auto;
-                    display: block;
-                    width: 0;
-                    height: 0;
-                    min-width: 100%;
-                    max-width: 100%;
-                    min-height: 100%;
-                    max-height: 100%;
-                  " />
-            </span>
-          </div>
-          <div>
-            <p class="mx-2">
-              The Infotainment of Cricket with CricTracker App
-            </p>
-            <p class="mx-2">Download Now</p>
-            <div class="d-flex justify-content-center">
-              <a class="mx-1" href="https://apps.apple.com/in/app/crictracker/id6443913175" rel="noreferrer"
-                target="_blank"><span style="
-                      box-sizing: border-box;
-                      display: inline-block;
-                      overflow: hidden;
-                      width: 96px;
-                      height: 32px;
-                      background: none;
-                      opacity: 1;
-                      border: 0;
-                      margin: 0;
-                      padding: 0;
-                      position: relative;
-                    "><img alt="CT"
-                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                    decoding="async" data-nimg="fixed" style="
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        bottom: 0;
-                        right: 0;
-                        box-sizing: border-box;
-                        padding: 0;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0;
-                        height: 0;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " /> </span></a><a class="mx-1" rel="noreferrer"
-                href="https://play.google.com/store/apps/details?id=com.app.crictracker" target="_blank"><span style="
-                      box-sizing: border-box;
-                      display: inline-block;
-                      overflow: hidden;
-                      width: 109px;
-                      height: 32px;
-                      background: none;
-                      opacity: 1;
-                      border: 0;
-                      margin: 0;
-                      padding: 0;
-                      position: relative;
-                    "><img alt="CT"
-                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                    decoding="async" data-nimg="fixed" style="
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        bottom: 0;
-                        right: 0;
-                        box-sizing: border-box;
-                        padding: 0;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0;
-                        height: 0;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                      " /> </span></a>
-            </div>
-          </div>
-          <div class="style_pattern__SXNNg position-absolute">
-            <span style="
-                  box-sizing: border-box;
-                  display: inline-block;
-                  overflow: hidden;
-                  width: 304px;
-                  height: 187px;
-                  background: none;
-                  opacity: 1;
-                  border: 0;
-                  margin: 0;
-                  padding: 0;
-                  position: relative;
-                "><img alt="CT" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                decoding="async" data-nimg="fixed" style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    box-sizing: border-box;
-                    padding: 0;
-                    border: none;
-                    margin: auto;
-                    display: block;
-                    width: 0;
-                    height: 0;
-                    min-width: 100%;
-                    max-width: 100%;
-                    min-height: 100%;
-                    max-height: 100%;
-                  " />
-            </span>
-          </div>
-        </div>
-
-        <section id="t20/t20-blast" class="style_homeArticles__4e_Na">
-          <h4 class="line-title text-uppercase text-center overflow-hidden">
-            <a class="rounded-pill position-relative d-inline-block" href="/t20/t20-blast/"><span
-                class="d-none d-md-block text-nowrap overflow-hidden">T20 Blast 2023</span><span
-                class="d-block d-md-none text-nowrap overflow-hidden">Vitality Blast</span></a>
-          </h4>
-          <div class="style_seriesInfo__LBbez text-center">
-            <p>Vitality Blast</p>
-            <div class="style_btnList__6CLwB text-nowrap scroll-list d-flex">
-              <nav class="font-semi d-flex me-auto ms-auto text-uppercase">
-                <a href="/t20/t20-blast/fixtures/">Fixtures</a><a href="/t20/t20-blast/standings/">Standings</a><a
-                  href="/t20/t20-blast/stats/">Stats</a><a href="/t20/t20-blast/squads/">Squads</a><a
-                  href="/t20/t20-blast/fantasy-tips/">Fantasy Tips</a>
-              </nav>
-            </div>
-            <div class="">
-              <div class="style_liveMatchCard__tNdaO d-flex flex-column align-items-center mb-2 position-relative">
-                <div
-                  class="w-100 position-relative d-flex flex-column flex-sm-row align-items-sm-center justify-content-between">
-                  <a class="style_scoreCardLink__PeqzJ"
-                    href="/live-scores/wor-vs-was-north-group-t20-vitality-blast-16-jun-2023/"></a>
-                  <div class="style_team__SgPqc flex-shrink-0 text-start mb-2 mb-sm-0">
-                    <div class="style_name__KSXfd d-flex align-items-center">
-                      <div class="style_teamImg__LLq3Z flex-shrink-0 rounded-circle overflow-hidden">
-                        <span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="WOR"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                            decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " />
-                        </span>
-                      </div>
-                      <div
-                        class="d-flex align-items-center align-items-sm-start flex-sm-column flex-grow-1 flex-sm-grow-0 justify-content-between justify-content-sm-start">
-                        <b class="mx-1">WOR</b>
-                        <p class="style_score__yQMk7 font-semi"></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="style_info__5CTrf text-start text-sm-center">
-                    <span class="style_badge__q5297 live mb-1 badge bg-primary"><span>Upcoming</span></span>
-                    <p class="d-inline d-sm-block">
-                      North Group
-                      <!-- -->,
-                      <!-- -->Leicester
-                    </p>
-                    <p class="d-inline d-sm-block">
-                      Match starts at
-                      <!-- -->
-                      <!-- -->16 Jun 2023, Fri, 3:30 PM IST
-                    </p>
-                  </div>
-                  <div class="style_team__SgPqc flex-shrink-0 text-end mb-2 mb-sm-0">
-                    <div
-                      class="style_name__KSXfd d-flex align-items-center justify-content-end flex-row-reverse flex-sm-row">
-                      <div
-                        class="d-flex align-items-center align-items-sm-end flex-sm-column flex-grow-1 flex-sm-grow-0 justify-content-between justify-content-sm-center">
-                        <b class="mx-1">WAS</b>
-                        <p class="style_score__yQMk7 font-semi"></p>
-                      </div>
-                      <div class="style_teamImg__LLq3Z flex-shrink-0 rounded-circle overflow-hidden">
-                        <span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0;
-                                margin: 0;
-                                padding: 0;
-                                padding-top: 100%;
-                              "></span><img alt="WAS"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                            decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
-                                box-sizing: border-box;
-                                padding: 0;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0;
-                                height: 0;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " />
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <article id="647daeb7b948073ed181cf30" class="style_article__IayJx style_articleMedium__ME07j undefined">
-            <div class="row-8 row">
-              <div class="col-sm-6 col-5">
-                <a
-                  href="/social-tracker-cricket/t20-blast-2023-shaheen-afridi-sends-jos-buttlers-off-stump-flying-with-searing-yorker/">
-                  <div class="style_postimg__ftSiV undefined block-img">
-                    <span style="
-                          box-sizing: border-box;
-                          display: block;
-                          overflow: hidden;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          position: relative;
-                        "><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            padding-top: 62.5%;
-                          "></span><img alt="Shaheen Afridi Dismissal."
-                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                        decoding="async" data-nimg="responsive" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            bottom: 0;
-                            right: 0;
-                            box-sizing: border-box;
-                            padding: 0;
-                            border: none;
-                            margin: auto;
-                            display: block;
-                            width: 0;
-                            height: 0;
-                            min-width: 100%;
-                            max-width: 100%;
-                            min-height: 100%;
-                            max-height: 100%;
-                            background-size: cover;
-                            background-position: 0% 0%;
-                            filter: blur(20px);
-                            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                          " />
-                    </span>
-                  </div>
-                </a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-6 col-7">
-                <div>
-                  <h3 class="small-head mb-1">
-                    <a
-                      href="/social-tracker-cricket/t20-blast-2023-shaheen-afridi-sends-jos-buttlers-off-stump-flying-with-searing-yorker/">Afridi
-                      sends Buttler's off stump flying with
-                      searing yorker</a>
-                  </h3>
-                  <p class="style_desc__jLYw_ style_desc__zP5qm">
-                    Pakistani fast-bowling sensation Shaheen Afridi has
-                    rediscovered his lethal form with the ball after
-                    recovering from his knee injury. The left-arm pacer
-                    displayed his imperious control of the ball, up
-                  </p>
-                </div>
-                <div class="style_articleInfo__WqisT undefined d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh undefined d-block"><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            overflow: hidden;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                          "><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              padding-top: 100%;
-                            "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                          decoding="async" data-nimg="responsive" style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              box-sizing: border-box;
-                              padding: 0;
-                              border: none;
-                              margin: auto;
-                              display: block;
-                              width: 0;
-                              height: 0;
-                              min-width: 100%;
-                              max-width: 100%;
-                              min-height: 100%;
-                              max-height: 100%;
-                            " /> </span></span>5 Jun 2023</span><span class="d-flex align-items-center"><span
-                      class="style_icon__Ukkjh undefined d-block"><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            overflow: hidden;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                          "><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              padding-top: 100%;
-                            "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                          decoding="async" data-nimg="responsive" style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              box-sizing: border-box;
-                              padding: 0;
-                              border: none;
-                              margin: auto;
-                              display: block;
-                              width: 0;
-                              height: 0;
-                              min-width: 100%;
-                              max-width: 100%;
-                              min-height: 100%;
-                              max-height: 100%;
-                            " /> </span></span>2
-                    <!-- -->
-                    <!-- -->Min
-                  </span>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article id="647c53b6a191afaf30098d1d" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
-            <div class="row-8 row">
-              <div class="col-sm-3 col-5">
-                <a class="style_postimg__ftSiV undefined d-block block-img"
-                  href="/cricket-news/important-that-people-see-women-in-different-roles-throughout-sue-redfern-on-becoming-first-woman-to-umpire-t20-blast-clash-4703/"><span
-                    style="
-                        box-sizing: border-box;
-                        display: block;
-                        overflow: hidden;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0;
-                        margin: 0;
-                        padding: 0;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          padding-top: 62.5%;
-                        "></span><img alt="Sue Redfern"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async" data-nimg="responsive" style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          bottom: 0;
-                          right: 0;
-                          box-sizing: border-box;
-                          padding: 0;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0;
-                          height: 0;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                          background-size: cover;
-                          background-position: 0% 0%;
-                          filter: blur(20px);
-                          background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                        " /> </span></a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
-                <div>
-                  <h4 class="small-head mb-2">
-                    <a
-                      href="/cricket-news/important-that-people-see-women-in-different-roles-throughout-sue-redfern-on-becoming-first-woman-to-umpire-t20-blast-clash-4703/">Sue
-                      Redfern to become first woman to umpire T20
-                      Blast clash</a>
-                  </h4>
-                </div>
-                <div class="style_articleInfo__WqisT d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            overflow: hidden;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                          "><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              padding-top: 100%;
-                            "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                          decoding="async" data-nimg="responsive" style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              box-sizing: border-box;
-                              padding: 0;
-                              border: none;
-                              margin: auto;
-                              display: block;
-                              width: 0;
-                              height: 0;
-                              min-width: 100%;
-                              max-width: 100%;
-                              min-height: 100%;
-                              max-height: 100%;
-                            " /> </span></span>4 Jun 2023</span><span class="d-flex align-items-center"><span
-                      class="style_icon__Ukkjh d-block"><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            overflow: hidden;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                          "><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              padding-top: 100%;
-                            "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                          decoding="async" data-nimg="responsive" style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              box-sizing: border-box;
-                              padding: 0;
-                              border: none;
-                              margin: auto;
-                              display: block;
-                              width: 0;
-                              height: 0;
-                              min-width: 100%;
-                              max-width: 100%;
-                              min-height: 100%;
-                              max-height: 100%;
-                            " /> </span></span>2
-                    <!-- -->
-                    <!-- -->Min
-                  </span>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article id="6479b4cd23632738d7f2525a" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
-            <div class="row-8 row">
-              <div class="col-sm-3 col-5">
-                <a class="style_postimg__ftSiV undefined d-block block-img"
-                  href="/cricket-news/it-is-very-easy-for-people-to-overcomplicate-t20-cricket-it-is-a-simple-game-mason-crane/"><span
-                    style="
-                        box-sizing: border-box;
-                        display: block;
-                        overflow: hidden;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0;
-                        margin: 0;
-                        padding: 0;
-                        position: relative;
-                      "><span style="
-                          box-sizing: border-box;
-                          display: block;
-                          width: initial;
-                          height: initial;
-                          background: none;
-                          opacity: 1;
-                          border: 0;
-                          margin: 0;
-                          padding: 0;
-                          padding-top: 62.5%;
-                        "></span><img alt="Mason Crane"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async" data-nimg="responsive" style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          bottom: 0;
-                          right: 0;
-                          box-sizing: border-box;
-                          padding: 0;
-                          border: none;
-                          margin: auto;
-                          display: block;
-                          width: 0;
-                          height: 0;
-                          min-width: 100%;
-                          max-width: 100%;
-                          min-height: 100%;
-                          max-height: 100%;
-                          background-size: cover;
-                          background-position: 0% 0%;
-                          filter: blur(20px);
-                          background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAZACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEAACAgICAQUAAAAAAAAAAAAAAQIRITEDEmEEIjJBQv/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECQf/aAAwDAQACEQMRAD8A4PBVAl1axsHRyE6dE08j63JRTbb0bvgUOPOyLnnXK1YEyl73EBZWWYqN0vI7S+yVoH8TE0g+s0607Rrz+oco02c36HzbiXpc3IxzKeAKjtgNj//Z');
-                        " /> </span></a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
-                <div>
-                  <h4 class="small-head mb-2">
-                    <a
-                      href="/cricket-news/it-is-very-easy-for-people-to-overcomplicate-t20-cricket-it-is-a-simple-game-mason-crane/">Mason
-                      Crane remarks ahead of South Coast Derby</a>
-                  </h4>
-                </div>
-                <div class="style_articleInfo__WqisT d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            overflow: hidden;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                          "><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              padding-top: 100%;
-                            "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg"
-                          decoding="async" data-nimg="responsive" style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              box-sizing: border-box;
-                              padding: 0;
-                              border: none;
-                              margin: auto;
-                              display: block;
-                              width: 0;
-                              height: 0;
-                              min-width: 100%;
-                              max-width: 100%;
-                              min-height: 100%;
-                              max-height: 100%;
-                            " /> </span></span>2 Jun 2023</span><span class="d-flex align-items-center"><span
-                      class="style_icon__Ukkjh d-block"><span style="
-                            box-sizing: border-box;
-                            display: block;
-                            overflow: hidden;
-                            width: initial;
-                            height: initial;
-                            background: none;
-                            opacity: 1;
-                            border: 0;
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                          "><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0;
-                              margin: 0;
-                              padding: 0;
-                              padding-top: 100%;
-                            "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
-                          decoding="async" data-nimg="responsive" style="
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              bottom: 0;
-                              right: 0;
-                              box-sizing: border-box;
-                              padding: 0;
-                              border: none;
-                              margin: auto;
-                              display: block;
-                              width: 0;
-                              height: 0;
-                              min-width: 100%;
-                              max-width: 100%;
-                              min-height: 100%;
-                              max-height: 100%;
-                            " /> </span></span>2
-                    <!-- -->
-                    <!-- -->Min
-                  </span>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="style_article__IayJx style_articleList__HOi_f py-0">
-            <h4 id="647877eda191afaf305ccec9" class="small-head mb-0">
-              <a class="d-flex align-items-center"
-                href="/cricket-news/t20-blast-2023-josh-cobbs-stunning-catch-sends-rob-yates-packing/"><svg width="20"
-                  height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M3.66667 2H15.3333C16.25 2 17 2.75 17 3.66667V12L12 17H3.66667C2.75 17 2 16.25 2 15.3333V3.66667C2 2.75 2.75 2 3.66667 2ZM15.3333 11.1667V3.66667H3.66667V15.3333H11.1667V11.1667H15.3333ZM9.5 11.1667H5.33333V9.5H9.5V11.1667ZM5.33333 7.83333H13.6667V6.16667H5.33333V7.83333Z"
-                    fill="#757A82"></path>
-                </svg><span class="style_textTruncate__R9wLD">Cobb completes stunning catch of Yates during T20
-                  Blast</span></a>
-            </h4>
-            <h4 id="6478490c23632738d7b6195f" class="small-head mb-0">
-              <a class="d-flex align-items-center"
-                href="/cricket-news/t20-blast-hampshire-skipper-james-vince-surpasses-luke-wright-to-become-highest-run-scorer-in-competitions-history/"><svg
-                  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M3.66667 2H15.3333C16.25 2 17 2.75 17 3.66667V12L12 17H3.66667C2.75 17 2 16.25 2 15.3333V3.66667C2 2.75 2.75 2 3.66667 2ZM15.3333 11.1667V3.66667H3.66667V15.3333H11.1667V11.1667H15.3333ZM9.5 11.1667H5.33333V9.5H9.5V11.1667ZM5.33333 7.83333H13.6667V6.16667H5.33333V7.83333Z"
-                    fill="#757A82"></path>
-                </svg><span class="style_textTruncate__R9wLD">T20 Blast: Vince surpasses Wright to lead run scoring
-                  chart</span></a>
-            </h4>
-            <h4 id="647433e83eb44cee8ad397bd" class="small-head mb-0">
-              <a class="d-flex align-items-center"
-                href="/cricket-news/greek-australian-cricketer-peter-hatzoglou-signs-short-term-deal-with-glamorgan/"><svg
-                  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M3.66667 2H15.3333C16.25 2 17 2.75 17 3.66667V12L12 17H3.66667C2.75 17 2 16.25 2 15.3333V3.66667C2 2.75 2.75 2 3.66667 2ZM15.3333 11.1667V3.66667H3.66667V15.3333H11.1667V11.1667H15.3333ZM9.5 11.1667H5.33333V9.5H9.5V11.1667ZM5.33333 7.83333H13.6667V6.16667H5.33333V7.83333Z"
-                    fill="#757A82"></path>
-                </svg><span class="style_textTruncate__R9wLD">Peter Hatzoglou signs short-term deal with
-                  Glamorgan</span></a>
-            </h4>
-          </article>
-          <a class="theme-btn full-btn btn btn-primary" href="/t20/t20-blast/">More from
-            <!-- -->
-            <!-- -->T20 Blast 2023
-            <!-- -->
-            &gt;
-          </a>
-        </section>
+        @endforeach
+        {{-- LATEST UPDATE HIGHLIGHTER END --}}
+        {{-- SEASON UPDATE END --}}
       </div>
       <div class="style_commonSidebar__uyNzj common-sidebar bt-width  d-lg-block col-lg-3">
         <div class="style_rankingTab__ZG_Ko widget">

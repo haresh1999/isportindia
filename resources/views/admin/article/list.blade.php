@@ -9,7 +9,7 @@
     </div>
     <div class="page-body pb-4 pb-xl-6">
         @if (Session::has('article.success'))
-            <div class="alert alert-green">{{ Session::get('article.success') }}</div>
+        <div class="alert alert-green">{{ Session::get('article.success') }}</div>
         @endif
         <div class="card mb-2 p-4 p-sm-5">
             <div class="card-head d-flex flex-wrap align-items-center justify-content-between mb-2 mb-sm-7">
@@ -42,27 +42,46 @@
                 <div class="drafts tab-content">
                     <div class="tab-pane fade active show" id="tab-list" role="tabpanel">
                         <div class="row g-0">
-                            <div class="sheet-table d-block d-md-table">
+                            <div class="sheet-table d-block d-md-table text-center">
                                 <div class="border-bottom d-none d-md-table-row">
                                     {{-- <div class="checkbox-cell d-table-cell py-4 px-3">
                                         <input class="form-check-input" data-group-checkbox="product" type="checkbox" />
                                     </div> --}}
                                     <div class="d-table-cell pb-4 px-3 caption">#</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Title</div>
+                                    <div class="d-table-cell pb-4 px-3 caption">Category</div>
+                                    <div class="d-table-cell pb-4 px-3 caption">Type</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Views</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Likes</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Status</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Created By</div>
+                                    <div class="d-table-cell pb-4 px-3 caption">Created At</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Edit</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Delete</div>
                                 </div>
+                                @foreach ($res as $key => $re)
                                 <div class="border-bottom sheet-row position-relative d-block d-md-table-row pb-4 mb-4">
-                                    @foreach ($res as $key => $re)
                                     <div class="checkbox-cell sheet-cell d-none d-md-table-cell py-2 py-md-4 px-3">
                                         {{ ++$key }}
                                     </div>
                                     <div class="sheet-cell d-block d-md-table-cell py-2 py-md-4 px-0 px-md-3">
-                                        {{ $re->title }}
+                                        {{Str::limit($re->title,25,'...')}}
+                                    </div>
+                                    <div class="sheet-cell d-block d-md-table-cell py-2 py-md-4 px-0 px-md-3">
+                                        @if ($re->category == 'latest_update')
+                                        Latest Update
+                                        @else
+                                        Seasons Update
+                                        @endif
+                                    </div>
+                                    <div class="sheet-cell d-block d-md-table-cell py-2 py-md-4 px-0 px-md-3">
+                                        @if ($re->type == 'highlighter')
+                                        Highlighter
+                                        @elseif ($re->type == 'normal')
+                                        Normal
+                                        @elseif ($re->type == 'one_liner')
+                                        One Liner
+                                        @endif
                                     </div>
                                     <div class="sheet-cell d-block d-md-table-cell py-2 py-md-4 px-0 px-md-3">
                                         {{ $re->views }}
@@ -81,21 +100,25 @@
                                         {{ $re->user->name }}
                                     </div>
                                     <div class="sheet-cell d-block d-md-table-cell py-2 py-md-4 px-0 px-md-3">
+                                        {{ Carbon\Carbon::parse($re->created_at)->format('d-m-Y H:i:s') }}
+                                    </div>
+                                    <div class="sheet-cell d-block d-md-table-cell py-2 py-md-4 px-0 px-md-3">
                                         <a href="{{ route('article.edit',$re->id) }}">
                                             <svg class="icon icon-edit">
                                                 <use xlink:href="#icon-edit"></use>
                                             </svg>
                                         </a>
                                     </div>
-                                    <div  class="sheet-cell d-block d-md-table-cell py-2 py-md-4 px-0 px-md-3">
-                                        <a onclick="return confirm('are you sure want to delete?')" href="{{ route('article.destroy',$re->id) }}">
+                                    <div class="sheet-cell d-block d-md-table-cell py-2 py-md-4 px-0 px-md-3">
+                                        <a onclick="return confirm('are you sure want to delete?')"
+                                            href="{{ route('article.destroy',$re->id) }}">
                                             <svg class="icon icon-trash">
                                                 <use xlink:href="#icon-trash"></use>
                                             </svg>
                                         </a>
                                     </div>
-                                    @endforeach
                                 </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
