@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class NewsController extends Controller
 {
@@ -55,7 +56,7 @@ class NewsController extends Controller
         ]);
 
         $v['created_by'] = auth()->id();
-        $v['slug'] = \Str::slug($v['title']);
+        $v['slug'] = Str::slug($v['title']);
         $v['img'] = uploadImage($v['img'], 'news');
 
         News::create($v);
@@ -95,7 +96,7 @@ class NewsController extends Controller
         ]);
 
         $v['created_by'] = auth()->id();
-        $v['slug'] = \Str::slug($v['title']);
+        $v['slug'] = Str::slug($v['title']);
 
         if (isset($v['img'])) {
 
