@@ -18,25 +18,25 @@
                     </div>
                     <article>
                         <h1 class="style_title__1dJo7">
-                            {{ $res->title }}
+                            {{ $news->title }}
                         </h1>
                         <h2 class="style_subTitle___67cW small-head mb-2 mb-md-3 pt-2 pt-md-3">
-                            {!! Str::limit($res->description, 256, '...') !!}
+                            {!! Str::limit($news->description, 256, '...') !!}
                         </h2>
                         <div class="undefined d-flex flex-wrap align-items-start mb-2 mb-md-3">
                             <div class="style_author__Kem0w font-semi">
                                 <div class="undefined pe-2 my-1 mb-md-2 mt-md-0"><a class="text-capitalize "
-                                        href="/author/ctstaff/"><span class="text-muted">By </span>{{ $res->user->name
+                                        href="/author/ctstaff/"><span class="text-muted">By </span>{{ $news->user->name
                                         }} <span
                                             class="style_verfied__NQDlI d-inline-block rounded-circle align-text-top"></span></a>
                                 </div>
                                 <p class="undefined w-100 xsmall-text font-semi mb-0"><time
                                         class="op-published d-none d-md-inline-block"
                                         datetime="2023-06-14T09:30:18.000Z">Published - {{
-                                        Carbon\Carbon::parse($res->created_at)->format('M d, Y H:m') }} IST
+                                        Carbon\Carbon::parse($news->created_at)->format('M d, Y H:m') }} IST
                                         |&nbsp;</time><time class="op-modified"
                                         datetime="2023-06-14T16:12:22.650Z">Updated - {{
-                                        Carbon\Carbon::parse($res->updated_at)->format('M d, Y H:m') }}
+                                        Carbon\Carbon::parse($news->updated_at)->format('M d, Y H:m') }}
                                         IST</time></p>
                             </div>
                             <div class="ms-auto">
@@ -52,7 +52,7 @@
                                                     points="10.4330357 4.28571429 19.0044643 4.28571429 19.0044643 12.8571429">
                                                 </polyline>
                                             </g>
-                                        </svg></span> View : {{$res->views}}</p>
+                                        </svg></span> View : {{$news->views}}</p>
 
                                 <p class="style_views__04sMk style_duration__EM9F7 mb-0 d-flex align-items-center">
                                     <span class="style_iconOuter__jQd_D"><svg width="14px" height="14px"
@@ -69,7 +69,7 @@
                                                     </polygon>
                                                 </g>
                                             </g>
-                                        </svg></span>{{$res->min}} Min Read
+                                        </svg></span>{{$news->min}} Min Read
                                 </p>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                         style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
                                         fetchpriority="high" alt="Lanka Premier League"
                                         sizes="(max-width: 767px) 240px, (max-width: 991px) 320px, (max-width: 1190px) 360px, (max-width: 1400px) 700px, (max-width: 1920px) 800px"
-                                        src="{{ getImageUrl($res->img) }}" decoding="async" data-nimg="responsive"
+                                        src="{{ getImageUrl($news->img) }}" decoding="async" data-nimg="responsive"
                                         style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span>
 
                                 {{-- <div class="style_captionBlock__4sWuT">
@@ -110,7 +110,7 @@
                                                 src="/_next/static/media/clap-theme-icon.e7c59412.svg" decoding="async"
                                                 data-nimg="responsive"
                                                 style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>
-                                    <span class="ms-2 likes">{{$res->likes}}</span>
+                                    <span class="ms-2 likes">{{$news->likes}}</span>
                                     <span
                                         class="style_currentClap__T63UC d-block text-center bg-secondary rounded-circle"></span></button>
                             </div>
@@ -118,7 +118,7 @@
                         <div class="d-flex d-md-none flex-column" style="height: 260px;"></div>
                         <div class="style_commonContent__Aq_YG  ">
                             <div class="undefined text-break" id="content">
-                                {!! $res->description !!}
+                                {!! $news->description !!}
                             </div>
                         </div>
                     </article>
@@ -175,7 +175,6 @@
                         @include('layout.news')
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -188,7 +187,7 @@
   $.ajax({
     type: "post",
     url: "{{ route('likes.add') }}",
-    data: {'_token' : "{{ csrf_token() }}",'id':"{{ $res->id }}",'type' : 'cricspecial'},
+    data: {'_token' : "{{ csrf_token() }}",'id':"{{ $news->id }}",'type' : 'news'},
     dataType: "json",
     success: function (response) {
         $('.likes').text(response)

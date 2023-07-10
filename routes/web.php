@@ -23,13 +23,13 @@ use App\Http\Controllers\Admin\NewsController;
 |
 */
 
-// dd();
-// dd(getSeasons('seasons/2021/competitions'));
-
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('post-details/{id}/{slug}', [HomeController::class, 'postDetails'])->name('post.details');
-Route::get('cricspecial-details/{id}/{slug}', [HomeController::class, 'cricspecialDetails'])->name('cricspecial.details');
 Route::get('score-card/{match_id}', [HomeController::class, 'scoreCard'])->name('score.card');
+
+// BLOG SECTION
+Route::get('post-details/{slug}', [HomeController::class, 'postDetails'])->name('post.details');
+Route::get('cricspecial-details/{slug}', [HomeController::class, 'cricspecialDetails'])->name('cricspecial.details');
+Route::get('news/{slug}', [HomeController::class, 'newsDetails'])->name('news.details');
 
 Route::prefix('admin')->group(function () {
 

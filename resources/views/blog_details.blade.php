@@ -158,62 +158,7 @@
                                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span><span>CricSpecial</span>
                     </h3>
                     <div class="style_slider__UbtNO   process-arrow position-relative">
-                        <div id="carousel" class="style_inner__csGhV slider-track d-flex style_single__wL76r"
-                            id="c-slider" style="gap: 15px">
-                            @foreach ($cric as $key => $cri)
-                            <div data-slick-index="{{++$key}}">
-                                <article class="style_item__CjFgl">
-                                    <div class="block-img">
-                                        <a href="{{route('cricspecial.details',[$cri->id,$cri->slug])}}"><span style="
-                              box-sizing: border-box;
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0px;
-                              margin: 0px;
-                              padding: 0px;
-                              position: relative;
-                            "><span style="
-                                box-sizing: border-box;
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0px;
-                                margin: 0px;
-                                padding: 62.5% 0px 0px;
-                              "></span><img alt="Shijit Chandran."
-                                                    sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                                                    src="{{ getImageUrl($cri->img) }}" decoding="async"
-                                                    data-nimg="responsive" class="style_postimg__rYHSo" style="
-                                position: absolute;
-                                inset: 0px;
-                                box-sizing: border-box;
-                                padding: 0px;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0px;
-                                height: 0px;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              " /></span></a>
-                                    </div>
-                                    <span class="undefined my-2 badge bg-secondary">Cricket Appeal</span>
-                                    <h4 class="small-head mb-0 overflow-hidden">
-                                        <a href="{{route('cricspecial.details',[$cri->id,$cri->slug])}}">{{
-                                            $cri->short_description }} </a>
-                                    </h4>
-                                </article>
-                            </div>
-                            @endforeach
-                        </div>
+                        @include('layout.cric_special')
                     </div>
                 </div>
                 <div class="trendingNews trending-news widget">
@@ -227,31 +172,7 @@
                             </svg></span>Trending News
                     </h3>
                     <div class="trendingList">
-                        <article class="d-flex align-items-start"><b class="num">1</b>
-                            <div class="desc flex-grow-1"><span class="badge bg-primary">Social Tracker</span>
-                                <h4 class="small-head mb-0"><a class="overflow-hidden"
-                                        href="/social-tracker-cricket/just-two-young-boys-from-baroda-who-never-gave-up-hardik-pandyas-heartwarming-photo-with-brother-krunal-wins-internet/">'Just
-                                        two young boys from Baroda who never gave up' - Hardik Pandya's
-                                        heartwarming photo with brother Krunal wins internet</a></h4>
-                            </div>
-                        </article>
-                        <article class="d-flex align-items-start"><b class="num">2</b>
-                            <div class="desc flex-grow-1"><span class="badge bg-primary">Stats Mania</span>
-                                <h4 class="small-head mb-0"><a class="overflow-hidden"
-                                        href="/cricket-stats-mania/rr-vs-srh-match-52-ipl-2023-stats-review-yashasvi-jaiswals-feat-srhs-record-chase-and-other-stats/">RR
-                                        vs SRH, Match 52 IPL 2023 Stats Review: Yashasvi Jaiswal's feat, SRH's
-                                        record chase and other stats</a></h4>
-                            </div>
-                        </article>
-                        <article class="d-flex align-items-start"><b class="num">3</b>
-                            <div class="desc flex-grow-1"><span class="badge bg-primary">Twitter
-                                    Reactions</span>
-                                <h4 class="small-head mb-0"><a class="overflow-hidden"
-                                        href="/twitter-reactions-cricket/twitter-reactions-new-zealand-down-pakistan-despite-iftikhar-ahmeds-fighting-knock-in-karachi/">Twitter
-                                        Reactions: New Zealand down Pakistan despite Iftikhar Ahmed's fighting
-                                        knock in Karachi</a></h4>
-                            </div>
-                        </article>
+                        @include('layout.news')
                     </div>
                 </div>
             </div>

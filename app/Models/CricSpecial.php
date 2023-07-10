@@ -23,4 +23,9 @@ class CricSpecial extends Model
     {
         return $this->hasOne(User::class,'id','created_by');
     }
+
+    public function getData()
+    {
+        return static::with('user')->where('status', 1)->orderBy('id', 'desc')->limit(5)->get();
+    }
 }

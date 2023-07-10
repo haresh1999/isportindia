@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\CricSpecial;
+use App\Models\News;
 use App\Models\PostLikes;
 use Illuminate\Http\Request;
 
@@ -38,38 +39,30 @@ class HomeController extends Controller
             ->limit(5)
             ->get();
 
-        $cric = CricSpecial::where('status', 1)
-            ->orderBy('id', 'desc')
-            ->limit(5)
-            ->get();
-
         return view('home', compact(
             'latestUpdateHighlighter',
             'latestUpdateNormal',
             'latestUpdateOneLiner',
             'seasonsUpdateHighlighter',
-            'cric',
         ));
     }
 
-    public function postDetails($id, $slug)
+    public function postDetails($slug)
     {
         $res = Article::with('user')->where('slug', $slug)->first();
 
         $res->increment('views', 1);
 
-        $cric = CricSpecial::where('status', 1)->orderBy('id', 'desc')->limit(5)->get();
-
-        return view('blog_details', compact('res', 'cric'));
+        return view('blog_details', compact('res'));
     }
 
-    public function cricspecialDetails($id, $slug)
+    public function cricspecialDetails($slug)
     {
         $res = CricSpecial::with('user')->where('slug', $slug)->first();
 
-        $cric = CricSpecial::where('status', 1)->orderBy('id', 'desc')->limit(5)->get();
-
-        return view('cricspecial_details', compact('res', 'cric'));
+        $res->increment('views', 1);
+        
+        return view('cricspecial_details', compact('res'));
     }
 
     public function scoreCard($matchId)
@@ -81,14 +74,27 @@ class HomeController extends Controller
 
     public function likesAdd(Request $request)
     {
-        if (PostLikes::where('post_id', $request->id)->where('ip_address', $request->ip())->exists()) {
+        if (PostLikes::where('post_id', $request->id)
+            ->where('ip_address', $request->ip())
+            ->where('type', $request->type)
+            ->exists()
+        ) {
 
             PostLikes::where('post_id', $request->id)
                 ->where('ip_address', $request->ip())
                 ->where('type', $request->type)
                 ->delete();
 
-            Article::where('id', $request->id)->decrement('likes', 1);
+            if ($request->type == 'article') {
+
+                Article::where('id', $request->id)->decrement('likes', 1);
+            } elseif ($request->type == 'news') {
+
+                News::where('id', $request->id)->decrement('likes', 1);
+            } elseif ($request->type == 'cricspecial') {
+
+                CricSpecial::where('id', $request->id)->decrement('likes', 1);
+            }
         } else {
 
             PostLikes::create([
@@ -97,11 +103,38 @@ class HomeController extends Controller
                 'type' => $request->type
             ]);
 
-            Article::where('id', $request->id)->increment('likes', 1);
+            if ($request->type == 'article') {
+
+                Article::where('id', $request->id)->update(['likes' => \DB::raw('likes+1')]);
+            } elseif ($request->type == 'news') {
+
+                News::where('id', $request->id)->update(['likes' => \DB::raw('likes+1')]);
+            } elseif ($request->type == 'cricspecial') {
+
+                CricSpecial::where('id', $request->id)->update(['likes' => \DB::raw('likes+1')]);
+            }
         }
 
-        $likes = Article::where('id', $request->id)->value('likes');
+        if ($request->type == 'article') {
+
+            $likes = Article::where('id', $request->id)->value('likes');
+        } elseif ($request->type == 'news') {
+
+            $likes = News::where('id', $request->id)->value('likes');
+        } elseif ($request->type == 'cricspecial') {
+
+            $likes = CricSpecial::where('id', $request->id)->value('likes');
+        }
 
         return response()->json($likes);
+    }
+
+    public function newsDetails($slug)
+    {
+        $news = News::where('slug', $slug)->first();
+
+        $news->increment('views', 1);
+
+        return view('news_details', compact('news'));
     }
 }
