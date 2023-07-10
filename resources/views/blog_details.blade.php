@@ -116,7 +116,7 @@
                             </div>
                         </div>
                         <div class="d-flex d-md-none flex-column" style="height: 260px;"></div>
-                        <div class="style_commonContent__Aq_YG  ">
+                        <div class="style_commonContent__Aq_YG">
                             <div class="undefined text-break" id="content">
                                 {!! $res->description !!}
                             </div>

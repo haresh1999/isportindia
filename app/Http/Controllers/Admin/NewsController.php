@@ -86,11 +86,11 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
         $v = $request->validate([
-            'title' => 'required|max:255|unique:news',
+            'title' => 'required|max:255|unique:news,title,' . $id,
             'short_description' => 'required',
             'description' => 'required',
             'status' => 'required',
-            'img' => 'required|image',
+            'img' => 'nullable|image',
             'min' => 'required|numeric'
         ]);
 
@@ -105,7 +105,7 @@ class NewsController extends Controller
 
             deleteImage($news);
         }
-        
+
         News::where('id', $id)->update($v);
 
         return redirect()->route('news')->with('news.success', 'News updated successfully');
