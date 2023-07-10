@@ -7,14 +7,14 @@
     src="{{ asset('admin/img/logo-light.png') }}"></a>
 <div class="nav nav-pills flex-column mb-auto mt-8 menu">
 
-  <div class="nav-item mb-2">
+  {{-- <div class="nav-item mb-2">
     <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/dashboard') ? 'active' : '' }}"
       href="{{route('dashboard')}}">
       <svg class="icon icon-double-home icon-item">
         <use class="fill" href="#icon-home-fill"></use>
         <use class="stroke" href="#icon-home-stroke"></use>
       </svg>Home</a>
-  </div>
+  </div> --}}
 
   {{-- <div class="nav-item mb-2">
     <a class="nav-link d-flex align-items-center p-3 active" href="{{route('article')}}">
