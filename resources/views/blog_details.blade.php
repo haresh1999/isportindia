@@ -266,7 +266,7 @@
   $.ajax({
     type: "post",
     url: "{{ route('likes.add') }}",
-    data: {'_token' : "{{ csrf_token() }}",'id':"{{ $res->id }}"},
+    data: {'_token' : "{{ csrf_token() }}",'id':"{{ $res->id }}",'type' : 'article'},
     dataType: "json",
     success: function (response) {
         $('.likes').text(response)

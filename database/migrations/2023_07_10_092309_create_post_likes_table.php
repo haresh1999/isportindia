@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('post_id');
             $table->string('ip_address');
+            $table->string('type')->comment('article,cricspecial,news');
             $table->timestamps();
         });
     }

@@ -2,10 +2,25 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'created_by',
+        'views',
+        'likes',
+        'title',
+        'slug',
+        'short_description',
+        'description',
+        'status',
+        'img',
+        'min',
+    ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class,'id','created_by');
+    }
 }

@@ -52,7 +52,7 @@
                             @error('short_description')
                             <span class="text-red">{{$message}}</span>
                             @enderror
-                            <textarea class="form-control mb-5 mb-sm-6" name="short_description" rows="10"
+                            <textarea class="form-control mb-5 mb-sm-6" name="short_description" rows="3"
                                 cols="10">{{ old('short_description') }}</textarea>
 
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Description

@@ -56,7 +56,7 @@ class HomeController extends Controller
     {
         $res = Article::with('user')->where('slug', $slug)->first();
 
-        $res->increment('views',1);
+        $res->increment('views', 1);
 
         $cric = CricSpecial::where('status', 1)->orderBy('id', 'desc')->limit(5)->get();
 
@@ -81,26 +81,27 @@ class HomeController extends Controller
 
     public function likesAdd(Request $request)
     {
-        if (PostLikes::where('post_id',$request->id)->where('ip_address',$request->ip())->exists()) {
+        if (PostLikes::where('post_id', $request->id)->where('ip_address', $request->ip())->exists()) {
 
-            PostLikes::where('post_id',$request->id)
-            ->where('ip_address',$request->ip())
-            ->delete();
+            PostLikes::where('post_id', $request->id)
+                ->where('ip_address', $request->ip())
+                ->where('type', $request->type)
+                ->delete();
 
-            Article::where('id',$request->id)->decrement('likes',1);
+            Article::where('id', $request->id)->decrement('likes', 1);
+        } else {
 
-        }else{
-            
             PostLikes::create([
                 'post_id' => $request->id,
-                'ip_address' => $request->ip()
+                'ip_address' => $request->ip(),
+                'type' => $request->type
             ]);
 
-            Article::where('id',$request->id)->increment('likes',1);
+            Article::where('id', $request->id)->increment('likes', 1);
         }
 
-        $likes = Article::where('id',$request->id)->value('likes');
-        
+        $likes = Article::where('id', $request->id)->value('likes');
+
         return response()->json($likes);
     }
 }

@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
-use App\Models\CricSpecial;
+use App\Models\News;
 use Illuminate\Http\Request;
 
-class CricSpecialController extends Controller
+class NewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,16 +15,16 @@ class CricSpecialController extends Controller
      */
     public function index(Request $request)
     {
-        $res = CricSpecial::with('user')
+        $news = News::with('user')
             ->when(isset($request->search), function ($q) use ($request) {
-                $q->where('title', 'like', "%{$request->search}%");
-                $q->Orwhere('short_description', 'like', "%{$request->search}%");
-                $q->Orwhere('description', 'like', "%{$request->search}%");
+                $q->where('title', 'like', "%{$request->title}%");
+                $q->Orwhere('short_description', 'like', "%{$request->short_description}%");
+                $q->Orwhere('description', 'like', "%{$request->description}%");
             })
             ->orderBy('id', 'desc')
             ->paginate(10);
 
-        return view('admin.cricspecial.list', compact('res'));
+        return view('admin.news.list', compact('news'));
     }
 
     /**
@@ -35,7 +34,7 @@ class CricSpecialController extends Controller
      */
     public function create()
     {
-        return view('admin.cricspecial.create');
+        return view('admin.news.create');
     }
 
     /**
@@ -47,7 +46,7 @@ class CricSpecialController extends Controller
     public function store(Request $request)
     {
         $v = $request->validate([
-            'title' => 'required|max:255|unique:cric_specials',
+            'title' => 'required|max:255|unique:news',
             'short_description' => 'required',
             'description' => 'required',
             'status' => 'required',
@@ -57,84 +56,71 @@ class CricSpecialController extends Controller
 
         $v['created_by'] = auth()->id();
         $v['slug'] = \Str::slug($v['title']);
-        $v['img'] = uploadImage($v['img'], 'cricspecial');
+        $v['img'] = uploadImage($v['img'], 'news');
 
-        CricSpecial::create($v);
+        News::create($v);
 
-        return redirect()->route('cricspecial')->with('cricspecial.success', 'CricSpecial Created successfully!');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\CricSpecial  $cricSpecial
-     * @return \Illuminate\Http\Response
-     */
-    public function show(CricSpecial $cricSpecial)
-    {
-        //
+        return redirect()->route('news')->with('news.success', 'News created successfully');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CricSpecial  $cricSpecial
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $res = CricSpecial::find($id);
+        $news = News::find($id);
 
-        return view('admin.cricspecial.edit', compact('res'));
+        return view('admin.news.edit', compact('news'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CricSpecial  $cricSpecial
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $v = $request->validate([
-            'title' => 'required|max:255|unique:cric_specials,title,' . $id,
+            'title' => 'required|max:255|unique:news',
             'short_description' => 'required',
             'description' => 'required',
             'status' => 'required',
-            'img' => 'nullable|image',
+            'img' => 'required|image',
             'min' => 'required|numeric'
         ]);
 
+        $v['created_by'] = auth()->id();
         $v['slug'] = \Str::slug($v['title']);
 
         if (isset($v['img'])) {
 
-            $v['img'] = uploadImage($v['img'], 'cricspecial');
+            $v['img'] = uploadImage($v['img'], 'news');
 
-            $cs = CricSpecial::find($id);
+            $news = News::find($id);
 
-            deleteImage($cs->img);
-        } else {
-
-            unset($v['img']);
+            deleteImage($news);
         }
+        
+        News::where('id', $id)->update($v);
 
-        CricSpecial::where('id', $id)->update($v);
-
-        return redirect()->route('cricspecial')->with('cricspecial.success', 'CricSpecial Updated successfully!');
+        return redirect()->route('news')->with('news.success', 'News updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CricSpecial  $cricSpecial
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        CricSpecial::destroy($id);
+        News::destroy($id);
 
-        return redirect()->route('cricspecial')->with('cricspecial.warning', 'CricSpecial Deleted successfully!');
+        return redirect()->route('news')->with('news.success', 'News updated successfully');
     }
 }

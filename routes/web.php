@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CricSpecialController;
+use App\Http\Controllers\Admin\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,13 @@ Route::prefix('admin')->group(function () {
         Route::get('cricspecial/edit/{id}', [CricSpecialController::class, 'edit'])->name('cricspecial.edit');
         Route::post('cricspecial/update/{id}', [CricSpecialController::class, 'update'])->name('cricspecial.update');
         Route::get('cricspecial/destroy/{id}', [CricSpecialController::class, 'destroy'])->name('cricspecial.destroy');
+        
+        Route::get('news', [NewsController::class, 'index'])->name('news');
+        Route::get('news/create', [NewsController::class, 'create'])->name('news.create');
+        Route::post('news/store', [NewsController::class, 'store'])->name('news.store');
+        Route::get('news/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
+        Route::post('news/update/{id}', [NewsController::class, 'update'])->name('news.update');
+        Route::get('news/destroy/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 
         Route::get('logout', [LoginController::class, 'logout'])->name('logout');
     });
