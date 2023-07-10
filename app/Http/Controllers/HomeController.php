@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\CricSpecial;
+use App\Models\PostLikes;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -55,6 +56,8 @@ class HomeController extends Controller
     {
         $res = Article::with('user')->where('slug', $slug)->first();
 
+        $res->increment('views',1);
+
         $cric = CricSpecial::where('status', 1)->orderBy('id', 'desc')->limit(5)->get();
 
         return view('blog_details', compact('res', 'cric'));
@@ -74,5 +77,30 @@ class HomeController extends Controller
         $response = getMatchDetails($matchId);
 
         return view('score_card', compact('response'));
+    }
+
+    public function likesAdd(Request $request)
+    {
+        if (PostLikes::where('post_id',$request->id)->where('ip_address',$request->ip())->exists()) {
+
+            PostLikes::where('post_id',$request->id)
+            ->where('ip_address',$request->ip())
+            ->delete();
+
+            Article::where('id',$request->id)->decrement('likes',1);
+
+        }else{
+            
+            PostLikes::create([
+                'post_id' => $request->id,
+                'ip_address' => $request->ip()
+            ]);
+
+            Article::where('id',$request->id)->increment('likes',1);
+        }
+
+        $likes = Article::where('id',$request->id)->value('likes');
+        
+        return response()->json($likes);
     }
 }
