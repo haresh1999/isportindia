@@ -2,10 +2,27 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'created_by',
+        'views',
+        'likes',
+        'title',
+        'description',
+        'status',
+        'img',
+        'slug',
+        'category',
+        'type',
+        'cid',
+        'min'
+    ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class,'id','created_by');
+    }
 }

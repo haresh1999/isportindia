@@ -26,7 +26,7 @@ class LoginController extends Controller
 
         if (auth()->attempt($v)) {
 
-            return redirect()->route('dashboard');
+            return redirect()->route('article');
         }
 
         return redirect()->back()->withErrors(['email' => 'Email or password is wrong']);

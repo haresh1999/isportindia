@@ -6,7 +6,7 @@
       </svg>
     </button>
   </div>
-  <div class="search-input input-group">
+  {{-- <div class="search-input input-group">
     <div class="input-group-text justify-content-center">
       <button class="btn-search">
         <svg class="icon icon-search">
@@ -30,7 +30,7 @@
         </svg>
       </button>
     </div>
-  </div>
+  </div> --}}
   <div class="search-result">
     <div class="group">
       <div class="category">Recent search</div>
@@ -106,32 +106,33 @@
     </div>
   </div>
 </div>
-<div class="navbar"><a class="btn btn-primary nav-item create" href="products-add.html" role="button">
-    <svg class="icon icon-plus me-2">
+<div class="navbar">
+  {{--<a class="btn btn-primary nav-item create" href="products-add.html" role="button">
+     <svg class="icon icon-plus me-2">
       <use xlink:href="#icon-plus"></use>
-    </svg><span>Create</span></a>
-  <div class="nav-item menu-item js-show-sidebar">
+    </svg><span>Create</span></a> --}}
+  {{-- <div class="nav-item menu-item js-show-sidebar">
     <div class="nav-link d-flex align-items-center justify-content-center">
       <svg class="icon icon-menu">
         <use xlink:href="#icon-menu"></use>
       </svg>
     </div>
-  </div>
-  <div class="nav-item search-item">
+  </div> --}}
+  {{-- <div class="nav-item search-item">
     <div class="nav-link d-flex align-items-center justify-content-center">
       <svg class="icon icon-search">
         <use xlink:href="#icon-search"></use>
       </svg>
     </div>
-  </div>
-  <div class="nav-item messages-item toggle-item">
-    <button class="toggle-head nav-link active">
+  </div> --}}
+  {{-- <div class="nav-item messages-item toggle-item"> --}}
+    {{-- <button class="toggle-head nav-link active">
       <svg class="icon icon-double-messages">
         <use class="fill" href="#icon-messages-fill"></use>
         <use class="stroke" href="#icon-messages-stroke"></use>
       </svg>
-    </button>
-    <div class="toggle-body">
+    </button> --}}
+    {{-- <div class="toggle-body">
       <div class="top d-flex align-items-center justify-content-between mb-3">
         <div class="toggle-title ms-3">Message</div>
         <div class="action-item">
@@ -212,15 +213,15 @@
         </a>
       </div><a class="btn d-flex mx-3" href="/message-center.html">View in message center</a>
     </div>
-  </div>
+  </div> --}}
   <div class="nav-item notification-item toggle-item">
-    <button class="toggle-head nav-link active">
+    {{-- <button class="toggle-head nav-link active">
       <svg class="icon icon-double-notification">
         <use class="fill" href="#icon-notification-fill"></use>
         <use class="stroke" href="#icon-notification-stroke"></use>
       </svg>
-    </button>
-    <div class="toggle-body">
+    </button> --}}
+    {{-- <div class="toggle-body">
       <div class="top d-flex align-items-center justify-content-between mb-3">
         <div class="toggle-title ms-3">Notification</div>
         <div class="action-item">
@@ -340,14 +341,14 @@
           </div>
         </a>
       </div><a class="btn d-flex mx-3" href="/notification.html">See all notifications</a>
-    </div>
+    </div> --}}
   </div>
   <div class="nav-item user-item toggle-item">
     <div class="toggle-head nav-link"><img src="{{ asset('admin/img/content/user-1.jpg') }}"></div>
     <div class="toggle-body">
-      <div class="nav"><a class="item" href="shop.html">Profile</a><a class="item" href="settings.html">Edit profile</a>
-      </div>
-      <div class="nav"><a class="item" href="customers-overview.html">
+      {{-- <div class="nav"><a class="item" href="shop.html">Profile</a><a class="item" href="settings.html">Edit profile</a>
+      </div> --}}
+      {{-- <div class="nav"><a class="item" href="customers-overview.html">
           <svg class="icon icon-bar-chart">
             <use xlink:href="#icon-bar-chart"></use>
           </svg>Analytics</a><a class="item" href="affiliate-center.html">
@@ -360,8 +361,9 @@
       <div class="nav"><a class="item purple" href="upgrade-to-pro.html">
           <svg class="icon icon-leaderboard">
             <use xlink:href="#icon-leaderboard"></use>
-          </svg>Upgrade to Pro</a></div>
-      <div class="nav"><a class="item" href="settings.html">Account settings</a><a class="item" href="{{route('logout')}}">Log
+          </svg>Upgrade to Pro</a></div> --}}
+      {{-- <div class="nav"><a class="item" href="settings.html">Account settings</a> --}}
+        <a class="item" href="{{route('logout')}}">Log
           out</a></div>
     </div>
   </div>

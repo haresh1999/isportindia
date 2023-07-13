@@ -48,9 +48,8 @@
   <meta property="fb:pages" content="352719408676818" />
   <meta property="fb:app_id" content="1133939180696269" />
   <meta name="next-head-count" content="5" />
-
   @include('layout.css')
-
+  @yield('css')
 </head>
 
 <body id="body" data-mode="light">
@@ -116,7 +115,8 @@
           </g>
         </svg>More</button></li>
   </ul>
+  @include('layout.script')
+  @yield('script')
 </body>
-@include('layout.script')
 
 </html>

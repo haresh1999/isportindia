@@ -7,14 +7,14 @@
     src="{{ asset('admin/img/logo-light.png') }}"></a>
 <div class="nav nav-pills flex-column mb-auto mt-8 menu">
 
-  <div class="nav-item mb-2">
+  {{-- <div class="nav-item mb-2">
     <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/dashboard') ? 'active' : '' }}"
       href="{{route('dashboard')}}">
       <svg class="icon icon-double-home icon-item">
         <use class="fill" href="#icon-home-fill"></use>
         <use class="stroke" href="#icon-home-stroke"></use>
       </svg>Home</a>
-  </div>
+  </div> --}}
 
   {{-- <div class="nav-item mb-2">
     <a class="nav-link d-flex align-items-center p-3 active" href="{{route('article')}}">
@@ -23,36 +23,10 @@
       </svg> &nbsp;&nbsp; Articles</a>
   </div> --}}
 
-  {{-- <div class="nav-item mb-2">
-    <div class="nav-link d-flex align-items-center p-3 collapsed" data-bs-target="#sidebar-products-collapse"
-      data-bs-toggle="collapse">
-      <svg class="icon icon-double-diamond icon-item">
-        <use class="fill" href="#icon-diamond-fill"></use>
-        <use class="stroke" href="#icon-diamond-stroke"></use>
-      </svg>Products
-      <svg class="icon icon-cheveron ms-auto arrow">
-        <use xlink:href="#icon-cheveron"></use>
-      </svg>
-    </div>
-    <div class="collapse submenu" id="sidebar-products-collapse" data-bs-parent=".sidebar">
-      <div class="wrapper"><a class="nav-link d-flex align-items-center p-3"
-          href="products-dashboard.html">Dashboard</a><a class="nav-link d-flex align-items-center p-3"
-          href="products-drafts.html">Drafts
-          <div class="badge red ms-auto">2</div>
-        </a><a class="nav-link d-flex align-items-center p-3" href="products-released.html">Released</a><a
-          class="nav-link d-flex align-items-center p-3" href="products-comments.html">Comments</a><a
-          class="nav-link d-flex align-items-center p-3" href="products-scheduled.html">Scheduled
-          <div class="badge green ms-auto">8</div>
-        </a></div>
-    </div><a class="btn-plus" href="products-add.html">
-      <svg class="icon icon-min-plus">
-        <use xlink:href="#icon-min-plus"></use>
-      </svg></a>
-  </div> --}}
   <div class="nav-item mb-2">
     <div
-      class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/article','article/create','article/edit/*') ? 'active' : '' }}"
-      data-bs-target="#sidebar-customers-collapse" data-bs-toggle="collapse">
+      class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/article','admin/article/create','admin/article/edit/*') ? 'active' : '' }}"
+      data-bs-target="#articles" data-bs-toggle="collapse">
       <svg class="icon icon-schedule">
         <use xlink:href="#icon-schedule"></use>
       </svg>&nbsp;&nbsp; Articles
@@ -60,13 +34,58 @@
         <use xlink:href="#icon-cheveron"></use>
       </svg>
     </div>
-    <div class="collapse submenu" id="sidebar-customers-collapse" data-bs-parent=".sidebar">
+    <div
+      class="collapse submenu {{ Request::is('admin/article','admin/article/create','admin/article/edit/*') ? 'show' : '' }}"
+      id="articles" data-bs-parent=".sidebar">
       <div class="wrapper">
-        <a class="nav-link d-flex align-items-center p-3" href="{{route('article.create')}}">Create</a>
-        <a class="nav-link d-flex align-items-center p-3" href="{{route('article')}}">List</a>
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article/create') ? 'text-dark' : '' }}"
+          href="{{route('article.create')}}">Create</a>
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article','admin/article/edit/*') ? 'text-dark' : '' }}"
+          href="{{route('article')}}">List</a>
+      </div>
+    </div>
+
+    <div
+      class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/cricspecial','admin/cricspecial/create','admin/cricspecial/edit/*') ? 'active' : '' }}"
+      data-bs-target="#cricspecial" data-bs-toggle="collapse">
+      <svg class="icon icon-star-stroke">
+        <use xlink:href="#icon-star-stroke"></use>
+      </svg>&nbsp;&nbsp; CricSpecial
+      <svg class="icon icon-cheveron ms-auto arrow">
+        <use xlink:href="#icon-cheveron"></use>
+      </svg>
+    </div>
+    <div
+      class="collapse submenu {{ Request::is('admin/cricspecial','admin/cricspecial/create','admin/cricspecial/edit/*') ? 'show' : '' }}"
+      id="cricspecial" data-bs-parent=".sidebar">
+      <div class="wrapper">
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/cricspecial/create') ? 'text-dark' : '' }}"
+          href="{{route('cricspecial.create')}}">Create</a>
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/cricspecial','admin/cricspecial/edit/*') ? 'text-dark' : '' }}"
+          href="{{route('cricspecial')}}">List</a>
+      </div>
+    </div>
+    <div
+      class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/cricspecial','admin/cricspecial/create','admin/cricspecial/edit/*') ? 'active' : '' }}"
+      data-bs-target="#news" data-bs-toggle="collapse">
+      <svg class="icon icon-messages-fill">
+        <use xlink:href="#icon-messages-fill"></use>
+      </svg>&nbsp;&nbsp; News
+      <svg class="icon icon-cheveron ms-auto arrow">
+        <use xlink:href="#icon-cheveron"></use>
+      </svg>
+    </div>
+    <div class="collapse submenu {{ Request::is('admin/news','admin/news/create','admin/news/edit/*') ? 'show' : '' }}"
+      id="news" data-bs-parent=".sidebar">
+      <div class="wrapper">
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/news/create') ? 'text-dark' : '' }}"
+          href="{{route('news.create')}}">Create</a>
+        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/news','admin/news/edit/*') ? 'text-dark' : '' }}"
+          href="{{route('news')}}">List</a>
       </div>
     </div>
   </div>
+
   {{--<div class="nav-item mb-2"><a class="nav-link d-flex align-items-center p-3" href="shop.html">
       <svg class="icon icon-double-store icon-item">
         <use class="fill" href="#icon-store-fill"></use>

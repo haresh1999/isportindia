@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('created_by');
+            $table->integer('views')->default(0);
+            $table->integer('likes')->default(0);
+            $table->text('title');
+            $table->text('slug');
+            $table->longText('description');
+            $table->tinyInteger('status');
+            $table->string('img');
             $table->timestamps();
         });
     }

@@ -22,14 +22,12 @@
                 margin: 0;
                 padding: 0;
                 padding-top: 15.68702290076336%;
-              "></span><img alt="logo" src="/_next/static/media/logo.9bce43e9.svg" decoding="async"
-            data-nimg="responsive" style="
+              "></span><img alt="logo" src="{{ asset('logo.png') }}" decoding="async" data-nimg="responsive" style="
                 position: absolute;
                 top: 0;
                 left: 0;
                 bottom: 0;
                 right: 0;
-
                 padding: 0;
                 border: none;
                 margin: auto;
@@ -179,7 +177,7 @@
 <div class="style_headerMenu__YNVcR xsmall-text d-flex text-nowrap">
   <ul class="d-flex mb-0 m-auto">
     <li><a class="style_navItem__o66ST  style_liveUpdate__l5Ln_ text-uppercase font-bold d-block" target="_self"
-        href="/live-scores/?ref=hm">Live Scores</a></li>
+        href="{{route('home')}}">Live Scores</a></li>
     <li><a class="style_navItem__o66ST   text-uppercase font-bold d-block" target="_self"
         href="/cricket-news/?ref=hm">Cricket News</a></li>
     <li>

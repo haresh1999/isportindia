@@ -2,17 +2,139 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\CricSpecial;
+use App\Models\News;
+use App\Models\PostLikes;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function home()
     {
-        return view('home');
+        $latestUpdateHighlighter = Article::where('status', 1)
+            ->where('category', 'latest_update')
+            ->where('type', 'highlighter')
+            ->latest()
+            ->first();
+
+        $latestUpdateNormal = Article::where('status', 1)
+            ->where('category', 'latest_update')
+            ->where('type', 'normal')
+            ->latest()
+            ->limit(3)
+            ->get();
+
+        $latestUpdateOneLiner = Article::where('status', 1)
+            ->where('category', 'latest_update')
+            ->where('type', 'one_liner')
+            ->latest()
+            ->limit(3)
+            ->get();
+
+        $seasonsUpdateHighlighter = Article::where('status', 1)
+            ->where('category', 'seasons_update')
+            ->where('type', 'highlighter')
+            ->latest()
+            ->limit(5)
+            ->get();
+
+        return view('home', compact(
+            'latestUpdateHighlighter',
+            'latestUpdateNormal',
+            'latestUpdateOneLiner',
+            'seasonsUpdateHighlighter',
+        ));
     }
 
     public function postDetails($slug)
     {
-        return view('blog_details');
+        $res = Article::with('user')->where('slug', $slug)->first();
+
+        $res->increment('views', 1);
+
+        return view('blog_details', compact('res'));
+    }
+
+    public function cricspecialDetails($slug)
+    {
+        $res = CricSpecial::with('user')->where('slug', $slug)->first();
+
+        $res->increment('views', 1);
+        
+        return view('cricspecial_details', compact('res'));
+    }
+
+    public function scoreCard($matchId)
+    {
+        $response = getMatchDetails($matchId);
+
+        return view('score_card', compact('response'));
+    }
+
+    public function likesAdd(Request $request)
+    {
+        if (PostLikes::where('post_id', $request->id)
+            ->where('ip_address', $request->ip())
+            ->where('type', $request->type)
+            ->exists()
+        ) {
+
+            PostLikes::where('post_id', $request->id)
+                ->where('ip_address', $request->ip())
+                ->where('type', $request->type)
+                ->delete();
+
+            if ($request->type == 'article') {
+
+                Article::where('id', $request->id)->decrement('likes', 1);
+            } elseif ($request->type == 'news') {
+
+                News::where('id', $request->id)->decrement('likes', 1);
+            } elseif ($request->type == 'cricspecial') {
+
+                CricSpecial::where('id', $request->id)->decrement('likes', 1);
+            }
+        } else {
+
+            PostLikes::create([
+                'post_id' => $request->id,
+                'ip_address' => $request->ip(),
+                'type' => $request->type
+            ]);
+
+            if ($request->type == 'article') {
+
+                Article::where('id', $request->id)->update(['likes' => \DB::raw('likes+1')]);
+            } elseif ($request->type == 'news') {
+
+                News::where('id', $request->id)->update(['likes' => \DB::raw('likes+1')]);
+            } elseif ($request->type == 'cricspecial') {
+
+                CricSpecial::where('id', $request->id)->update(['likes' => \DB::raw('likes+1')]);
+            }
+        }
+
+        if ($request->type == 'article') {
+
+            $likes = Article::where('id', $request->id)->value('likes');
+        } elseif ($request->type == 'news') {
+
+            $likes = News::where('id', $request->id)->value('likes');
+        } elseif ($request->type == 'cricspecial') {
+
+            $likes = CricSpecial::where('id', $request->id)->value('likes');
+        }
+
+        return response()->json($likes);
+    }
+
+    public function newsDetails($slug)
+    {
+        $news = News::where('slug', $slug)->first();
+
+        $news->increment('views', 1);
+
+        return view('news_details', compact('news'));
     }
 }
