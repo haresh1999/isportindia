@@ -8,24 +8,27 @@ function token()
 	return 'ec471071441bb2ac538a0ff901abd249';
 }
 
-function getSeasons($url)
+function getSeasons()
 {
-
+	$url = 'seasons/2021/competitions';
+	
 	$response = Http::get(config('services.api') . $url . '?token=' . token())
-		->json();
-
+	->json();
+	
 	return $response['response']['items'];
+}
+
+function seasonWithSession(){
+	
 }
 
 function getSeasonsDetailsUrl($path)
 {
-
 	return config('services.api') . $path . '?token=' . token();
 }
 
 function getSeasonsDetails($url)
 {
-
 	return Http::get($url)->json();
 }
 
