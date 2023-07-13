@@ -51,7 +51,7 @@
                       <use xlink:href="#icon-mail"></use>
                     </svg>
                   </button>
-                  <input class="form-control rounded-2" type="text" placeholder="Your mail" name="email">
+                  <input class="form-control rounded-2" type="text" placeholder="Your mail" name="email" value="admin@gmail.com">
                 </div>
                 @error('email')
                   <p class="text-red">{{ $message }}</p>
@@ -62,7 +62,7 @@
                       <use xlink:href="#icon-lock"></use>
                     </svg>
                   </button>
-                  <input class="form-control rounded-2" type="password" placeholder="Password" name="password">
+                  <input class="form-control rounded-2" type="password" placeholder="Password" name="password" value="123456">
                 </div>
                 @error('password')
                   <p class="text-red">{{ $message }}</p>
