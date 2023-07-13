@@ -49,7 +49,7 @@
   <meta property="fb:app_id" content="1133939180696269" />
   <meta name="next-head-count" content="5" />
   @include('layout.css')
-  @yield('css')
+  @yield('style')
 </head>
 
 <body id="body" data-mode="light">
