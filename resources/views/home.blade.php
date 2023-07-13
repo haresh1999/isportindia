@@ -1085,7 +1085,6 @@
                           max-height: 100%;
                           background-size: cover;
                           background-position: 0% 0%;
-                          filter: blur(20px);
                           background-image: url('{{getImageUrl($suh->img)}}');
                         " /> </span></a>
             <h3 class="small-head mb-2">
@@ -1237,7 +1236,6 @@
                           max-height: 100%;
                           background-size: cover;
                           background-position: 0% 0%;
-                          filter: blur(20px);
                           background-image: url('{{getImageUrl($article->img)}}');
                         " /> </span></a>
               </div>
