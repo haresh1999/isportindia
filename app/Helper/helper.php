@@ -10,7 +10,6 @@ function token()
 
 function getSeasons($url)
 {
-
 	$response = Http::get(config('services.api') . $url . '?token=' . token())
 		->json();
 
