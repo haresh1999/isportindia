@@ -768,7 +768,7 @@
     border-radius: 13px;
     border: 2px solid var(--theme-color-light);
     cursor: pointer;
-    position: absolute
+    position: absolute;
 }
 
 .style_arrow__bXMF0:before {

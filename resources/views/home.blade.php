@@ -1,317 +1,174 @@
 @extends('layout.main')
 
+@section('style')
+<style>
+  .style_arrow__bXMF0 {
+    width: 26px;
+    height: 60px;
+    transform: translateY(-50%);
+    font-size: 0;
+    z-index: 5;
+    background: var(--light-mode-bg);
+    border-radius: 13px;
+    border: 3px solid var(--theme-color-light);
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .style_arrow__bXMF0:active {
+    background: #E76161;
+  }
+</style>
+@endsection
+
 @section('content')
 <div style="height: 259px">
   <section class="style_scorecardSlider__sPmoX scorecard-slider pt-0 overflow-hidden pb-3">
     <div class="container">
       <div class="style_scorecardNav__b0jAi xsmall-text text-nowrap scroll-list d-flex pb-1">
         <div class="d-flex m-auto">
-          <button type="button" class="style_active__3p7K4 font-bold text-uppercase rounded-3 btn btn-link">
-            All Matches (13)</button><button type="button" class="font-bold text-uppercase btn btn-link">
-            W-Emerging Teams Asia Cup</button><button type="button" class="font-bold text-uppercase btn btn-link">
-            U19 EAP WC Qualifier</button><button type="button" class="font-bold text-uppercase btn btn-link">
-            BAN vs AFG</button><button type="button" class="font-bold text-uppercase btn btn-link">
-            Odisha Cricket League</button><button type="button" class="font-bold text-uppercase btn btn-link">
-            Africa Continental Cup</button><button type="button" class="font-bold text-uppercase btn btn-link">
-            Kwibuka W-T20I</button><button type="button" class="font-bold text-uppercase btn btn-link">
-            TNPL</button><button type="button" class="font-bold text-uppercase btn btn-link">
-            Ajman T10
+          @php $matchs = getMatch();@endphp
+          @php $slugs = array_unique(Arr::pluck($matchs,'short_title')); @endphp
+          <button type="button"
+            class="style_active__3p7K4 font-bold text-uppercase rounded-3 btn btn-link category_button"
+            onclick="categoryClickHandler('all')" category="all">
+            All Matches ({{count($slugs)}})
           </button>
+          @foreach ($slugs as $series)
+          <button category="{{Str::slug($series)}}" type="button"
+            class="font-bold text-uppercase btn btn-link category_button"
+            onclick="categoryClickHandler('{{ Str::slug($series) }}')">{{$series}}</button>
+          @endforeach
         </div>
       </div>
+
       <div class="style_slider__UbtNO style_destroy__J7ab0 style_sliderMain__Q3_kE position-relative">
         <button style="display:none" onclick="scrollContent(-1)" id="scroll_1_prev"
           class="style_arrow__bXMF0 style_prev__wdbiv position-absolute top-50 start-0">Prev</button>
-        <div class="style_inner__csGhV slider-track d-flex undefined" style="gap: 0" id="c-slider">
-          <div class="">
-            <div class="style_item__sjAWf p-2 mx-1 font-semi">
-              <div class="position-relative">
-                <a class="style_scoreCardLink__Clpdb position-absolute top-0 start-0 opacity-0 w-100 h-100"
-                  href="scoreCard.html">Sri
-                  Lanka A Women vs Bangladesh Women A</a>
-                <div class="d-flex justify-content-between align-items-center style_head__CLILr">
-                  <p>
-                    <span class="danger-text text-capitalize">• raindelay </span><span class="style_dark__duIOp"> -
-                      Match 5</span> -
-                    Mong Kok
+        <div id="all_matches">
+          <div class="all-slider-track style_inner__csGhV slider-track d-flex " style="gap: 0" id="c-slider">
+            @foreach ($matchs as $val)
+            <div category="{{ Str::slug($val['short_title']) }}" class="banner_match">
+              <div class="style_item__sjAWf p-2 mx-1 font-semi">
+                <div class="position-relative">
+                  <a class="style_scoreCardLink__Clpdb position-absolute top-0 start-0 opacity-0 w-100 h-100"
+                    href="{{ route('score.card',$val['match_id']) }}">{{$val['title'] }}</a>
+                  <div class="d-flex justify-content-between align-items-center style_head__CLILr">
+                    <p>
+                      <span class="danger-text text-capitalize">• {{$val['status_str']}} </span><span
+                        class="style_dark__duIOp"> -
+                        {{$val['subtitle']}}</span> -
+                      {{$val['venue']['name']}}
+                    </p>
+                  </div>
+                  <p class="style_series__ggX10 font-medium text-nowrap overflow-hidden my-2">
+                    {{$val['short_title']}}
+                  </p>
+                  <div class="style_head__CLILr">
+                    <div class="style_team__wJ2ZX d-flex justify-content-between position-relative xsmall-text">
+                      <div class="style_teamName__mcMHu d-flex align-items-center">
+                        <div class="style_teamFlag__yzzhu rounded-circle overflow-hidden">
+                          <span style="
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 100% 0px 0px;
+                      ">
+                            </span><img alt="{{$val['teama']['name']}}" src="{{ $val['teama']['logo_url'] }}"
+                              decoding="async" data-nimg="responsive" style="
+                        position: absolute;
+                        inset: 0px;
+                        padding: 0px;
+                        border: none;
+                        display: block;
+                        width: 0px;
+                        min-width: 100%;
+                        max-width: 100%;
+                        max-height: 100%;"
+                              sizes="(max-width: 767px) 24px, (max-width: 991px) 24px, (max-width: 1190px) 200px, 24px"
+                              srcset="{{$val['teama']['logo_url']}} 40w,{{$val['teama']['logo_url']}} 80w,{{$val['teama']['logo_url']}} 120w,{{$val['teama']['logo_url']}} 240w,{{$val['teama']['logo_url']}} 450w,{{$val['teama']['logo_url']}}  992w,{{$val['teama']['logo_url']}} 1200w,{{$val['teama']['logo_url']}} 1900w">&gt;
+                          </span>
+                        </div>
+                        <span>{{$val['teama']['name']}}</span>
+                      </div>
+                      <p></p>
+                    </div>
+                    <div class="style_team__wJ2ZX d-flex justify-content-between position-relative xsmall-text">
+                      <div class="style_teamName__mcMHu d-flex align-items-center">
+                        <div class="style_teamFlag__yzzhu rounded-circle overflow-hidden">
+                          <span style="
+                      display: block;
+                      overflow: hidden;
+                      width: initial;
+                      height: initial;
+                      background: none;
+                      opacity: 1;
+                      border: 0px;
+                      margin: 0px;
+                      padding: 0px;
+                      position: relative;
+                    "><span style="
+                        display: block;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 100% 0px 0px;
+                      "></span><img alt="{{$val['teamb']['name']}}" src="{{ $val['teamb']['logo_url'] }}"
+                              decoding="async" data-nimg="responsive" style=" position: absolute;
+                              inset: 0px;
+                              padding: 0px;
+                              border: none;
+                              display: block;
+                              width: 0px;
+                              min-width: 100%;
+                              max-width: 100%;
+                              max-height: 100%;"
+                              sizes="(max-width: 767px) 24px, (max-width: 991px) 24px, (max-width: 1190px) 200px, 24px"
+                              srcset="{{ $val['teamb']['logo_url'] }} 40w,{{ $val['teamb']['logo_url'] }} 80w,{{ $val['teamb']['logo_url'] }} 120w,{{ $val['teamb']['logo_url'] }} 240w,{{ $val['teamb']['logo_url'] }} 450w,{{ $val['teamb']['logo_url'] }} 992w,{{ $val['teamb']['logo_url'] }} 1200w,{{ $val['teamb']['logo_url'] }} 1900w">&gt;
+                          </span>
+                        </div>
+                        <span>{{$val['teamb']['name']}}</span>
+                      </div>
+                      <p></p>
+                    </div>
+                  </div>
+                  <p class="style_result__gMwNw danger-text text-nowrap font-medium my-2 overflow-hidden">
+                    {{$val['status_note']}}
                   </p>
                 </div>
-                <p class="style_series__ggX10 font-medium text-nowrap overflow-hidden my-2">
-                  Womens Emerging Teams Asia Cup
-                </p>
-                <div class="style_head__CLILr">
-                  <div class="style_team__wJ2ZX d-flex justify-content-between position-relative xsmall-text">
-                    <div class="style_teamName__mcMHu d-flex align-items-center">
-                      <div class="style_teamFlag__yzzhu rounded-circle overflow-hidden">
-                        <span style="
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0px;
-                              margin: 0px;
-                              padding: 0px;
-                              position: relative;
-                            "><span style="
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0px;
-                                margin: 0px;
-                                padding: 100% 0px 0px;
-                              "></span><img alt="SLAWM"
-                            src="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=1900&amp;q=75"
-                            decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                inset: 0px;
-
-                                padding: 0px;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0px;
-                                height: 0px;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              "
-                            sizes="(max-width: 767px) 24px, (max-width: 991px) 24px, (max-width: 1190px) 200px, 24px"
-                            srcset="
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=40&amp;q=75     40w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=80&amp;q=75     80w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=120&amp;q=75   120w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=240&amp;q=75   240w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=450&amp;q=75   450w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=992&amp;q=75   992w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=1200&amp;q=75 1200w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FSri-lanka_1686633046504.png&amp;w=1900&amp;q=75 1900w
-                              " />
-                          ></span>
-                      </div>
-                      <span>SLAWM</span>
-                    </div>
-                    <p></p>
-                  </div>
-                  <div class="style_team__wJ2ZX d-flex justify-content-between position-relative xsmall-text">
-                    <div class="style_teamName__mcMHu d-flex align-items-center">
-                      <div class="style_teamFlag__yzzhu rounded-circle overflow-hidden">
-                        <span style="
-                              display: block;
-                              overflow: hidden;
-                              width: initial;
-                              height: initial;
-                              background: none;
-                              opacity: 1;
-                              border: 0px;
-                              margin: 0px;
-                              padding: 0px;
-                              position: relative;
-                            "><span style="
-                                display: block;
-                                width: initial;
-                                height: initial;
-                                background: none;
-                                opacity: 1;
-                                border: 0px;
-                                margin: 0px;
-                                padding: 100% 0px 0px;
-                              "></span><img alt="BANA-W"
-                            src="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=1900&amp;q=75"
-                            decoding="async" data-nimg="responsive" style="
-                                position: absolute;
-                                inset: 0px;
-
-                                padding: 0px;
-                                border: none;
-                                margin: auto;
-                                display: block;
-                                width: 0px;
-                                height: 0px;
-                                min-width: 100%;
-                                max-width: 100%;
-                                min-height: 100%;
-                                max-height: 100%;
-                              "
-                            sizes="(max-width: 767px) 24px, (max-width: 991px) 24px, (max-width: 1190px) 200px, 24px"
-                            srcset="
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=40&amp;q=75     40w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=80&amp;q=75     80w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=120&amp;q=75   120w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=240&amp;q=75   240w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=450&amp;q=75   450w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=992&amp;q=75   992w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=1200&amp;q=75 1200w,
-                                /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2FBangladesh-10_1686633046856.png&amp;w=1900&amp;q=75 1900w
-                              " />
-                          ></span>
-                      </div>
-                      <span>BANA-W</span>
-                    </div>
-                    <p></p>
-                  </div>
+                <div class="style_btnList__BelA5 d-flex text-center text-uppercase">
+                  <a class="mx-1 p-1 flex-grow-1 rounded-pill"
+                    href="/womens-emerging-teams-asia-cup/fixtures/">Fixtures</a><a
+                    class="mx-1 p-1 flex-grow-1 rounded-pill"
+                    href="/womens-emerging-teams-asia-cup/standings/">Standings</a>
                 </div>
-                <p class="style_result__gMwNw danger-text text-nowrap font-medium my-2 overflow-hidden">
-                  Rain Delay
-                </p>
-              </div>
-              <div class="style_btnList__BelA5 d-flex text-center text-uppercase">
-                <a class="mx-1 p-1 flex-grow-1 rounded-pill"
-                  href="/womens-emerging-teams-asia-cup/fixtures/">Fixtures</a><a
-                  class="mx-1 p-1 flex-grow-1 rounded-pill"
-                  href="/womens-emerging-teams-asia-cup/standings/">Standings</a>
               </div>
             </div>
+            @endforeach
           </div>
+        </div>
+        <div style="display: none;" id="category_matches">
+          <div id="category-slider-track" class="style_inner__csGhV slider-track d-flex" style="gap: 0" id="c-slider">
 
-          @foreach (getMatch() as $val)
-          <div class="">
-            <div class="style_item__sjAWf p-2 mx-1 font-semi">
-              <div class="position-relative">
-                <a class="style_scoreCardLink__Clpdb position-absolute top-0 start-0 opacity-0 w-100 h-100"
-                  href="{{ route('score.card',$val['match_id']) }}">{{$val['title'] }}</a>
-                <div class="d-flex justify-content-between align-items-center style_head__CLILr">
-                  <p>
-                    <span class="danger-text text-capitalize">• {{$val['status_str']}} </span><span
-                      class="style_dark__duIOp"> -
-                      {{$val['subtitle']}}</span> -
-                    {{$val['venue']['name']}}
-                  </p>
-                </div>
-                <p class="style_series__ggX10 font-medium text-nowrap overflow-hidden my-2">
-                  {{$val['short_title']}}
-                </p>
-                <div class="style_head__CLILr">
-                  <div class="style_team__wJ2ZX d-flex justify-content-between position-relative xsmall-text">
-                    <div class="style_teamName__mcMHu d-flex align-items-center">
-                      <div class="style_teamFlag__yzzhu rounded-circle overflow-hidden">
-                        <span style="
-                                  display: block;
-                                  overflow: hidden;
-                                  width: initial;
-                                  height: initial;
-                                  background: none;
-                                  opacity: 1;
-                                  border: 0px;
-                                  margin: 0px;
-                                  padding: 0px;
-                                  position: relative;
-                                "><span style="
-                                    display: block;
-                                    width: initial;
-                                    height: initial;
-                                    background: none;
-                                    opacity: 1;
-                                    border: 0px;
-                                    margin: 0px;
-                                    padding: 100% 0px 0px;
-                                  "></span><img alt="SLAWM" src="{{ $val['teama']['logo_url'] }}" decoding="async"
-                            data-nimg="responsive" style="
-                                    position: absolute;
-                                    inset: 0px;
-                                    padding: 0px;
-                                    border: none;
-                                    margin: auto;
-                                    display: block;
-                                    width: 0px;
-                                    height: 0px;
-                                    min-width: 100%;
-                                    max-width: 100%;
-                                    min-height: 100%;
-                                    max-height: 100%;
-                                  "
-                            sizes="(max-width: 767px) 24px, (max-width: 991px) 24px, (max-width: 1190px) 200px, 24px"
-                            srcset="
-                                   {{$val['teama']['logo_url']}} 40w,
-                                   {{$val['teama']['logo_url']}} 80w,
-                                   {{$val['teama']['logo_url']}} 120w,
-                                   {{$val['teama']['logo_url']}} 240w,
-                                   {{$val['teama']['logo_url']}} 450w,
-                                   {{$val['teama']['logo_url']}}  992w,
-                                   {{$val['teama']['logo_url']}} 1200w,
-                                   {{$val['teama']['logo_url']}} 1900w
-                                  " />
-                          ></span>
-                      </div>
-                      <span>{{$val['teama']['name']}}</span>
-                    </div>
-                    <p></p>
-                  </div>
-                  <div class="style_team__wJ2ZX d-flex justify-content-between position-relative xsmall-text">
-                    <div class="style_teamName__mcMHu d-flex align-items-center">
-                      <div class="style_teamFlag__yzzhu rounded-circle overflow-hidden">
-                        <span style="
-                                  display: block;
-                                  overflow: hidden;
-                                  width: initial;
-                                  height: initial;
-                                  background: none;
-                                  opacity: 1;
-                                  border: 0px;
-                                  margin: 0px;
-                                  padding: 0px;
-                                  position: relative;
-                                "><span style="
-                                    display: block;
-                                    width: initial;
-                                    height: initial;
-                                    background: none;
-                                    opacity: 1;
-                                    border: 0px;
-                                    margin: 0px;
-                                    padding: 100% 0px 0px;
-                                  "></span><img alt="BANA-W" src="{{ $val['teamb']['logo_url'] }}" decoding="async"
-                            data-nimg="responsive" style="
-                                    position: absolute;
-                                    inset: 0px;
-
-                                    padding: 0px;
-                                    border: none;
-                                    margin: auto;
-                                    display: block;
-                                    width: 0px;
-                                    height: 0px;
-                                    min-width: 100%;
-                                    max-width: 100%;
-                                    min-height: 100%;
-                                    max-height: 100%;
-                                  "
-                            sizes="(max-width: 767px) 24px, (max-width: 991px) 24px, (max-width: 1190px) 200px, 24px"
-                            srcset="
-                                   {{ $val['teamb']['logo_url'] }} 40w,
-                                   {{ $val['teamb']['logo_url'] }} 80w,
-                                   {{ $val['teamb']['logo_url'] }} 120w,
-                                   {{ $val['teamb']['logo_url'] }} 240w,
-                                   {{ $val['teamb']['logo_url'] }} 450w,
-                                   {{ $val['teamb']['logo_url'] }} 992w,
-                                   {{ $val['teamb']['logo_url'] }} 1200w,
-                                   {{ $val['teamb']['logo_url'] }} 1900w
-                                  " />
-                          ></span>
-                      </div>
-                      <span>{{$val['teamb']['name']}}</span>
-                    </div>
-                    <p></p>
-                  </div>
-                </div>
-                <p class="style_result__gMwNw danger-text text-nowrap font-medium my-2 overflow-hidden">
-                  {{$val['status_note']}}
-                </p>
-              </div>
-              <div class="style_btnList__BelA5 d-flex text-center text-uppercase">
-                <a class="mx-1 p-1 flex-grow-1 rounded-pill"
-                  href="/womens-emerging-teams-asia-cup/fixtures/">Fixtures</a><a
-                  class="mx-1 p-1 flex-grow-1 rounded-pill"
-                  href="/womens-emerging-teams-asia-cup/standings/">Standings</a>
-              </div>
-            </div>
           </div>
-          @endforeach
-
         </div>
         <div id="scroll_1_next" onclick="scrollContent(1)"
           class="style_arrow__bXMF0 undefined position-absolute top-50 end-0">
@@ -873,8 +730,8 @@
           <article class="style_article__IayJx style_articleList__HOi_f py-0">
             @foreach ($latestUpdateOneLiner as $luol)
             <h4 id="648881141024650a1b84c88b" class="small-head mb-0">
-              <a class="d-flex align-items-center" href="{{route('post.details',[$luol->slug])}}"><svg
-                  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a class="d-flex align-items-center" href="{{route('post.details',[$luol->slug])}}"><svg width="20"
+                  height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M3.66667 2H15.3333C16.25 2 17 2.75 17 3.66667V12L12 17H3.66667C2.75 17 2 16.25 2 15.3333V3.66667C2 2.75 2.75 2 3.66667 2ZM15.3333 11.1667V3.66667H3.66667V15.3333H11.1667V11.1667H15.3333ZM9.5 11.1667H5.33333V9.5H9.5V11.1667ZM5.33333 7.83333H13.6667V6.16667H5.33333V7.83333Z"
                     fill="#757A82"></path>
@@ -895,8 +752,7 @@
         @php $match = getCompetitionsMatches($suh->cid) @endphp
         <section id="{{route('post.details',[$suh->slug])}}" class="style_homeArticles__4e_Na">
           <h4 class="line-title text-uppercase text-center overflow-hidden">
-            <a class="rounded-pill position-relative d-inline-block"
-              href="{{route('post.details',[$suh->slug])}}"><span
+            <a class="rounded-pill position-relative d-inline-block" href="{{route('post.details',[$suh->slug])}}"><span
                 class="d-none d-md-block text-nowrap overflow-hidden">{{$match['competition']['title']}}</span><span
                 class="d-block d-md-none text-nowrap overflow-hidden">{{$match['competition']['title']}}</span></a>
           </h4>
@@ -1085,7 +941,6 @@
                           max-height: 100%;
                           background-size: cover;
                           background-position: 0% 0%;
-                          filter: blur(20px);
                           background-image: url('{{getImageUrl($suh->img)}}');
                         " /> </span></a>
             <h3 class="small-head mb-2">
@@ -1237,7 +1092,6 @@
                           max-height: 100%;
                           background-size: cover;
                           background-position: 0% 0%;
-                          filter: blur(20px);
                           background-image: url('{{getImageUrl($article->img)}}');
                         " /> </span></a>
               </div>
@@ -1353,8 +1207,8 @@
           <article class="style_article__IayJx style_articleList__HOi_f py-0">
             @foreach ($articlesOneLiner as $aOL)
             <h4 id="{{$aOL->id}}" class="small-head mb-0">
-              <a class="d-flex align-items-center" href="{{route('post.details',[$aOL->slug])}}"><svg
-                  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a class="d-flex align-items-center" href="{{route('post.details',[$aOL->slug])}}"><svg width="20"
+                  height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M3.66667 2H15.3333C16.25 2 17 2.75 17 3.66667V12L12 17H3.66667C2.75 17 2 16.25 2 15.3333V3.66667C2 2.75 2.75 2 3.66667 2ZM15.3333 11.1667V3.66667H3.66667V15.3333H11.1667V11.1667H15.3333ZM9.5 11.1667H5.33333V9.5H9.5V11.1667ZM5.33333 7.83333H13.6667V6.16667H5.33333V7.83333Z"
                     fill="#757A82"></path>
@@ -1566,8 +1420,6 @@
     @endfor
     {{-- T20 TEAM RANKING END --}}
 
-
-
     <p class="card-footer-note text-center">
       Last Updated On {{ $lastUpdate }} IST
     </p>
@@ -1630,6 +1482,8 @@
         @endforeach
       </div>
     </section>
+
+    {{-- TOP TEAMS --}}
     <section class="widget">
       <div class="widget-title">
         <h3 class="small-head d-flex align-items-center text-uppercase mb-0">
@@ -2119,5 +1973,64 @@
     </div>
     </div>
 
+    @endsection
 
+    @section('script')
+    <script>
+      const all_matches_list = document.querySelectorAll('#all_matches .banner_match')
+  const categoryClickHandler = (category) => {
+      console.log(all_matches_list, '########')
+      ///buttons logic
+      const buttons = document.querySelectorAll('.category_button');
+      buttons.forEach(button => {
+          if (category == button.getAttribute('category')) {
+              button.classList.add('style_active__3p7K4');
+              return
+          }
+          button.classList.remove('style_active__3p7K4');
+      })
+
+      //// filter logic
+      let all_matches = document.querySelector('#all_matches')
+      let category_matches = document.querySelector('#category_matches')
+      if (category == 'all') {
+          all_matches.style.display = 'block'
+          category_matches.style.display = 'none'
+          let allContainer = document.querySelector('.all-slider-track');
+          while (allContainer.firstChild) {
+              allContainer.removeChild(allContainer.firstChild);
+          }
+          all_matches_list.forEach(each => {
+              allContainer.appendChild(each);
+
+          })
+      }
+      else {
+          all_matches.style.display = 'none'
+          category_matches.style.display = 'block'
+
+          let filteredItems = []
+          let categoryContainer = document.querySelector('#category-slider-track');
+          while (categoryContainer.firstChild) {
+              categoryContainer.removeChild(categoryContainer.firstChild);
+          }
+          all_matches_list.forEach(each => {
+              if (each.getAttribute('category') == category) {
+                  filteredItems.push(each)
+                  categoryContainer.appendChild(each);
+              }
+          })
+          if (!filteredItems?.length) {
+              $('#scroll_1_next').hide();
+              categoryContainer.append("no data found")
+          }
+          else {
+              $('#scroll_1_next').show()
+          }
+
+      }
+  }
+
+
+    </script>
     @endsection

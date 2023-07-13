@@ -38,7 +38,9 @@ $('#carousel').slick({
 var container = document.getElementById("c-slider");
 var nextBtn = document.getElementById("scroll_1_next");
 var prevBtn = document.getElementById("scroll_1_prev");
+
 function scrollContent(direction) {
+
   if (direction == 1)
     container.scrollLeft += 310;
   else
