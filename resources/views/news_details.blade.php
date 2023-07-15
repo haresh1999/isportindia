@@ -21,7 +21,7 @@
                             {{ $news->title }}
                         </h1>
                         <h2 class="style_subTitle___67cW small-head mb-2 mb-md-3 pt-2 pt-md-3">
-                            {!! Str::limit($news->description, 256, '...') !!}
+                            {{$news->short_description}}
                         </h2>
                         <div class="undefined d-flex flex-wrap align-items-start mb-2 mb-md-3">
                             <div class="style_author__Kem0w font-semi">
