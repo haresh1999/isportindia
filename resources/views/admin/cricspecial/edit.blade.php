@@ -24,7 +24,8 @@
                             </svg><span>Back</span></a>
                     </div>
 
-                    <form action="{{ route('cricspecial.update',$res->id) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('cricspecial.update',$res->id) }}" method="post"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="card-body p-0">
 
@@ -38,8 +39,7 @@
                             @error('title')
                             <span class="text-red">{{$message}}</span>
                             @enderror
-                            <input class="form-control mb-5 mb-sm-6" type="text" name="title"
-                                value="{{ $res->title }}">
+                            <input class="form-control mb-5 mb-sm-6" type="text" name="title" value="{{ $res->title }}">
 
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Short Description
                                 <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
@@ -78,12 +78,12 @@
                                 </div>
                             </div>
                             @error('img')
-                                <span class="text-red">{{$message}}</span>
+                            <span class="text-red">{{$message}}</span>
                             @enderror
                             @if ($res->img)
-                                <a target="_blank" href="{{ getImageUrl($res->img) }}">View</a>
+                            <a target="_blank" href="{{ getImageUrl($res->img) }}">View</a>
                             @endif
-                            <input class="form-control mb-5 mb-sm-6" type="file" name="img">
+                            <input class="form-control mb-3 mb-sm-6" type="file" name="img">
 
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Read Min
                                 <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
@@ -96,9 +96,20 @@
                             @error('min')
                             <span class="text-red">{{$message}}</span>
                             @enderror
-                            <input class="form-control" type="text" name="min" value="{{ old('min') }}">
+                            <input class="form-control mb-3" type="text" name="min" value="{{ old('min',$res->min) }}">
 
-                            
+                            <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Tag
+                                <div class="info-tooltip ms-1" data-bs-toggle="tooltip" title="Add Tags">
+                                    <svg class="icon icon-info">
+                                        <use xlink:href="#icon-info"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            @error('tag')
+                            <span class="text-red">{{$message}}</span>
+                            @enderror
+                            <input class="form-control mb-3" type="text" name="tag" value="{{ old('tag',$res->tag) }}">
+
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Status
                                 <div class="info-tooltip ms-1" data-bs-toggle="tooltip" title="Status">
                                     <svg class="icon icon-info">

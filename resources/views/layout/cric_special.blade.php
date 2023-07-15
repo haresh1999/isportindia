@@ -46,7 +46,7 @@
                   max-height: 100%;
                 " /></span></a>
       </div>
-      <span class="undefined my-2 badge bg-secondary">Cricket Appeal</span>
+      <span class="undefined my-2 badge bg-secondary">{{$cri->tag}}</span>
       <h4 class="small-head mb-0 overflow-hidden">
         <a href="{{route('cricspecial.details',[$cri->slug])}}">{{ $cri->short_description }} </a>
       </h4>

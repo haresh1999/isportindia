@@ -80,8 +80,7 @@
                             @error('img')
                             <span class="text-red">{{$message}}</span>
                             @enderror
-                            <input class="form-control mb-5 mb-sm-6" type="file" name="img">
-
+                            <input class="form-control mb-3 mb-sm-6" type="file" name="img">
 
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Read Min
                                 <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
@@ -94,7 +93,19 @@
                             @error('min')
                             <span class="text-red">{{$message}}</span>
                             @enderror
-                            <input class="form-control" type="text" name="min" value="{{ old('min') }}">
+                            <input class="form-control mb-3" type="text" name="min" value="{{ old('min') }}">
+
+                            <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Tag
+                                <div class="info-tooltip ms-1" data-bs-toggle="tooltip" title="Add Tags">
+                                    <svg class="icon icon-info">
+                                        <use xlink:href="#icon-info"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            @error('tag')
+                            <span class="text-red">{{$message}}</span>
+                            @enderror
+                            <input class="form-control mb-3" type="text" name="tag" value="{{ old('tag') }}">
 
 
                             <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Status

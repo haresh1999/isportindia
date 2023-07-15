@@ -16,7 +16,8 @@ class CricSpecial extends Model
         'description',
         'status',
         'img',
-        'min'
+        'min',
+        'tag'
     ];
 
     public function user()

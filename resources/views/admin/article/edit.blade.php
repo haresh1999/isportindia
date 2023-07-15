@@ -156,8 +156,7 @@
                                     @error('min')
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
-                                    <input class="form-control" type="text" name="min"
-                                        value="{{ $article->min }}">
+                                    <input class="form-control" type="text" name="min" value="{{ $article->min }}">
                                 </div>
 
                                 <div class="col-md-12 mt-4">
@@ -250,6 +249,12 @@
     $('.textarea').wysihtml5()
 })
 </script>
+@if ($article->category=='seasons_update')
+<script>
+    $('.seasons').removeClass('d-none')
+$('.seasons').addClass('d-block')
+</script>
+@endif
 <script>
     $('.category').change(function(){
         if ($(this).val() == 'seasons_update') {
@@ -260,5 +265,5 @@
             $('.seasons').addClass('d-none')
         }
     })
-    </script>
+</script>
 @endsection

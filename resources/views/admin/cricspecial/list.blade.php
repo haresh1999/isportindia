@@ -55,6 +55,7 @@
                                     <div class="d-table-cell pb-4 px-3 caption">Views</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Likes</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Status</div>
+                                    <div class="d-table-cell pb-4 px-3 caption">Tag</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Created By</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Edit</div>
                                     <div class="d-table-cell pb-4 px-3 caption">Delete</div>
@@ -79,6 +80,9 @@
                                         @else
                                         <div class="badge min red-light">InActive</div>
                                         @endif
+                                    </div>
+                                    <div class="sheet-cell d-block d-md-table-cell py-2 py-md-4 px-0 px-md-3">
+                                        {{ $re->tag }}
                                     </div>
                                     <div class="sheet-cell d-block d-md-table-cell py-2 py-md-4 px-0 px-md-3">
                                         {{ $re->user->name }}
