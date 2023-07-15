@@ -247,8 +247,7 @@
           class="style_dropdownMenu__lVfAZ dropdown-menu " data-popper-reference-hidden="false"
           data-popper-escaped="false" data-popper-placement="bottom-end"
           style="position: absolute; right : 0; left : unset; ">
-
-          @foreach (getSeasons('seasons/2021/competitions') as $val)
+          @foreach (getSeasons() as $val)
           <a class="dropdown-item" href="{{ getSeasonsDetailsUrl($val['matches_url']) }}">{{$val['title']}}</a>
           @endforeach
         </div>

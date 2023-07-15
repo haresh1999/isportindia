@@ -52,7 +52,8 @@ class CricSpecialController extends Controller
             'description' => 'required',
             'status' => 'required',
             'img' => 'required|image',
-            'min' => 'required|numeric'
+            'min' => 'required|numeric',
+            'tag' => 'required'
         ]);
 
         $v['created_by'] = auth()->id();
@@ -103,7 +104,8 @@ class CricSpecialController extends Controller
             'description' => 'required',
             'status' => 'required',
             'img' => 'nullable|image',
-            'min' => 'required|numeric'
+            'min' => 'required|numeric',
+            'tag' => 'required'
         ]);
 
         $v['slug'] = \Str::slug($v['title']);

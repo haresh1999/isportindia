@@ -139,7 +139,7 @@
                                 Series</span></h3>
                     </div>
                     <div class="font-semi">
-                        @foreach (getSeasons('seasons/2021/competitions') as $val)
+                        @foreach (getSeasons() as $val)
                         <a class="cs-item common-box d-block overflow-hidden text-nowrap mb-2"
                             href="{{ getSeasonsDetailsUrl($val['matches_url']) }}">{{$val['title']}}</a>
                         @endforeach
