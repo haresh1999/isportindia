@@ -3,7 +3,6 @@
     <nav class="style_navbar__r9UeE align-items-center position-sticky top-0 navbar navbar-expand navbar-light">
       <a class="style_logo__iDBP2 navbar-brand d-block m-0 p-0" href="/"><span style="
               display: block;
-              overflow: hidden;
               width: initial;
               height: initial;
               background: none;
@@ -22,7 +21,7 @@
                 margin: 0;
                 padding: 0;
                 padding-top: 15.68702290076336%;
-              "></span><img alt="logo" src="{{ asset('logo.png') }}" decoding="async" data-nimg="responsive" style="
+              "></span><img alt="logo" class="nav_logo" src="{{ asset('logo.png') }}" decoding="async" data-nimg="responsive" style="
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -38,78 +37,14 @@
                 max-width: 100%;
                 min-height: 100%;
                 max-height: 100%;
-              " sizes="100vw" /></span></a><span
-        class="style_separator__n6bds d-none d-md-block ms-1 ms-md-2 ms-lg-3"></span>
-      <div class="style_langMenu__nnhmv common-dropdown d-none d-md-block dropdown">
-        <button id="language" aria-expanded="false" type="button" class="dropdown-toggle btn btn-link">
-          English
-        </button>
-      </div>
-      <div class="style_nav__1OO3C ms-auto align-items-center navbar-nav">
-        <a href="/sign-in/" class="d-none">Sign in</a>
-        <!-- <div class="">
-                        <div
-                            class="form_formSwitch__8A_aR style_modeSwitch__SPnb9 undefined d-flex align-items-center">
-                            <div class="d-none form-switch">
-                                <input type="checkbox" id="modeSwitch" class="form-check-input" />
-                            </div>
-                            <label for="modeSwitch" class="style_darkModeIcon__uOVf_ me-2"><span style="
-                    display: inline-block;
-                    overflow: hidden;
-                    width: initial;
-                    height: initial;
-                    background: none;
-                    opacity: 1;
-                    border: 0px;
-                    margin: 0px;
-                    padding: 0px;
-                    position: relative;
-                    max-width: 100%;
-                  "><span style="
-                      display: block;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0px;
-                      margin: 0px;
-                      padding: 0px;
-                      max-width: 100%;
-                    "><img alt="" aria-hidden="true"
-                                            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2722%27%20height=%2722%27/%3e"
-                                            style="
-                        display: block;
-                        max-width: 100%;
-                        width: initial;
-                        height: initial;
-                        background: none;
-                        opacity: 1;
-                        border: 0px;
-                        margin: 0px;
-                        padding: 0px;
-                      " /></span><img alt="dark mode" src="/_next/static/media/light-mode.6f89d25e.svg"
-                                        decoding="async" data-nimg="intrinsic" class="style_lightModeImg__2_YH4"
-                                        style="
-                      position: absolute;
-                      inset: 0px;
+              " sizes="100vw" /></span></a>
 
-                      padding: 0px;
-                      border: none;
-                      margin: auto;
-                      display: block;
-                      width: 0px;
-                      height: 0px;
-                      min-width: 100%;
-                      max-width: 100%;
-                      min-height: 100%;
-                      max-height: 100%;
-                    " srcset="
-                      /_next/static/media/light-mode.6f89d25e.svg 1x,
-                      /_next/static/media/light-mode.6f89d25e.svg 2x
-                    " /></span></label>
-                        </div>
-                    </div> -->
+      <div class="style_nav__1OO3C ms-auto align-items-center navbar-nav">
+      <li><a class="style_navItem__o66ST hide_in_mobile  style_liveUpdate__l5Ln_ text-uppercase font-bold "
+                target="_self"  href="{{route('home')}}">Live Scores</a></li> 
         <a class="style_navLink__aDOS0 style_fillBtn__xma7g rounded-pill" href="/sign-in/">Sign In</a>
+        <a class="style_navLink__aDOS0 style_fillBtn__xma7g rounded-pill register_btn" href="/sign-in/">Register</a>
+
         <div class="hd-search-ot d-none d-md-block">
           <div class="style_navLink__aDOS0 style_iconItem__NTDWb p-0 searchItem">
             <button type="button" class="searchBtn border-0 btn btn-link">
@@ -148,6 +83,8 @@
                       max-width: 100%;
                       min-height: 100%;
                       max-height: 100%;
+                      filter: invert(59%) sepia(33%) saturate(2578%) hue-rotate(325deg) brightness(94%) contrast(93%);
+
                     " /></span>
             </button>
           </div>
@@ -176,9 +113,9 @@
 
 <div class="style_headerMenu__YNVcR xsmall-text d-flex text-nowrap">
   <ul class="d-flex mb-0 m-auto">
-    <li><a class="style_navItem__o66ST  style_liveUpdate__l5Ln_ text-uppercase font-bold d-block" target="_self"
+    <li><a class="style_navItem__o66ST  style_liveUpdate__l5Ln_ text-uppercase font-bold  hide_in_desk" target="_self"
         href="{{route('home')}}">Live Scores</a></li>
-    <li><a class="style_navItem__o66ST   text-uppercase font-bold d-block" target="_self"
+    <li><a class="style_navItem__o66ST   text-uppercase font-bold d-block " target="_self"
         href="/cricket-news/?ref=hm">Cricket News</a></li>
     <li>
       <div id="uniq648979ca4c330e9fa30f2961" class="dropdown"><button id="648979ca4c330e9fa30f2961"

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
@@ -8,45 +7,38 @@
     Cricket Teams, Stats, Latest News, Match Predictions, Fantasy Tips
     &amp;amp; Results
   </title>
-  <link rel="canonical" href="https://www.crictracker.com/" />
+  <link rel="canonical" href="https://www.isportindia.com/" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2" />
-  <meta name="Author" content="CricTracker" />
+  <meta name="Author" content="isportindia" />
   <meta property="og:locale" content="en_US" />
   <meta name="description"
-    content="Get cricket match updates (Domestic &amp;amp; International), team stats, series results, fixtures, latest news, top stories, match preview, predictions, review, results, fantasy tips, statistical highlights, videos and complete cricket analysis along with ICC Cricket player rankings on CricTracker" />
+    content="Get cricket match updates (Domestic &amp;amp; International), team stats, series results, fixtures, latest news, top stories, match preview, predictions, review, results, fantasy tips, statistical highlights, videos and complete cricket analysis along with ICC Cricket player rankings on isportindia" />
   <meta name="robots" content="Follow, Index" />
   <meta property="og:title"
     content="Cricket Teams, Stats, Latest News, Match Predictions, Fantasy Tips &amp;amp; Results" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.crictracker.com/" />
-  <meta property="og:site_name" content="CricTracker" />
-  <meta property="og:image" content="https://www.crictracker.com/images/CricTracker-Facebook-Preview.jpg" />
+  <meta property="og:url" content="https://www.isportindia.com/" />
+  <meta property="og:site_name" content="isportindia" />
+  <meta property="og:image" content="https://isportindia.com/images/02.png" />
   <meta property="og:image:alt"
     content="Cricket Teams, Stats, Latest News, Match Predictions, Fantasy Tips &amp;amp; Results" />
   <meta property="og:image:width" content="640" />
   <meta property="og:image:height" content="400" />
-  <meta property="og:image:url" content="https://www.crictracker.com/images/CricTracker-Facebook-Preview.jpg" />
+  <meta property="og:image:url" content="https://isportindia.com/images/02.png" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:description"
-    content="Get cricket match updates (Domestic &amp;amp; International), team stats, series results, fixtures, latest news, top stories, match preview, predictions, review, results, fantasy tips, statistical highlights, videos and complete cricket analysis along with ICC Cricket player rankings on CricTracker" />
+    content="Get cricket match updates (Domestic &amp;amp; International), team stats, series results, fixtures, latest news, top stories, match preview, predictions, review, results, fantasy tips, statistical highlights, videos and complete cricket analysis along with ICC Cricket player rankings on isportindia" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@cricketracker" />
-  <meta name="twitter:domain" content="crictracker.com" />
+  <meta name="twitter:domain" content="isportindia.com" />
   <meta property="twitter:title"
     content="Cricket Teams, Stats, Latest News, Match Predictions, Fantasy Tips &amp;amp; Results" />
-  <meta property="twitter:image" content="https://www.crictracker.com/images/CricTracker-Facebook-Preview.jpg" />
-  <meta property="twitter:url" content="https://www.crictracker.com/" />
+  <meta property="twitter:image" content="https://isportindia.com/images/02.png" />
+  <meta property="twitter:url" content="https://www.isportindia.com/" />
   <meta property="twitter:image:alt"
     content="Cricket Teams, Stats, Latest News, Match Predictions, Fantasy Tips &amp;amp; Results" />
-  <meta name="twitter:creator" content="@cricketracker" />
   <meta property="twitter:description"
-    content="Get cricket match updates (Domestic &amp;amp; International), team stats, series results, fixtures, latest news, top stories, match preview, predictions, review, results, fantasy tips, statistical highlights, videos and complete cricket analysis along with ICC Cricket player rankings on CricTracker" />
-  <meta property="fb:pages" content="600228316674560" />
-  <meta property="fb:pages" content="307083702751174" />
-  <meta property="fb:pages" content="1644838162470778" />
-  <meta name="p:domain_verify" content="195bbe55be30c5d6ff0e09090afb9684" />
-  <meta property="fb:pages" content="352719408676818" />
-  <meta property="fb:app_id" content="1133939180696269" />
+    content="Get cricket match updates (Domestic &amp;amp; International), team stats, series results, fixtures, latest news, top stories, match preview, predictions, review, results, fantasy tips, statistical highlights, videos and complete cricket analysis along with ICC Cricket player rankings on isportindia" />
+
   <meta name="next-head-count" content="5" />
   @include('layout.css')
   @yield('style')
