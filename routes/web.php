@@ -31,6 +31,11 @@ Route::get('post-details/{slug}', [HomeController::class, 'postDetails'])->name(
 Route::get('cricspecial-details/{slug}', [HomeController::class, 'cricspecialDetails'])->name('cricspecial.details');
 Route::get('news/{slug}', [HomeController::class, 'newsDetails'])->name('news.details');
 
+// SEASON 
+Route::get('season/{cid}',[HomeController::class,'seasonDetails'])->name('season.details');
+
+Route::get('cricket-teams/{name}',[HomeController::class,'cricketTeams'])->name('cricket.teams');
+
 Route::prefix('admin')->group(function () {
 
     Route::get('/', [LoginController::class, 'login'])->name('login');

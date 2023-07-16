@@ -185,7 +185,7 @@
           data-popper-escaped="false" data-popper-placement="bottom-end"
           style="position: absolute; right : 0; left : unset; ">
           @foreach (getSeasons() as $val)
-          <a class="dropdown-item" href="{{ getSeasonsDetailsUrl($val['matches_url']) }}">{{$val['title']}}</a>
+          <a class="dropdown-item" href="{{ route('season.details',$val['matches_url']) }}">{{$val['title']}}</a>
           @endforeach
         </div>
     </li>
