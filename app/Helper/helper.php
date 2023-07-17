@@ -11,7 +11,7 @@ function getSeasons()
 {
 	$url = 'seasons/2021/competitions';
 
-	$response = Http::get(config('services.api') . $url . '?token=' . token())
+	$response = Http::get(config('services.api') . $url . '?per_page=5&token=' . token())
 		->json();
 
 	return $response['response']['items'];
