@@ -745,8 +745,6 @@ $matchs = getMatch();
           {{-- LATEST UPDATE END --}}
         </section>
 
-
-
         {{-- SEASON UPDATE START --}}
 
         {{-- LATEST UPDATE HIGHLIGHTER START --}}
@@ -772,8 +770,7 @@ $matchs = getMatch();
               <div class="style_liveMatchCard__tNdaO d-flex flex-column align-items-center mb-2 position-relative">
                 <div
                   class="w-100 position-relative d-flex flex-column flex-sm-row align-items-sm-center justify-content-between">
-                  <a class="style_scoreCardLink__PeqzJ"
-                    href="/live-scores/dd-vs-trichy-match-4-t20-tamil-nadu-premier-league-14-jun-2023/"></a>
+                  <a class="style_scoreCardLink__PeqzJ" href="{{route('post.details',[$suh->slug])}}/"></a>
                   <div class="style_team__SgPqc flex-shrink-0 text-start mb-2 mb-sm-0">
                     <div class="style_name__KSXfd d-flex align-items-center">
                       <div class="style_teamImg__LLq3Z flex-shrink-0 rounded-circle overflow-hidden">
@@ -899,9 +896,21 @@ $matchs = getMatch();
               </div>
             </div>
           </div>
-          <article class="style_article__IayJx undefined" id="{{$suh->cid}}">
+
+          @php
+          $articlesH = DB::table('articles')
+          ->where('cid',$suh->cid)
+          ->where('category', 'seasons_update')
+          ->where('type', 'highlighter')
+          ->where('status', 1)
+          ->latest()
+          ->first();
+          @endphp
+
+          @if (! is_null($articlesH))
+          <article class="style_article__IayJx undefined" id="{{$articlesH->cid}}">
             <a class="style_postimg__ftSiV d-block block-img mb-2 mb-md-3"
-              href="{{route('post.details',[$suh->slug])}}"><span style="
+              href="{{route('post.details',[$articlesH->slug])}}"><span style="
                         box-sizing: border-box;
                         display: block;
                         overflow: hidden;
@@ -924,7 +933,7 @@ $matchs = getMatch();
                           margin: 0;
                           padding: 0;
                           padding-top: 62.5%;
-                        "></span><img alt="{{$suh->cid}}" src="{{getImageUrl($suh->img)}}" decoding="async"
+                        "></span><img alt="{{$articlesH->cid}}" src="{{getImageUrl($articlesH->img)}}" decoding="async"
                   data-nimg="responsive" style="position: absolute;
                           top: 0;
                           left: 0;
@@ -943,10 +952,10 @@ $matchs = getMatch();
                           max-height: 100%;
                           background-size: cover;
                           background-position: 0% 0%;
-                          background-image: url('{{getImageUrl($suh->img)}}');
+                          background-image: url('{{getImageUrl($articlesH->img)}}');
                         " /> </span></a>
             <h3 class="small-head mb-2">
-              <a href="{{route('post.details',[$suh->slug])}}">{{ $suh->title }} </a>
+              <a href="{{route('post.details',[$articlesH->slug])}}">{{ $articlesH->title }} </a>
             </h3>
             <div class="style_articleInfo__WqisT d-flex">
               <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
@@ -990,7 +999,7 @@ $matchs = getMatch();
                               max-width: 100%;
                               min-height: 100%;
                               max-height: 100%;
-                            " /> </span></span>{{ Carbon\Carbon::parse($suh->created_at)->format('d M Y')
+                            " /> </span></span>{{ Carbon\Carbon::parse($articlesH->created_at)->format('d M Y')
                 }}</span><span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
                             box-sizing: border-box;
                             display: block;
@@ -1032,9 +1041,11 @@ $matchs = getMatch();
                               max-width: 100%;
                               min-height: 100%;
                               max-height: 100%;
-                            " /> </span></span>{{ $suh->min }} Min</span>
+                            " /> </span></span>{{ $articlesH->min }} Min</span>
             </div>
           </article>
+          @endif
+
           {{-- NORMAL --}}
           @php $articles = DB::table('articles')
           ->where('cid',$suh->cid)
@@ -1480,7 +1491,7 @@ $matchs = getMatch();
       <div class="font-semi">
         @foreach (getSeasons() as $val)
         <a class="cs-item common-box d-block overflow-hidden text-nowrap mb-2"
-          href="{{ getSeasonsDetailsUrl($val['matches_url']) }}">{{$val['title']}}</a>
+          href="{{ route('season.details',$val['cid']) }}">{{$val['title']}}</a>
         @endforeach
       </div>
     </section>
@@ -1529,9 +1540,11 @@ $matchs = getMatch();
                       " /></span></span>Top Teams
         </h3>
       </div>
+
       <div class="undefined d-flex flex-wrap font-semi text-center justify-content-between">
+        @for ($i = 0; $i < 10; $i++) 
         <a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-          href="/cricket-teams/australia/">
+          href="{{ route('cricket.teams',$rank['teams']['odis'][$i]['team']) }}">
           <div class="style_flag__W_wsf position-absolute">
             <span style="
                       box-sizing: border-box;
@@ -1572,9 +1585,11 @@ $matchs = getMatch();
                         max-height: 100%;
                       " /></span>
           </div>
-          <span class="style_name__cp86h position-relative">Australia</span>
-        </a>
+          <span class="style_name__cp86h position-relative">{{$rank['teams']['odis'][$i]['team']}}</span>
+          </a>
+          @endfor
       </div>
+
     </section>
     </div>
     </div>

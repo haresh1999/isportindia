@@ -4,32 +4,22 @@ use Illuminate\Support\Facades\Http;
 
 function token()
 {
-
 	return 'ec471071441bb2ac538a0ff901abd249';
 }
 
 function getSeasons()
 {
 	$url = 'seasons/2021/competitions';
-	
+
 	$response = Http::get(config('services.api') . $url . '?token=' . token())
-	->json();
-	
+		->json();
+
 	return $response['response']['items'];
 }
 
-function seasonWithSession(){
-	
-}
-
-function getSeasonsDetailsUrl($path)
+function getSeasonsDetails($cid)
 {
-	return config('services.api') . $path . '?token=' . token();
-}
-
-function getSeasonsDetails($url)
-{
-	return Http::get($url)->json();
+	return Http::get(config('services.api') . 'competitions/' . $cid . '/matches?token=' . token())->json();
 }
 
 function getMatch()
@@ -41,7 +31,6 @@ function getMatch()
 
 function getMatchDetails($matchId)
 {
-
 	$response = Http::get(config('services.api') . "matches/" . $matchId . "/info?token=" . token())->json();
 
 	return $response['response'];
@@ -49,7 +38,6 @@ function getMatchDetails($matchId)
 
 function getIccRanking()
 {
-
 	$response = Http::get(config('services.api') . "iccranks?token=" . token())->json();
 
 	return $response;
@@ -57,7 +45,6 @@ function getIccRanking()
 
 function getTopTeam()
 {
-
 	return  Http::get(config('services.api') . "teams&format=1,2,3,4&token=" . token())->json();
 
 	// return $response['response'];

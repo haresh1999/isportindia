@@ -34,7 +34,7 @@ class HomeController extends Controller
 
         $seasonsUpdateHighlighter = Article::where('status', 1)
             ->where('category', 'seasons_update')
-            ->where('type', 'highlighter')
+            ->groupBy('cid')
             ->latest()
             ->limit(5)
             ->get();
@@ -136,5 +136,19 @@ class HomeController extends Controller
         $news->increment('views', 1);
 
         return view('news_details', compact('news'));
+    }
+
+    public function seasonDetails($cId)
+    {
+        $response = getSeasonsDetails($cId);
+        
+        return redirect()->back();
+    }
+
+    public function cricketTeams($name)
+    {
+        // $name
+        
+        return redirect()->back();
     }
 }
