@@ -112,6 +112,22 @@
                                 </div>
 
                                 <div class="col-md-12 mt-4">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Short Description
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Write short description of this blog">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('short_description')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <textarea class="form-control mb-5 mb-sm-6" name="short_description" rows="3"
+                                        cols="10">{{ $article->short_description }}</textarea>
+                                </div>
+
+                                <div class="col-md-12 mt-4">
                                     <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Description
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
                                             title="Article Details Description">

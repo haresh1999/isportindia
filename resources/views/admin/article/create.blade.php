@@ -47,7 +47,7 @@
                                             value="seasons_update">Seasons Update</option>
                                     </select>
                                 </div>
-                                
+
                                 <div class="col-md-12 mt-4 d-none seasons">
                                     <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Select Seasons
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
@@ -96,7 +96,7 @@
                                             Liner</option>
                                     </select>
                                 </div>
-                                
+
                                 <div class="col-md-12 mt-4">
                                     <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Title
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
@@ -109,9 +109,25 @@
                                     @error('title')
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
-                                    <input class="form-control" type="text" name="title"
-                                        value="{{ old('title') }}">
+                                    <input class="form-control" type="text" name="title" value="{{ old('title') }}">
                                 </div>
+
+                                <div class="col-md-12 mt-4">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Short Description
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Write short description of this blog">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('short_description')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <textarea class="form-control mb-5 mb-sm-6" name="short_description" rows="3"
+                                        cols="10">{{ old('short_description') }}</textarea>
+                                </div>
+
 
                                 <div class="col-md-12 mt-4">
                                     <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Description
@@ -155,8 +171,7 @@
                                     @error('min')
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
-                                    <input class="form-control" type="text" name="min"
-                                        value="{{ old('min') }}">
+                                    <input class="form-control" type="text" name="min" value="{{ old('min') }}">
                                 </div>
 
                                 <div class="col-md-12 mt-4">
@@ -249,7 +264,7 @@
 })
 </script>
 <script>
-$('.category').change(function(){
+    $('.category').change(function(){
     if ($(this).val() == 'seasons_update') {
         $('.seasons').removeClass('d-none')
         $('.seasons').addClass('d-block')

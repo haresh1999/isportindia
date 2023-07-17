@@ -478,7 +478,7 @@ $matchs = getMatch();
                       $latestUpdateHighlighter->title }}</a>
                   </h3>
                   <p class="style_desc__jLYw_ style_desc__zP5qm">
-                    {!! Str::limit($latestUpdateHighlighter->description, 256, '...') !!}
+                    {{ $latestUpdateHighlighter->short_description }}
                   </p>
                 </div>
                 <div class="style_articleInfo__WqisT undefined d-flex">
@@ -1542,8 +1542,8 @@ $matchs = getMatch();
       </div>
 
       <div class="undefined d-flex flex-wrap font-semi text-center justify-content-between">
-        @for ($i = 0; $i < 10; $i++) 
-        <a class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
+        @for ($i = 0; $i < 10; $i++) <a
+          class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
           href="{{ route('cricket.teams',$rank['teams']['odis'][$i]['team']) }}">
           <div class="style_flag__W_wsf position-absolute">
             <span style="

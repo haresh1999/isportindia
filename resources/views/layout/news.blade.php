@@ -8,7 +8,7 @@
         </span>
         <h4 class="small-head mb-0">
             <a class="overflow-hidden" href="{{ route('news.details',$new->slug) }}">
-                {{ Str::limit($new->short_description, 100, '...') }}
+                {{ $new->short_description }}
             </a>
         </h4>
     </div>
