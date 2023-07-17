@@ -18,7 +18,8 @@ class Article extends Model
         'category',
         'type',
         'cid',
-        'min'
+        'min',
+        'short_description'
     ];
 
     public function user()
