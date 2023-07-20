@@ -7,6 +7,7 @@ use App\Models\CricSpecial;
 use App\Models\News;
 use App\Models\PostLikes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -61,7 +62,7 @@ class HomeController extends Controller
         $res = CricSpecial::with('user')->where('slug', $slug)->first();
 
         $res->increment('views', 1);
-        
+
         return view('cricspecial_details', compact('res'));
     }
 
@@ -69,7 +70,11 @@ class HomeController extends Controller
     {
         $response = getMatchDetails($matchId);
 
-        return view('score_card', compact('response'));
+        $player = Http::get(config('services.api') . 'competitions/' . $response['competition']['cid'] . '/squads?token=' . token())->json();
+
+        $player = $player['response']['squads'];
+
+        return view('score_card', compact('response', 'player'));
     }
 
     public function likesAdd(Request $request)
@@ -141,14 +146,14 @@ class HomeController extends Controller
     public function seasonDetails($cId)
     {
         $response = getSeasonsDetails($cId);
-        
+
         return redirect()->back();
     }
 
     public function cricketTeams($name)
     {
         // $name
-        
+
         return redirect()->back();
     }
 }

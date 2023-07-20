@@ -32,9 +32,9 @@ Route::get('cricspecial-details/{slug}', [HomeController::class, 'cricspecialDet
 Route::get('news/{slug}', [HomeController::class, 'newsDetails'])->name('news.details');
 
 // SEASON 
-Route::get('season/{cid}',[HomeController::class,'seasonDetails'])->name('season.details');
+Route::get('season/{cid}', [HomeController::class, 'seasonDetails'])->name('season.details');
 
-Route::get('cricket-teams/{name}',[HomeController::class,'cricketTeams'])->name('cricket.teams');
+Route::get('cricket-teams/{name}', [HomeController::class, 'cricketTeams'])->name('cricket.teams');
 
 Route::prefix('admin')->group(function () {
 
@@ -58,7 +58,7 @@ Route::prefix('admin')->group(function () {
         Route::get('cricspecial/edit/{id}', [CricSpecialController::class, 'edit'])->name('cricspecial.edit');
         Route::post('cricspecial/update/{id}', [CricSpecialController::class, 'update'])->name('cricspecial.update');
         Route::get('cricspecial/destroy/{id}', [CricSpecialController::class, 'destroy'])->name('cricspecial.destroy');
-        
+
         Route::get('news', [NewsController::class, 'index'])->name('news');
         Route::get('news/create', [NewsController::class, 'create'])->name('news.create');
         Route::post('news/store', [NewsController::class, 'store'])->name('news.store');
