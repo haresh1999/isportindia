@@ -3333,6 +3333,10 @@
     color: white !important;
 }
 
+.dropdown a {
+    color: black !important;
+}
+
 .hide_in_mobile {
     display: block !important; ;
 }

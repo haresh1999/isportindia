@@ -21,7 +21,8 @@
                 margin: 0;
                 padding: 0;
                 padding-top: 15.68702290076336%;
-              "></span><img alt="logo" class="nav_logo" src="{{ asset('logo.png') }}" decoding="async" data-nimg="responsive" style="
+              "></span><img alt="logo" class="nav_logo" src="{{ asset('logo.png') }}" decoding="async"
+            data-nimg="responsive" style="
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -40,8 +41,8 @@
               " sizes="100vw" /></span></a>
 
       <div class="style_nav__1OO3C ms-auto align-items-center navbar-nav">
-      <li><a class="style_navItem__o66ST hide_in_mobile  style_liveUpdate__l5Ln_ text-uppercase font-bold "
-                target="_self"  href="{{route('home')}}">Live Scores</a></li> 
+        <li><a class="style_navItem__o66ST hide_in_mobile  style_liveUpdate__l5Ln_ text-uppercase font-bold "
+            target="_self" href="{{route('home')}}">Live Scores</a></li>
         <a class="style_navLink__aDOS0 style_fillBtn__xma7g rounded-pill" href="/sign-in/">Sign In</a>
         <a class="style_navLink__aDOS0 style_fillBtn__xma7g rounded-pill register_btn" href="/sign-in/">Register</a>
 
@@ -123,9 +124,9 @@
           class="style_navMore__r_nff text-uppercase font-bold d-block dropdown-toggle btn btn-link">TNPL</button>
         <div id="648979ca4c330e9fa30f2961" x-placement="bottom-start" aria-labelledby="648979ca4c330e9fa30f2961"
           class="style_dropdownMenu__lVfAZ dropdown-menu" data-popper-reference-hidden="false"
-          data-popper-escaped="false" data-popper-placement="bottom-start" style="position: absolute; "><a
-            class="dropdown-item" href="/t20/tnpl/?ref=hm">TNPL Home</a><a class="dropdown-item"
-            href="/t20/tnpl/fixtures/?ref=hm">TNPL Schedule 2023</a><a class="dropdown-item"
+          data-popper-escaped="false" data-popper-placement="bottom-start" style="position: absolute; ">
+          <a class="dropdown-item" href="/t20/tnpl/?ref=hm">TNPL Home</a>
+          <a class="dropdown-item" href="/t20/tnpl/fixtures/?ref=hm">TNPL Schedule 2023</a><a class="dropdown-item"
             href="/t20/tnpl/standings/?ref=hm">TNPL Points Table 2023</a><a class="dropdown-item"
             href="/t20/tnpl/stats/?ref=hm">TNPL Stats 2023</a><a class="dropdown-item"
             href="/tnpl-winners-and-runners-list/?ref=hm">TNPL Winners List</a></div>
