@@ -8,6 +8,7 @@ use App\Models\News;
 use App\Models\PostLikes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -50,7 +51,9 @@ class HomeController extends Controller
 
     public function postDetails($slug)
     {
-        $res = Article::with('user')->where('slug', $slug)->first();
+        $res = Article::with('user')
+            ->where('slug', $slug)
+            ->first();
 
         $res->increment('views', 1);
 
@@ -59,7 +62,9 @@ class HomeController extends Controller
 
     public function cricspecialDetails($slug)
     {
-        $res = CricSpecial::with('user')->where('slug', $slug)->first();
+        $res = CricSpecial::with('user')
+            ->where('slug', $slug)
+            ->first();
 
         $res->increment('views', 1);
 
@@ -110,13 +115,13 @@ class HomeController extends Controller
 
             if ($request->type == 'article') {
 
-                Article::where('id', $request->id)->update(['likes' => \DB::raw('likes+1')]);
+                Article::where('id', $request->id)->update(['likes' => DB::raw('likes+1')]);
             } elseif ($request->type == 'news') {
 
-                News::where('id', $request->id)->update(['likes' => \DB::raw('likes+1')]);
+                News::where('id', $request->id)->update(['likes' => DB::raw('likes+1')]);
             } elseif ($request->type == 'cricspecial') {
 
-                CricSpecial::where('id', $request->id)->update(['likes' => \DB::raw('likes+1')]);
+                CricSpecial::where('id', $request->id)->update(['likes' => DB::raw('likes+1')]);
             }
         }
 

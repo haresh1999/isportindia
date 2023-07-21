@@ -5,9 +5,11 @@
   .hide {
     display: none;
   }
+
   .show {
     display: block;
   }
+
   .style_arrow__bXMF0 {
     width: 26px;
     height: 60px;
@@ -1293,34 +1295,34 @@ $matchs = getMatch();
             <a class="theme-text font-semi" href="/icc-rankings/">Visit All</a>
           </div>
           <div class="style_tabContainer__K8v4c">
-          <div id="series-cont" class="style_navTab__SVIAC text-uppercase equal-width-nav  nav nav-pills">
-                    <div class="nav-item">
-                        <a type="TEST" onclick="seriesTabClick(this)" role="button" class="active nav-link nav-link"
-                            tabindex="0">Test</a>
-                    </div>
-                    <div class="nav-item">
-                        <a type="ODI" onclick="seriesTabClick(this)" role="button" class="false nav-link nav-link"
-                            tabindex="0">ODI</a>
-                    </div>
-                    <div class="nav-item">
-                        <a type="T20i" onclick="seriesTabClick(this)" role="button" class="false nav-link nav-link"
-                            tabindex="0">T20i</a>
-                    </div>
-                </div>
-                <div id="rankingSimpleTab" class="style_simpleTab__KhKGx simple-tab nav">
-                    <div class="nav-item">
-                        <a type="Teams" onclick="rankingDataTypeTabClick(this)" role="button"
-                            class="active nav-link nav-link" tabindex="0">Teams</a>
-                    </div>
-                    <div class="nav-item">
-                        <a type="Batting" onclick="rankingDataTypeTabClick(this)" role="button"
-                            class="false nav-link nav-link" tabindex="0">Batting</a>
-                    </div>
-                    <div class="nav-item">
-                        <a type="Bowling" onclick="rankingDataTypeTabClick(this)" role="button"
-                            class="false nav-link nav-link" tabindex="0">Bowling</a>
-                    </div>
-                </div>
+            <div id="series-cont" class="style_navTab__SVIAC text-uppercase equal-width-nav  nav nav-pills">
+              <div class="nav-item">
+                <a type="TEST" onclick="seriesTabClick(this)" role="button" class="active nav-link nav-link"
+                  tabindex="0">Test</a>
+              </div>
+              <div class="nav-item">
+                <a type="ODI" onclick="seriesTabClick(this)" role="button" class="false nav-link nav-link"
+                  tabindex="0">ODI</a>
+              </div>
+              <div class="nav-item">
+                <a type="T20i" onclick="seriesTabClick(this)" role="button" class="false nav-link nav-link"
+                  tabindex="0">T20i</a>
+              </div>
+            </div>
+            <div id="rankingSimpleTab" class="style_simpleTab__KhKGx simple-tab nav">
+              <div class="nav-item">
+                <a type="Teams" onclick="rankingDataTypeTabClick(this)" role="button" class="active nav-link nav-link"
+                  tabindex="0">Teams</a>
+              </div>
+              <div class="nav-item">
+                <a type="Batting" onclick="rankingDataTypeTabClick(this)" role="button" class="false nav-link nav-link"
+                  tabindex="0">Batting</a>
+              </div>
+              <div class="nav-item">
+                <a type="Bowling" onclick="rankingDataTypeTabClick(this)" role="button" class="false nav-link nav-link"
+                  tabindex="0">Bowling</a>
+              </div>
+            </div>
             <div class="table-item_itemCard__qI76x">
               <div class="table-item_item__nbsco table-item_head___plQ3 d-flex align-items-center">
                 <p class="mb-0">Rank</p>
@@ -1330,143 +1332,143 @@ $matchs = getMatch();
 
               {{-- TEST TEAM RANKING START--}}
 
-              
+
               @php $data = getIccRanking() @endphp
               @php $lastUpdate = \Carbon\Carbon::parse($data['modified'])->format('M d, Y, H:m') @endphp
               @php $rank = $data['response']['ranks'] @endphp
 
 
-                  <div class="ranking-data TEST-Teams show">
-                  {{-- TEAM --}}
-                  @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
-                      <p class="mb-0 flex-shrink-0">{{$rank['teams']['tests'][$i]['rank']}}</p>
-                      <div class="undefined d-flex align-items-center flex-grow-1">
-                        <div>
-                          <p class="mb-0">{{$rank['teams']['tests'][$i]['team']}}</p>
-                        </div>
-                      </div>
-                      <p class="mb-0 flex-shrink-0">{{$rank['teams']['tests'][$i]['rating']}}</p>
-                  </div>
-                  @endfor
-                  </div>
-                  <div class="ranking-data TEST-Batting hide">
-                  {{-- Batting --}}
-                      @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
-                        <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['tests'][$i]['rank']}}</p>
-                        <div class="undefined d-flex align-items-center flex-grow-1">
-                          <div>
-                            <p class="mb-0">{{$rank['batsmen']['tests'][$i]['player']}}</p>
-                          </div>
-                        </div>
-                        <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['tests'][$i]['rating']}}</p>
+              <div class="ranking-data TEST-Teams show">
+                {{-- TEAM --}}
+                @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+                  <p class="mb-0 flex-shrink-0">{{$rank['teams']['tests'][$i]['rank']}}</p>
+                  <div class="undefined d-flex align-items-center flex-grow-1">
+                    <div>
+                      <p class="mb-0">{{$rank['teams']['tests'][$i]['team']}}</p>
                     </div>
-                    @endfor
                   </div>
-                  <div class="ranking-data TEST-Bowling hide">
-                  {{-- Bowling --}}
-                      @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
-                        <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['tests'][$i]['rank']}}</p>
-                        <div class="undefined d-flex align-items-center flex-grow-1">
-                          <div>
-                            <p class="mb-0">{{$rank['bowlers']['tests'][$i]['player']}}</p>
-                          </div>
-                        </div>
-                        <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['tests'][$i]['rating']}}</p>
-                    </div>
-                    @endfor
+                  <p class="mb-0 flex-shrink-0">{{$rank['teams']['tests'][$i]['rating']}}</p>
+              </div>
+              @endfor
+            </div>
+            <div class="ranking-data TEST-Batting hide">
+              {{-- Batting --}}
+              @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+                <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['tests'][$i]['rank']}}</p>
+                <div class="undefined d-flex align-items-center flex-grow-1">
+                  <div>
+                    <p class="mb-0">{{$rank['batsmen']['tests'][$i]['player']}}</p>
                   </div>
-    
-                  <div class="ranking-data ODI-Teams hide">
-                  {{-- ODI TEAM RANKING START --}}
+                </div>
+                <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['tests'][$i]['rating']}}</p>
+            </div>
+            @endfor
+          </div>
+          <div class="ranking-data TEST-Bowling hide">
+            {{-- Bowling --}}
+            @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+              <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['tests'][$i]['rank']}}</p>
+              <div class="undefined d-flex align-items-center flex-grow-1">
+                <div>
+                  <p class="mb-0">{{$rank['bowlers']['tests'][$i]['player']}}</p>
+                </div>
+              </div>
+              <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['tests'][$i]['rating']}}</p>
+          </div>
+          @endfor
+        </div>
 
-                      @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
-                        <p class="mb-0 flex-shrink-0">{{$rank['teams']['odis'][$i]['rank']}}</p>
-                        <div class="undefined d-flex align-items-center flex-grow-1">
-                          <div>
-                            <p class="mb-0">{{$rank['teams']['odis'][$i]['team']}}</p>
-                          </div>
-                        </div>
-                        <p class="mb-0 flex-shrink-0">{{$rank['teams']['odis'][$i]['rating']}}</p>
-                      </div>
-                      @endfor
-                  </div>
-                  <div class="ranking-data ODI-Batting hide">
-                   {{-- Batting --}}
-                      @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
-                        <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['odis'][$i]['rank']}}</p>
-                        <div class="undefined d-flex align-items-center flex-grow-1">
-                          <div>
-                            <p class="mb-0">{{$rank['batsmen']['odis'][$i]['player']}}</p>
-                          </div>
-                        </div>
-                        <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['odis'][$i]['rating']}}</p>
-                    </div>
-                    @endfor
-                  </div>
-                  <div class="ranking-data ODI-Bowling hide">
-                  {{-- Bowling --}}
-                      @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
-                        <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['odis'][$i]['rank']}}</p>
-                        <div class="undefined d-flex align-items-center flex-grow-1">
-                          <div>
-                            <p class="mb-0">{{$rank['bowlers']['odis'][$i]['player']}}</p>
-                          </div>
-                        </div>
-                        <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['odis'][$i]['rating']}}</p>
-                    </div>
-                    @endfor
-                  </div>
-                  <div class="ranking-data T20i-Teams hide">
-                  @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
-                        <p class="mb-0 flex-shrink-0">{{$rank['teams']['t20s'][$i]['rank']}}</p>
-                        <div class="undefined d-flex align-items-center flex-grow-1">
-                          <div>
-                            <p class="mb-0">{{$rank['teams']['t20s'][$i]['team']}}</p>
-                          </div>
-                        </div>
-                        <p class="mb-0 flex-shrink-0">{{$rank['teams']['t20s'][$i]['rating']}}</p>
-                    </div>
-                    @endfor
-                  </div>
-                  <div class="ranking-data T20i-Batting hide">
-                  {{-- Batting --}}
-                      @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
-                        <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['t20s'][$i]['rank']}}</p>
-                        <div class="undefined d-flex align-items-center flex-grow-1">
-                          <div>
-                            <p class="mb-0">{{$rank['batsmen']['t20s'][$i]['player']}}</p>
-                          </div>
-                        </div>
-                        <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['t20s'][$i]['rating']}}</p>
-                        </div>
-                        @endfor
-                  </div>
-                  <div class="ranking-data T20i-Bowling hide">
-                  {{-- Bowling --}}
-                    @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
-                      <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['t20s'][$i]['rank']}}</p>
-                      <div class="undefined d-flex align-items-center flex-grow-1">
-                        <div>
-                          <p class="mb-0">{{$rank['bowlers']['t20s'][$i]['player']}}</p>
-                        </div>
-                      </div>
-                      <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['t20s'][$i]['rating']}}</p>
-                      </div>
-                      @endfor
-                  </div>
+        <div class="ranking-data ODI-Teams hide">
+          {{-- ODI TEAM RANKING START --}}
 
-    
-    <p class="card-footer-note text-center">
-      Last Updated On {{ $lastUpdate }} IST
-    </p>
+          @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+            <p class="mb-0 flex-shrink-0">{{$rank['teams']['odis'][$i]['rank']}}</p>
+            <div class="undefined d-flex align-items-center flex-grow-1">
+              <div>
+                <p class="mb-0">{{$rank['teams']['odis'][$i]['team']}}</p>
+              </div>
+            </div>
+            <p class="mb-0 flex-shrink-0">{{$rank['teams']['odis'][$i]['rating']}}</p>
+        </div>
+        @endfor
+      </div>
+      <div class="ranking-data ODI-Batting hide">
+        {{-- Batting --}}
+        @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+          <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['odis'][$i]['rank']}}</p>
+          <div class="undefined d-flex align-items-center flex-grow-1">
+            <div>
+              <p class="mb-0">{{$rank['batsmen']['odis'][$i]['player']}}</p>
+            </div>
+          </div>
+          <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['odis'][$i]['rating']}}</p>
+      </div>
+      @endfor
     </div>
+    <div class="ranking-data ODI-Bowling hide">
+      {{-- Bowling --}}
+      @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+        <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['odis'][$i]['rank']}}</p>
+        <div class="undefined d-flex align-items-center flex-grow-1">
+          <div>
+            <p class="mb-0">{{$rank['bowlers']['odis'][$i]['player']}}</p>
+          </div>
+        </div>
+        <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['odis'][$i]['rating']}}</p>
     </div>
+    @endfor
+  </div>
+  <div class="ranking-data T20i-Teams hide">
+    @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+      <p class="mb-0 flex-shrink-0">{{$rank['teams']['t20s'][$i]['rank']}}</p>
+      <div class="undefined d-flex align-items-center flex-grow-1">
+        <div>
+          <p class="mb-0">{{$rank['teams']['t20s'][$i]['team']}}</p>
+        </div>
+      </div>
+      <p class="mb-0 flex-shrink-0">{{$rank['teams']['t20s'][$i]['rating']}}</p>
+  </div>
+  @endfor
+</div>
+<div class="ranking-data T20i-Batting hide">
+  {{-- Batting --}}
+  @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+    <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['t20s'][$i]['rank']}}</p>
+    <div class="undefined d-flex align-items-center flex-grow-1">
+      <div>
+        <p class="mb-0">{{$rank['batsmen']['t20s'][$i]['player']}}</p>
+      </div>
     </div>
+    <p class="mb-0 flex-shrink-0">{{$rank['batsmen']['t20s'][$i]['rating']}}</p>
+</div>
+@endfor
+</div>
+<div class="ranking-data T20i-Bowling hide">
+  {{-- Bowling --}}
+  @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
+    <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['t20s'][$i]['rank']}}</p>
+    <div class="undefined d-flex align-items-center flex-grow-1">
+      <div>
+        <p class="mb-0">{{$rank['bowlers']['t20s'][$i]['player']}}</p>
+      </div>
+    </div>
+    <p class="mb-0 flex-shrink-0">{{$rank['bowlers']['t20s'][$i]['rating']}}</p>
+</div>
+@endfor
+</div>
 
-    <section class="widget">
-      <div class="widget-title">
-        <h3 class="small-head d-flex align-items-center text-uppercase mb-0">
-          <span class="icon me-1"><span style="
+
+<p class="card-footer-note text-center">
+  Last Updated On {{ $lastUpdate }} IST
+</p>
+</div>
+</div>
+</div>
+
+<section class="widget">
+  <div class="widget-title">
+    <h3 class="small-head d-flex align-items-center text-uppercase mb-0">
+      <span class="icon me-1"><span style="
                       box-sizing: border-box;
                       display: block;
                       overflow: hidden;
@@ -1494,7 +1496,7 @@ $matchs = getMatch();
                         /_next/static/media/cup-dark-icon.133e379b.svg 1200w,
                         /_next/static/media/cup-dark-icon.133e379b.svg 1900w
                       " src="/_next/static/media/cup-dark-icon.133e379b.svg" decoding="async" data-nimg="responsive"
-                style="
+            style="
                         position: absolute;
                         inset: 0px;
                         box-sizing: border-box;
@@ -1509,21 +1511,21 @@ $matchs = getMatch();
                         min-height: 100%;
                         max-height: 100%;
                       " /></span></span><span>Current Series</span>
-        </h3>
-      </div>
-      <div class="font-semi">
-        @foreach (getSeasons() as $val)
-        <a class="cs-item common-box d-block overflow-hidden text-nowrap mb-2"
-          href="{{ route('season.details',$val['cid']) }}">{{$val['title']}}</a>
-        @endforeach
-      </div>
-    </section>
+    </h3>
+  </div>
+  <div class="font-semi">
+    @foreach (getSeasons() as $val)
+    <a class="cs-item common-box d-block overflow-hidden text-nowrap mb-2"
+      href="{{ route('season.details',$val['cid']) }}">{{$val['title']}}</a>
+    @endforeach
+  </div>
+</section>
 
-    {{-- TOP TEAMS --}}
-    <section class="widget">
-      <div class="widget-title">
-        <h3 class="small-head d-flex align-items-center text-uppercase mb-0">
-          <span class="icon me-1"><span style="
+{{-- TOP TEAMS --}}
+<section class="widget">
+  <div class="widget-title">
+    <h3 class="small-head d-flex align-items-center text-uppercase mb-0">
+      <span class="icon me-1"><span style="
                       box-sizing: border-box;
                       display: block;
                       overflow: hidden;
@@ -1546,7 +1548,7 @@ $matchs = getMatch();
                         margin: 0px;
                         padding: 100% 0px 0px;
                       "></span><img alt="winner" src="./_next/static/media/earth-dark-icon.3958b272.svg"
-                decoding="async" data-nimg="responsive" style="
+            decoding="async" data-nimg="responsive" style="
                         position: absolute;
                         inset: 0px;
                         box-sizing: border-box;
@@ -1561,15 +1563,15 @@ $matchs = getMatch();
                         min-height: 100%;
                         max-height: 100%;
                       " /></span></span>Top Teams
-        </h3>
-      </div>
+    </h3>
+  </div>
 
-      <div class="undefined d-flex flex-wrap font-semi text-center justify-content-between">
-        @for ($i = 0; $i < 10; $i++) <a
-          class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-          href="{{ route('cricket.teams',$rank['teams']['odis'][$i]['team']) }}">
-          <div class="style_flag__W_wsf position-absolute">
-            <span style="
+  <div class="undefined d-flex flex-wrap font-semi text-center justify-content-between">
+    @for ($i = 0; $i < 10; $i++) <a
+      class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
+      href="{{ route('cricket.teams',$rank['teams']['odis'][$i]['team']) }}">
+      <div class="style_flag__W_wsf position-absolute">
+        <span style="
                       box-sizing: border-box;
                       display: block;
                       overflow: hidden;
@@ -1592,7 +1594,7 @@ $matchs = getMatch();
                         margin: 0px;
                         padding: 100% 0px 0px;
                       "></span><img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async"
-                data-nimg="responsive" style="
+            data-nimg="responsive" style="
                         position: absolute;
                         inset: 0px;
                         box-sizing: border-box;
@@ -1607,23 +1609,23 @@ $matchs = getMatch();
                         min-height: 100%;
                         max-height: 100%;
                       " /></span>
-          </div>
-          <span class="style_name__cp86h position-relative">{{$rank['teams']['odis'][$i]['team']}}</span>
-          </a>
-          @endfor
       </div>
+      <span class="style_name__cp86h position-relative">{{$rank['teams']['odis'][$i]['team']}}</span>
+      </a>
+      @endfor
+  </div>
 
-    </section>
-    </div>
-    </div>
-    </div>
-    </div>
+</section>
+</div>
+</div>
+</div>
+</div>
 
-    @endsection
+@endsection
 
-    @section('script')
-    <script>
-      const all_matches_list = document.querySelectorAll('#all_matches .banner_match')
+@section('script')
+<script>
+  const all_matches_list = document.querySelectorAll('#all_matches .banner_match')
 const categoryClickHandler = (category) => {
   console.log(all_matches_list, '########')
   ///buttons logic
@@ -1678,9 +1680,9 @@ const categoryClickHandler = (category) => {
 }
 
 
-    </script>
-    <script>
-    const getActiveRankingDataType = () => {
+</script>
+<script>
+  const getActiveRankingDataType = () => {
         return $("#rankingSimpleTab .active").attr("type")
     }
     const getActiveSeriesType = () => {
@@ -1709,4 +1711,4 @@ const categoryClickHandler = (category) => {
         $(`.ranking-data.${show_cont_class}`).addClass("show")
     }
 </script>
-    @endsection
+@endsection
