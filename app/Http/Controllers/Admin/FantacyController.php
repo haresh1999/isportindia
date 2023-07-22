@@ -16,7 +16,9 @@ class FantacyController extends Controller
      */
     public function index()
     {
-        return view('fantasy.list');
+        $fantasys = Fantacy::paginate(10);
+
+        return view('admin.fantasy.list',compact('fantasys'));
     }
 
     /**
@@ -26,7 +28,7 @@ class FantacyController extends Controller
      */
     public function create()
     {
-        return view('fantasy.create');
+        return view('admin.fantasy.create');
     }
 
     /**
@@ -48,7 +50,7 @@ class FantacyController extends Controller
      */
     public function edit(Fantacy $fantacy)
     {
-        return view('fantasy.edit');
+        return view('admin.fantasy.edit');
     }
 
     /**

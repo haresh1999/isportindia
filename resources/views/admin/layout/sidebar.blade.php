@@ -79,17 +79,17 @@
     {{-- FANTASY START --}}
     <div
       class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/fantasy','admin/fantasy/create','admin/fantasy/edit/*') ? 'active' : '' }}"
-      data-bs-target="#news" data-bs-toggle="collapse">
-      <svg class="icon icon-messages-fill">
-        <use xlink:href="#icon-messages-fill"></use>
-      </svg>&nbsp;&nbsp; News
+      data-bs-target="#fantasy" data-bs-toggle="collapse">
+      <svg class="icon icon-laptop">
+        <use xlink:href="#icon-laptop"></use>
+      </svg>&nbsp;&nbsp; Fantasy
       <svg class="icon icon-cheveron ms-auto arrow">
         <use xlink:href="#icon-cheveron"></use>
       </svg>
     </div>
     <div
       class="collapse submenu {{ Request::is('admin/fantasy','admin/fantasy/create','admin/fantasy/edit/*') ? 'show' : '' }}"
-      id="news" data-bs-parent=".sidebar">
+      id="fantasy" data-bs-parent=".sidebar">
       <div class="wrapper">
         <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/fantasy/create') ? 'text-dark' : '' }}"
           href="{{route('fantasy.create')}}">Create</a>
