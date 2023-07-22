@@ -4,7 +4,7 @@
   </svg>
 </button>
 
-<a class="logo flex-shrink-0" href="{{ env('APP_URL') }}">
+<a target="_blank" class="logo flex-shrink-0" href="{{ env('APP_URL') }}">
   <img class="logo-dark" src="{{ asset('admin/img/logo-dark.png') }}">
   <img class="logo-light" src="{{ asset('admin/img/logo-light.png') }}">
 </a>
