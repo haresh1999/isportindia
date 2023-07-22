@@ -24,6 +24,8 @@
   </div> --}}
 
   <div class="nav-item mb-2">
+
+    {{-- ARTICLE START --}}
     <div
       class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/article','admin/article/create','admin/article/edit/*') ? 'active' : '' }}"
       data-bs-target="#articles" data-bs-toggle="collapse">
@@ -44,7 +46,9 @@
           href="{{route('article')}}">List</a>
       </div>
     </div>
+    {{-- ARTICLE END --}}
 
+    {{-- CRICSPECIAL START --}}
     <div
       class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/cricspecial','admin/cricspecial/create','admin/cricspecial/edit/*') ? 'active' : '' }}"
       data-bs-target="#cricspecial" data-bs-toggle="collapse">
@@ -65,6 +69,9 @@
           href="{{route('cricspecial')}}">List</a>
       </div>
     </div>
+    {{-- CRICSPECIAL END --}}
+
+    {{-- NEWS START --}}
     <div
       class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/cricspecial','admin/cricspecial/create','admin/cricspecial/edit/*') ? 'active' : '' }}"
       data-bs-target="#news" data-bs-toggle="collapse">
@@ -84,6 +91,8 @@
           href="{{route('news')}}">List</a>
       </div>
     </div>
+    {{-- NEWS END --}}
+
   </div>
 
   {{--<div class="nav-item mb-2"><a class="nav-link d-flex align-items-center p-3" href="shop.html">

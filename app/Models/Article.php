@@ -19,7 +19,8 @@ class Article extends Model
         'type',
         'cid',
         'min',
-        'short_description'
+        'short_description',
+        'fantacy_id'
     ];
 
     public function user()
