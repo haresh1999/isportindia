@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\{
     ArticleController,
     CricSpecialController,
     NewsController,
-    FantacyController,
+    FantasyController,
 };
 
 /*
@@ -69,12 +69,12 @@ Route::prefix('admin')->group(function () {
         Route::post('news/update/{news}', [NewsController::class, 'update'])->name('news.update');
         Route::get('news/destroy/{news}', [NewsController::class, 'destroy'])->name('news.destroy');
 
-        Route::get('fantasy', [FantacyController::class, 'index'])->name('fantasy');
-        Route::get('fantasy/create', [FantacyController::class, 'create'])->name('fantasy.create');
-        Route::post('fantasy/store', [FantacyController::class, 'store'])->name('fantasy.store');
-        Route::get('fantasy/edit/{fantacy}', [FantacyController::class, 'edit'])->name('fantasy.edit');
-        Route::post('fantasy/update/{fantacy}', [FantacyController::class, 'update'])->name('fantasy.update');
-        Route::get('fantasy/destroy/{fantacy}', [FantacyController::class, 'destroy'])->name('fantasy.destroy');
+        Route::get('fantasy', [FantasyController::class, 'index'])->name('fantasy');
+        Route::get('fantasy/create', [FantasyController::class, 'create'])->name('fantasy.create');
+        Route::post('fantasy/store', [FantasyController::class, 'store'])->name('fantasy.store');
+        Route::get('fantasy/edit/{fantasy}', [FantasyController::class, 'edit'])->name('fantasy.edit');
+        Route::post('fantasy/update/{fantasy}', [FantasyController::class, 'update'])->name('fantasy.update');
+        Route::get('fantasy/destroy/{fantasy}', [FantasyController::class, 'destroy'])->name('fantasy.destroy');
 
         Route::get('logout', [LoginController::class, 'logout'])->name('logout');
     });

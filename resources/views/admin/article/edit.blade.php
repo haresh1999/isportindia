@@ -97,6 +97,26 @@
                                 </div>
 
                                 <div class="col-md-12 mt-4">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Fantasy Tips
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Type of article select from below">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('type')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <select class="select select-wide" name="fantasy_id">
+                                        <option value="" selected>Select Fantasy</option>
+                                        @foreach ($fantasy as $key => $fant)
+                                            <option {{ old('fantasy_id',$article->fantasy_id) == $key ? 'selected' : '' }} value="{{ $key }}">{{ $fant }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 mt-4">
                                     <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Title
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
                                             title="Maximum 100 characters">
