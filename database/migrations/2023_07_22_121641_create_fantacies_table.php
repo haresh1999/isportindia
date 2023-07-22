@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('fantasies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('link');
+            $table->text('link')->nullable();
             $table->string('img');
             $table->tinyInteger('status')->default(1);
             $table->timestamps();

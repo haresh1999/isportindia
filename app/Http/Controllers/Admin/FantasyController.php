@@ -44,7 +44,7 @@ class FantasyController extends Controller
     {
         $input = $request->validate([
             'name' => 'required|unique:fantasies',
-            'link' => 'required|url',
+            'link' => 'nullable|url',
             'status' => 'required|in:1,2',
             'img' => 'required|image|mimes:jpg,pjeg,png,gif,webp'
         ]);
@@ -80,7 +80,7 @@ class FantasyController extends Controller
     {
         $input = $request->validate([
             'name' => 'required|unique:fantasies,title,' . $fantasy->id,
-            'link' => 'required|url',
+            'link' => 'nullable|url',
             'status' => 'required|in:1,2',
             'img' => 'nullable|image|mimes:jpg,pjeg,png,gif,webp'
         ]);

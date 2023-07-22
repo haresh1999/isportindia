@@ -261,6 +261,9 @@ $matchs = getMatch();
           </div>
         </div>
       </div>
+
+      {{-- ARTICLE NEWS --}}
+
       <div class="style_centerContent__xrgF5 col-lg-6">
         <div class="style_articleTab__eD_8W text-uppercase equal-width-nav mb-3 mb-md-4 overflow-hidden nav nav-pills">
           <div class="nav-item">
@@ -1243,6 +1246,9 @@ $matchs = getMatch();
         {{-- LATEST UPDATE HIGHLIGHTER END --}}
         {{-- SEASON UPDATE END --}}
       </div>
+
+      {{-- TIPS --}}
+
       <div class="style_commonSidebar__uyNzj common-sidebar bt-width  d-lg-block col-lg-3">
         <div class="style_rankingTab__ZG_Ko widget">
           <div class="style_title__x0MLg d-flex justify-content-between align-items-center">
@@ -1392,6 +1398,7 @@ $matchs = getMatch();
         </div>
         @endfor
       </div>
+
       <div class="ranking-data ODI-Batting hide">
         {{-- Batting --}}
         @for ($i = 0; $i < 5; $i++) <div class="table-item_item__nbsco d-flex align-items-center">
