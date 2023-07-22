@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\CricSpecial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CricSpecialController extends Controller
 {
@@ -46,7 +47,7 @@ class CricSpecialController extends Controller
      */
     public function store(Request $request)
     {
-        $v = $request->validate([
+        $input = $request->validate([
             'title' => 'required|max:255|unique:cric_specials',
             'short_description' => 'required',
             'description' => 'required',
@@ -56,24 +57,15 @@ class CricSpecialController extends Controller
             'tag' => 'required'
         ]);
 
-        $v['created_by'] = auth()->id();
-        $v['slug'] = \Str::slug($v['title']);
-        $v['img'] = uploadImage($v['img'], 'cricspecial');
+        $input['created_by'] = auth()->id();
+        $input['slug'] = Str::slug($input['title']);
+        $input['img'] = uploadImage($input['img'], 'cricspecial');
 
-        CricSpecial::create($v);
+        CricSpecial::create($input);
 
-        return redirect()->route('cricspecial')->with('cricspecial.success', 'CricSpecial Created successfully!');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\CricSpecial  $cricSpecial
-     * @return \Illuminate\Http\Response
-     */
-    public function show(CricSpecial $cricSpecial)
-    {
-        //
+        return redirect()
+            ->route('cricspecial')
+            ->with('cricspecial.success', 'CricSpecial Created successfully!');
     }
 
     /**
@@ -82,9 +74,9 @@ class CricSpecialController extends Controller
      * @param  \App\Models\CricSpecial  $cricSpecial
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(CricSpecial $cricSpecial)
     {
-        $res = CricSpecial::find($id);
+        $res = $cricSpecial;
 
         return view('admin.cricspecial.edit', compact('res'));
     }
@@ -96,10 +88,10 @@ class CricSpecialController extends Controller
      * @param  \App\Models\CricSpecial  $cricSpecial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, CricSpecial $cricSpecial)
     {
-        $v = $request->validate([
-            'title' => 'required|max:255|unique:cric_specials,title,' . $id,
+        $input = $request->validate([
+            'title' => 'required|max:255|unique:cric_specials,title,' . $cricSpecial->id,
             'short_description' => 'required',
             'description' => 'required',
             'status' => 'required',
@@ -108,23 +100,20 @@ class CricSpecialController extends Controller
             'tag' => 'required'
         ]);
 
-        $v['slug'] = \Str::slug($v['title']);
+        $input['slug'] = Str::slug($input['title']);
 
-        if (isset($v['img'])) {
+        if (isset($input['img'])) {
 
-            $v['img'] = uploadImage($v['img'], 'cricspecial');
+            $input['img'] = uploadImage($input['img'], 'cricspecial');
 
-            $cs = CricSpecial::find($id);
-
-            deleteImage($cs->img);
-        } else {
-
-            unset($v['img']);
+            deleteImage($cricSpecial->img);
         }
 
-        CricSpecial::where('id', $id)->update($v);
+        $cricSpecial->update($input);
 
-        return redirect()->route('cricspecial')->with('cricspecial.success', 'CricSpecial Updated successfully!');
+        return redirect()
+            ->route('cricspecial')
+            ->with('cricspecial.success', 'CricSpecial Updated successfully!');
     }
 
     /**
@@ -133,10 +122,12 @@ class CricSpecialController extends Controller
      * @param  \App\Models\CricSpecial  $cricSpecial
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CricSpecial $cricSpecial)
     {
-        CricSpecial::destroy($id);
+        $cricSpecial->delete();
 
-        return redirect()->route('cricspecial')->with('cricspecial.warning', 'CricSpecial Deleted successfully!');
+        return redirect()
+            ->route('cricspecial')
+            ->with('cricspecial.warning', 'CricSpecial Deleted successfully!');
     }
 }

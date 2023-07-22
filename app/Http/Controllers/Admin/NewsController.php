@@ -61,7 +61,9 @@ class NewsController extends Controller
 
         News::create($v);
 
-        return redirect()->route('news')->with('news.success', 'News created successfully');
+        return redirect()
+            ->route('news')
+            ->with('news.success', 'News created successfully');
     }
 
     /**
@@ -70,10 +72,8 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(News $news)
     {
-        $news = News::find($id);
-
         return view('admin.news.edit', compact('news'));
     }
 
@@ -84,10 +84,10 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, News $news)
     {
-        $v = $request->validate([
-            'title' => 'required|max:255|unique:news,title,' . $id,
+        $input = $request->validate([
+            'title' => 'required|max:255|unique:news,title,' . $news->id,
             'short_description' => 'required',
             'description' => 'required',
             'status' => 'required',
@@ -95,21 +95,21 @@ class NewsController extends Controller
             'min' => 'required|numeric'
         ]);
 
-        $v['created_by'] = auth()->id();
-        $v['slug'] = Str::slug($v['title']);
+        $input['created_by'] = auth()->id();
+        $input['slug'] = Str::slug($input['title']);
 
-        if (isset($v['img'])) {
+        if (isset($input['img'])) {
 
-            $v['img'] = uploadImage($v['img'], 'news');
-
-            $news = News::find($id);
+            $input['img'] = uploadImage($input['img'], 'news');
 
             deleteImage($news);
         }
 
-        News::where('id', $id)->update($v);
+        $news->update($input);
 
-        return redirect()->route('news')->with('news.success', 'News updated successfully');
+        return redirect()
+            ->route('news')
+            ->with('news.success', 'News updated successfully');
     }
 
     /**
@@ -118,10 +118,12 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(News $news)
     {
-        News::destroy($id);
+        $news->delete();
 
-        return redirect()->route('news')->with('news.success', 'News updated successfully');
+        return redirect()
+            ->route('news')
+            ->with('news.success', 'News updated successfully');
     }
 }

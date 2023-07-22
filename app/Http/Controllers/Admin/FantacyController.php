@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\Fantacy;
 use Illuminate\Http\Request;
@@ -14,7 +16,7 @@ class FantacyController extends Controller
      */
     public function index()
     {
-        //
+        return view('fantasy.list');
     }
 
     /**
@@ -24,7 +26,7 @@ class FantacyController extends Controller
      */
     public function create()
     {
-        //
+        return view('fantasy.create');
     }
 
     /**
@@ -39,17 +41,6 @@ class FantacyController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Fantacy  $fantacy
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Fantacy $fantacy)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Fantacy  $fantacy
@@ -57,7 +48,7 @@ class FantacyController extends Controller
      */
     public function edit(Fantacy $fantacy)
     {
-        //
+        return view('fantasy.edit');
     }
 
     /**

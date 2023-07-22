@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
 use App\Models\Article;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
@@ -59,13 +61,15 @@ class ArticleController extends Controller
 
         $v['img'] = uploadImage($v['img'], 'article');
 
-        $v['slug'] = \Str::slug($v['title']);
+        $v['slug'] = Str::slug($v['title']);
 
         $v['created_by'] = auth()->id();
 
         Article::create($v);
 
-        return redirect()->route('article')->with('post.success', 'Article created successfully!');
+        return redirect()
+            ->route('article')
+            ->with('post.success', 'Article created successfully!');
     }
 
     /**
@@ -74,10 +78,8 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Article $article)
     {
-        $article = Article::find($id);
-
         return view('admin.article.edit', compact('article'));
     }
 
@@ -88,10 +90,10 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Article $article)
     {
-        $v = $request->validate([
-            'title' => 'required|max:250|unique:articles,title,' . $id,
+        $input = $request->validate([
+            'title' => 'required|max:250|unique:articles,title,' . $article->id,
             'description' => 'required',
             'short_description' => 'required',
             'img' => 'nullable|image',
@@ -102,23 +104,20 @@ class ArticleController extends Controller
             'min' => 'required|numeric'
         ]);
 
-        if (isset($v['img'])) {
+        if (isset($input['img'])) {
 
-            $v['img'] = uploadImage($v['img'], 'article');
-
-            $article = Article::find($id);
+            $input['img'] = uploadImage($input['img'], 'article');
 
             deleteImage($article->img);
-        } else {
-
-            unset($v['img']);
         }
 
-        $v['slug'] = \Str::slug($v['title']);
+        $input['slug'] = Str::slug($input['title']);
 
-        Article::where('id', $id)->update($v);
+        $article->update($input);
 
-        return redirect()->route('article')->with('post.success', 'Article updated successfully!');
+        return redirect()
+            ->route('article')
+            ->with('post.success', 'Article updated successfully!');
     }
 
     /**
@@ -127,10 +126,12 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Article $article)
     {
-        Article::destroy($id);
+        $article->delete();
 
-        return redirect()->back()->with('article.success', 'Article deleted successfully!');
+        return redirect()
+            ->back()
+            ->with('article.success', 'Article deleted successfully!');
     }
 }

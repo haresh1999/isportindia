@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CricSpecialController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\FantacyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,23 +49,30 @@ Route::prefix('admin')->group(function () {
         Route::get('article', [ArticleController::class, 'index'])->name('article');
         Route::get('article/create', [ArticleController::class, 'create'])->name('article.create');
         Route::post('article/store', [ArticleController::class, 'store'])->name('article.store');
-        Route::get('article/edit/{id}', [ArticleController::class, 'edit'])->name('article.edit');
-        Route::post('article/update/{id}', [ArticleController::class, 'update'])->name('article.update');
-        Route::get('article/destroy/{id}', [ArticleController::class, 'destroy'])->name('article.destroy');
+        Route::get('article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
+        Route::post('article/update/{article}', [ArticleController::class, 'update'])->name('article.update');
+        Route::get('article/destroy/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
 
         Route::get('cricspecial', [CricSpecialController::class, 'index'])->name('cricspecial');
         Route::get('cricspecial/create', [CricSpecialController::class, 'create'])->name('cricspecial.create');
         Route::post('cricspecial/store', [CricSpecialController::class, 'store'])->name('cricspecial.store');
-        Route::get('cricspecial/edit/{id}', [CricSpecialController::class, 'edit'])->name('cricspecial.edit');
-        Route::post('cricspecial/update/{id}', [CricSpecialController::class, 'update'])->name('cricspecial.update');
-        Route::get('cricspecial/destroy/{id}', [CricSpecialController::class, 'destroy'])->name('cricspecial.destroy');
+        Route::get('cricspecial/edit/{cricspecial}', [CricSpecialController::class, 'edit'])->name('cricspecial.edit');
+        Route::post('cricspecial/update/{cricspecial}', [CricSpecialController::class, 'update'])->name('cricspecial.update');
+        Route::get('cricspecial/destroy/{cricspecial}', [CricSpecialController::class, 'destroy'])->name('cricspecial.destroy');
 
         Route::get('news', [NewsController::class, 'index'])->name('news');
         Route::get('news/create', [NewsController::class, 'create'])->name('news.create');
         Route::post('news/store', [NewsController::class, 'store'])->name('news.store');
-        Route::get('news/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
-        Route::post('news/update/{id}', [NewsController::class, 'update'])->name('news.update');
-        Route::get('news/destroy/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+        Route::get('news/edit/{news}', [NewsController::class, 'edit'])->name('news.edit');
+        Route::post('news/update/{news}', [NewsController::class, 'update'])->name('news.update');
+        Route::get('news/destroy/{news}', [NewsController::class, 'destroy'])->name('news.destroy');
+
+        Route::get('fantasy', [FantacyController::class, 'index'])->name('fantasy');
+        Route::get('fantasy/create', [FantacyController::class, 'create'])->name('fantasy.create');
+        Route::post('fantasy/store', [FantacyController::class, 'store'])->name('fantasy.store');
+        Route::get('fantasy/edit/{fantacy}', [FantacyController::class, 'edit'])->name('fantasy.edit');
+        Route::post('fantasy/update/{fantacy}', [FantacyController::class, 'update'])->name('fantasy.update');
+        Route::get('fantasy/destroy/{fantacy}', [FantacyController::class, 'destroy'])->name('fantasy.destroy');
 
         Route::get('logout', [LoginController::class, 'logout'])->name('logout');
     });
