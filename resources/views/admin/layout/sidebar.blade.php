@@ -2,12 +2,15 @@
   <svg class="icon icon-close">
     <use xlink:href="#icon-close"></use>
   </svg>
-</button><a class="logo flex-shrink-0" href="index.html"><img class="logo-dark"
-    src="{{ asset('admin/img/logo-dark.png') }}"><img class="logo-light"
-    src="{{ asset('admin/img/logo-light.png') }}"></a>
+</button>
+
+<a class="logo flex-shrink-0" href="{{ env('APP_URL') }}">
+  <img class="logo-dark" src="{{ asset('admin/img/logo-dark.png') }}">
+  <img class="logo-light" src="{{ asset('admin/img/logo-light.png') }}">
+</a>
+
 <div class="nav nav-pills flex-column mb-auto mt-8 menu">
   <div class="nav-item mb-2">
-
     {{-- ARTICLE START --}}
     <div
       class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/article','admin/article/create','admin/article/edit/*') ? 'active' : '' }}"
