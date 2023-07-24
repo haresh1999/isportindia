@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
 use App\Models\Article;
-
+use App\Models\Fantasy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -36,7 +36,10 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('admin.article.create');
+        $fantasy = Fantasy::where('status', 1)
+            ->pluck('name', 'id');
+
+        return view('admin.article.create', compact('fantasy'));
     }
 
     /**
@@ -47,7 +50,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $v = $request->validate([
+        $input = $request->validate([
             'title' => 'required|max:250|unique:articles',
             'description' => 'required',
             'short_description' => 'required',
@@ -56,20 +59,21 @@ class ArticleController extends Controller
             'category' => 'required',
             'cid' => 'required_if:category,==,seasons_update',
             'type' => 'required',
-            'min' => 'required|numeric'
+            'min' => 'required|numeric',
+            'fantasy_id' => 'required|integer|exists:fantasies,id'
         ]);
 
-        $v['img'] = uploadImage($v['img'], 'article');
+        $input['img'] = uploadImage($input['img'], 'article');
 
-        $v['slug'] = Str::slug($v['title']);
+        $input['slug'] = Str::slug($input['title']);
 
-        $v['created_by'] = auth()->id();
+        $input['created_by'] = auth()->id();
 
-        Article::create($v);
+        Article::create($input);
 
         return redirect()
             ->route('article')
-            ->with('post.success', 'Article created successfully!');
+            ->with('article.success', 'Article created successfully!');
     }
 
     /**
@@ -80,7 +84,9 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        return view('admin.article.edit', compact('article'));
+        $fantasy = Fantasy::where('status', 1)->pluck('name', 'id');
+
+        return view('admin.article.edit', compact('article', 'fantasy'));
     }
 
     /**
@@ -101,7 +107,8 @@ class ArticleController extends Controller
             'category' => 'required',
             'cid' => 'required_if:category,==,seasons_update',
             'type' => 'required',
-            'min' => 'required|numeric'
+            'min' => 'required|numeric',
+            'fantasy_id' => 'required|integer|exists:fantasies,id'
         ]);
 
         if (isset($input['img'])) {
@@ -117,7 +124,7 @@ class ArticleController extends Controller
 
         return redirect()
             ->route('article')
-            ->with('post.success', 'Article updated successfully!');
+            ->with('article.success', 'Article updated successfully!');
     }
 
     /**
@@ -132,6 +139,6 @@ class ArticleController extends Controller
 
         return redirect()
             ->back()
-            ->with('article.success', 'Article deleted successfully!');
+            ->with('article.error', 'Article deleted successfully!');
     }
 }

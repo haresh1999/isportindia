@@ -1,6 +1,6 @@
 @extends('admin.layout.main')
 
-@section('title','News Create')
+@section('title','Fantasy Create')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
@@ -9,27 +9,27 @@
 @section('content')
 <div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-7 px-xl-7">
     <div class="page-head">
-        <div class="h3 mb-4 mb-xl-5">New News</div>
+        <div class="h3 mb-4 mb-xl-5">New Fantasy</div>
     </div>
     <div class="page-body pb-4 pb-xl-6">
         <div class="row g-0">
             <div class="col-lg-8 col-12 pe-lg-2">
                 <div class="card mb-2 p-4 p-sm-5">
                     <div class="card-head d-flex align-items-center justify-content-between mb-5 mb-sm-6">
-                        <div class="title title-color green">Add News</div><a class="btn-stroke btn-small"
-                            href="{{route('news')}}">
+                        <div class="title title-color green">Add Fantasy</div><a class="btn-stroke btn-small"
+                            href="{{route('fantasy')}}">
                             <svg class="icon icon-arrow-left me-1">
                                 <use xlink:href="#icon-arrow-left"></use>
                             </svg><span>Back</span></a>
                     </div>
 
-                    <form action="{{ route('news.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('fantasy.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body p-0">
                             <div class="row">
 
                                 <div class="col-md-12 mt-4">
-                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Title
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Name of Website or App
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
                                             title="Maximum 100 characters">
                                             <svg class="icon icon-info">
@@ -37,49 +37,31 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    @error('title')
+                                    @error('name')
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
-                                    <input class="form-control" type="text" name="title" value="{{ old('title') }}">
+                                    <input class="form-control" type="text" name="name" value="{{ old('name') }}">
                                 </div>
 
                                 <div class="col-md-12 mt-4">
-                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Short
-                                        Description
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">URL
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                            title="Write short description of this blog">
+                                            title="paste your fantasy url here">
                                             <svg class="icon icon-info">
                                                 <use xlink:href="#icon-info"></use>
                                             </svg>
                                         </div>
                                     </div>
-                                    @error('short_description')
+                                    @error('link')
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
-                                    <textarea class="form-control mb-5 mb-sm-6" name="short_description" rows="3"
-                                        cols="10">{{ old('short_description') }}</textarea>
+                                    <input class="form-control" type="text" name="link" value="{{ old('link') }}">
                                 </div>
 
-
                                 <div class="col-md-12 mt-4">
-                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Description
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Image
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                            title="Article Details Description">
-                                            <svg class="icon icon-info">
-                                                <use xlink:href="#icon-info"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    @error('description')
-                                    <span class="text-red">{{$message}}</span>
-                                    @enderror
-                                    <textarea id="editor1" name="description" rows="10"
-                                        cols="80">{{ old('description') }}</textarea>
-                                </div>
-
-                                <div class="col-md-12 mt-4">
-                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Image
-                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip" title="Image">
+                                            title="upload your fantasy profile image">
                                             <svg class="icon icon-info">
                                                 <use xlink:href="#icon-info"></use>
                                             </svg>
@@ -88,22 +70,7 @@
                                     @error('img')
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
-                                    <input class="form-control" type="file" name="img">
-                                </div>
-
-                                <div class="col-md-12 mt-4">
-                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Read Min
-                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                            title="add number of min to read this article">
-                                            <svg class="icon icon-info">
-                                                <use xlink:href="#icon-info"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    @error('min')
-                                    <span class="text-red">{{$message}}</span>
-                                    @enderror
-                                    <input class="form-control" type="text" name="min" value="{{ old('min') }}">
+                                    <input class="form-control" type="file" name="img" value="{{ old('img') }}">
                                 </div>
 
                                 <div class="col-md-12 mt-4">
@@ -119,15 +86,14 @@
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
                                     <select class="select select-wide" name="status">
-                                        <option {{ old('stauts')==1 ? 'selected' : '' }} selected value="1">Active
-                                        </option>
+                                        <option {{ old('stauts')==1 ? 'selected' : '' }} selected value="1">Active</option>
                                         <option {{ old('stauts')==2 ? 'selected' : '' }} value="2">InActive</option>
                                     </select>
                                 </div>
 
-                            </div>
-                            <div class="w-100 text-center">
-                                <button class="btn mt-3">Save</button>
+                                <div class="w-100 text-center">
+                                    <button class="btn mt-3">Save</button>
+                                </div>
                             </div>
                         </div>
                     </form>

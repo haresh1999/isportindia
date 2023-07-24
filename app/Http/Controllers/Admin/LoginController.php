@@ -29,7 +29,9 @@ class LoginController extends Controller
             return redirect()->route('article');
         }
 
-        return redirect()->back()->withErrors(['email' => 'Email or password is wrong']);
+        return redirect()
+            ->back()
+            ->withErrors(['email' => 'Email or password is wrong']);
     }
 
     public function logout()
