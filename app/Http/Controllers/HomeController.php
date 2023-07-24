@@ -38,7 +38,7 @@ class HomeController extends Controller
             ->where('category', 'seasons_update')
             ->groupBy('cid')
             ->latest()
-            ->limit(5)
+            ->limit(request()->has('per_page') ? request()->get('per_page') : 5)
             ->get();
 
         return view('home', compact(

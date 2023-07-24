@@ -1242,6 +1242,16 @@ $matchs = getMatch();
         @endforeach
         {{-- LATEST UPDATE HIGHLIGHTER END --}}
         {{-- SEASON UPDATE END --}}
+
+        {{-- LOAD BUTTON --}}
+        @if ($seasonsUpdateHighlighter->count() >= 5)
+        <div class="" style="text-align: center">
+          <a style="padding: 6px 12px;background: var(--theme-color-light);color:white" class="style_navLink__aDOS0 style_fillBtn__xma7g rounded-pill"
+            href="{{ route('home',['per_page' => (5 * (($seasonsUpdateHighlighter->count() / 5) + 5))]) }}">Lore
+            More</a>
+        </div>
+        @endif
+
       </div>
       <div class="style_commonSidebar__uyNzj common-sidebar bt-width  d-lg-block col-lg-3">
         <div class="style_rankingTab__ZG_Ko widget">
