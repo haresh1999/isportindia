@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
-use App\Models\CricSpecial;
-use App\Models\News;
-use App\Models\PostLikes;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\DB;
+
+use App\Models\{
+    Article,
+    CricSpecial,
+    News,
+    PostLikes
+};
+
+use Illuminate\Support\Facades\{
+    Http,
+    DB
+};
 
 class HomeController extends Controller
 {
@@ -41,17 +47,18 @@ class HomeController extends Controller
             ->limit(request()->has('per_page') ? request()->get('per_page') : 5)
             ->get();
 
-        // $fantasys = Article::where('status',1)
-        // ->whereNotNull('fantasy_id')
-        // ->latest()
-        // ->limit(5)
-        // ->get();
+        $fantasys = Article::where('status',1)
+            ->has('fantasy')    
+            ->latest()
+            ->limit(5)
+            ->get();
 
         return view('home', compact(
             'latestUpdateHighlighter',
             'latestUpdateNormal',
             'latestUpdateOneLiner',
             'seasonsUpdateHighlighter',
+            'fantasys'
         ));
     }
 

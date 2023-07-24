@@ -110,7 +110,6 @@
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
                                     <select class="form-select" name="fantasy_id[]" multiple>
-                                        <option value="" selected disabled>Select Fantasy</option>
                                         @foreach ($fantasy as $key => $fant)
                                         <option {{ in_array($key,old('fantasy_id',[])) ? 'selected' : '' }} value="{{ $key }}">{{ $fant }}</option>
                                         @endforeach

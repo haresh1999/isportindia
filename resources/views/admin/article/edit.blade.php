@@ -109,13 +109,11 @@
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
                                     <select class="form-select" name="fantasy_id[]" multiple>
-                                        <option value="" selected disabled>Select Fantasy</option>
                                         @foreach ($fantasy as $key => $fant)
-                                        <option {{ in_array($key,old('fantasy_id',$article)) ? 'selected' : '' }} value="{{ $key }}">{{ $fant }}</option>
+                                        <option {{ in_array($key,old('fantasy_id',Arr::pluck($article->fantasy,'id'))) ? 'selected' : '' }} value="{{ $key }}">{{ $fant }}</option>
                                         @endforeach
                                     </select>
                                 </div>
-
 
                                 <div class="col-md-12 mt-4">
                                     <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Title

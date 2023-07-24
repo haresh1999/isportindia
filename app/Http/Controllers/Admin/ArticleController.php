@@ -99,9 +99,8 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        dd($article->fantasy);
-
-        $fantasy = Fantasy::where('status', 1)->pluck('name', 'id');
+        $fantasy = Fantasy::where('status', 1)
+            ->pluck('name', 'id');
 
         return view('admin.article.edit', compact('article', 'fantasy'));
     }

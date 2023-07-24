@@ -261,7 +261,7 @@ $matchs = getMatch();
           </div>
         </div>
       </div>
-
+      
       {{-- ARTICLE NEWS --}}
 
       <div class="style_centerContent__xrgF5 col-lg-6">
