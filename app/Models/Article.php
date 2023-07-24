@@ -20,12 +20,11 @@ class Article extends Model
         'cid',
         'min',
         'short_description',
-        'fantasy_id'
     ];
 
     public function user()
     {
-        return $this->hasOne(User::class,'id','created_by');
+        return $this->belongsTo(User::class,'created_by');
     }
 
     public function fantasy()
