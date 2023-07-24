@@ -1860,7 +1860,8 @@ textarea.form-control-lg {
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); }
   .form-select[multiple], .form-select[size]:not([size="1"]) {
     padding-right: 9px;
-    background-image: none; }
+    background-image: none;
+   }
   .form-select:disabled {
     background-color: #e9ecef; }
   .form-select:-moz-focusring {

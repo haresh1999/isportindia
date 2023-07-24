@@ -27,4 +27,9 @@ class Article extends Model
     {
         return $this->hasOne(User::class,'id','created_by');
     }
+
+    public function fantasy()
+    {
+        return $this->belongsToMany(Fantasy::class);
+    }
 }

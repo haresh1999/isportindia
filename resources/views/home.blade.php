@@ -1254,7 +1254,6 @@ $matchs = getMatch();
             More</a>
         </div>
         @endif
-
       </div>
 
       {{-- TIPS --}}

@@ -41,6 +41,12 @@ class HomeController extends Controller
             ->limit(request()->has('per_page') ? request()->get('per_page') : 5)
             ->get();
 
+        // $fantasys = Article::where('status',1)
+        // ->whereNotNull('fantasy_id')
+        // ->latest()
+        // ->limit(5)
+        // ->get();
+
         return view('home', compact(
             'latestUpdateHighlighter',
             'latestUpdateNormal',

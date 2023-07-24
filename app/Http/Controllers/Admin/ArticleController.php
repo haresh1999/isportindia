@@ -3,11 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
-use App\Models\Article;
-use App\Models\Fantasy;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+
+use App\Models\{
+    Article,
+    Fantasy,
+    ArticleFantasy
+};
+
+use Illuminate\Support\{
+    Str,
+    Arr
+};
 
 class ArticleController extends Controller
 {
@@ -60,7 +67,7 @@ class ArticleController extends Controller
             'cid' => 'required_if:category,==,seasons_update',
             'type' => 'required',
             'min' => 'required|numeric',
-            'fantasy_id' => 'required|integer|exists:fantasies,id'
+            'fantasy_id.*' => 'required|integer|exists:fantasies,id'
         ]);
 
         $input['img'] = uploadImage($input['img'], 'article');
@@ -69,7 +76,15 @@ class ArticleController extends Controller
 
         $input['created_by'] = auth()->id();
 
-        Article::create($input);
+        $res = Article::create(Arr::except($input, 'fantasy_id'));
+
+        foreach ($input['fantasy_id'] as $f_id) {
+
+            ArticleFantasy::create([
+                'article_id' => $res->id,
+                'fantasy_id' => $f_id
+            ]);
+        }
 
         return redirect()
             ->route('article')
@@ -84,6 +99,8 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
+        dd($article->fantasy);
+
         $fantasy = Fantasy::where('status', 1)->pluck('name', 'id');
 
         return view('admin.article.edit', compact('article', 'fantasy'));
@@ -108,7 +125,7 @@ class ArticleController extends Controller
             'cid' => 'required_if:category,==,seasons_update',
             'type' => 'required',
             'min' => 'required|numeric',
-            'fantasy_id' => 'required|integer|exists:fantasies,id'
+            'fantasy_id.*' => 'required|integer|exists:fantasies,id'
         ]);
 
         if (isset($input['img'])) {
@@ -119,6 +136,20 @@ class ArticleController extends Controller
         }
 
         $input['slug'] = Str::slug($input['title']);
+
+        foreach ($input['fantasy_id'] as $f_id) {
+
+            if (
+                ArticleFantasy::where('article_id', $article->id)
+                ->where('fantasy_id', $f_id)
+                ->doesntExist()
+            ) {
+                ArticleFantasy::create([
+                    'article_id' => $article->id,
+                    'fantasy_id' => $f_id
+                ]);
+            }
+        }
 
         $article->update($input);
 
