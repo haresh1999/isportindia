@@ -53,8 +53,6 @@ class HomeController extends Controller
             ->limit(5)
             ->get();
 
-        dd($fantasys);
-
         return view('home', compact(
             'latestUpdateHighlighter',
             'latestUpdateNormal',
