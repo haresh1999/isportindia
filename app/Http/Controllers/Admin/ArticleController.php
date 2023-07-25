@@ -67,24 +67,14 @@ class ArticleController extends Controller
             'cid' => 'required_if:category,==,seasons_update',
             'type' => 'required',
             'min' => 'required|numeric',
-            'fantasy_id.*' => 'required|integer|exists:fantasies,id'
+            'fantasy_id' => 'required|integer|exists:fantasies,id'
         ]);
 
         $input['img'] = uploadImage($input['img'], 'article');
-
         $input['slug'] = Str::slug($input['title']);
-
         $input['created_by'] = auth()->id();
 
-        $res = Article::create(Arr::except($input, 'fantasy_id'));
-
-        foreach ($input['fantasy_id'] as $f_id) {
-
-            ArticleFantasy::create([
-                'article_id' => $res->id,
-                'fantasy_id' => $f_id
-            ]);
-        }
+        Article::create($input);
 
         return redirect()
             ->route('article')
@@ -124,7 +114,7 @@ class ArticleController extends Controller
             'cid' => 'required_if:category,==,seasons_update',
             'type' => 'required',
             'min' => 'required|numeric',
-            'fantasy_id.*' => 'required|integer|exists:fantasies,id'
+            'fantasy_id' => 'required|integer|exists:fantasies,id'
         ]);
 
         if (isset($input['img'])) {
@@ -135,20 +125,6 @@ class ArticleController extends Controller
         }
 
         $input['slug'] = Str::slug($input['title']);
-
-        foreach ($input['fantasy_id'] as $f_id) {
-
-            if (
-                ArticleFantasy::where('article_id', $article->id)
-                ->where('fantasy_id', $f_id)
-                ->doesntExist()
-            ) {
-                ArticleFantasy::create([
-                    'article_id' => $article->id,
-                    'fantasy_id' => $f_id
-                ]);
-            }
-        }
 
         $article->update($input);
 

@@ -13,20 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('articles', function (Blueprint $table) {
-            $table->dropColumn('fantasy_id');
-        });
-    }
+        Schema::dropIfExists('article_fantasy');
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
         Schema::table('articles', function (Blueprint $table) {
-            $table->unsignedBigInteger('fantasy_id');
+            $table->unsignedBigInteger('fantasy_id')->nullable()->change();
+            $table->foreign('fantasy_id')
+                ->references('id')
+                ->on('fantasies')
+                ->onDelete('cascade');
         });
     }
 };

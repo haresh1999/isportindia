@@ -45,6 +45,8 @@
                                             value="latest_update">Latest Update</option>
                                         <option {{ old('category')=='seasons_update' ? 'selected' : '' }}
                                             value="seasons_update">Seasons Update</option>
+                                        <option {{ old('category')=='fantasy' ? 'selected' : '' }} value="fantasy">
+                                            Fantasy</option>
                                     </select>
                                 </div>
 
@@ -97,7 +99,7 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-12 mt-4">
+                                <div class="col-md-12 mt-4 d-none fantasy">
                                     <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Fantasy Tips
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
                                             title="Type of article select from below">
@@ -109,9 +111,11 @@
                                     @error('fantasy_id')
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
-                                    <select class="form-select" name="fantasy_id[]" multiple>
+                                    <select class="select select-wide" name="fantasy_id">
+                                        <option value="" selected disabled>Select Fantasy</option>
                                         @foreach ($fantasy as $key => $fant)
-                                        <option {{ in_array($key,old('fantasy_id',[])) ? 'selected' : '' }} value="{{ $key }}">{{ $fant }}</option>
+                                        <option {{ old('fantasy_id')==$key ? 'selected' : '' }}value="{{ $key }}">{{
+                                            $fant }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -284,13 +288,22 @@
 })
 </script>
 <script>
-    $('.category').change(function(){
-    if ($(this).val() == 'seasons_update') {
+$('.category').change(function(){
+
+    if ($(this).val() == 'seasons_update'){
         $('.seasons').removeClass('d-none')
         $('.seasons').addClass('d-block')
     }else{
         $('.seasons').removeClass('d-block')
         $('.seasons').addClass('d-none')
+    }
+
+    if ($(this).val() == 'fantasy') {
+        $('.fantasy').removeClass('d-none')
+        $('.fantasy').addClass('d-block')
+    }else{
+        $('.fantasy').removeClass('d-block')
+        $('.fantasy').addClass('d-none')
     }
 })
 </script>

@@ -28,6 +28,7 @@
                         @csrf
                         <div class="card-body p-0">
                             <div class="row">
+
                                 <div class="col-md-12">
                                     <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Category
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
@@ -46,6 +47,8 @@
                                             value="latest_update">Latest Update</option>
                                         <option {{ $article->category=='seasons_update' ? 'selected' : '' }}
                                             value="seasons_update">Seasons Update</option>
+                                        <option {{ $article->category=='fantasy' ? 'selected' : '' }} value="fantasy">
+                                            Fantasy</option>
                                     </select>
                                 </div>
 
@@ -96,7 +99,7 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-12 mt-4">
+                                <div class="col-md-12 mt-4 d-none fantasy">
                                     <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Fantasy Tips
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
                                             title="Type of article select from below">
@@ -108,9 +111,11 @@
                                     @error('fantasy_id')
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
-                                    <select class="form-select" name="fantasy_id[]" multiple>
+                                    <select class="select select-wide" name="fantasy_id">
+                                        <option value="" selected disabled>Select Fantasy</option>
                                         @foreach ($fantasy as $key => $fant)
-                                        <option {{ in_array($key,old('fantasy_id',Arr::pluck($article->fantasy,'id'))) ? 'selected' : '' }} value="{{ $key }}">{{ $fant }}</option>
+                                        <option {{ old('fantasy_id')==$key ? 'selected' : '' }} value="{{ $key }}">{{
+                                            $fant }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -131,7 +136,8 @@
                                 </div>
 
                                 <div class="col-md-12 mt-4">
-                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Short Description
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Short
+                                        Description
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
                                             title="Write short description of this blog">
                                             <svg class="icon icon-info">
@@ -286,19 +292,33 @@
 </script>
 @if ($article->category=='seasons_update')
 <script>
-    $('.seasons').removeClass('d-none')
+$('.seasons').removeClass('d-none')
 $('.seasons').addClass('d-block')
+</script>
+@elseif($article->category=='fantasy')
+<script>
+$('.fantasy').removeClass('d-none')
+$('.fantasy').addClass('d-block')
 </script>
 @endif
 <script>
-    $('.category').change(function(){
-        if ($(this).val() == 'seasons_update') {
-            $('.seasons').removeClass('d-none')
-            $('.seasons').addClass('d-block')
-        }else{
-            $('.seasons').removeClass('d-block')
-            $('.seasons').addClass('d-none')
-        }
-    })
+$('.category').change(function(){
+    
+    if ($(this).val() == 'seasons_update') {
+        $('.seasons').removeClass('d-none')
+        $('.seasons').addClass('d-block')
+    }else{
+        $('.seasons').removeClass('d-block')
+        $('.seasons').addClass('d-none')
+    }
+
+    if ($(this).val() == 'fantasy') {
+        $('.fantasy').removeClass('d-none')
+        $('.fantasy').addClass('d-block')
+    }else{
+        $('.fantasy').removeClass('d-block')
+        $('.fantasy').addClass('d-none')
+    }
+})
 </script>
 @endsection

@@ -12,9 +12,4 @@ class Fantasy extends Model
         'img',
         'status',
     ];
-
-    public function article()
-    {
-        return $this->belongsToMany(Article::class);
-    }
 }

@@ -20,6 +20,7 @@ class Article extends Model
         'cid',
         'min',
         'short_description',
+        'fantasy_id'
     ];
 
     public function user()
@@ -29,6 +30,6 @@ class Article extends Model
 
     public function fantasy()
     {
-        return $this->belongsToMany(Fantasy::class);
+        return $this->belongsTo(Fantasy::class,'fantasy_id');
     }
 }
