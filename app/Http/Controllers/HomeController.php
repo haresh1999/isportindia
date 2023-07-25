@@ -21,21 +21,27 @@ class HomeController extends Controller
     public function home()
     {
         $latestUpdateHighlighter = Article::where('status', 1)
-            ->where('category', 'latest_update')
-            ->where('type', 'highlighter')
+            ->where([
+                ['category', '=', 'latest_update'],
+                ['type', '=', 'highlighter']
+            ])
             ->latest()
             ->first();
 
         $latestUpdateNormal = Article::where('status', 1)
-            ->where('category', 'latest_update')
-            ->where('type', 'normal')
+            ->where([
+                ['category', '=', 'latest_update'],
+                ['type', '=', 'normal'],
+            ])
             ->latest()
             ->limit(3)
             ->get();
 
         $latestUpdateOneLiner = Article::where('status', 1)
-            ->where('category', 'latest_update')
-            ->where('type', 'one_liner')
+            ->where([
+                ['category', '=', 'latest_update'],
+                ['type', '=', 'one_liner'],
+            ])
             ->latest()
             ->limit(3)
             ->get();
@@ -50,7 +56,7 @@ class HomeController extends Controller
         $fantasys = Article::where('status', 1)
             ->has('fantasy')
             ->latest()
-            ->limit(5)
+            ->limit(request()->has('fantasy_per_page') ? request()->get('fantasy_per_page') : 5)
             ->get();
 
         return view('home', compact(
@@ -177,6 +183,10 @@ class HomeController extends Controller
 
     public function fantasyDetails($slug)
     {
-        dd($slug);
+        $article = Article::where('slug', $slug)->first();
+
+        $article->increment('views', 1);
+
+        return view('fantasy_details', compact('article'));
     }
 }

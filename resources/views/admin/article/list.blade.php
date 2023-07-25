@@ -72,9 +72,11 @@
                                     </div>
                                     <div class="sheet-cell d-block d-md-table-cell py-2 py-md-4 px-0 px-md-3">
                                         @if ($re->category == 'latest_update')
-                                        Latest Update
+                                            Latest Update
+                                        @elseif($re->category == 'fantasy')
+                                            Fantasy
                                         @else
-                                        Seasons Update
+                                            Seasons Update
                                         @endif
                                     </div>
                                     <div class="sheet-cell d-block d-md-table-cell py-2 py-md-4 px-0 px-md-3">

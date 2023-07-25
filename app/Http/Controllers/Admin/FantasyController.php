@@ -19,7 +19,7 @@ class FantasyController extends Controller
         $fantasys = Fantasy::when(isset($request->search), function ($q) use ($request) {
             $q->where('name', 'like', "%{$request->search}%");
         })
-            ->paginate(10);
+            ->paginate(perPage());
 
         return view('admin.fantasy.list', compact('fantasys'));
     }

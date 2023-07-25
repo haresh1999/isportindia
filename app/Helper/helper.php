@@ -101,3 +101,8 @@ function deleteImage($imageUrl)
 
 	return false;
 }
+
+function perPage()
+{
+	return 100;
+}

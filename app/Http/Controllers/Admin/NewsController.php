@@ -23,7 +23,7 @@ class NewsController extends Controller
                 $q->Orwhere('description', 'like', "%{$request->description}%");
             })
             ->orderBy('id', 'desc')
-            ->paginate(10);
+            ->paginate(perPage());
 
         return view('admin.news.list', compact('news'));
     }

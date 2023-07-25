@@ -913,10 +913,12 @@ $matchs = getMatch();
 
             @php
             $articlesH = DB::table('articles')
-            ->where('cid',$suh->cid)
-            ->where('category', 'seasons_update')
-            ->where('type', 'highlighter')
-            ->where('status', 1)
+            ->where([
+            ['cid','=',$suh->cid],
+            ['category','=','seasons_update'],
+            ['type','=','highlighter'],
+            ['status','=',1],
+            ])
             ->latest()
             ->first();
             @endphp
@@ -1062,10 +1064,12 @@ $matchs = getMatch();
 
             {{-- NORMAL --}}
             @php $articles = DB::table('articles')
-            ->where('cid',$suh->cid)
-            ->where('category', 'seasons_update')
-            ->where('type', 'normal')
-            ->where('status', 1)
+            ->where([
+            ['cid','=',$suh->cid],
+            ['category','=','seasons_update'],
+            ['type','=','normal'],
+            ['status','=',1],
+            ])
             ->latest()
             ->limit(3)
             ->get();
@@ -1222,10 +1226,12 @@ $matchs = getMatch();
 
             {{-- ONE LINER --}}
             @php $articlesOneLiner = DB::table('articles')
-            ->where('cid',$suh->cid)
-            ->where('category', 'seasons_update')
-            ->where('type', 'one_liner')
-            ->where('status', 1)
+            ->where([
+            ['cid','=',$suh->cid],
+            ['category','=','seasons_update'],
+            ['type','=','one_liner'],
+            ['status','=',1],
+            ])
             ->latest()
             ->limit(3)
             ->get();
@@ -1246,10 +1252,8 @@ $matchs = getMatch();
 
           </section>
           @endforeach
-          {{-- LATEST UPDATE HIGHLIGHTER END --}}
-          {{-- SEASON UPDATE END --}}
 
-          {{-- LOAD BUTTON --}}
+          {{-- ARTICLES 1st --}}
           @if ($seasonsUpdateHighlighter->count() >= 5)
           <div class="" style="text-align: center">
             <a style="padding: 6px 12px;background: var(--theme-color-light);color:white"
@@ -1262,7 +1266,9 @@ $matchs = getMatch();
 
         {{-- FANTASY 2nd --}}
         <section class="style_homeArticles__4e_Na tabs-data Fantacy-data hide">
-
+          <div class="line-title mb-2 mb-md-4 text-uppercase text-center overflow-hidden">
+            <h4 class="rounded-pill position-relative d-inline-block">Fantasy News</h4>
+          </div>
           @foreach ($fantasys as $fantasy)
 
           @if ($fantasy->type == 'highlighter')
@@ -1312,13 +1318,10 @@ $matchs = getMatch();
                 background-position: 0% 0%;
                 background-image: url('{{getImageUrl($fantasy->img)}}');
               " /></span></a>
-
-            <span class="undefined undefined mb-1 badge bg-danger">
-              <a href="/dream11-fantasy-tips/">Dream11 Fantasy Tips</a>
-            </span>
-
+            <span class="undefined undefined mb-1 badge bg-danger"><a
+                href="/dream11-fantasy-tips/">{{$fantasy->fantasy->name}}</a></span>
             <h3 class="small-head mb-2">
-              <a href="{{route('fantasy.details',[$fantasy->slug])}}">{{ $fantasy->title }} </a>
+              <a href="{{route('fantasy.details',[$fantasy->slug])}}">{{ $fantasy->title }}</a>
             </h3>
             <div class="style_articleInfo__WqisT d-flex">
               <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
@@ -1408,157 +1411,10 @@ $matchs = getMatch();
             </div>
           </article>
           @elseif($fantasy->type == 'normal')
-          <article id="{{$fantasy->id}}" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
-            <div class="row-8 row">
-              <div class="col-sm-3 col-5">
-                <a class="style_postimg__ftSiV undefined d-block block-img"
-                  href="{{route('post.details',[$fantasy->slug])}}"><span style="
-              box-sizing: border-box;
-              display: block;
-              overflow: hidden;
-              width: initial;
-              height: initial;
-              background: none;
-              opacity: 1;
-              border: 0;
-              margin: 0;
-              padding: 0;
-              position: relative;
-            "><span style="
-                box-sizing: border-box;
-                display: block;
-                width: initial;
-                height: initial;
-                background: none;
-                opacity: 1;
-                border: 0;
-                margin: 0;
-                padding: 0;
-                padding-top: 62.5%;
-              "></span><img alt="Dindigul Dragons" src="{{getImageUrl($fantasy->img)}}" decoding="async"
-                      data-nimg="responsive" style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                box-sizing: border-box;
-                padding: 0;
-                border: none;
-                margin: auto;
-                display: block;
-                width: 0;
-                height: 0;
-                min-width: 100%;
-                max-width: 100%;
-                min-height: 100%;
-                max-height: 100%;
-                background-size: cover;
-                background-position: 0% 0%;
-                background-image: url('{{getImageUrl($fantasy->img)}}');
-              " /> </span></a>
-              </div>
-              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
-                <div>
-                  <h4 class="small-head mb-2">
-                    <a href="{{route('post.details',[$fantasy->slug])}}">{{ $fantasy->title }}</a>
-                  </h4>
-                </div>
-                <div class="style_articleInfo__WqisT d-flex">
-                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
-                  box-sizing: border-box;
-                  display: block;
-                  overflow: hidden;
-                  width: initial;
-                  height: initial;
-                  background: none;
-                  opacity: 1;
-                  border: 0;
-                  margin: 0;
-                  padding: 0;
-                  position: relative;
-                "><span style="
-                    box-sizing: border-box;
-                    display: block;
-                    width: initial;
-                    height: initial;
-                    background: none;
-                    opacity: 1;
-                    border: 0;
-                    margin: 0;
-                    padding: 0;
-                    padding-top: 100%;
-                  "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg" decoding="async"
-                          data-nimg="responsive" style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    box-sizing: border-box;
-                    padding: 0;
-                    border: none;
-                    margin: auto;
-                    display: block;
-                    width: 0;
-                    height: 0;
-                    min-width: 100%;
-                    max-width: 100%;
-                    min-height: 100%;
-                    max-height: 100%;
-                  " /> </span></span>{{Carbon\Carbon::parse($fantasy->created_at)->format('d M
-                    Y')}}</span><span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span
-                        style="
-                  box-sizing: border-box;
-                  display: block;
-                  overflow: hidden;
-                  width: initial;
-                  height: initial;
-                  background: none;
-                  opacity: 1;
-                  border: 0;
-                  margin: 0;
-                  padding: 0;
-                  position: relative;
-                "><span style="
-                    box-sizing: border-box;
-                    display: block;
-                    width: initial;
-                    height: initial;
-                    background: none;
-                    opacity: 1;
-                    border: 0;
-                    margin: 0;
-                    padding: 0;
-                    padding-top: 100%;
-                  "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg" decoding="async"
-                          data-nimg="responsive" style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    box-sizing: border-box;
-                    padding: 0;
-                    border: none;
-                    margin: auto;
-                    display: block;
-                    width: 0;
-                    height: 0;
-                    min-width: 100%;
-                    max-width: 100%;
-                    min-height: 100%;
-                    max-height: 100%;
-                  " /> </span></span>{{$fantasy->min}} Min</span>
-                </div>
-              </div>
-            </div>
-          </article>
-          @elseif($fantasy->type == 'one_liner')
           <article id="{{$fantasy->id}}" class="style_article__IayJx style_articleMedium__ME07j undefined">
             <div class="row-8 row">
               <div class="col-sm-6 col-5">
-                <a href="{{ route('post.details',[$fantasy->slug]) }}">
+                <a href="{{ route('fantasy.details',[$fantasy->slug]) }}">
                   <div class="style_postimg__ftSiV undefined block-img">
                     <span style="
                                 box-sizing: border-box;
@@ -1607,13 +1463,12 @@ $matchs = getMatch();
               </div>
               <div class="d-flex flex-column justify-content-between col-sm-6 col-7">
                 <div>
+                  <span class="undefined undefined mb-1 badge bg-danger"><a
+                      href="/dream11-fantasy-tips/">{{$fantasy->fantasy->name}}</a></span>
                   <h3 class="small-head mb-1">
-                    <a href="{{ route('post.details',[$fantasy->slug]) }}">{{
+                    <a href="{{ route('fantasy.details',[$fantasy->slug]) }}">{{
                       $fantasy->title }}</a>
                   </h3>
-                  <p class="style_desc__jLYw_ style_desc__zP5qm">
-                    {{ $fantasy->short_description }}
-                  </p>
                 </div>
                 <div class="style_articleInfo__WqisT undefined d-flex">
                   <span class="d-flex align-items-center"><span class="style_icon__Ukkjh undefined d-block"><span style="
@@ -1707,8 +1562,169 @@ $matchs = getMatch();
               </div>
             </div>
           </article>
+          @elseif($fantasy->type == 'one_liner')
+          <article id="{{$fantasy->id}}" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
+            <div class="row-8 row">
+              <div class="col-sm-3 col-5">
+                <a class="style_postimg__ftSiV undefined d-block block-img"
+                  href="{{route('fantasy.details',[$fantasy->slug])}}"><span style="
+              box-sizing: border-box;
+              display: block;
+              overflow: hidden;
+              width: initial;
+              height: initial;
+              background: none;
+              opacity: 1;
+              border: 0;
+              margin: 0;
+              padding: 0;
+              position: relative;
+            "><span style="
+                box-sizing: border-box;
+                display: block;
+                width: initial;
+                height: initial;
+                background: none;
+                opacity: 1;
+                border: 0;
+                margin: 0;
+                padding: 0;
+                padding-top: 62.5%;
+              "></span><img alt="Dindigul Dragons" src="{{getImageUrl($fantasy->img)}}" decoding="async"
+                      data-nimg="responsive" style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                box-sizing: border-box;
+                padding: 0;
+                border: none;
+                margin: auto;
+                display: block;
+                width: 0;
+                height: 0;
+                min-width: 100%;
+                max-width: 100%;
+                min-height: 100%;
+                max-height: 100%;
+                background-size: cover; 
+                background-position: 0% 0%;
+                background-image: url('{{getImageUrl($fantasy->img)}}');
+              " /> </span></a>
+              </div>
+              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
+                <div>
+                  <span class="undefined undefined mb-1 badge bg-danger"><a
+                      href="/dream11-fantasy-tips/">{{$fantasy->fantasy->name}}</a></span>
+                  <h4 class="small-head mb-2">
+                    <a href="{{route('fantasy.details',[$fantasy->slug])}}">{{ $fantasy->title }}</a>
+                  </h4>
+                </div>
+                <div class="style_articleInfo__WqisT d-flex">
+                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
+                  box-sizing: border-box;
+                  display: block;
+                  overflow: hidden;
+                  width: initial;
+                  height: initial;
+                  background: none;
+                  opacity: 1;
+                  border: 0;
+                  margin: 0;
+                  padding: 0;
+                  position: relative;
+                "><span style="
+                    box-sizing: border-box;
+                    display: block;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    padding-top: 100%;
+                  "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg" decoding="async"
+                          data-nimg="responsive" style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    box-sizing: border-box;
+                    padding: 0;
+                    border: none;
+                    margin: auto;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 100%;
+                    max-height: 100%;
+                  " /> </span></span>{{Carbon\Carbon::parse($fantasy->created_at)->format('d M
+                    Y')}}</span><span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span
+                        style="
+                  box-sizing: border-box;
+                  display: block;
+                  overflow: hidden;
+                  width: initial;
+                  height: initial;
+                  background: none;
+                  opacity: 1;
+                  border: 0;
+                  margin: 0;
+                  padding: 0;
+                  position: relative;
+                "><span style="
+                    box-sizing: border-box;
+                    display: block;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    padding-top: 100%;
+                  "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg" decoding="async"
+                          data-nimg="responsive" style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    box-sizing: border-box;
+                    padding: 0;
+                    border: none;
+                    margin: auto;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 100%;
+                    max-height: 100%;
+                  " /> </span></span>{{$fantasy->min}} Min</span>
+                </div>
+              </div>
+            </div>
+          </article>
           @endif
           @endforeach
+
+          <br>
+
+          @if ($fantasys->count() >= 5)
+          <div style="text-align: center">
+            <a style="padding: 6px 12px;background: var(--theme-color-light);color:white"
+              class="style_navLink__aDOS0 style_fillBtn__xma7g rounded-pill"
+              href="{{ route('home',['fantasy_per_page' => (5 * (($fantasys->count() / 5) + 5))]) }}">Lore
+              More</a>
+          </div>
+          @endif
+
         </section>
 
         {{-- VIDEO 3nd --}}
@@ -1718,7 +1734,6 @@ $matchs = getMatch();
       </div>
 
       {{-- TIPS --}}
-
       <div class="style_commonSidebar__uyNzj common-sidebar bt-width  d-lg-block col-lg-3">
         <div class="style_rankingTab__ZG_Ko widget">
           <div class="style_title__x0MLg d-flex justify-content-between align-items-center">

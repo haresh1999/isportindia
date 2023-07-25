@@ -31,7 +31,7 @@ class ArticleController extends Controller
                 $q->Orwhere('description', 'like', "%{$request->search}%");
             })
             ->orderBy('id', 'desc')
-            ->paginate(10);
+            ->paginate(perPage());
 
         return view('admin.article.list', compact('res'));
     }

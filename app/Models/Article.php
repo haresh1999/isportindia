@@ -30,6 +30,6 @@ class Article extends Model
 
     public function fantasy()
     {
-        return $this->belongsTo(Fantasy::class,'fantasy_id');
+        return $this->belongsTo(Fantasy::class, 'fantasy_id');
     }
 }
