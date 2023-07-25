@@ -1258,7 +1258,7 @@ $matchs = getMatch();
           <div class="" style="text-align: center">
             <a style="padding: 6px 12px;background: var(--theme-color-light);color:white"
               class="style_navLink__aDOS0 style_fillBtn__xma7g rounded-pill"
-              href="{{ route('home',['per_page' => (5 * (($seasonsUpdateHighlighter->count() / 5) + 5))]) }}">Lore
+              href="{{ route('home',['per_page' => (5 * (($seasonsUpdateHighlighter->count() / 5) + 1))]) }}">Lore
               More</a>
           </div>
           @endif
@@ -1720,7 +1720,7 @@ $matchs = getMatch();
           <div style="text-align: center">
             <a style="padding: 6px 12px;background: var(--theme-color-light);color:white"
               class="style_navLink__aDOS0 style_fillBtn__xma7g rounded-pill"
-              href="{{ route('home',['fantasy_per_page' => (5 * (($fantasys->count() / 5) + 5))]) }}">Lore
+              href="{{ route('home',['fantasy_per_page' => (5 * (($fantasys->count() / 5) + 1))]) }}">Lore
               More</a>
           </div>
           @endif
