@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::dropIfExists('article_fantasy');
 
         Schema::table('articles', function (Blueprint $table) {
-            $table->unsignedBigInteger('fantasy_id')->nullable()->change();
+            $table->unsignedBigInteger('fantasy_id')->nullable();
             $table->foreign('fantasy_id')
                 ->references('id')
                 ->on('fantasies')
