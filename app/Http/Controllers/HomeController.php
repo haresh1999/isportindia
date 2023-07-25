@@ -47,8 +47,8 @@ class HomeController extends Controller
             ->limit(request()->has('per_page') ? request()->get('per_page') : 5)
             ->get();
 
-        $fantasys = Article::where('status',1)
-            ->has('fantasy')    
+        $fantasys = Article::where('status', 1)
+            ->has('fantasy')
             ->latest()
             ->limit(5)
             ->get();
@@ -173,5 +173,10 @@ class HomeController extends Controller
         // $name
 
         return redirect()->back();
+    }
+
+    public function fantasyDetails($slug)
+    {
+        dd($slug);
     }
 }
