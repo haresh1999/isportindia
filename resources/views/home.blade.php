@@ -1312,7 +1312,12 @@ $matchs = getMatch();
                 background-size: cover;
                 background-position: 0% 0%;
                 background-image: url('{{getImageUrl($fantasy->img)}}');
-              " /> </span></a>
+              " /></span></a>
+
+            <span class="undefined undefined mb-1 badge bg-danger">
+              <a href="/dream11-fantasy-tips/">Dream11 Fantasy Tips</a>
+            </span>
+
             <h3 class="small-head mb-2">
               <a href="{{route('fantasy.details',[$fantasy->slug])}}">{{ $fantasy->title }} </a>
             </h3>
