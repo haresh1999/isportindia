@@ -690,9 +690,8 @@ $matchs = getMatch();
                                     min-height: 100%;
                                     max-height: 100%;
                                   " sizes="100vw" /></span></span>{{ Carbon\Carbon::parse($lun->created_at)->format('d
-                      M
-                      Y') }}</span><span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span
-                          style="
+                      M Y') }}</span><span class="d-flex align-items-center"><span
+                        class="style_icon__Ukkjh d-block"><span style="
                                   box-sizing: border-box;
                                   display: block;
                                   overflow: hidden;
@@ -1261,9 +1260,458 @@ $matchs = getMatch();
           @endif
         </div>
 
+        {{-- FANTASY 2nd --}}
         <section class="style_homeArticles__4e_Na tabs-data Fantacy-data hide">
-          <h4>Fantacy</h4>
+
+          @foreach ($fantasys as $fantasy)
+
+          @if ($fantasy->type == 'highlighter')
+          <article class="style_article__IayJx undefined" id="{{$fantasy->id}}">
+            <a class="style_postimg__ftSiV d-block block-img mb-2 mb-md-3"
+              href="{{route('fantasy.details',[$fantasy->slug])}}"><span style="
+              box-sizing: border-box;
+              display: block;
+              overflow: hidden;
+              width: initial;
+              height: initial;
+              background: none;
+              opacity: 1;
+              border: 0;
+              margin: 0;
+              padding: 0;
+              position: relative;
+            "><span style="
+                box-sizing: border-box;
+                display: block;
+                width: initial;
+                height: initial;
+                background: none;
+                opacity: 1;
+                border: 0;
+                margin: 0;
+                padding: 0;
+                padding-top: 62.5%;
+              "></span><img alt="{{$fantasy->id}}" src="{{getImageUrl($fantasy->img)}}" decoding="async"
+                  data-nimg="responsive" style="position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                box-sizing: border-box;
+                padding: 0;
+                border: none;
+                margin: auto;
+                display: block;
+                width: 0;
+                height: 0;
+                min-width: 100%;
+                max-width: 100%;
+                min-height: 100%;
+                max-height: 100%;
+                background-size: cover;
+                background-position: 0% 0%;
+                background-image: url('{{getImageUrl($fantasy->img)}}');
+              " /></span></a>
+
+            <span class="undefined undefined mb-1 badge bg-danger">
+              <a href="/dream11-fantasy-tips/">Dream11 Fantasy Tips</a>
+            </span>
+
+            <h3 class="small-head mb-2">
+              <a href="{{route('fantasy.details',[$fantasy->slug])}}">{{ $fantasy->title }} </a>
+            </h3>
+            <div class="style_articleInfo__WqisT d-flex">
+              <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
+                  box-sizing: border-box;
+                  display: block;
+                  overflow: hidden;
+                  width: initial;
+                  height: initial;
+                  background: none;
+                  opacity: 1;
+                  border: 0;
+                  margin: 0;
+                  padding: 0;
+                  position: relative;
+                "><span style="
+                    box-sizing: border-box;
+                    display: block;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    padding-top: 100%;
+                  "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg" decoding="async"
+                      data-nimg="responsive" style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    box-sizing: border-box;
+                    padding: 0;
+                    border: none;
+                    margin: auto;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 100%;
+                    max-height: 100%;
+                  " /> </span></span>{{ Carbon\Carbon::parse($fantasy->created_at)->format('d M Y')
+                }}</span><span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
+                  box-sizing: border-box;
+                  display: block;
+                  overflow: hidden;
+                  width: initial;
+                  height: initial;
+                  background: none;
+                  opacity: 1;
+                  border: 0;
+                  margin: 0;
+                  padding: 0;
+                  position: relative;
+                "><span style="
+                    box-sizing: border-box;
+                    display: block;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    padding-top: 100%;
+                  "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg" decoding="async"
+                      data-nimg="responsive" style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    box-sizing: border-box;
+                    padding: 0;
+                    border: none;
+                    margin: auto;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 100%;
+                    max-height: 100%;
+                  " /> </span></span>{{ $fantasy->min }} Min</span>
+            </div>
+          </article>
+          @elseif($fantasy->type == 'normal')
+          <article id="{{$fantasy->id}}" class="style_article__IayJx style_articleSmall__SMJc6 undefined">
+            <div class="row-8 row">
+              <div class="col-sm-3 col-5">
+                <a class="style_postimg__ftSiV undefined d-block block-img"
+                  href="{{route('post.details',[$fantasy->slug])}}"><span style="
+              box-sizing: border-box;
+              display: block;
+              overflow: hidden;
+              width: initial;
+              height: initial;
+              background: none;
+              opacity: 1;
+              border: 0;
+              margin: 0;
+              padding: 0;
+              position: relative;
+            "><span style="
+                box-sizing: border-box;
+                display: block;
+                width: initial;
+                height: initial;
+                background: none;
+                opacity: 1;
+                border: 0;
+                margin: 0;
+                padding: 0;
+                padding-top: 62.5%;
+              "></span><img alt="Dindigul Dragons" src="{{getImageUrl($fantasy->img)}}" decoding="async"
+                      data-nimg="responsive" style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                box-sizing: border-box;
+                padding: 0;
+                border: none;
+                margin: auto;
+                display: block;
+                width: 0;
+                height: 0;
+                min-width: 100%;
+                max-width: 100%;
+                min-height: 100%;
+                max-height: 100%;
+                background-size: cover;
+                background-position: 0% 0%;
+                background-image: url('{{getImageUrl($fantasy->img)}}');
+              " /> </span></a>
+              </div>
+              <div class="d-flex flex-column justify-content-between col-sm-9 col-7">
+                <div>
+                  <h4 class="small-head mb-2">
+                    <a href="{{route('post.details',[$fantasy->slug])}}">{{ $fantasy->title }}</a>
+                  </h4>
+                </div>
+                <div class="style_articleInfo__WqisT d-flex">
+                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span style="
+                  box-sizing: border-box;
+                  display: block;
+                  overflow: hidden;
+                  width: initial;
+                  height: initial;
+                  background: none;
+                  opacity: 1;
+                  border: 0;
+                  margin: 0;
+                  padding: 0;
+                  position: relative;
+                "><span style="
+                    box-sizing: border-box;
+                    display: block;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    padding-top: 100%;
+                  "></span><img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg" decoding="async"
+                          data-nimg="responsive" style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    box-sizing: border-box;
+                    padding: 0;
+                    border: none;
+                    margin: auto;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 100%;
+                    max-height: 100%;
+                  " /> </span></span>{{Carbon\Carbon::parse($fantasy->created_at)->format('d M
+                    Y')}}</span><span class="d-flex align-items-center"><span class="style_icon__Ukkjh d-block"><span
+                        style="
+                  box-sizing: border-box;
+                  display: block;
+                  overflow: hidden;
+                  width: initial;
+                  height: initial;
+                  background: none;
+                  opacity: 1;
+                  border: 0;
+                  margin: 0;
+                  padding: 0;
+                  position: relative;
+                "><span style="
+                    box-sizing: border-box;
+                    display: block;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    padding-top: 100%;
+                  "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg" decoding="async"
+                          data-nimg="responsive" style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    box-sizing: border-box;
+                    padding: 0;
+                    border: none;
+                    margin: auto;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 100%;
+                    max-height: 100%;
+                  " /> </span></span>{{$fantasy->min}} Min</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          @elseif($fantasy->type == 'one_liner')
+          <article id="{{$fantasy->id}}" class="style_article__IayJx style_articleMedium__ME07j undefined">
+            <div class="row-8 row">
+              <div class="col-sm-6 col-5">
+                <a href="{{ route('post.details',[$fantasy->slug]) }}">
+                  <div class="style_postimg__ftSiV undefined block-img">
+                    <span style="
+                                box-sizing: border-box;
+                                display: block;
+                                overflow: hidden;
+                                width: initial;
+                                height: initial;
+                                background: none;
+                                opacity: 1;
+                                border: 0;
+                                margin: 0;
+                                padding: 0;
+                                position: relative;
+                              "><span style="
+                                  box-sizing: border-box;
+                                  display: block;
+                                  width: initial;
+                                  height: initial;
+                                  background: none;
+                                  opacity: 1;
+                                  border: 0;
+                                  margin: 0;
+                                  padding: 0;
+                                  padding-top: 62.5%;
+                                "></span>
+                      <img alt="Andre Russell and Sunil Narine" src="{{getImageUrl($fantasy->img)}}" decoding="async"
+                        data-nimg="responsive" style="
+                                  position: absolute;
+                                  inset: 0px;
+                                  box-sizing: border-box;
+                                  padding: 0px;
+                                  border: none;
+                                  margin: auto;
+                                  display: block;
+                                  width: 0px;
+                                  height: 0px;
+                                  min-width: 100%;
+                                  max-width: 100%;
+                                  min-height: 100%;
+                                  max-height: 100%;
+                                "
+                        sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px" />
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div class="d-flex flex-column justify-content-between col-sm-6 col-7">
+                <div>
+                  <h3 class="small-head mb-1">
+                    <a href="{{ route('post.details',[$fantasy->slug]) }}">{{
+                      $fantasy->title }}</a>
+                  </h3>
+                  <p class="style_desc__jLYw_ style_desc__zP5qm">
+                    {{ $fantasy->short_description }}
+                  </p>
+                </div>
+                <div class="style_articleInfo__WqisT undefined d-flex">
+                  <span class="d-flex align-items-center"><span class="style_icon__Ukkjh undefined d-block"><span style="
+                                  box-sizing: border-box;
+                                  display: block;
+                                  overflow: hidden;
+                                  width: initial;
+                                  height: initial;
+                                  background: none;
+                                  opacity: 1;
+                                  border: 0;
+                                  margin: 0;
+                                  padding: 0;
+                                  position: relative;
+                                "><span style="
+                                    box-sizing: border-box;
+                                    display: block;
+                                    width: initial;
+                                    height: initial;
+                                    background: none;
+                                    opacity: 1;
+                                    border: 0;
+                                    margin: 0;
+                                    padding: 0;
+                                    padding-top: 100%;
+                                  "></span>
+                        <img alt="Calender" src="/_next/static/media/calender-icon.23e624a9.svg" decoding="async"
+                          data-nimg="responsive" style="
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    box-sizing: border-box;
+                                    padding: 0;
+                                    border: none;
+                                    margin: auto;
+                                    display: block;
+                                    width: 0;
+                                    height: 0;
+                                    min-width: 100%;
+                                    max-width: 100%;
+                                    min-height: 100%;
+                                    max-height: 100%;
+                                  " sizes="100vw" /> </span></span>{{
+                    Carbon\Carbon::parse($fantasy->created_at)->format('m M
+                    Y') }}</span><span class="d-flex align-items-center"><span
+                      class="style_icon__Ukkjh undefined d-block"><span style="
+                                  box-sizing: border-box;
+                                  display: block;
+                                  overflow: hidden;
+                                  width: initial;
+                                  height: initial;
+                                  background: none;
+                                  opacity: 1;
+                                  border: 0;
+                                  margin: 0;
+                                  padding: 0;
+                                  position: relative;
+                                "><span style="
+                                    box-sizing: border-box;
+                                    display: block;
+                                    width: initial;
+                                    height: initial;
+                                    background: none;
+                                    opacity: 1;
+                                    border: 0;
+                                    margin: 0;
+                                    padding: 0;
+                                    padding-top: 100%;
+                                  "></span><img alt="Clock" src="/_next/static/media/clock-icon.c7a46c6e.svg"
+                          decoding="async" data-nimg="responsive" style="
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    box-sizing: border-box;
+                                    padding: 0;
+                                    border: none;
+                                    margin: auto;
+                                    display: block;
+                                    width: 0;
+                                    height: 0;
+                                    min-width: 100%;
+                                    max-width: 100%;
+                                    min-height: 100%;
+                                    max-height: 100%;
+                                  " sizes="100vw" /> </span></span>{{ $fantasy->min }} Min </span>
+                </div>
+              </div>
+            </div>
+          </article>
+          @endif
+          @endforeach
         </section>
+
+        {{-- VIDEO 3nd --}}
         <section class="style_homeArticles__4e_Na tabs-data Videos-data hide">
           <h4>Videos</h4>
         </section>
@@ -1623,7 +2071,8 @@ $matchs = getMatch();
                         margin: 0px;
                         padding: 100% 0px 0px;
                       "></span>
-                      <img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async" data-nimg="responsive" style="
+          <img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async" data-nimg="responsive"
+            style="
                         position: absolute;
                         inset: 0px;
                         box-sizing: border-box;
