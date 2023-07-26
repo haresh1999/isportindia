@@ -172,12 +172,12 @@ class HomeController extends Controller
         $response = getSeasonsDetails($cId);
 
         return redirect()->back();
+
+        return view('season_details',compact('response'));
     }
 
     public function cricketTeams($name)
     {
-        // $name
-
         return redirect()->back();
     }
 

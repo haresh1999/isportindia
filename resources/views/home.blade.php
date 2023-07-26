@@ -424,6 +424,8 @@ $matchs = getMatch();
             </button>
           </div>
         </div>
+
+        {{-- ARTICLES 1st --}}
         <div class="Articles-data show tabs-data ">
           <section class="style_homeArticles__4e_Na ">
             <h4 class="line-title text-uppercase text-center overflow-hidden">
@@ -763,10 +765,10 @@ $matchs = getMatch();
           {{-- LATEST UPDATE HIGHLIGHTER START --}}
           @foreach ($seasonsUpdateHighlighter as $suh)
           @php $match = getCompetitionsMatches($suh->cid) @endphp
-          <section id="{{route('post.details',[$suh->slug])}}" class="style_homeArticles__4e_Na">
+          <section id="{{ $suh->cid }}" class="style_homeArticles__4e_Na">
             <h4 class="line-title text-uppercase text-center overflow-hidden">
               <a class="rounded-pill position-relative d-inline-block"
-                href="{{route('post.details',[$suh->slug])}}"><span
+                href="{{route('season.details',[$suh->cid])}}"><span
                   class="d-none d-md-block text-nowrap overflow-hidden">{{$match['competition']['title']}}</span><span
                   class="d-block d-md-none text-nowrap overflow-hidden">{{$match['competition']['title']}}</span></a>
             </h4>
@@ -1253,7 +1255,7 @@ $matchs = getMatch();
           </section>
           @endforeach
 
-          {{-- ARTICLES 1st --}}
+          
           @if ($seasonsUpdateHighlighter->count() >= 5)
           <div class="" style="text-align: center">
             <a style="padding: 6px 12px;background: var(--theme-color-light);color:white"
