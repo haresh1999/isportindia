@@ -116,13 +116,16 @@ class HomeController extends Controller
 
             if ($request->type == 'article') {
 
-                Article::where('id', $request->id)->decrement('likes', 1);
+                Article::where('id', $request->id)
+                    ->decrement('likes', 1);
             } elseif ($request->type == 'news') {
 
-                News::where('id', $request->id)->decrement('likes', 1);
+                News::where('id', $request->id)
+                    ->decrement('likes', 1);
             } elseif ($request->type == 'cricspecial') {
 
-                CricSpecial::where('id', $request->id)->decrement('likes', 1);
+                CricSpecial::where('id', $request->id)
+                    ->decrement('likes', 1);
             }
         } else {
 
@@ -134,28 +137,35 @@ class HomeController extends Controller
 
             if ($request->type == 'article') {
 
-                Article::where('id', $request->id)->update(['likes' => DB::raw('likes+1')]);
+                Article::where('id', $request->id)
+                    ->update(['likes' => DB::raw('likes+1')]);
             } elseif ($request->type == 'news') {
 
-                News::where('id', $request->id)->update(['likes' => DB::raw('likes+1')]);
+                News::where('id', $request->id)
+                    ->update(['likes' => DB::raw('likes+1')]);
             } elseif ($request->type == 'cricspecial') {
 
-                CricSpecial::where('id', $request->id)->update(['likes' => DB::raw('likes+1')]);
+                CricSpecial::where('id', $request->id)
+                    ->update(['likes' => DB::raw('likes+1')]);
             }
         }
 
         if ($request->type == 'article') {
 
-            $likes = Article::where('id', $request->id)->value('likes');
+            $likes = Article::where('id', $request->id)
+                ->value('likes');
         } elseif ($request->type == 'news') {
 
-            $likes = News::where('id', $request->id)->value('likes');
+            $likes = News::where('id', $request->id)
+                ->value('likes');
         } elseif ($request->type == 'cricspecial') {
 
-            $likes = CricSpecial::where('id', $request->id)->value('likes');
+            $likes = CricSpecial::where('id', $request->id)
+                ->value('likes');
         }
 
-        return response()->json($likes);
+        return response()
+            ->json($likes);
     }
 
     public function newsDetails($slug)
@@ -167,13 +177,47 @@ class HomeController extends Controller
         return view('news_details', compact('news'));
     }
 
-    public function seasonDetails($cId)
+    public function seasonDetails(Request $request, $cId)
     {
+        $type = $request->has('type') ? $request->type : 0;
+
+        $squads = getSeasonSquads($cId);
+
+        $bat = [];
+        $bowl = [];
+        $wk = [];
+        $all = [];
+
+        foreach ($squads[$type]['players'] as $key => $value) {
+
+            if ($value['playing_role'] == 'bat') {
+                $bat[] = $value;
+            } else if ($value['playing_role'] == 'bowl') {
+                $bowl[] = $value;
+            } else if ($value['playing_role'] == 'wk') {
+                $wk[] = $value;
+            } else if ($value['playing_role'] == 'all') {
+                $all[] = $value;
+            }
+        }
+
         $response = getSeasonsDetails($cId);
 
-        return redirect()->back();
+        $news = Article::where('cid', $cId)
+            ->latest()
+            ->get();
 
-        return view('season_details',compact('response'));
+        return view('season_details', compact(
+            'response',
+            'news',
+            'squads',
+            'bat',
+            'bowl',
+            'wk',
+            'all',
+            'type',
+            'cId'
+        ));
     }
 
     public function cricketTeams($name)

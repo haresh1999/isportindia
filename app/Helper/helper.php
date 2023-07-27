@@ -19,7 +19,16 @@ function getSeasons()
 
 function getSeasonsDetails($cid)
 {
-	return Http::get(config('services.api') . 'competitions/' . $cid . '/matches?token=' . token())->json();
+	$response = Http::get(config('services.api') . 'competitions/' . $cid . '/matches?token=' . token())->json();
+
+	return $response['response']['items'];
+}
+
+function getSeasonSquads($cid)
+{
+	$response = Http::get(config('services.api') . 'competitions/' . $cid . '/squads?token=' . token())->json();
+
+	return $response['response']['squads'];
 }
 
 function getMatch()
