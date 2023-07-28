@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\{
 
 class HomeController extends Controller
 {
+    // HOME
     public function home()
     {
         $latestUpdateHighlighter = Article::where('status', 1)
@@ -68,6 +69,7 @@ class HomeController extends Controller
         ));
     }
 
+    // DETAILS PAGE
     public function postDetails($slug)
     {
         $res = Article::with('user')
@@ -90,6 +92,68 @@ class HomeController extends Controller
         return view('cricspecial_details', compact('res'));
     }
 
+    public function newsDetails($slug)
+    {
+        $news = News::where('slug', $slug)->first();
+
+        $news->increment('views', 1);
+
+        return view('news_details', compact('news'));
+    }
+
+    public function fantasyDetails($slug)
+    {
+        $article = Article::where('slug', $slug)->first();
+
+        $article->increment('views', 1);
+
+        return view('fantasy_details', compact('article'));
+    }
+
+    public function seasonDetails(Request $request, $cId)
+    {
+        $type = $request->has('type') ? $request->type : 0;
+
+        $squads = getSeasonSquads($cId);
+
+        $bat = [];
+        $bowl = [];
+        $wk = [];
+        $all = [];
+
+        foreach ($squads[$type]['players'] as $key => $value) {
+
+            if ($value['playing_role'] == 'bat') {
+                $bat[] = $value;
+            } else if ($value['playing_role'] == 'bowl') {
+                $bowl[] = $value;
+            } else if ($value['playing_role'] == 'wk') {
+                $wk[] = $value;
+            } else if ($value['playing_role'] == 'all') {
+                $all[] = $value;
+            }
+        }
+
+        $response = getSeasonsDetails($cId);
+
+        $news = Article::where('cid', $cId)
+            ->latest()
+            ->get();
+
+        return view('season_details', compact(
+            'response',
+            'news',
+            'squads',
+            'bat',
+            'bowl',
+            'wk',
+            'all',
+            'type',
+            'cId'
+        ));
+    }
+    
+    // SCORE CARD LIVE MATCHES
     public function scoreCard($matchId)
     {
         $response = getMatchDetails($matchId);
@@ -101,6 +165,12 @@ class HomeController extends Controller
         return view('score_card', compact('response', 'player'));
     }
 
+    public function cricketTeams($name)
+    {
+        return redirect()->back();
+    }
+
+    // LIKES AND DISLIKE ADDED
     public function likesAdd(Request $request)
     {
         if (PostLikes::where('post_id', $request->id)
@@ -166,71 +236,5 @@ class HomeController extends Controller
 
         return response()
             ->json($likes);
-    }
-
-    public function newsDetails($slug)
-    {
-        $news = News::where('slug', $slug)->first();
-
-        $news->increment('views', 1);
-
-        return view('news_details', compact('news'));
-    }
-
-    public function seasonDetails(Request $request, $cId)
-    {
-        $type = $request->has('type') ? $request->type : 0;
-
-        $squads = getSeasonSquads($cId);
-
-        $bat = [];
-        $bowl = [];
-        $wk = [];
-        $all = [];
-
-        foreach ($squads[$type]['players'] as $key => $value) {
-
-            if ($value['playing_role'] == 'bat') {
-                $bat[] = $value;
-            } else if ($value['playing_role'] == 'bowl') {
-                $bowl[] = $value;
-            } else if ($value['playing_role'] == 'wk') {
-                $wk[] = $value;
-            } else if ($value['playing_role'] == 'all') {
-                $all[] = $value;
-            }
-        }
-
-        $response = getSeasonsDetails($cId);
-
-        $news = Article::where('cid', $cId)
-            ->latest()
-            ->get();
-
-        return view('season_details', compact(
-            'response',
-            'news',
-            'squads',
-            'bat',
-            'bowl',
-            'wk',
-            'all',
-            'type',
-            'cId'
-        ));
-    }
-
-    public function cricketTeams($name)
-    {
-        return redirect()->back();
-    }
-
-    public function fantasyDetails($slug)
-    {
-        $article = Article::where('slug', $slug)->first();
-
-        $article->increment('views', 1);
-
-        return view('fantasy_details', compact('article'));
     }
 }
