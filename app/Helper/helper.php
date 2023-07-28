@@ -7,11 +7,11 @@ function token()
 	return 'ec471071441bb2ac538a0ff901abd249';
 }
 
-function getSeasons()
+function getSeasons($page = 10)
 {
 	$url = 'seasons/2021/competitions';
 
-	$response = Http::get(config('services.api') . $url . '?per_page=5&token=' . token())
+	$response = Http::get(config('services.api') . $url . '?per_page=' . $page . '&token=' . token())
 		->json();
 
 	return $response['response']['items'];
@@ -29,6 +29,13 @@ function getSeasonSquads($cid)
 	$response = Http::get(config('services.api') . 'competitions/' . $cid . '/squads?token=' . token())->json();
 
 	return $response['response']['squads'];
+}
+
+function getSeasonStats($cid, $type = null, $page = 1)
+{
+	$response = Http::get(config('services.api') . 'competitions/' . $cid . '/stats/' . $type . '?per_page=' . $page . '.&token=' . token())->json();
+
+	return $response['response'];
 }
 
 function getMatch()

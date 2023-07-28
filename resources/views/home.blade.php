@@ -1255,7 +1255,7 @@ $matchs = getMatch();
           </section>
           @endforeach
 
-          
+
           @if ($seasonsUpdateHighlighter->count() >= 5)
           <div class="" style="text-align: center">
             <a style="padding: 6px 12px;background: var(--theme-color-light);color:white"

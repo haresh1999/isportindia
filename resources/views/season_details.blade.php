@@ -149,69 +149,73 @@
                     <div class="style_seriesHome__Jnsnk home-data tabs-data">
                         <h4 class="text-uppercase">Latest Article</h4>
                         <section>
-                            <article id="64c1120ca05e9505c622abaa"
-                                class="style_article__IayJx style_articleSmall__SMJc6 false light-bg br-lg c-transition">
-                                <div class="gx-2 gx-md-3 row">
-                                    <div class="col-sm-3 col-12"><a
-                                            class="style_postimg__ftSiV mb-2 mb-sm-0 d-block br-md overflow-hidden position-relative a-transition"
-                                            href="/cricket-news/july-26-evening-brief-todays-top-news-and-headlines-from-cricket-world/"><span
-                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
-                                                    alt="David Warner"
-                                                    sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                                                    src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1690355429024_1000111128.jpeg&amp;w=1900&amp;q=75"
-                                                    decoding="async" data-nimg="responsive"
-                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-between col-sm-9 col-12">
-                                        <div>
-                                            <h3 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                    href="/cricket-news/july-26-evening-brief-todays-top-news-and-headlines-from-cricket-world/">July
-                                                    26 Evening Brief: Today's Top news and headlines from cricket
-                                                    world</a></h3>
-                                            <p class="d-none d-sm-block">July 26 Evening Brief: Today's Top news and
-                                                headlines
-                                            </p>
-                                        </div>
-                                        <div class="style_articleInfo__WqisT text-muted d-flex"><span
-                                                class="d-flex align-items-center"><span
-                                                    class="style_icon__Ukkjh d-block"><span
-                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                            alt="Calender" sizes="100vw"
-                                                            src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
-                                                            decoding="async" data-nimg="responsive"
-                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>26
-                                                Jul 2023</span><span class="d-flex align-items-center"><span
-                                                    class="style_icon__Ukkjh d-block"><span
-                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                            alt="Clock" sizes="100vw"
-                                                            src="https://www.crictracker.com/_next/static/media/clock-icon.c7a46c6e.svg"
-                                                            decoding="async" data-nimg="responsive"
-                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>2
-                                                Min</span></div>
-                                    </div>
-                                </div>
-                            </article>
                             <div class="row">
-                                <div id="64c11083a05e9505c62265eb" class="col-lg-4 col-sm-6">
+                                @foreach ($articles as $akey => $article)
+                                @if ($loop->first)
+                                <div id="{{$article->id}}" class="col-lg-12 col-sm-12">
+                                    <article id="{{$article->id}}"
+                                        class="style_article__IayJx style_articleSmall__SMJc6 false light-bg br-lg c-transition">
+                                        <div class="gx-2 gx-md-3 row">
+                                            <div class="col-sm-3 col-12"><a
+                                                    class="style_postimg__ftSiV mb-2 mb-sm-0 d-block br-md overflow-hidden position-relative a-transition"
+                                                    href="{{route('post.details',$article->slug)}}"><span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
+                                                            alt="David Warner"
+                                                            sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
+                                                            src="{{ getImageUrl($article->img) }}" decoding="async"
+                                                            data-nimg="responsive"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-between col-sm-9 col-12">
+                                                <div>
+                                                    <h3 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
+                                                            href="{{route('post.details',$article->slug)}}">{{$article->title}}</a>
+                                                    </h3>
+                                                    <p class="d-none d-sm-block">{{$article->short_description}}
+                                                    </p>
+                                                </div>
+                                                <div class="style_articleInfo__WqisT text-muted d-flex"><span
+                                                        class="d-flex align-items-center"><span
+                                                            class="style_icon__Ukkjh d-block"><span
+                                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                                                    alt="Calender" sizes="100vw"
+                                                                    src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
+                                                                    decoding="async" data-nimg="responsive"
+                                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{
+                                                        Carbon\Carbon::parse($article->created_at)->format('d M Y')
+                                                        }}</span><span class="d-flex align-items-center"><span
+                                                            class="style_icon__Ukkjh d-block"><span
+                                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                                                    alt="Clock" sizes="100vw"
+                                                                    src="https://www.crictracker.com/_next/static/media/clock-icon.c7a46c6e.svg"
+                                                                    decoding="async" data-nimg="responsive"
+                                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{$article->min}}
+                                                        Min</span></div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                @else
+                                <div id="{{$article->id}}" class="col-lg-4 col-sm-6">
                                     <article
                                         class="style_article__IayJx style_articleGrid__LHxgp false flex-sm-column align-items-top style_mobileSmall__SYPwG d-flex light-bg br-lg c-transition"
-                                        id="64c11083a05e9505c62265eb"><a
+                                        id="{{$article->id}}"><a
                                             class="style_postimg__ftSiV style_postimg__pbfkX d-block mb-0 mb-sm-2 overflow-hidden br-md position-relative a-transition"
-                                            href="/cricket-stats-mania/wi-vs-ind-odis-2023-stats-preview-of-players-records-and-approaching-milestones-6762/"><span
+                                            href="{{route('post.details',$article->slug)}}"><span
                                                 style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                     style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
                                                     alt="Team India ODI."
                                                     sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                                                    src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1688625096211_Team-India-ODI.jpeg&amp;w=1900&amp;q=75"
-                                                    decoding="async" data-nimg="responsive"
+                                                    src="{{ getImageUrl($article->img) }}" decoding="async"
+                                                    data-nimg="responsive"
                                                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
                                         <div class="d-flex flex-column flex-grow-1">
                                             <h4 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                    href="/cricket-stats-mania/wi-vs-ind-odis-2023-stats-preview-of-players-records-and-approaching-milestones-6762/">WI
-                                                    vs IND 2023 1st ODI Stats Preview</a></h4>
+                                                    href="{{route('post.details',$article->slug)}}">{{ $article->title
+                                                    }}</a></h4>
                                             <div
                                                 class="style_articleInfo__WqisT style_articleInfo__LJyqf text-muted d-flex mt-auto">
                                                 <span class="d-flex align-items-center"><span
@@ -221,118 +225,46 @@
                                                                 alt="Calender" sizes="100vw"
                                                                 src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
                                                                 decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>26
-                                                    Jul 2023</span><span class="d-flex align-items-center"><span
+                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{
+                                                    Carbon\Carbon::parse($article->created_at)->format('d M Y')
+                                                    }}</span><span class="d-flex align-items-center"><span
                                                         class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
                                                             style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                                 style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
                                                                 alt="Clock" sizes="100vw"
                                                                 src="https://www.crictracker.com/_next/static/media/clock-icon.c7a46c6e.svg"
                                                                 decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>2
+                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{$article->min}}
                                                     Min</span>
                                             </div>
                                         </div>
                                     </article>
                                 </div>
-                                <div id="64c100dc13ad32565411dfb4" class="col-lg-4 col-sm-6">
-                                    <article
-                                        class="style_article__IayJx style_articleGrid__LHxgp false flex-sm-column align-items-top style_mobileSmall__SYPwG d-flex light-bg br-lg c-transition"
-                                        id="64c100dc13ad32565411dfb4"><a
-                                            class="style_postimg__ftSiV style_postimg__pbfkX d-block mb-0 mb-sm-2 overflow-hidden br-md position-relative a-transition"
-                                            href="/cricket-previews/west-indies-vs-india-2023-wi-vs-ind-1st-odi-preview-playing-xi-live-streaming-details-updates/"><span
-                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
-                                                    alt="Team India ODI."
-                                                    sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                                                    src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1688625096211_Team-India-ODI.jpeg&amp;w=1900&amp;q=75"
-                                                    decoding="async" data-nimg="responsive"
-                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
-                                        <div class="d-flex flex-column flex-grow-1">
-                                            <h4 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                    href="/cricket-previews/west-indies-vs-india-2023-wi-vs-ind-1st-odi-preview-playing-xi-live-streaming-details-updates/">WI
-                                                    vs IND 1st ODI Preview</a></h4>
-                                            <div
-                                                class="style_articleInfo__WqisT style_articleInfo__LJyqf text-muted d-flex mt-auto">
-                                                <span class="d-flex align-items-center"><span
-                                                        class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
-                                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="Calender" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
-                                                                decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>26
-                                                    Jul 2023</span><span class="d-flex align-items-center"><span
-                                                        class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
-                                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="Clock" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/static/media/clock-icon.c7a46c6e.svg"
-                                                                decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>2
-                                                    Min</span>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-                                <div id="64c0f5268762c729a257f27d" class="col-lg-4 col-sm-6">
-                                    <article
-                                        class="style_article__IayJx style_articleGrid__LHxgp false flex-sm-column align-items-top style_mobileSmall__SYPwG d-flex light-bg br-lg c-transition"
-                                        id="64c0f5268762c729a257f27d"><a
-                                            class="style_postimg__ftSiV style_postimg__pbfkX d-block mb-0 mb-sm-2 overflow-hidden br-md position-relative a-transition"
-                                            href="/cricket-match-predictions/wi-vs-ind-match-prediction-who-will-win-todays-1st-odi-between-west-indies-and-india/"><span
-                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
-                                                    alt="Indian Cricket Team."
-                                                    sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                                                    src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1679503450958_Indian-Cricket-Team.jpeg&amp;w=1900&amp;q=75"
-                                                    decoding="async" data-nimg="responsive"
-                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
-                                        <div class="d-flex flex-column flex-grow-1">
-                                            <h4 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                    href="/cricket-match-predictions/wi-vs-ind-match-prediction-who-will-win-todays-1st-odi-between-west-indies-and-india/">WI
-                                                    vs IND Match Prediction - Who will win today's 1st ODI?</a></h4>
-                                            <div
-                                                class="style_articleInfo__WqisT style_articleInfo__LJyqf text-muted d-flex mt-auto">
-                                                <span class="d-flex align-items-center"><span
-                                                        class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
-                                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="Calender" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
-                                                                decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>26
-                                                    Jul 2023</span><span class="d-flex align-items-center"><span
-                                                        class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
-                                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="Clock" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/static/media/clock-icon.c7a46c6e.svg"
-                                                                decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>3
-                                                    Min</span>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-
+                                @endif
+                                @endforeach
                             </div>
+                            @if ($articles->count() >= 5)
                             <div class="text-center theme-text"><a class="theme-btn small-btn"
-                                    href="/west-indies-vs-india/news/">More News &gt;</a></div>
+                                    href="{{ route('season.details',[$cId,'per_page' => (5 * (($articles->count() / 5) + 1))]) }}">More
+                                    News &gt;</a></div>
+                            @endif
                         </section>
+
                         <h4 class="text-uppercase">Top Rankings</h4>
                         <section class="common-section">
                             <div class="flex-nowrap scroll-list row">
+                                @foreach ($ranking as $rankKey => $rank)
                                 <div class="col-xl-3 col-auto">
                                     <div
                                         class="style_playerCard__X2o3g light-bg text-center br-lg mx-auto overflow-hidden">
-                                        <a href="/west-indies-vs-india/stats/batting-most-runs/">
-                                            <p class="style_title__rkxfw p-2 font-semi">Highest Run Scorer</p>
+                                        <a href="#">
+                                            <p class="style_title__rkxfw p-2 font-semi">{{
+                                                str_replace(Str::upper($rankKey),'_',' ') }}</p>
                                         </a>
                                         <p class="big-text"><b class="text-uppercase"><a
-                                                    href="/cricket-players/yashasvi-jaiswal/">Yashasvi Jaiswal</a></b>
-                                            (IN)</p>
+                                                    href="/cricket-players/yashasvi-jaiswal/">{{$rank['stats'][0]['player']['title']}}</a>
+                                                ({{ $rank['stats'][0]['team']['abbr'] }})</b>
+                                        </p>
                                         <div class="style_playerImg___TrCq position-relative"><a
                                                 class="style_imgBlock__9oEt4 d-block m-auto rounded-circle overflow-hidden "
                                                 href="/cricket-players/yashasvi-jaiswal/">
@@ -341,139 +273,43 @@
                                                     <div class="w-100"><span
                                                             style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                                 style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="CT" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fplayer%2Fhead%2F300x300%2Fyashasvi_jaiswal_9ef5e.png&amp;w=1900&amp;q=75"
+                                                                alt="{{$rank['stats'][0]['player']['title']}}"
+                                                                sizes="100vw"
+                                                                src="{{$rank['stats'][0]['player']['thumb_url'] }}"
                                                                 decoding="async" data-nimg="responsive"
                                                                 style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
                                                     </div>
                                                     <div class="position-absolute w-100 h-100 bottom-0 start-0"><span
                                                             style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                                 style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="CT" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2Fjersey%2F300x300%2Findia_8cdea.png&amp;w=1900&amp;q=75"
+                                                                alt="{{$rank['stats'][0]['team']['title']}}"
+                                                                sizes="100vw"
+                                                                src="{{ $rank['stats'][0]['team']['logo_url'] }}"
                                                                 decoding="async" data-nimg="responsive"
                                                                 style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
                                                     </div>
                                                 </div>
                                             </a></div>
-                                        <p class="style_score__o8kP_ mt-2 mb-0">266</p>
+
+                                        @if ($rankKey == 'batting_most_runs')
+                                        <p class="style_score__o8kP_ mt-2 mb-0">{{$rank['stats'][0]['runs']}}</p>
                                         <p class="undefined big-text text-secondary">Runs</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-auto">
-                                    <div
-                                        class="style_playerCard__X2o3g light-bg text-center br-lg mx-auto overflow-hidden">
-                                        <a href="/west-indies-vs-india/stats/batting-most-runs-innings/">
-                                            <p class="style_title__rkxfw p-2 font-semi">Highest Score</p>
-                                        </a>
-                                        <p class="big-text"><b class="text-uppercase"><a
-                                                    href="/cricket-players/yashasvi-jaiswal/">Yashasvi Jaiswal</a></b>
-                                            (IN)</p>
-                                        <div class="style_playerImg___TrCq position-relative"><a
-                                                class="style_imgBlock__9oEt4 d-block m-auto rounded-circle overflow-hidden "
-                                                href="/cricket-players/yashasvi-jaiswal/">
-                                                <div class="w-100 position-relative overflow-hidden rounded-circle"
-                                                    style="background-color: rgb(210, 211, 211);">
-                                                    <div class="w-100"><span
-                                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="CT" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fplayer%2Fhead%2F300x300%2Fyashasvi_jaiswal_9ef5e.png&amp;w=1900&amp;q=75"
-                                                                decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
-                                                    </div>
-                                                    <div class="position-absolute w-100 h-100 bottom-0 start-0"><span
-                                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="CT" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2Fjersey%2F300x300%2Findia_8cdea.png&amp;w=1900&amp;q=75"
-                                                                decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <p class="style_score__o8kP_ mt-2 mb-0">171</p>
+                                        @elseif ($rankKey == 'batting_most_runs_innings')
+                                        <p class="style_score__o8kP_ mt-2 mb-0">{{$rank['stats'][0]['runs']}}</p>
                                         <p class="undefined big-text text-secondary">Runs</p>
+                                        @elseif ($rankKey == 'bowling_top_wicket_takers')
+                                        <p class="style_score__o8kP_ mt-2 mb-0">{{$rank['stats'][0]['wickets']}}</p>
+                                        <p class="undefined big-text text-secondary">Runs</p>
+                                        @elseif ($rankKey == 'bowling_best_economy_rates')
+                                        <p class="style_score__o8kP_ mt-2 mb-0">{{$rank['stats'][0]['econ']}}</p>
+                                        <p class="undefined big-text text-secondary">Runs</p>
+                                        @endif
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-auto">
-                                    <div
-                                        class="style_playerCard__X2o3g light-bg text-center br-lg mx-auto overflow-hidden">
-                                        <a href="/west-indies-vs-india/stats/bowling-top-wicket-takers/">
-                                            <p class="style_title__rkxfw p-2 font-semi">Highest Wicket Taker</p>
-                                        </a>
-                                        <p class="big-text"><b class="text-uppercase"><a
-                                                    href="/cricket-players/ravichandran-ashwin/">Ravichandran
-                                                    Ashwin</a></b>
-                                            (IN)
-                                        </p>
-                                        <div class="style_playerImg___TrCq position-relative"><a
-                                                class="style_imgBlock__9oEt4 d-block m-auto rounded-circle overflow-hidden "
-                                                href="/cricket-players/ravichandran-ashwin/">
-                                                <div class="w-100 position-relative overflow-hidden rounded-circle"
-                                                    style="background-color: rgb(210, 211, 211);">
-                                                    <div class="w-100"><span
-                                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="CT" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fplayer%2Fhead%2F300x300%2Fravichandran_ashwin_f80ce.png&amp;w=1900&amp;q=75"
-                                                                decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
-                                                    </div>
-                                                    <div class="position-absolute w-100 h-100 bottom-0 start-0"><span
-                                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="CT" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2Fjersey%2F300x300%2Findia_8cdea.png&amp;w=1900&amp;q=75"
-                                                                decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <p class="style_score__o8kP_ mt-2 mb-0">15</p>
-                                        <p class="undefined big-text text-secondary">Wickets</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-auto">
-                                    <div
-                                        class="style_playerCard__X2o3g light-bg text-center br-lg mx-auto overflow-hidden">
-                                        <a href="/west-indies-vs-india/stats/bowling-best-bowling-figures/">
-                                            <p class="style_title__rkxfw p-2 font-semi">Best Bowling Figure</p>
-                                        </a>
-                                        <p class="big-text"><b class="text-uppercase"><a
-                                                    href="/cricket-players/ravichandran-ashwin/">Ravichandran
-                                                    Ashwin</a></b>
-                                            (IN)
-                                        </p>
-                                        <div class="style_playerImg___TrCq position-relative"><a
-                                                class="style_imgBlock__9oEt4 d-block m-auto rounded-circle overflow-hidden "
-                                                href="/cricket-players/ravichandran-ashwin/">
-                                                <div class="w-100 position-relative overflow-hidden rounded-circle"
-                                                    style="background-color: rgb(210, 211, 211);">
-                                                    <div class="w-100"><span
-                                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="CT" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fplayer%2Fhead%2F300x300%2Fravichandran_ashwin_f80ce.png&amp;w=1900&amp;q=75"
-                                                                decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
-                                                    </div>
-                                                    <div class="position-absolute w-100 h-100 bottom-0 start-0"><span
-                                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="CT" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2Fjersey%2F300x300%2Findia_8cdea.png&amp;w=1900&amp;q=75"
-                                                                decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <p class="style_score__o8kP_ mt-2 mb-0">7/71</p>
-                                        <p class="undefined big-text text-secondary">Best</p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </section>
+
                         <h4 class="text-uppercase">Fantasy Articles</h4>
                         <section>
                             <article id="64c07616131c01b64d0151b7"
@@ -605,7 +441,7 @@
                                 </div>
                             </div>
                         </section>
-                        <h4 class="text-uppercase">Videos</h4>
+                        {{-- <h4 class="text-uppercase">Videos</h4>
                         <section>
                             <article id="62e770814cbc935afe342263"
                                 class="style_article__IayJx style_articleSmall__SMJc6 undefined light-bg br-lg c-transition">
@@ -789,7 +625,7 @@
                             </div>
                             <div class="text-center theme-text"><a class="theme-btn small-btn"
                                     href="/west-indies-vs-india/videos/">More Videos &gt;</a></div>
-                        </section>
+                        </section> --}}
                     </div>
                     <!-- HOME SECTION END -->
 
@@ -801,7 +637,7 @@
                         <div class="row">
                             @foreach ($news as $new)
                             @if (in_array($new->type,['highlighter']))
-                            <div id="{{$new->id}}" class="col-lg-4 col-sm-6">
+                            <div id="{{$new->id}}" class="col-lg-12 col-sm-6">
                                 <article
                                     class="style_article__IayJx style_articleGrid__LHxgp undefined flex-sm-column align-items-top style_mobileSmall__SYPwG d-flex light-bg br-lg c-transition"
                                     id="{{$new->id}}"><a
@@ -1066,140 +902,33 @@
                     <!-- STATS SECTION START -->
                     <div class="style_seriesHome__Jnsnk stats-data hide tabs-data">
                         <div class="mt-4 gx-2 gx-md-3 row">
+                            @foreach ($states['stat_types'] as $statesKey => $state)
                             <div class="col-xl-4 col-lg-6 col-md-6">
                                 <div class="table-responsive">
                                     <table
                                         class="undefined undefined undefined text-center font-semi text-nowrap table">
                                         <thead>
                                             <tr>
-                                                <th class="">Batting Stats</th>
+                                                <th class="">{{$state['group_title']}} Stats</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td class=" align-top">
-                                                    <div class="d-flex flex-column"><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/batting-most-runs/">Most
-                                                            Runs</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/batting-most-fours/">Most
-                                                            Fours</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/batting-most-sixes/">Most
-                                                            Sixes</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/batting-most-run50/">Most
-                                                            Fifties</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/batting-most-centuries/">Most
-                                                            Centuries</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/batting-most-run4-innings/">Most
-                                                            Fours (Innings)</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/batting-most-run6-innings/">Most
-                                                            Sixes (Innings)</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/batting-most-runs-innings/">Highest
-                                                            Individual Score</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/batting-highest-strikerate/">Highest
-                                                            Strike Rates</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/batting-highest-average/">Highest
-                                                            Average</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/batting-highest-strikerate-innings/">Highest
-                                                            Strike Rates (Innings)</a></div>
+                                                    <div class="d-flex flex-column">
+                                                        @foreach ($state['types'] as $stateTypes)
+                                                        <a class="theme-btn outline-btn small-btn outline-light mb-2"
+                                                            href="#">{{$stateTypes}}</a>
+                                                        @endforeach
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                <div class="table-responsive">
-                                    <table
-                                        class="undefined undefined undefined text-center font-semi text-nowrap table">
-                                        <thead>
-                                            <tr>
-                                                <th class="">Bowling Stats</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class=" align-top">
-                                                    <div class="d-flex flex-column"><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/bowling-top-wicket-takers/">Top
-                                                            Wicket Takers</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/bowling-four-wickets/">Four
-                                                            Wickets</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/bowling-five-wickets/">Five
-                                                            Wickets</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/bowling-maidens/">Maidens</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/bowling-best-averages/">Best
-                                                            Averages</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/bowling-best-bowling-figures/">Best
-                                                            Bowling Figures</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/bowling-best-economy-rates/">Best
-                                                            Economy Rates</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/bowling-best-strike-rates/">Best
-                                                            Strike Rates</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/bowling-most-runs-conceded-innings/">Most
-                                                            runs conceded in an innings</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/bowling-best-economy-rates-innings/">Best
-                                                            Economy Rates (Innings)</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/bowling-best-strike-rates-innings/">Best
-                                                            Strike Rates (Innings)</a></div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                <div class="table-responsive">
-                                    <table
-                                        class="undefined undefined undefined text-center font-semi text-nowrap table">
-                                        <thead>
-                                            <tr>
-                                                <th class="">Team Stats</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class=" align-top">
-                                                    <div class="d-flex flex-column"><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/team-total-runs/">Total
-                                                            Runs</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/team-total-wickets/">Total
-                                                            Wickets</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/batting-most-fifties/">Most
-                                                            Fifties</a><a
-                                                            class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="/west-indies-vs-india/stats/team-total-run100/">Most
-                                                            Centuries</a></div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                     </div>
                     <!-- STATS SECTION END -->
