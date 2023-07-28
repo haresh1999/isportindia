@@ -62,10 +62,49 @@
                                     @error('cid')
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
-                                    <select class="select select-wide" name="cid">
+                                    <select class="select select-wide" name="cid" id="select_season_val">
                                         <option value="" selected disabled>Select Seasons</option>
                                         @foreach (getSeasons() as $val)
-                                            <option {{ old('cid')==$val['cid'] ? 'selected' : '' }} value="{{$val['cid']}}"> {{$val['title']}}</option>
+                                        <option {{ old('cid')==$val['cid'] ? 'selected' : '' }} value="{{$val['cid']}}">
+                                            {{$val['title']}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 mt-4 d-none match">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Select Match
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Select match available in season">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('match_id')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <select class="select select-wide" name="match_id" id="match_option">
+                                        <option value="" selected disabled>Select Match</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 mt-4 d-none fantasy">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Fantasy Tips
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Type of article select from below">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('fantasy_id')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <select class="select select-wide" name="fantasy_id">
+                                        <option value="" selected disabled>Select Fantasy</option>
+                                        @foreach ($fantasy as $key => $fant)
+                                        <option {{ old('fantasy_id')==$key ? 'selected' : '' }}value="{{ $key }}">{{
+                                            $fant }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -90,27 +129,6 @@
                                         </option>
                                         <option {{ old('type')=='one_liner' ? 'selected' : '' }} value="one_liner">One
                                             Liner</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-12 mt-4 d-none fantasy">
-                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Fantasy Tips
-                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                            title="Type of article select from below">
-                                            <svg class="icon icon-info">
-                                                <use xlink:href="#icon-info"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    @error('fantasy_id')
-                                    <span class="text-red">{{$message}}</span>
-                                    @enderror
-                                    <select class="select select-wide" name="fantasy_id">
-                                        <option value="" selected disabled>Select Fantasy</option>
-                                        @foreach ($fantasy as $key => $fant)
-                                        <option {{ old('fantasy_id')==$key ? 'selected' : '' }}value="{{ $key }}">{{
-                                            $fant }}</option>
-                                        @endforeach
                                     </select>
                                 </div>
 
@@ -145,7 +163,6 @@
                                     <textarea class="form-control mb-5 mb-sm-6" name="short_description" rows="3"
                                         cols="10">{{ old('short_description') }}</textarea>
                                 </div>
-
 
                                 <div class="col-md-12 mt-4">
                                     <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Description
@@ -284,21 +301,44 @@
 <script>
 $('.category').change(function(){
 
-    if ($(this).val() == 'seasons_update'){
+    if ($(this).val() == 'seasons_update' || $(this).val() == 'fantasy'){
+        
         $('.seasons').removeClass('d-none')
         $('.seasons').addClass('d-block')
+
+        if ($(this).val() == 'fantasy') {
+            $('.fantasy').removeClass('d-none')
+            $('.fantasy').addClass('d-block')
+            $('.match').removeClass('d-none')
+            $('.match').addClass('d-block')
+        }else{
+            $('.fantasy').removeClass('d-block')
+            $('.fantasy').addClass('d-none')    
+            $('.match').removeClass('d-block')
+            $('.match').addClass('d-none')    
+        }
     }else{
         $('.seasons').removeClass('d-block')
         $('.seasons').addClass('d-none')
-    }
-
-    if ($(this).val() == 'fantasy') {
-        $('.fantasy').removeClass('d-none')
-        $('.fantasy').addClass('d-block')
-    }else{
         $('.fantasy').removeClass('d-block')
         $('.fantasy').addClass('d-none')
     }
+})
+
+$('#select_season_val').change(function(){
+
+    $.ajax({
+        type: "POST",
+        url: "{{ route('season.match') }}",
+        data: {'_token':"{{ csrf_token() }}",'cid' :$(this).val()},
+        dataType: "json",
+        success: function (response) {
+            $('#match_option').html(' ')
+            $.each(response, function (index, value) { 
+                $('#match_option').append('<option value="'+valueOfElement.match_id+'">'+valueOfElement.short_title + ' ' + valueOfElement.format_str + ' ' + valueOfElement.match_number +'</option>');
+            });
+        }
+    });
 })
 </script>
 @endsection

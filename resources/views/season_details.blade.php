@@ -312,70 +312,69 @@
 
                         <h4 class="text-uppercase">Fantasy Articles</h4>
                         <section>
-                            <article id="64c07616131c01b64d0151b7"
-                                class="style_article__IayJx style_articleSmall__SMJc6 false light-bg br-lg c-transition">
-                                <div class="gx-2 gx-md-3 row">
-                                    <div class="col-sm-3 col-12"><a
-                                            class="style_postimg__ftSiV mb-2 mb-sm-0 d-block br-md overflow-hidden position-relative a-transition"
-                                            href="/fantasy-cricket-tips/dream11-ind-vs-wi-dream11-prediction-playing-xi-fantasy-cricket-tips-injury-updates-pitch-report-for-1st-odi/"><span
-                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
-                                                    alt="India vs West Indies Dream11 Team Today"
-                                                    sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                                                    src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1688625096211_Team-India-ODI.jpeg&amp;w=1900&amp;q=75"
-                                                    decoding="async" data-nimg="responsive"
-                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-between col-sm-9 col-12">
-                                        <div><span class="undefined undefined mb-1 badge bg-danger"><a
-                                                    href="/dream11-fantasy-tips/">Dream11 Fantasy Tips</a></span>
-                                            <h3 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                    href="/fantasy-cricket-tips/dream11-ind-vs-wi-dream11-prediction-playing-xi-fantasy-cricket-tips-injury-updates-pitch-report-for-1st-odi/">IND
-                                                    vs WI Dream11 Prediction, Playing XI, Fantasy Cricket Tips, Injury
-                                                    Updates
-                                                    &amp;
-                                                    Pitch Report For 1st ODI</a></h3>
-                                            <p class="d-none d-sm-block">IND vs WI Dream11 Prediction</p>
-                                        </div>
-                                        <div class="style_articleInfo__WqisT text-muted d-flex"><span
-                                                class="d-flex align-items-center"><span
-                                                    class="style_icon__Ukkjh d-block"><span
-                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                            alt="Calender" sizes="100vw"
-                                                            src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
-                                                            decoding="async" data-nimg="responsive"
-                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>26
-                                                Jul 2023</span><span class="d-flex align-items-center"><span
-                                                    class="style_icon__Ukkjh d-block"><span
-                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                            alt="Clock" sizes="100vw"
-                                                            src="https://www.crictracker.com/_next/static/media/clock-icon.c7a46c6e.svg"
-                                                            decoding="async" data-nimg="responsive"
-                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>1
-                                                Min</span></div>
-                                    </div>
-                                </div>
-                            </article>
                             <div class="row">
-                                <div id="64b6e2b43c018a2401193717" class="col-lg-4 col-sm-6">
+                                @foreach ($farticles as $fantasy)
+                                @if ($loop->first)
+                                <div id="{{$fantasy->id}}" class="col-lg-4 col-sm-6">
+                                    <article id="{{$fantasy->id}}"
+                                        class="style_article__IayJx style_articleSmall__SMJc6 false light-bg br-lg c-transition">
+                                        <div class="gx-2 gx-md-3 row">
+                                            <div class="col-sm-3 col-12"><a
+                                                    class="style_postimg__ftSiV mb-2 mb-sm-0 d-block br-md overflow-hidden position-relative a-transition"
+                                                    href="{{route('post.details',$fantasy->slug)}}/"><span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
+                                                            alt="{{$fantasy->title}}"
+                                                            sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
+                                                            src="{{ getImageUrl($fantasy->fantasy->img) }}"
+                                                            decoding="async" data-nimg="responsive"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-between col-sm-9 col-12">
+                                                <div><span class="undefined undefined mb-1 badge bg-danger"><a
+                                                            href="{{route('fantasy.details',$fantasy->fantasy->id)}}">{{ $fantasy->fantasy->name }}</a></span>
+                                                    <h3 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
+                                                            href="{{route('post.details',$fantasy->slug)}}/">{{ $fantasy->title }}</a></h3>
+                                                    <p class="d-none d-sm-block">IND vs WI Dream11 Prediction</p>
+                                                </div>
+                                                <div class="style_articleInfo__WqisT text-muted d-flex"><span
+                                                        class="d-flex align-items-center"><span
+                                                            class="style_icon__Ukkjh d-block"><span
+                                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                                                    alt="Calender" sizes="100vw"
+                                                                    src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
+                                                                    decoding="async" data-nimg="responsive"
+                                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{ Carbon\Carbon::parse($fatntasy->created_at)->format('d M Y') }}</span><span class="d-flex align-items-center"><span
+                                                            class="style_icon__Ukkjh d-block"><span
+                                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                                                    alt="Clock" sizes="100vw"
+                                                                    src="https://www.crictracker.com/_next/static/media/clock-icon.c7a46c6e.svg"
+                                                                    decoding="async" data-nimg="responsive"
+                                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{$fantasy->min}}
+                                                        Min</span></div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                @else
+                                <div id="{{$fantasy->id}}" class="col-lg-4 col-sm-6">
                                     <article
                                         class="style_article__IayJx style_articleGrid__LHxgp false flex-sm-column align-items-top style_mobileSmall__SYPwG d-flex light-bg br-lg c-transition"
-                                        id="64b6e2b43c018a2401193717"><a
+                                        id="{{$fantasy->id}}"><a
                                             class="style_postimg__ftSiV style_postimg__pbfkX d-block mb-0 mb-sm-2 overflow-hidden br-md position-relative a-transition"
-                                            href="/fantasy-cricket-tips/dream11-wi-vs-ind-dream11-prediction-playing-xi-fantasy-cricket-tips-injury-updates-pitch-report-for-2nd-test/"><span
+                                            href="{{route('post.details',$fantasy->slug)}}"><span
                                                 style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                     style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
-                                                    alt="India vs West Indies Dream11 Team Today"
+                                                    alt="{{$fantasy->title}}"
                                                     sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                                                    src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1689372348586_Team-India-vs-WI.jpeg&amp;w=1900&amp;q=75"
+                                                    src="{{ getImageUrl($fantasy->fantasy->img) }}"
                                                     decoding="async" data-nimg="responsive"
                                                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
                                         <div class="d-flex flex-column flex-grow-1">
                                             <h4 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                    href="/fantasy-cricket-tips/dream11-wi-vs-ind-dream11-prediction-playing-xi-fantasy-cricket-tips-injury-updates-pitch-report-for-2nd-test/">IND
-                                                    vs WI Dream11 Prediction</a></h4>
+                                                    href="{{route('post.details',$fantasy->slug)}}">{{ $fantasy->title }}</a></h4>
                                             <div
                                                 class="style_articleInfo__WqisT style_articleInfo__LJyqf text-muted d-flex mt-auto">
                                                 <span class="d-flex align-items-center"><span
@@ -385,60 +384,21 @@
                                                                 alt="Calender" sizes="100vw"
                                                                 src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
                                                                 decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>19
-                                                    Jul 2023</span><span class="d-flex align-items-center"><span
+                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{ Carbon\Carbon::parse($fantasy->created_at)->format('d M Y') }}</span><span class="d-flex align-items-center"><span
                                                         class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
                                                             style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                                 style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
                                                                 alt="Clock" sizes="100vw"
                                                                 src="https://www.crictracker.com/_next/static/media/clock-icon.c7a46c6e.svg"
                                                                 decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>1
+                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{$fantasy->id}}
                                                     Min</span>
                                             </div>
                                         </div>
                                     </article>
                                 </div>
-                                <div id="64ad1bc4454fbfda01cc8693" class="col-lg-4 col-sm-6">
-                                    <article
-                                        class="style_article__IayJx style_articleGrid__LHxgp false flex-sm-column align-items-top style_mobileSmall__SYPwG d-flex light-bg br-lg c-transition"
-                                        id="64ad1bc4454fbfda01cc8693"><a
-                                            class="style_postimg__ftSiV style_postimg__pbfkX d-block mb-0 mb-sm-2 overflow-hidden br-md position-relative a-transition"
-                                            href="/fantasy-cricket-tips/dream11-ind-vs-wi-dream11-prediction-playing-xi-fantasy-cricket-tips-injury-updates-pitch-report-for-1st-test/"><span
-                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
-                                                    alt="India vs West Indies Dream11 Team Today"
-                                                    sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                                                    src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1686559210706_Indian-Cricket.jpeg&amp;w=1900&amp;q=75"
-                                                    decoding="async" data-nimg="responsive"
-                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
-                                        <div class="d-flex flex-column flex-grow-1">
-                                            <h4 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                    href="/fantasy-cricket-tips/dream11-ind-vs-wi-dream11-prediction-playing-xi-fantasy-cricket-tips-injury-updates-pitch-report-for-1st-test/">IND
-                                                    vs WI Dream11 Prediction</a></h4>
-                                            <div
-                                                class="style_articleInfo__WqisT style_articleInfo__LJyqf text-muted d-flex mt-auto">
-                                                <span class="d-flex align-items-center"><span
-                                                        class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
-                                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="Calender" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
-                                                                decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>11
-                                                    Jul 2023</span><span class="d-flex align-items-center"><span
-                                                        class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
-                                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                                alt="Clock" sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/static/media/clock-icon.c7a46c6e.svg"
-                                                                decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>1
-                                                    Min</span>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
+                                @endif
+                                @endforeach
                             </div>
                         </section>
                         {{-- <h4 class="text-uppercase">Videos</h4>
