@@ -59,12 +59,15 @@ class HomeController extends Controller
             ->limit(request()->has('fantasy_per_page') ? request()->get('fantasy_per_page') : 5)
             ->get();
 
+        $matchs = getMatch();
+
         return view('home', compact(
             'latestUpdateHighlighter',
             'latestUpdateNormal',
             'latestUpdateOneLiner',
             'seasonsUpdateHighlighter',
-            'fantasys'
+            'fantasys',
+            'matchs'
         ));
     }
 
@@ -236,7 +239,10 @@ class HomeController extends Controller
             ->limit(request()->has('per_page') ? request()->get('per_page') : 5)
             ->get();
 
+        $matchs = getSeasonsDetails($cId);
+
         return view('season_details', compact(
+            'matchs',
             'response',
             'news',
             'squads',

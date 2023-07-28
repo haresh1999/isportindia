@@ -30,10 +30,7 @@
 @endsection
 
 @section('content')
-@php
-$matchs = getMatch();
-@endphp
-<div style="height: 259px">
+<div style="height: auto">
   <section class="style_scorecardSlider__sPmoX scorecard-slider pt-0 overflow-hidden pb-3">
     <div class="container">
       <div class="style_scorecardNav__b0jAi xsmall-text text-nowrap scroll-list d-flex pb-1">
@@ -177,7 +174,6 @@ $matchs = getMatch();
         </div>
         <div style="display: none;" id="category_matches">
           <div id="category-slider-track" class="style_inner__csGhV slider-track d-flex" style="gap: 0" id="c-slider">
-
           </div>
         </div>
         <div id="scroll_1_next" onclick="scrollContent(1)"
@@ -188,8 +184,6 @@ $matchs = getMatch();
     </div>
   </section>
 </div>
-
-<div style="min-height: 90px" class="d-none d-md-block mt-2 container"></div>
 
 <div class="common-section">
   <div class="style_homeContainer__89N3q container">

@@ -14,6 +14,150 @@
 @endsection
 
 @section('content')
+<div style="height: auto">
+    <section class="style_scorecardSlider__sPmoX scorecard-slider pt-0 overflow-hidden pb-3">
+        <div class="container">
+            <div class="style_scorecardNav__b0jAi xsmall-text text-nowrap scroll-list d-flex pb-0"></div>
+
+            <div class="style_slider__UbtNO style_destroy__J7ab0 style_sliderMain__Q3_kE position-relative">
+                <button style="display:none" onclick="scrollContent(-1)" id="scroll_1_prev"
+                    class="style_arrow__bXMF0 style_prev__wdbiv position-absolute top-50 start-0">Prev</button>
+                <div id="all_matches">
+                    <div class="all-slider-track style_inner__csGhV slider-track d-flex " style="gap: 0" id="c-slider">
+                        @foreach ($matchs as $val)
+                        <div category="{{ Str::slug($val['short_title']) }}" class="banner_match">
+                            <div class="style_item__sjAWf p-2 mx-1 font-semi">
+                                <div class="position-relative">
+                                    <a class="style_scoreCardLink__Clpdb position-absolute top-0 start-0 opacity-0 w-100 h-100"
+                                        href="{{ route('score.card',$val['match_id']) }}">{{$val['title'] }}</a>
+                                    <div class="d-flex justify-content-between align-items-center style_head__CLILr">
+                                        <p>
+                                            <span class="danger-text text-capitalize">• {{$val['status_str']}}
+                                            </span><span class="style_dark__duIOp"> -
+                                                {{$val['subtitle']}}</span> -
+                                            {{$val['venue']['name']}}
+                                        </p>
+                                    </div>
+                                    <p class="style_series__ggX10 font-medium text-nowrap overflow-hidden my-2">
+                                        {{$val['short_title']}}
+                                    </p>
+                                    <div class="style_head__CLILr">
+                                        <div
+                                            class="style_team__wJ2ZX d-flex justify-content-between position-relative xsmall-text">
+                                            <div class="style_teamName__mcMHu d-flex align-items-center">
+                                                <div class="style_teamFlag__yzzhu rounded-circle overflow-hidden">
+                                                    <span style="
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 0px;
+                        position: relative;
+                      "><span style="
+                          display: block;
+                          width: initial;
+                          height: initial;
+                          background: none;
+                          opacity: 1;
+                          border: 0px;
+                          margin: 0px;
+                          padding: 100% 0px 0px;
+                        ">
+                                                        </span><img alt="{{$val['teama']['name']}}"
+                                                            src="{{ $val['teama']['logo_url'] }}" decoding="async"
+                                                            data-nimg="responsive" style="
+                          position: absolute;
+                          inset: 0px;
+                          padding: 0px;
+                          border: none;
+                          display: block;
+                          width: 0px;
+                          min-width: 100%;
+                          max-width: 100%;
+                          max-height: 100%;" sizes="(max-width: 767px) 24px, (max-width: 991px) 24px, (max-width: 1190px) 200px, 24px"
+                                                            srcset="{{$val['teama']['logo_url']}} 40w,{{$val['teama']['logo_url']}} 80w,{{$val['teama']['logo_url']}} 120w,{{$val['teama']['logo_url']}} 240w,{{$val['teama']['logo_url']}} 450w,{{$val['teama']['logo_url']}}  992w,{{$val['teama']['logo_url']}} 1200w,{{$val['teama']['logo_url']}} 1900w">&gt;
+                                                    </span>
+                                                </div>
+                                                <span>{{$val['teama']['name']}}</span>
+                                            </div>
+                                            <p></p>
+                                        </div>
+                                        <div
+                                            class="style_team__wJ2ZX d-flex justify-content-between position-relative xsmall-text">
+                                            <div class="style_teamName__mcMHu d-flex align-items-center">
+                                                <div class="style_teamFlag__yzzhu rounded-circle overflow-hidden">
+                                                    <span style="
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0px;
+                        margin: 0px;
+                        padding: 0px;
+                        position: relative;
+                      "><span style="
+                          display: block;
+                          width: initial;
+                          height: initial;
+                          background: none;
+                          opacity: 1;
+                          border: 0px;
+                          margin: 0px;
+                          padding: 100% 0px 0px;
+                        "></span><img alt="{{$val['teamb']['name']}}" src="{{ $val['teamb']['logo_url'] }}"
+                                                            decoding="async" data-nimg="responsive" style=" position: absolute;
+                                inset: 0px;
+                                padding: 0px;
+                                border: none;
+                                display: block;
+                                width: 0px;
+                                min-width: 100%;
+                                max-width: 100%;
+                                max-height: 100%;" sizes="(max-width: 767px) 24px, (max-width: 991px) 24px, (max-width: 1190px) 200px, 24px"
+                                                            srcset="{{ $val['teamb']['logo_url'] }} 40w,{{ $val['teamb']['logo_url'] }} 80w,{{ $val['teamb']['logo_url'] }} 120w,{{ $val['teamb']['logo_url'] }} 240w,{{ $val['teamb']['logo_url'] }} 450w,{{ $val['teamb']['logo_url'] }} 992w,{{ $val['teamb']['logo_url'] }} 1200w,{{ $val['teamb']['logo_url'] }} 1900w">&gt;
+                                                    </span>
+                                                </div>
+                                                <span>{{$val['teamb']['name']}}</span>
+                                            </div>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <p
+                                        class="style_result__gMwNw danger-text text-nowrap font-medium my-2 overflow-hidden">
+                                        {{$val['status_note']}}
+                                    </p>
+                                </div>
+                                <div class="style_btnList__BelA5 d-flex text-center text-uppercase">
+                                    <a class="mx-1 p-1 flex-grow-1 rounded-pill"
+                                        href="/womens-emerging-teams-asia-cup/fixtures/">Fixtures</a><a
+                                        class="mx-1 p-1 flex-grow-1 rounded-pill"
+                                        href="/womens-emerging-teams-asia-cup/standings/">Standings</a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div style="display: none;" id="category_matches">
+                    <div id="category-slider-track" class="style_inner__csGhV slider-track d-flex" style="gap: 0"
+                        id="c-slider">
+                    </div>
+                </div>
+                <div id="scroll_1_next" onclick="scrollContent(1)"
+                    class="style_arrow__bXMF0 undefined position-absolute top-50 end-0">
+                    Next
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
 <section class="style_articleBlockSec__Eg4q3 common-section false">
     <div class="container">
         <div class="row justify-content-center justify-content-lg-start">
@@ -912,7 +1056,8 @@
                                                         alt="Dream 11"
                                                         src="https://www.crictracker.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fdream11-icon.ddcccae1.png&amp;w=1900&amp;q=75"
                                                         decoding="async" data-nimg="responsive" sizes="100vw"
-                                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></span><span>{{$f_match->fantasy->name}}</span></a></div>
+                                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></span><span>{{$f_match->fantasy->name}}</span></a>
+                                    </div>
                                 </div>
                             </div>
                             @endforeach
@@ -1044,4 +1189,105 @@ $('.style_selectNative__gg_ys').change(function(){
     window.location.href = "{{ route('season.details',$cId) }}?type="+$(this).val()
 })
 </script>
+
+<script>
+    const all_matches_list = document.querySelectorAll('#all_matches .banner_match')
+const categoryClickHandler = (category) => {
+  console.log(all_matches_list, '########')
+  ///buttons logic
+  const buttons = document.querySelectorAll('.category_button');
+  buttons.forEach(button => {
+      if (category == button.getAttribute('category')) {
+          button.classList.add('style_active__3p7K4');
+          return
+      }
+      button.classList.remove('style_active__3p7K4');
+  })
+
+  //// filter logic
+  let all_matches = document.querySelector('#all_matches')
+  let category_matches = document.querySelector('#category_matches')
+  if (category == 'all') {
+      all_matches.style.display = 'block'
+      category_matches.style.display = 'none'
+      let allContainer = document.querySelector('.all-slider-track');
+      while (allContainer.firstChild) {
+          allContainer.removeChild(allContainer.firstChild);
+      }
+      all_matches_list.forEach(each => {
+          allContainer.appendChild(each);
+
+      })
+  }
+  else {
+      all_matches.style.display = 'none'
+      category_matches.style.display = 'block'
+
+      let filteredItems = []
+      let categoryContainer = document.querySelector('#category-slider-track');
+      while (categoryContainer.firstChild) {
+          categoryContainer.removeChild(categoryContainer.firstChild);
+      }
+      all_matches_list.forEach(each => {
+          if (each.getAttribute('category') == category) {
+              filteredItems.push(each)
+              categoryContainer.appendChild(each);
+          }
+      })
+      if (!filteredItems?.length) {
+          $('#scroll_1_next').hide();
+          categoryContainer.append("no data found")
+      }
+      else {
+          $('#scroll_1_next').show()
+      }
+
+  }
+}
+</script>
+<script>
+    const getActiveRankingDataType = () => {
+        return $("#rankingSimpleTab .active").attr("type")
+    }
+    const getActiveSeriesType = () => {
+        return $("#series-cont .active").attr("type")
+    }
+    const seriesTabClick = (clickTab) => {
+        $("#series-cont .active").removeClass('active')
+        clickTab.classList.add("active");
+        let activeSeriesType = clickTab.getAttribute("type")
+        let activeRankingDataType = getActiveRankingDataType()
+        let show_cont_class = `${activeSeriesType}-${activeRankingDataType}`
+        showRespectiveData(show_cont_class)
+    }
+    const rankingDataTypeTabClick = (clickTab) => {
+        $("#rankingSimpleTab .active").removeClass('active')
+        clickTab.classList.add("active");
+        let activeRankingDataType = clickTab.getAttribute("type")
+        let activeSeriesType = getActiveSeriesType()
+        let show_cont_class = `${activeSeriesType}-${activeRankingDataType}`
+        showRespectiveData(show_cont_class)
+    }
+    const showRespectiveData = (show_cont_class) => {
+        $(".ranking-data").removeClass("show").addClass('hide');
+        console.log(show_cont_class);
+        console.log($(`.ranking-data.${show_cont_class}`))
+        $(`.ranking-data.${show_cont_class}`).addClass("show")
+    }
+</script>
+<script>
+    const tabclickHandler = (clickTab,tabs_root_id,active_class) => {
+        $(`#${tabs_root_id} .${active_class}`).removeClass(`${active_class}`)
+        clickTab.classList.add(active_class);
+        let activeTabType = clickTab.getAttribute("tabtype")
+        showRespectiveTabSection(tabs_root_id,activeTabType)
+    }
+
+    const showRespectiveTabSection = (tabs_root_id,activeTabType) => {
+        $(`#${tabs_root_id} .tabs-data`).removeClass("show").addClass('hide');
+        console.log(activeTabType)
+        $(`#${tabs_root_id} .${activeTabType}-data`).addClass("show")
+    }
+</script>
+
 @endsection
