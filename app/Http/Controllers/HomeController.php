@@ -179,14 +179,22 @@ class HomeController extends Controller
 
     public function seasonDetails(Request $request, $cId)
     {
-        $type = $request->has('type') ? $request->type : 0;
-
-        $squads = getSeasonSquads($cId);
-
+        $ranking = [];
         $bat = [];
         $bowl = [];
         $wk = [];
         $all = [];
+
+        $type = $request->has('type') ? $request->type : 0;
+
+        $squads = getSeasonSquads($cId);
+
+        $states = getSeasonStats($cId);
+
+        $ranking['batting_most_runs'] = getSeasonStats($cId, 'batting_most_runs');
+        $ranking['batting_most_runs_innings'] = getSeasonStats($cId, 'batting_most_runs_innings');
+        $ranking['bowling_top_wicket_takers'] = getSeasonStats($cId, 'bowling_top_wicket_takers');
+        $ranking['bowling_best_economy_rates'] = getSeasonStats($cId, 'bowling_best_economy_rates');
 
         foreach ($squads[$type]['players'] as $key => $value) {
 
@@ -203,8 +211,24 @@ class HomeController extends Controller
 
         $response = getSeasonsDetails($cId);
 
-        $news = Article::where('cid', $cId)
+        $articles = Article::where('status', 1)
+            ->where('cid', $cId)
+            ->whereNull('fantasy_id')
             ->latest()
+            ->limit(request()->has('per_page') ? request()->get('per_page') : 5)
+            ->get();
+
+        $farticles = Article::where('status', 1)
+            ->where('cid', $cId)
+            ->whereNotNull('fantasy_id')
+            ->latest()
+            ->limit(5)
+            ->get();
+
+        $news = News::where('status', 1)
+            ->where('cid', $cId)
+            ->latest()
+            ->limit(request()->has('per_page') ? request()->get('per_page') : 5)
             ->get();
 
         return view('season_details', compact(
@@ -216,7 +240,11 @@ class HomeController extends Controller
             'wk',
             'all',
             'type',
-            'cId'
+            'cId',
+            'articles',
+            'farticles',
+            'ranking',
+            'states'
         ));
     }
 

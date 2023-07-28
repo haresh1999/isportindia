@@ -46,20 +46,22 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        $v = $request->validate([
+        $input = $request->validate([
             'title' => 'required|max:255|unique:news',
             'short_description' => 'required',
             'description' => 'required',
             'status' => 'required',
             'img' => 'required|image',
-            'min' => 'required|numeric'
+            'min' => 'required|numeric',
+            'cid' => 'required|integer',
+            'type' => 'required',
         ]);
 
-        $v['created_by'] = auth()->id();
-        $v['slug'] = Str::slug($v['title']);
-        $v['img'] = uploadImage($v['img'], 'news');
+        $input['created_by'] = auth()->id();
+        $input['slug'] = Str::slug($input['title']);
+        $input['img'] = uploadImage($input['img'], 'news');
 
-        News::create($v);
+        News::create($input);
 
         return redirect()
             ->route('news')
@@ -92,7 +94,9 @@ class NewsController extends Controller
             'description' => 'required',
             'status' => 'required',
             'img' => 'nullable|image',
-            'min' => 'required|numeric'
+            'min' => 'required|numeric',
+            'cid' => 'required|integer',
+            'type' => 'required',
         ]);
 
         $input['created_by'] = auth()->id();

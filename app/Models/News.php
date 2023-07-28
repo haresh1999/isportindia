@@ -17,6 +17,8 @@ class News extends Model
         'status',
         'img',
         'min',
+        'cid',
+        'type'
     ];
 
     public function user()
