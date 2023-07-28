@@ -22,7 +22,7 @@
                                 <use xlink:href="#icon-arrow-left"></use>
                             </svg><span>Back</span></a>
                     </div>
-
+                    
                     <form action="{{ route('article.update',$article->id) }}" method="post"
                         enctype="multipart/form-data">
                         @csrf

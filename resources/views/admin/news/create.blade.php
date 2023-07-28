@@ -27,6 +27,46 @@
                         @csrf
                         <div class="card-body p-0">
                             <div class="row">
+                                
+                                <div class="col-md-12 mt-4">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Article Type
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Type of article select from below">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('type')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <select class="select select-wide" name="type">
+                                        <option value="" selected disabled>Select type</option>
+                                        <option {{ old('type')=='highlighter' ? 'selected' : '' }} value="highlighter">Highlighter</option>
+                                        <option {{ old('type')=='normal' ? 'selected' : '' }} value="normal">Normal</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 mt-4">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Select Seasons
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Select seasons related to article">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('cid')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <select class="select select-wide" name="cid">
+                                        <option value="" selected disabled>Select Seasons</option>
+                                        @foreach (getSeasons(10) as $val)
+                                        <option {{ old('cid')==$val['cid'] ? 'selected' : '' }} value="{{$val['cid']}}">
+                                            {{$val['title']}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
                                 <div class="col-md-12 mt-4">
                                     <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Title

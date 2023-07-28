@@ -67,7 +67,7 @@ class ArticleController extends Controller
             'cid' => 'required_if:category,==,seasons_update',
             'type' => 'required',
             'min' => 'required|numeric',
-            'fantasy_id' => 'required|integer|exists:fantasies,id'
+            'fantasy_id' => 'required_if:category,==,fantasy|integer|exists:fantasies,id'
         ]);
 
         $input['img'] = uploadImage($input['img'], 'article');
@@ -114,7 +114,7 @@ class ArticleController extends Controller
             'cid' => 'required_if:category,==,seasons_update',
             'type' => 'required',
             'min' => 'required|numeric',
-            'fantasy_id' => 'required|integer|exists:fantasies,id'
+            'fantasy_id' => 'required_if:category,==,fantasy|integer|exists:fantasies,id'
         ]);
 
         if (isset($input['img'])) {

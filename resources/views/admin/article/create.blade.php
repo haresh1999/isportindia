@@ -65,14 +65,8 @@
                                     <select class="select select-wide" name="cid">
                                         <option value="" selected disabled>Select Seasons</option>
                                         @foreach (getSeasons() as $val)
-                                        <option {{ old('cid')==$val['cid'] ? 'selected' : '' }} value="{{$val['cid']}}">
-                                            {{$val['title']}}</option>
-
+                                            <option {{ old('cid')==$val['cid'] ? 'selected' : '' }} value="{{$val['cid']}}"> {{$val['title']}}</option>
                                         @endforeach
-                                        <option {{ old('type')=='normal' ? 'selected' : '' }} value="normal">Normal
-                                        </option>
-                                        <option {{ old('type')=='one_liner' ? 'selected' : '' }} value="one_liner">One
-                                            Liner</option>
                                     </select>
                                 </div>
 
