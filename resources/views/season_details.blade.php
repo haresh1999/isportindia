@@ -24,9 +24,10 @@
                             <ol class="breadcrumb">
                                 <li class="style_item__p9Ik3 mb-1"><a href="/">Home</a></li>
                                 <li class="breadcrumb-item style_item__p9Ik3 style_active__bquuO mb-1 active"
-                                    aria-current="page">west indies vs india</li>
+                                    aria-current="page">{{$season['title']}} {{ $season['season'] }}</li>
                             </ol>
-                        </nav><button type="button"
+                        </nav>
+                        <button type="button"
                             class="style_share__oYEEa d-inline-flex align-items-center justify-content-center flex-shrink-0 text-primary rounded-circle btn btn-link"><svg
                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +39,7 @@
                             </svg></button>
                     </div>
                     <div class="page-header_title__9f6mH d-flex align-items-center">
-                        <h1 class="mb-0">West Indies vs India 2023</h1><button type="button"
+                        <h1 class="mb-0">{{$season['title']}} {{ $season['season'] }}</h1><button type="button"
                             class="null page-header_favBtn__AbpFn rounded-circle ms-2 ms-xl-3 d-inline-flex align-items-center justify-content-center flex-shrink-0 btn btn-link"><svg
                                 width="20px" height="20px" viewBox="0 0 20 20">
                                 <g id="heart-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -52,49 +53,9 @@
                         class="undefined false page-header_clamp__Hgm_F t-ellipsis line-clamp-3 overflow-hidden position-relative c-transition big-text">
                         <div class="style_commonContent__Aq_YG style_darkContent__s9WAF style_smallContent__1I0SW">
                             <div>
-                                <p>Following the loss endured in the ICC World Test Championship 2021-23 final, team
-                                    India will
-                                    turn its attention towards a multi-format series against the West Indies, scheduled
-                                    to begin
-                                    on July 12. The Men in Blue will play two Test matches, three ODIs, and five T20Is
-                                    in the
-                                    Caribbean and the United States.</p>
-                                <p>The tour will begin with the two Tests which will be the first assignments of both
-                                    teams in
-                                    the 2023-25 cycle of the WTC, followed by the three ODI matches. For the unversed,
-                                    the
-                                    second red-ball clash of the series will mark the historic 100th Test between the
-                                    two
-                                    nations.</p>
-                                <p>After the Tests, team India will look to make the most from the 50-over matches,
-                                    considering
-                                    that the 2023 ODI World Cup is on the horizon, slated to be played in
-                                    October-November.
-                                    &nbsp;On the other hand, the Windies are yet to cement their place in the marquee
-                                    ODI event
-                                    and will hope to confirm their ticket by making it to the finals of the ODI World
-                                    Cup
-                                    Qualifiers.</p>
-                                <p>The first ODI between the two nations will be played at Kensington Oval in Barbados
-                                    and the
-                                    ODI series will conclude on August 1. Following the conclusion of the ODI series,
-                                    the two
-                                    teams will play five T20Is, starting August 3 with the final game to be played on
-                                    August
-                                    13.&nbsp;</p>
-                                <p></p>
-                                <p>
-                                    <quillbot-extension-portal></quillbot-extension-portal>
-                                </p>
-                                <p>
-                                    <quillbot-extension-portal></quillbot-extension-portal>
-                                </p>
-                                <p>
-                                    <quillbot-extension-portal></quillbot-extension-portal>
-                                </p>
-                                <p>
-                                    <quillbot-extension-portal></quillbot-extension-portal>
-                                </p>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat recusandae
+                                    doloribus at nostrum cupiditate deleniti fugit excepturi nemo voluptatum reiciendis
+                                    animi, culpa, in saepe nesciunt modi laborum voluptates dolorem soluta?</p>
                             </div>
                         </div>
                     </div>
@@ -315,13 +276,13 @@
                             <div class="row">
                                 @foreach ($farticles as $fantasy)
                                 @if ($loop->first)
-                                <div id="{{$fantasy->id}}" class="col-lg-4 col-sm-6">
+                                <div id="{{$fantasy->id}}" class="col-lg-12 col-sm-12">
                                     <article id="{{$fantasy->id}}"
                                         class="style_article__IayJx style_articleSmall__SMJc6 false light-bg br-lg c-transition">
                                         <div class="gx-2 gx-md-3 row">
                                             <div class="col-sm-3 col-12"><a
                                                     class="style_postimg__ftSiV mb-2 mb-sm-0 d-block br-md overflow-hidden position-relative a-transition"
-                                                    href="{{route('post.details',$fantasy->slug)}}/"><span
+                                                    href="{{route('fantasy.details',$fantasy->slug)}}/"><span
                                                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                             style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
                                                             alt="{{$fantasy->title}}"
@@ -332,10 +293,13 @@
                                             </div>
                                             <div class="d-flex flex-column justify-content-between col-sm-9 col-12">
                                                 <div><span class="undefined undefined mb-1 badge bg-danger"><a
-                                                            href="{{route('fantasy.details',$fantasy->fantasy->id)}}">{{ $fantasy->fantasy->name }}</a></span>
+                                                            href="{{route('fantasy.details',$fantasy->slug)}}">{{
+                                                            $fantasy->fantasy->name }}</a></span>
                                                     <h3 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                            href="{{route('post.details',$fantasy->slug)}}/">{{ $fantasy->title }}</a></h3>
-                                                    <p class="d-none d-sm-block">IND vs WI Dream11 Prediction</p>
+                                                            href="{{route('fantasy.details',$fantasy->slug)}}">{{
+                                                            $fantasy->title }}</a></h3>
+                                                    <p class="d-none d-sm-block">{{$season['series_name']}}
+                                                        {{$fantasy->fantasy->name}} Prediction</p>
                                                 </div>
                                                 <div class="style_articleInfo__WqisT text-muted d-flex"><span
                                                         class="d-flex align-items-center"><span
@@ -345,7 +309,9 @@
                                                                     alt="Calender" sizes="100vw"
                                                                     src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
                                                                     decoding="async" data-nimg="responsive"
-                                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{ Carbon\Carbon::parse($fatntasy->created_at)->format('d M Y') }}</span><span class="d-flex align-items-center"><span
+                                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{
+                                                        Carbon\Carbon::parse($fantasy->created_at)->format('d M Y')
+                                                        }}</span><span class="d-flex align-items-center"><span
                                                             class="style_icon__Ukkjh d-block"><span
                                                                 style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                                     style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
@@ -364,17 +330,18 @@
                                         class="style_article__IayJx style_articleGrid__LHxgp false flex-sm-column align-items-top style_mobileSmall__SYPwG d-flex light-bg br-lg c-transition"
                                         id="{{$fantasy->id}}"><a
                                             class="style_postimg__ftSiV style_postimg__pbfkX d-block mb-0 mb-sm-2 overflow-hidden br-md position-relative a-transition"
-                                            href="{{route('post.details',$fantasy->slug)}}"><span
+                                            href="{{route('fantasy.details',$fantasy->slug)}}"><span
                                                 style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                     style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
                                                     alt="{{$fantasy->title}}"
                                                     sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                                                    src="{{ getImageUrl($fantasy->fantasy->img) }}"
-                                                    decoding="async" data-nimg="responsive"
+                                                    src="{{ getImageUrl($fantasy->fantasy->img) }}" decoding="async"
+                                                    data-nimg="responsive"
                                                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
                                         <div class="d-flex flex-column flex-grow-1">
                                             <h4 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                    href="{{route('post.details',$fantasy->slug)}}">{{ $fantasy->title }}</a></h4>
+                                                    href="{{route('fantasy.details',$fantasy->slug)}}">{{
+                                                    $fantasy->title }}</a></h4>
                                             <div
                                                 class="style_articleInfo__WqisT style_articleInfo__LJyqf text-muted d-flex mt-auto">
                                                 <span class="d-flex align-items-center"><span
@@ -384,7 +351,9 @@
                                                                 alt="Calender" sizes="100vw"
                                                                 src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
                                                                 decoding="async" data-nimg="responsive"
-                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{ Carbon\Carbon::parse($fantasy->created_at)->format('d M Y') }}</span><span class="d-flex align-items-center"><span
+                                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{
+                                                    Carbon\Carbon::parse($fantasy->created_at)->format('d M Y')
+                                                    }}</span><span class="d-flex align-items-center"><span
                                                         class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
                                                             style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                                 style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
@@ -896,54 +865,57 @@
                     <!-- FANTACY SECTION START -->
                     <div class="style_seriesHome__Jnsnk fantasy-data hide tabs-data">
                         <div class="undefined mt-4" id="648c1c46d66cffc597f2a49d">
-                            <p class="font-semi mb-2">27 Jul 2023</p>
-                            <div>
-                                <div
-                                    class="style_item__Xv7US d-flex flex-column flex-md-row align-items-center common-box text-center">
-                                    <div class="style_matchInfo__e5NfA col-md-5 pe-md-2">
-                                        <p class="undefined mb-0">Match starts at 7:00 PM IST</p>
-                                        <div class="undefined d-flex align-items-center justify-content-center">
-                                            <div class="undefined d-flex align-items-center">
-                                                <div class="style_flag__T_7st me-2"><span
-                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                            alt="WI" sizes="100vw"
-                                                            src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fwest-indies_ebdd.png&amp;w=1900&amp;q=75"
-                                                            decoding="async" data-nimg="responsive"
-                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
-                                                </div>
-                                                <p class="big-text font-semi mb-0">WI</p>
+                            @foreach ($farticles as $f_match)
+                            @php $m_details = getMatchDetails($f_match->match_id); @endphp
+                            <p class="font-semi mb-2">{{ Carbon\Carbon::parse($m_details['date_start'])->format('d M Y')
+                                }}</p>
+                            <div
+                                class="style_item__Xv7US d-flex flex-column flex-md-row align-items-center common-box text-center">
+                                <div class="style_matchInfo__e5NfA col-md-5 pe-md-2">
+                                    <p class="undefined mb-0">Match starts at
+                                        {{Carbon\Carbon::parse($m_details['date_start'])->format('h:i A')}} IST</p>
+                                    <div class="undefined d-flex align-items-center justify-content-center">
+                                        <div class="undefined d-flex align-items-center">
+                                            <div class="style_flag__T_7st me-2"><span
+                                                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                                        alt="{{$m_details['teama']['name']}}" sizes="100vw"
+                                                        src="{{$m_details['teama']['thumb_url']}}" decoding="async"
+                                                        data-nimg="responsive"
+                                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
                                             </div>
-                                            <p class="undefined mb-0 ms-4 me-4">V</p>
-                                            <div class="undefined d-flex align-items-center">
-                                                <div class="style_flag__T_7st me-2"><span
-                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                            alt="IND" sizes="100vw"
-                                                            src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Findia-4_8cde.png&amp;w=1900&amp;q=75"
-                                                            decoding="async" data-nimg="responsive"
-                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
-                                                </div>
-                                                <p class="big-text font-semi mb-0">IND</p>
-                                            </div>
+                                            <p class="big-text font-semi mb-0">{{$m_details['teama']['name']}}</p>
                                         </div>
-                                        <p class="text-muted font-semi mb-0">1st ODI - Bridgetown</p>
+                                        <p class="undefined mb-0 ms-4 me-4">V</p>
+                                        <div class="undefined d-flex align-items-center">
+                                            <div class="style_flag__T_7st me-2"><span
+                                                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                                        alt="{{$m_details['teamb']['name']}}" sizes="100vw"
+                                                        src="{{$m_details['teamb']['thumb_url']}}" decoding="async"
+                                                        data-nimg="responsive"
+                                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                                            </div>
+                                            <p class="big-text font-semi mb-0">{{$m_details['teamb']['name']}}</p>
+                                        </div>
                                     </div>
-                                    <div class="undefined col-md-7 ps-md-2 text-uppercase font-semi">
-                                        <div class="d-flex justify-content-center align-items-center flex-wrap"><a
-                                                class="style_tipsBtn__a5OIV style_dream11__jLZNg d-flex align-items-center mb-1 mt-1 mb-md-2 mt-sm-2"
-                                                href="/fantasy-cricket-tips/dream11-ind-vs-wi-dream11-prediction-playing-xi-fantasy-cricket-tips-injury-updates-pitch-report-for-1st-odi/"><span
-                                                    class="style_icon__g0nt8 d-block me-2 rounded-circle overflow-hidden"><span
-                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                            alt="Dream 11"
-                                                            src="https://www.crictracker.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fdream11-icon.ddcccae1.png&amp;w=1900&amp;q=75"
-                                                            decoding="async" data-nimg="responsive" sizes="100vw"
-                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></span><span>Dream
-                                                    11</span></a></div>
-                                    </div>
+                                    <p class="text-muted font-semi mb-0">{{$m_details['match_number'] }}
+                                        {{$m_details['format_str']}} - {{$m_details['venue']['location']}}</p>
+                                </div>
+                                <div class="undefined col-md-7 ps-md-2 text-uppercase font-semi">
+                                    <div class="d-flex justify-content-center align-items-center flex-wrap"><a
+                                            class="style_tipsBtn__a5OIV style_dream11__jLZNg d-flex align-items-center mb-1 mt-1 mb-md-2 mt-sm-2"
+                                            href="/fantasy-cricket-tips/dream11-ind-vs-wi-dream11-prediction-playing-xi-fantasy-cricket-tips-injury-updates-pitch-report-for-1st-odi/"><span
+                                                class="style_icon__g0nt8 d-block me-2 rounded-circle overflow-hidden"><span
+                                                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                                        alt="Dream 11"
+                                                        src="https://www.crictracker.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fdream11-icon.ddcccae1.png&amp;w=1900&amp;q=75"
+                                                        decoding="async" data-nimg="responsive" sizes="100vw"
+                                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></span><span>{{$f_match->fantasy->name}}</span></a></div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                     <!-- FANTACY SECTION END -->

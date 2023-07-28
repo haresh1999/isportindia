@@ -21,4 +21,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('likes/add', [HomeController::class, 'likesAdd'])->name('likes.add');
-Route::post('season/match',[APIController::class,'getMatch'])->name('season.match');

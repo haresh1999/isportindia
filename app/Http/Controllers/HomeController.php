@@ -184,6 +184,7 @@ class HomeController extends Controller
         $bowl = [];
         $wk = [];
         $all = [];
+        $season = [];
 
         $type = $request->has('type') ? $request->type : 0;
 
@@ -211,6 +212,10 @@ class HomeController extends Controller
 
         $response = getSeasonsDetails($cId);
 
+        $season['series_name'] = $response[0]['short_title'];
+        $season['title'] = $response[0]['title'];
+        $season['season'] = $response[0]['competition']['season'];
+
         $articles = Article::where('status', 1)
             ->where('cid', $cId)
             ->whereNull('fantasy_id')
@@ -220,7 +225,7 @@ class HomeController extends Controller
 
         $farticles = Article::where('status', 1)
             ->where('cid', $cId)
-            ->whereNotNull('fantasy_id')
+            ->where('category', 'fantasy')
             ->latest()
             ->limit(5)
             ->get();
@@ -244,7 +249,8 @@ class HomeController extends Controller
             'articles',
             'farticles',
             'ranking',
-            'states'
+            'states',
+            'season'
         ));
     }
 

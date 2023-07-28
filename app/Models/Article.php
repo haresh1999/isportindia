@@ -20,7 +20,8 @@ class Article extends Model
         'cid',
         'min',
         'short_description',
-        'fantasy_id'
+        'fantasy_id',
+        'match_id'
     ];
 
     public function user()

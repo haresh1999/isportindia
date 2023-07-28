@@ -41,11 +41,12 @@
                                     @enderror
                                     <select class="select select-wide category" name="category">
                                         <option value="" selected disabled>Select Category</option>
-                                        <option {{ old('category')=='latest_update' ? 'selected' : '' }}
-                                            value="latest_update">Latest Update</option>
-                                        <option {{ old('category')=='seasons_update' ? 'selected' : '' }}
-                                            value="seasons_update">Seasons Update</option>
-                                        <option {{ old('category')=='fantasy' ? 'selected' : '' }} value="fantasy">
+                                        <option {{ old('category',Request::get('category'))=='latest_update'
+                                            ? 'selected' : '' }} value="latest_update">Latest Update</option>
+                                        <option {{ old('category',Request::get('category'))=='seasons_update'
+                                            ? 'selected' : '' }} value="seasons_update">Seasons Update</option>
+                                        <option {{ old('category',Request::get('category'))=='fantasy' ? 'selected' : ''
+                                            }} value="fantasy">
                                             Fantasy</option>
                                     </select>
                                 </div>
@@ -65,7 +66,8 @@
                                     <select class="select select-wide" name="cid" id="select_season_val">
                                         <option value="" selected disabled>Select Seasons</option>
                                         @foreach (getSeasons() as $val)
-                                        <option {{ old('cid')==$val['cid'] ? 'selected' : '' }} value="{{$val['cid']}}">
+                                        <option {{ old('cid',Request::get('cid'))==$val['cid'] ? 'selected' : '' }}
+                                            value="{{$val['cid']}}">
                                             {{$val['title']}}</option>
                                         @endforeach
                                     </select>
@@ -85,6 +87,10 @@
                                     @enderror
                                     <select class="select select-wide" name="match_id" id="match_option">
                                         <option value="" selected disabled>Select Match</option>
+                                        @foreach ($season_match as $s_match)
+                                        <option value="{{ $s_match['match_id'] }}">{{$s_match['short_title'].' -
+                                            '.$s_match['format_str'].'-'.$s_match['match_number']}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 
@@ -298,8 +304,38 @@
     $('.textarea').wysihtml5()
 })
 </script>
+@if (Request::has('cid'))
 <script>
-$('.category').change(function(){
+    var category = "{{ Request::get('category') }}"
+
+    if (category == 'seasons_update' || category == 'fantasy'){
+        
+        $('.seasons').removeClass('d-none')
+        $('.seasons').addClass('d-block')
+
+        if (category == 'fantasy') {
+            $('.fantasy').removeClass('d-none')
+            $('.fantasy').addClass('d-block')
+            $('.match').removeClass('d-none')
+            $('.match').addClass('d-block')
+        }else{
+            $('.fantasy').removeClass('d-block')
+            $('.fantasy').addClass('d-none')    
+            $('.match').removeClass('d-block')
+            $('.match').addClass('d-none')    
+        }
+    }else{
+        $('.seasons').removeClass('d-block')
+        $('.seasons').addClass('d-none')
+        $('.fantasy').removeClass('d-block')
+        $('.fantasy').addClass('d-none')
+    }
+</script>
+@endif
+<script>
+    $('.category').change(function(){
+
+    localStorage.setItem("category",$(this).val());
 
     if ($(this).val() == 'seasons_update' || $(this).val() == 'fantasy'){
         
@@ -326,19 +362,7 @@ $('.category').change(function(){
 })
 
 $('#select_season_val').change(function(){
-
-    $.ajax({
-        type: "POST",
-        url: "{{ route('season.match') }}",
-        data: {'_token':"{{ csrf_token() }}",'cid' :$(this).val()},
-        dataType: "json",
-        success: function (response) {
-            $('#match_option').html(' ')
-            $.each(response, function (index, value) { 
-                $('#match_option').append('<option value="'+valueOfElement.match_id+'">'+valueOfElement.short_title + ' ' + valueOfElement.format_str + ' ' + valueOfElement.match_number +'</option>');
-            });
-        }
-    });
+    window.location.href = "{{ route('article.create') }}?cid="+$(this).val()+'&category='+localStorage.getItem("category");
 })
 </script>
 @endsection

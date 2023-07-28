@@ -22,7 +22,7 @@
                                 <use xlink:href="#icon-arrow-left"></use>
                             </svg><span>Back</span></a>
                     </div>
-                    
+
                     <form action="{{ route('article.update',$article->id) }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
@@ -43,11 +43,12 @@
                                     @enderror
                                     <select class="select select-wide category" name="category">
                                         <option value="" selected disabled>Select Category</option>
-                                        <option {{ $article->category=='latest_update' ? 'selected' : '' }}
-                                            value="latest_update">Latest Update</option>
-                                        <option {{ $article->category=='seasons_update' ? 'selected' : '' }}
-                                            value="seasons_update">Seasons Update</option>
-                                        <option {{ $article->category=='fantasy' ? 'selected' : '' }} value="fantasy">
+                                        <option {{ old('category',$article->category)=='latest_update'
+                                            ? 'selected' : '' }} value="latest_update">Latest Update</option>
+                                        <option {{ old('category',$article->category)=='seasons_update'
+                                            ? 'selected' : '' }} value="seasons_update">Seasons Update</option>
+                                        <option {{ old('category',$article->category)=='fantasy' ? 'selected' : ''
+                                            }} value="fantasy">
                                             Fantasy</option>
                                     </select>
                                 </div>
@@ -64,12 +65,56 @@
                                     @error('cid')
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
-                                    <select class="select select-wide" name="cid">
+                                    <select class="select select-wide" name="cid" id="select_season_val">
                                         <option value="" selected disabled>Select Seasons</option>
                                         @foreach (getSeasons() as $val)
-                                        <option {{ $article->cid ==$val['cid'] ? 'selected' : '' }}
+                                        <option {{ old('cid',$article->cid)==$val['cid'] ? 'selected' : '' }}
                                             value="{{$val['cid']}}">
                                             {{$val['title']}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 mt-4 d-none match">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Select Match
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Select match available in season">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('match_id')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <select class="select select-wide" name="match_id" id="match_option">
+                                        <option value="" selected disabled>Select Match</option>
+                                        @foreach ($season_match as $s_match)
+                                        <option {{ old('match_id',$article->match_id) == $s_match['match_id'] ?
+                                            'selected' : ''}} value="{{ $s_match['match_id']
+                                            }}">{{$s_match['short_title'].' -
+                                            '.$s_match['format_str'].'-'.$s_match['match_number']}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 mt-4 d-none fantasy">
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Fantasy Tips
+                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
+                                            title="Type of article select from below">
+                                            <svg class="icon icon-info">
+                                                <use xlink:href="#icon-info"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    @error('fantasy_id')
+                                    <span class="text-red">{{$message}}</span>
+                                    @enderror
+                                    <select class="select select-wide" name="fantasy_id">
+                                        <option value="" selected disabled>Select Fantasy</option>
+                                        @foreach ($fantasy as $key => $fant)
+                                        <option {{ old('fantasy_id',$article->fantasy_id)==$key ? 'selected' : '' }}
+                                            value="{{ $key }}">{{ $fant }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -96,27 +141,6 @@
                                         <option {{ $article->type=='one_liner' ? 'selected' : '' }}
                                             value="one_liner">One
                                             Liner</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-12 mt-4 d-none fantasy">
-                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Fantasy Tips
-                                        <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
-                                            title="Type of article select from below">
-                                            <svg class="icon icon-info">
-                                                <use xlink:href="#icon-info"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    @error('fantasy_id')
-                                    <span class="text-red">{{$message}}</span>
-                                    @enderror
-                                    <select class="select select-wide" name="fantasy_id">
-                                        <option value="" selected disabled>Select Fantasy</option>
-                                        @foreach ($fantasy as $key => $fant)
-                                        <option {{ old('fantasy_id')==$key ? 'selected' : '' }} value="{{ $key }}">{{
-                                            $fant }}</option>
-                                        @endforeach
                                     </select>
                                 </div>
 
@@ -290,19 +314,36 @@
     $('.textarea').wysihtml5()
 })
 </script>
-@if ($article->category=='seasons_update')
+@if (Request::has('cid') || ! is_null($article->cid))
 <script>
-$('.seasons').removeClass('d-none')
-$('.seasons').addClass('d-block')
-</script>
-@elseif($article->category=='fantasy')
-<script>
-$('.fantasy').removeClass('d-none')
-$('.fantasy').addClass('d-block')
+    var category = "{{ Request::has('category') ? Request::has('category') : $article->category }}"
+
+    if (category == 'seasons_update' || category == 'fantasy'){
+        
+        $('.seasons').removeClass('d-none')
+        $('.seasons').addClass('d-block')
+
+        if (category == 'fantasy') {
+            $('.fantasy').removeClass('d-none')
+            $('.fantasy').addClass('d-block')
+            $('.match').removeClass('d-none')
+            $('.match').addClass('d-block')
+        }else{
+            $('.fantasy').removeClass('d-block')
+            $('.fantasy').addClass('d-none')    
+            $('.match').removeClass('d-block')
+            $('.match').addClass('d-none')    
+        }
+    }else{
+        $('.seasons').removeClass('d-block')
+        $('.seasons').addClass('d-none')
+        $('.fantasy').removeClass('d-block')
+        $('.fantasy').addClass('d-none')
+    }
 </script>
 @endif
 <script>
-$('.category').change(function(){
+    $('.category').change(function(){
     
     if ($(this).val() == 'seasons_update') {
         $('.seasons').removeClass('d-none')

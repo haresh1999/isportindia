@@ -8,12 +8,10 @@ use Illuminate\Http\Request;
 use App\Models\{
     Article,
     Fantasy,
-    ArticleFantasy
 };
 
 use Illuminate\Support\{
     Str,
-    Arr
 };
 
 class ArticleController extends Controller
@@ -41,12 +39,19 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $fantasy = Fantasy::where('status', 1)
             ->pluck('name', 'id');
 
-        return view('admin.article.create', compact('fantasy'));
+        $season_match = collect();
+
+        if ($request->has('cid')) {
+
+            $season_match = getSeasonsDetails($request->cid);
+        }
+
+        return view('admin.article.create', compact('fantasy', 'season_match'));
     }
 
     /**
@@ -67,7 +72,8 @@ class ArticleController extends Controller
             'cid' => 'required_if:category,==,seasons_update',
             'type' => 'required',
             'min' => 'required|numeric',
-            'fantasy_id' => 'required_if:category,==,fantasy|integer|exists:fantasies,id'
+            'fantasy_id' => 'required_if:category,==,fantasy|integer|exists:fantasies,id',
+            'match_id' => 'required_if:fantasy_id,!=,null|integer'
         ]);
 
         $input['img'] = uploadImage($input['img'], 'article');
@@ -87,12 +93,16 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit(Request $request, Article $article)
     {
         $fantasy = Fantasy::where('status', 1)
             ->pluck('name', 'id');
 
-        return view('admin.article.edit', compact('article', 'fantasy'));
+        $c_id = $request->has('cid') ? $request->cid : $article->cid;
+
+        $season_match = getSeasonsDetails($c_id);
+
+        return view('admin.article.edit', compact('article', 'fantasy', 'season_match'));
     }
 
     /**
@@ -114,7 +124,8 @@ class ArticleController extends Controller
             'cid' => 'required_if:category,==,seasons_update',
             'type' => 'required',
             'min' => 'required|numeric',
-            'fantasy_id' => 'required_if:category,==,fantasy|integer|exists:fantasies,id'
+            'fantasy_id' => 'required_if:category,==,fantasy|integer|exists:fantasies,id',
+            'match_id' => 'required_if:fantasy_id,!=,null|integer'
         ]);
 
         if (isset($input['img'])) {
