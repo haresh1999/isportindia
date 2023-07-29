@@ -1,6 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
+
+// HOME SLIDER
+// https://rest.entitysport.com/v2/competitions?token=[ACCESS_TOKEN]&per_page=30&&paged=1&status=fixture
+// https://rest.entitysport.com/v2/competitions?token=[ACCESS_TOKEN]&per_page=30&&paged=1&status=live
+// https://rest.entitysport.com/v2/competitions?token=[ACCESS_TOKEN]&per_page=30&&paged=1&status=result
+
+// SEASONS
+// https://rest.entitysport.com/v2/seasons/?token=ec471071441bb2ac538a0ff901abd249
+
+
+// Matches List API provide access to all of our matches.
+// https: //rest.entitysport.com/v2/matches/?status=2&token=ec471071441bb2ac538a0ff901abd249
 
 function token()
 {
@@ -56,6 +71,8 @@ function getMatchDetails($matchId)
 {
 	$response = Http::get(config('services.api') . "matches/" . $matchId . "/info?token=" . token())->json();
 
+	// $response = Http::get('https://rest.entitysport.com/exchange/matches/'.$matchId.'/info?token='.token())->json();
+
 	return $response['response'];
 }
 
@@ -69,18 +86,14 @@ function getIccRanking()
 function getTopTeam()
 {
 	return  Http::get(config('services.api') . "teams&format=1,2,3,4&token=" . token())->json();
-
-	// return $response['response'];
 }
 
 function getCompetitionsMatches($matchId, $ppage = 1)
 {
-
 	$response = Http::get(config('services.api') . "competitions/" . $matchId . "/matches?&per_page=" . $ppage . "&token=" . token())->json();
 
 	return $response['response']['items'][0];
 }
-
 
 function uploadImage($image, $upath = '', $prefix = '')
 {
@@ -130,10 +143,11 @@ function perPage()
 	return 100;
 }
 
-function ordinal($number) {
-    $ends = array('th','st','nd','rd','th','th','th','th','th','th');
-    if ((($number % 100) >= 11) && (($number%100) <= 13))
-        return $number. 'th';
-    else
-        return $number. $ends[$number % 10];
+function ordinal($number)
+{
+	$ends = array('th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th');
+	if ((($number % 100) >= 11) && (($number % 100) <= 13))
+		return $number . 'th';
+	else
+		return $number . $ends[$number % 10];
 }
