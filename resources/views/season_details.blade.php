@@ -211,42 +211,34 @@
                 <div id="series_detail_tabs">
                     <div
                         class="style_commonNav__oQmFF undefined style_stickyNav__I_pcA  undefined text-uppercase scroll-list flex-nowrap text-nowrap nav nav-pills">
-                        <div onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')" tabtype="home"
-                            class="style_item___mmv9 nav-item">
-                            <p id="/west-indies-vs-india/" class="style_active__nlf9x nav-link tab" target="_self"
-                                href="#">home
-                            </p>
+
+                        <div tabtype="home" onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
+                            class="home style_item___mmv9 nav-item">
+                            <p class="nav-link tab">home</p>
                         </div>
                         <div tabtype="news" onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="style_item___mmv9 nav-item tab">
-                            <p id="/west-indies-vs-india/news/" class="false nav-link " target="_self" href="#">news</p>
+                            class="news style_item___mmv9 nav-item tab">
+                            <p class="false nav-link" href="#">news</p>
                         </div>
                         <!-- <div tabtype="videos" onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="style_item___mmv9 nav-item tab"><p id="/west-indies-vs-india/videos/" class="false nav-link "
-                                target="_self" href="#">videos</p></div> -->
+                            class="style_item___mmv9 nav-item tab"><p class="false nav-link">videos</p></div> -->
                         <div tabtype="fixtures"
                             onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="style_item___mmv9 nav-item tab">
-                            <p id="/west-indies-vs-india/fixtures/" class="false nav-link tab" target="_self" href="#">
-                                fixtures
-                            </p>
+                            class="fixtures style_item___mmv9 nav-item tab">
+                            <p class="false nav-link tab"> fixtures</p>
                         </div>
                         <div tabtype="stats" onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="style_item___mmv9 nav-item tab">
-                            <p id="/west-indies-vs-india/stats/" class="false nav-link " target="_self" href="#">stats
-                            </p>
+                            class="stats style_item___mmv9 nav-item tab">
+                            <p class="false nav-link ">stats</p>
                         </div>
                         <div tabtype="fantasy"
                             onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="style_item___mmv9 nav-item tab">
-                            <p id="/west-indies-vs-india/fantasy-tips/" class="false nav-link tab" target="_self"
-                                href="#">
-                                fantasy tips</p>
+                            class="fantasy style_item___mmv9 nav-item tab">
+                            <p class="false nav-link tab">fantasy tips</p>
                         </div>
                         <div tabtype="squads" onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="squads style_item___mmv9 nav-item tab">
-                            <p id="/west-indies-vs-india/squads/" class="false nav-link " target="_self" href="#">squads
-                            </p>
+                            class="squads squads style_item___mmv9 nav-item tab">
+                            <p class="false nav-link">squads</p>
                         </div>
                     </div>
 
@@ -814,47 +806,33 @@
                             <div class="style_filter__C0s78 flex-grow-1 row">
                                 <div class="col">
                                     <div class="form_formGroup__0jaCW mb-0">
-                                        <div class="dropdown">
-                                            <div class="style_selectContainer__4Iui4 position-relative"><input
-                                                    placeholder="Team" readonly="" id="teamSelect"
-                                                    class="style_formControl__3Z2Uk style_formSelect__UYPE5   style_isClearable__UaSpb  br-sm style_formControl__aLMXT form-control">
-                                            </div>
-                                            <div x-placement="bottom-start"
-                                                class="style_dropdownMenu__MZdP3 common-dropdown br-sm p-0 overflow-auto dropdown-menu">
-                                                <a data-rr-ui-dropdown-item=""
-                                                    class="style_dropdownItem__D8P9w  dropdown-item" role="button"
-                                                    tabindex="1">{{$response[0]['teama']['name']}}</a>
-                                                <a data-rr-ui-dropdown-item=""
-                                                    class="style_dropdownItem__D8P9w  dropdown-item" role="button"
-                                                    tabindex="2">{{$response[0]['teamb']['name']}}</a>
-                                            </div>
-                                        </div>
+                                        <select class="" name="team" id="team">
+                                            <option value="" selected>ALL Team</option>
+                                            @foreach ($teams['teams'] as $team)
+                                            <option {{ $team['tid']==Request::get('team') ? 'selected' : '' }}
+                                                value="{{ $team['tid'] }}">{{ $team['title'] }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form_formGroup__0jaCW mb-0">
-                                        <div class="dropdown">
-                                            <div class="style_selectContainer__4Iui4 position-relative"><input
-                                                    placeholder="Venue" readonly="" id="venueSelect"
-                                                    class="style_formControl__3Z2Uk style_formSelect__UYPE5   style_isClearable__UaSpb  br-sm style_formControl__aLMXT form-control">
-                                            </div>
-                                            <div x-placement="bottom-start"
-                                                class="style_dropdownMenu__MZdP3 common-dropdown br-sm p-0 overflow-auto dropdown-menu">
-                                                @foreach ($response as $venue)
-                                                <a class="style_dropdownItem__D8P9w  dropdown-item" role="button"
-                                                    tabindex="0">{{$venue['venue']['name'], $venue['venue']['location'],
-                                                    $venue['venue']['country']}}</a>
-                                                @endforeach
-                                            </div>
-                                        </div>
+                                        <select class="" name="venue" id="venue">
+                                            <option value="" selected>ALL Venue</option>
+                                            @foreach ($matchs as $venue)
+                                            <option {{ $venue['venue']['venue_id']==Request::get('venue') ? 'selected'
+                                                : '' }} value="{{ $venue['venue']['venue_id'] }}">
+                                                {{$venue['venue']['name'],
+                                                $venue['venue']['location'],$venue['venue']['country']}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
-                            </div><button type="submit"
+                            </div>
+                            <button type="submit"
                                 class="theme-btn outline-btn small-btn ms-2 ms-md-3 btn btn-primary">Search</button>
                         </form>
 
-
-                        {{-- haresh --}}
 
                         <div class="undefined">
 
@@ -1165,15 +1143,25 @@
 @endsection
 
 @section('script')
-@if (Request::has('type'))
 <script>
     $(function(){
-        $('.squads').click();
-    })
-</script>
-@endif
-<script>
-    const tabclickHandler = (clickTab, tabs_root_id, active_class) => {
+    if ("{{Request::has('q')}}") {
+        
+        var tab = "{{Request::get('q')}}";
+    }else{
+        var tab = localStorage.getItem('type',"{{Request::get('q')}}");
+    }
+
+    if (tab != null) {
+        
+        $('.'+tab).click()
+    }else{
+
+        $('.home p').click()
+    }
+})
+    
+const tabclickHandler = (clickTab, tabs_root_id, active_class) => {
     $(`#${tabs_root_id} .${active_class}`).removeClass(`${active_class}`)
     clickTab.classList.add(active_class);
     let activeTabType = clickTab.getAttribute("tabtype")
@@ -1181,113 +1169,14 @@
 }
 
 const showRespectiveTabSection = (tabs_root_id, activeTabType) => {
+    localStorage.setItem('type',activeTabType);
     $(`#${tabs_root_id} .tabs-data`).removeClass("show").addClass('hide');
-    console.log(activeTabType)
     $(`#${tabs_root_id} .${activeTabType}-data`).addClass("show")
 }
+
 $('.style_selectNative__gg_ys').change(function(){
+    localStorage.setItem('type','squads');
     window.location.href = "{{ route('season.details',$cId) }}?type="+$(this).val()
 })
 </script>
-
-<script>
-    const all_matches_list = document.querySelectorAll('#all_matches .banner_match')
-const categoryClickHandler = (category) => {
-  console.log(all_matches_list, '########')
-  ///buttons logic
-  const buttons = document.querySelectorAll('.category_button');
-  buttons.forEach(button => {
-      if (category == button.getAttribute('category')) {
-          button.classList.add('style_active__3p7K4');
-          return
-      }
-      button.classList.remove('style_active__3p7K4');
-  })
-
-  //// filter logic
-  let all_matches = document.querySelector('#all_matches')
-  let category_matches = document.querySelector('#category_matches')
-  if (category == 'all') {
-      all_matches.style.display = 'block'
-      category_matches.style.display = 'none'
-      let allContainer = document.querySelector('.all-slider-track');
-      while (allContainer.firstChild) {
-          allContainer.removeChild(allContainer.firstChild);
-      }
-      all_matches_list.forEach(each => {
-          allContainer.appendChild(each);
-
-      })
-  }
-  else {
-      all_matches.style.display = 'none'
-      category_matches.style.display = 'block'
-
-      let filteredItems = []
-      let categoryContainer = document.querySelector('#category-slider-track');
-      while (categoryContainer.firstChild) {
-          categoryContainer.removeChild(categoryContainer.firstChild);
-      }
-      all_matches_list.forEach(each => {
-          if (each.getAttribute('category') == category) {
-              filteredItems.push(each)
-              categoryContainer.appendChild(each);
-          }
-      })
-      if (!filteredItems?.length) {
-          $('#scroll_1_next').hide();
-          categoryContainer.append("no data found")
-      }
-      else {
-          $('#scroll_1_next').show()
-      }
-
-  }
-}
-</script>
-<script>
-    const getActiveRankingDataType = () => {
-        return $("#rankingSimpleTab .active").attr("type")
-    }
-    const getActiveSeriesType = () => {
-        return $("#series-cont .active").attr("type")
-    }
-    const seriesTabClick = (clickTab) => {
-        $("#series-cont .active").removeClass('active')
-        clickTab.classList.add("active");
-        let activeSeriesType = clickTab.getAttribute("type")
-        let activeRankingDataType = getActiveRankingDataType()
-        let show_cont_class = `${activeSeriesType}-${activeRankingDataType}`
-        showRespectiveData(show_cont_class)
-    }
-    const rankingDataTypeTabClick = (clickTab) => {
-        $("#rankingSimpleTab .active").removeClass('active')
-        clickTab.classList.add("active");
-        let activeRankingDataType = clickTab.getAttribute("type")
-        let activeSeriesType = getActiveSeriesType()
-        let show_cont_class = `${activeSeriesType}-${activeRankingDataType}`
-        showRespectiveData(show_cont_class)
-    }
-    const showRespectiveData = (show_cont_class) => {
-        $(".ranking-data").removeClass("show").addClass('hide');
-        console.log(show_cont_class);
-        console.log($(`.ranking-data.${show_cont_class}`))
-        $(`.ranking-data.${show_cont_class}`).addClass("show")
-    }
-</script>
-<script>
-    const tabclickHandler = (clickTab,tabs_root_id,active_class) => {
-        $(`#${tabs_root_id} .${active_class}`).removeClass(`${active_class}`)
-        clickTab.classList.add(active_class);
-        let activeTabType = clickTab.getAttribute("tabtype")
-        showRespectiveTabSection(tabs_root_id,activeTabType)
-    }
-
-    const showRespectiveTabSection = (tabs_root_id,activeTabType) => {
-        $(`#${tabs_root_id} .tabs-data`).removeClass("show").addClass('hide');
-        console.log(activeTabType)
-        $(`#${tabs_root_id} .${activeTabType}-data`).addClass("show")
-    }
-</script>
-
 @endsection

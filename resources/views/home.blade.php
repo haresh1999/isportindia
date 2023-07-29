@@ -770,10 +770,11 @@
               <p>{{$match['title']}}</p>
               <div class="style_btnList__6CLwB text-nowrap scroll-list d-flex">
                 <nav class="font-semi d-flex me-auto ms-auto text-uppercase">
-                  <a href="/t20/tnpl/fixtures/">Fixtures</a>
-                  <a href="/t20/tnpl/standings/">Standings</a>
-                  <a href="/t20/tnpl/stats/">Stats</a><a href="/t20/tnpl/squads/">Squads</a>
-                  <a href="/t20/tnpl/fantasy-tips/">Fantasy Tips</a>
+                  <a href="{{ route('season.details',[$suh->cid,'q' => 'fixtures']) }}">Fixtures</a>
+                  {{-- <a href="{{ route('season.details',[$suh->cid,'q' => 'standings']) }}">Standings</a> --}}
+                  <a href="{{ route('season.details',[$suh->cid,'q' => 'stats']) }}">Stats</a>
+                  <a href="{{ route('season.details',[$suh->cid,'q' => 'squads']) }}">Squads</a>
+                  <a href="{{ route('season.details',[$suh->cid,'q' => 'fantasy']) }}">Fantasy Tips</a>
                 </nav>
               </div>
               <div class="">

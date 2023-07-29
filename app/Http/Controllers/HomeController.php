@@ -195,6 +195,8 @@ class HomeController extends Controller
 
         $states = getSeasonStats($cId);
 
+        $teams = getSeasonTeams($cId);
+
         $ranking['batting_most_runs'] = getSeasonStats($cId, 'batting_most_runs');
         $ranking['batting_most_runs_innings'] = getSeasonStats($cId, 'batting_most_runs_innings');
         $ranking['bowling_top_wicket_takers'] = getSeasonStats($cId, 'bowling_top_wicket_takers');
@@ -214,6 +216,33 @@ class HomeController extends Controller
         }
 
         $response = getSeasonsDetails($cId);
+        $matchs = $response;
+
+        $filter = [];
+
+        foreach ($response as $key => $venue) {
+
+            $isVenue = !is_null($request->venue) && $venue['venue']['venue_id'] == $request->venue;
+            $isTeam = !is_null($request->team) && in_array($request->team, [$venue['teama']['team_id'], $venue['teamb']['team_id']]);
+
+            if (!is_null($request->venue) && !is_null($request->team)) {
+
+                if ($isVenue && $isTeam) {
+                    $filter[] = $venue;
+                }
+            } else {
+
+                if ($isVenue) {
+                    $filter[] = $venue;
+                }
+
+                if ($isTeam) {
+                    $filter[] = $venue;
+                }
+            }
+        }
+
+        $response = empty($filter) ? $response : $filter;
 
         $season['series_name'] = $response[0]['short_title'];
         $season['title'] = $response[0]['title'];
@@ -239,7 +268,6 @@ class HomeController extends Controller
             ->limit(request()->has('per_page') ? request()->get('per_page') : 5)
             ->get();
 
-        $matchs = getSeasonsDetails($cId);
 
         return view('season_details', compact(
             'matchs',
@@ -256,7 +284,8 @@ class HomeController extends Controller
             'farticles',
             'ranking',
             'states',
-            'season'
+            'season',
+            'teams'
         ));
     }
 

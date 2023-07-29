@@ -38,6 +38,13 @@ function getSeasonStats($cid, $type = null, $page = 1)
 	return $response['response'];
 }
 
+function getSeasonTeams($cid)
+{
+	$response = Http::get(config('services.api') . 'competitions/' . $cid . '/teams?&token=' . token())->json();
+
+	return $response['response'];
+}
+
 function getMatch()
 {
 	$response = Http::get(config('services.api') . 'matches/?status=2&format=1,2,3,4&token=' . token())->json();
