@@ -93,7 +93,7 @@
                                         <option {{ old('match_id',$article->match_id) == $s_match['match_id'] ?
                                             'selected' : ''}} value="{{ $s_match['match_id']
                                             }}">{{$s_match['short_title'].' -
-                                            '.$s_match['format_str'].'-'.$s_match['match_number']}}</option>
+                                            '.$s_match['format_str'].'-'.ordinal($s_match['match_number'])}}</option>
                                         @endforeach
                                     </select>
                                 </div>

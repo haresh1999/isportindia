@@ -89,7 +89,7 @@
                                         <option value="" selected disabled>Select Match</option>
                                         @foreach ($season_match as $s_match)
                                         <option value="{{ $s_match['match_id'] }}">{{$s_match['short_title'].' -
-                                            '.$s_match['format_str'].'-'.$s_match['match_number']}}</option>
+                                            '.$s_match['format_str'].'-'. ordinal($s_match['match_number'])}}</option>
                                         @endforeach
                                     </select>
                                 </div>

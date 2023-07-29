@@ -858,8 +858,7 @@
                                     <div class="style_content__OMegF d-flex flex-column flex-md-row align-items-center">
                                         <div class="style_infoList__GrEIP d-flex flex-wrap flex-md-column xsmall-text">
                                             <p class="font-semi text-dark"><span class="text-capitalize">test</span> -
-                                                {{ $fixtures['match_number'] == 1 ? '1st' :
-                                                $fixtures['match_number'].'nd' }}
+                                                {{ordinal($fixtures['match_number'])}}
                                                 {{ $fixtures['format_str'] }}
                                             </p>
                                             <p class="text-muted">{{$fixtures['venue']['name'],
@@ -1021,7 +1020,7 @@
                                             <p class="big-text font-semi mb-0">{{$m_details['teamb']['name']}}</p>
                                         </div>
                                     </div>
-                                    <p class="text-muted font-semi mb-0">{{$m_details['match_number'] }}
+                                    <p class="text-muted font-semi mb-0">{{ ordinal($m_details['match_number']) }}
                                         {{$m_details['format_str']}} - {{$m_details['venue']['location']}}</p>
                                 </div>
                                 <div class="undefined col-md-7 ps-md-2 text-uppercase font-semi">
