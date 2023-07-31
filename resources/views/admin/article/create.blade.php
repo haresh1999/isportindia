@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-7 px-xl-7">
+<div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-4 px-xl-4">
     <div class="page-body pb-4 pb-xl-6" style="max-width: 100% !important">
         <div class="row g-0">
             <div class="col-lg-12 col-12 pe-lg-2">

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
 
 // HOME SLIDER
 // https://rest.entitysport.com/v2/competitions?token=[ACCESS_TOKEN]&per_page=30&&paged=1&status=fixture
@@ -140,7 +141,7 @@ function deleteImage($imageUrl)
 
 function perPage()
 {
-	return 100;
+	return 10;
 }
 
 function ordinal($number)
@@ -150,4 +151,19 @@ function ordinal($number)
 		return $number . 'th';
 	else
 		return $number . $ends[$number % 10];
+}
+
+function responseMessage($name){
+
+	switch ($name) {
+		case (Session::has($name.'.success')):
+			return '<div class="alert alert-green">'.Session::get($name.'.success').'</div>';
+			break;
+		case (Session::has($name.'.warning')):
+			return '<div class="alert alert-warning">'.Session::get($name.'.warning').'</div>';
+			break;
+		case (Session::has($name.'.danger')):
+			return '<div class="alert alert-warning">'.Session::get($name.'.danger').'</div>';
+			break;
+	}
 }

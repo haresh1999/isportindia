@@ -3,14 +3,9 @@
 @section('title','Article')
 
 @section('content')
-<div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-7 px-xl-7">
+<div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-4 px-xl-4">
     <div class="page-body pb-4 pb-xl-6" style="max-width: 100% !important">
-        @if (Session::has('article.success'))
-        <div class="alert alert-green">{{ Session::get('article.success') }}</div>
-        @endif
-        @if (Session::has('article.error'))
-        <div class="alert alert-danger">{{ Session::get('article.error') }}</div>
-        @endif
+        {!! responseMessage('article') !!}
         <div class="card mb-2 p-4 p-sm-5">
             <div class="card-head d-flex flex-wrap align-items-center justify-content-between mb-2 mb-sm-3">
                 <div class="title title-color purple me-5 mb-4 mb-sm-0">Article List</div>

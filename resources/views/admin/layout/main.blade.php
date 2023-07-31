@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <title>{{ env('APP_NAME') }} - @yield('title')</title>
-
     @include('admin.layout.css')
     @yield('css')
 </head>
@@ -35,9 +34,9 @@
     </main>
 
     @include('admin.layout.model')
-    
+
     @include('admin.layout.script')
-    
+
     @yield('script')
 </body>
 

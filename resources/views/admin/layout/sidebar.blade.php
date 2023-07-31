@@ -1,108 +1,88 @@
+@php
+$route = Route::currentRouteName();
+
+$article = in_array($route,[
+'article',
+'article.create',
+'article.edit'
+]);
+
+$news = in_array($route,[
+'news',
+'news.create',
+'news.edit'
+]);
+
+$crickspecial = in_array($route,[
+'cricspecial',
+'cricspecial.create',
+'cricspecial.edit'
+]);
+
+$fantasy = in_array($route,[
+'fantasy',
+'fantasy.create',
+'fantasy.edit'
+]);
+@endphp
+
 <button class="close-sidebar js-close-sidebar position-absolute">
   <svg class="icon icon-close">
     <use xlink:href="#icon-close"></use>
   </svg>
 </button>
 
-<a target="_blank" class="logo flex-shrink-0" href="{{ env('APP_URL') }}">
-  <img class="logo-dark" src="{{ asset('admin/img/logo-dark.png') }}">
-  <img class="logo-light" src="{{ asset('admin/img/logo-light.png') }}">
+<a target="_blank" class="logo flex-shrink-0" href="{{ env('APP_URL') }}" style="width: 100%">
+  <img width="100%" class="logo-dark" src="{{ asset('logo.png') }}">
+  <img width="100%" class="logo-light" src="{{ asset('logo.png') }}">
 </a>
 
 <div class="nav nav-pills flex-column mb-auto mt-8 menu">
   <div class="nav-item mb-2">
+
     {{-- ARTICLE START --}}
-    <div
-      class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/article','admin/article/create','admin/article/edit/*') ? 'active' : '' }}"
-      data-bs-target="#articles" data-bs-toggle="collapse">
-      <svg class="icon icon-schedule">
-        <use xlink:href="#icon-schedule"></use>
-      </svg>&nbsp;&nbsp; Articles
-      <svg class="icon icon-cheveron ms-auto arrow">
-        <use xlink:href="#icon-cheveron"></use>
-      </svg>
+    <div class="nav-item mb-2">
+      <a class="{{ $article ? 'active' : '' }} nav-link d-flex align-items-center p-3" href="{{route('article')}}">
+        <svg class="icon icon-double-store icon-item">
+          <use class="fill" href="#icon-schedule"></use>
+          <use class="stroke" href="#icon-schedule"></use>
+        </svg>
+        Articles
+      </a>
     </div>
-    <div
-      class="collapse submenu {{ Request::is('admin/article','admin/article/create','admin/article/edit/*') ? 'show' : '' }}"
-      id="articles" data-bs-parent=".sidebar">
-      <div class="wrapper">
-        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article/create') ? 'text-dark' : '' }}"
-          href="{{route('article.create')}}">Create</a>
-        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/article','admin/article/edit/*') ? 'text-dark' : '' }}"
-          href="{{route('article')}}">List</a>
-      </div>
-    </div>
-    {{-- ARTICLE END --}}
 
-    {{-- CRICSPECIAL START --}}
-    <div
-      class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/cricspecial','admin/cricspecial/create','admin/cricspecial/edit/*') ? 'active' : '' }}"
-      data-bs-target="#cricspecial" data-bs-toggle="collapse">
-      <svg class="icon icon-star-stroke">
-        <use xlink:href="#icon-star-stroke"></use>
-      </svg>&nbsp;&nbsp; CricSpecial
-      <svg class="icon icon-cheveron ms-auto arrow">
-        <use xlink:href="#icon-cheveron"></use>
-      </svg>
+    <div class="nav-item mb-2">
+      <a class="{{ $crickspecial ? 'active' : '' }} nav-link d-flex align-items-center p-3"
+        href="{{route('cricspecial')}}">
+        <svg class="icon icon-double-store icon-item">
+          <use class="fill" href="#icon-star-stroke"></use>
+          <use class="stroke" href="#icon-star-stroke"></use>
+        </svg>
+        CricSpecial
+      </a>
     </div>
-    <div
-      class="collapse submenu {{ Request::is('admin/cricspecial','admin/cricspecial/create','admin/cricspecial/edit/*') ? 'show' : '' }}"
-      id="cricspecial" data-bs-parent=".sidebar">
-      <div class="wrapper">
-        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/cricspecial/create') ? 'text-dark' : '' }}"
-          href="{{route('cricspecial.create')}}">Create</a>
-        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/cricspecial','admin/cricspecial/edit/*') ? 'text-dark' : '' }}"
-          href="{{route('cricspecial')}}">List</a>
-      </div>
-    </div>
-    {{-- CRICSPECIAL END --}}
 
-    {{-- NEWS START --}}
-    <div
-      class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/cricspecial','admin/cricspecial/create','admin/cricspecial/edit/*') ? 'active' : '' }}"
-      data-bs-target="#news" data-bs-toggle="collapse">
-      <svg class="icon icon-messages-fill">
-        <use xlink:href="#icon-messages-fill"></use>
-      </svg>&nbsp;&nbsp; News
-      <svg class="icon icon-cheveron ms-auto arrow">
-        <use xlink:href="#icon-cheveron"></use>
-      </svg>
+    <div class="nav-item mb-2">
+      <a class="{{ $news ? 'active' : '' }} nav-link d-flex align-items-center p-3" href="{{route('news')}}">
+        <svg class="icon icon-double-store icon-item">
+          <use class="fill" href="#icon-messages-fill"></use>
+          <use class="stroke" href="#icon-messages-fill"></use>
+        </svg>
+        News
+      </a>
     </div>
-    <div class="collapse submenu {{ Request::is('admin/news','admin/news/create','admin/news/edit/*') ? 'show' : '' }}"
-      id="news" data-bs-parent=".sidebar">
-      <div class="wrapper">
-        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/news/create') ? 'text-dark' : '' }}"
-          href="{{route('news.create')}}">Create</a>
-        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/news','admin/news/edit/*') ? 'text-dark' : '' }}"
-          href="{{route('news')}}">List</a>
-      </div>
-    </div>
-    {{-- NEWS END --}}
 
-    {{-- FANTASY START --}}
-    <div
-      class="nav-link d-flex align-items-center p-3 collapsed collapsed {{ Request::is('admin/fantasy','admin/fantasy/create','admin/fantasy/edit/*') ? 'active' : '' }}"
-      data-bs-target="#fantasy" data-bs-toggle="collapse">
-      <svg class="icon icon-laptop">
-        <use xlink:href="#icon-laptop"></use>
-      </svg>&nbsp;&nbsp; Fantasy
-      <svg class="icon icon-cheveron ms-auto arrow">
-        <use xlink:href="#icon-cheveron"></use>
-      </svg>
+    <div class="nav-item mb-2">
+      <a class="{{ $fantasy ? 'active' : '' }} nav-link d-flex align-items-center p-3" href="{{route('fantasy')}}">
+        <svg class="icon icon-double-store icon-item">
+          <use class="fill" href="#icon-laptop"></use>
+          <use class="stroke" href="#icon-laptop"></use>
+        </svg>
+        Fantasy
+      </a>
     </div>
-    <div
-      class="collapse submenu {{ Request::is('admin/fantasy','admin/fantasy/create','admin/fantasy/edit/*') ? 'show' : '' }}"
-      id="fantasy" data-bs-parent=".sidebar">
-      <div class="wrapper">
-        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/fantasy/create') ? 'text-dark' : '' }}"
-          href="{{route('fantasy.create')}}">Create</a>
-        <a class="nav-link d-flex align-items-center p-3 {{ Request::is('admin/fantasy','admin/fantasy/edit/*') ? 'text-dark' : '' }}"
-          href="{{route('fantasy')}}">List</a>
-      </div>
-    </div>
-    {{-- FANTASY END --}}
-
   </div>
+
   <div class="border-top bottom pt-4">
     <input id="switch-theme-input" type="checkbox">
     <label class="switch-theme js-theme-switch d-flex" for="switch-theme-input">

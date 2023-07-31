@@ -3,14 +3,9 @@
 @section('title','CricSpecial')
 
 @section('content')
-<div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-7 px-xl-7">
+<div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-4 px-xl-4">
     <div class="page-body pb-4 pb-xl-6" style="max-width: 100% !important">
-        @if (Session::has('cricspecial.success'))
-        <div class="alert alert-green">{{ Session::get('cricspecial.success') }}</div>
-        @endif
-        @if (Session::has('cricspecial.warning'))
-        <div class="alert alert-yellow">{{ Session::get('cricspecial.warning') }}</div>
-        @endif
+        {!! responseMessage('cricspecial') !!}
         <div class="card mb-2 p-4 p-sm-5">
             <div class="card-head d-flex flex-wrap align-items-center justify-content-between mb-2 mb-sm-7">
                 <div class="title title-color purple me-5 mb-4 mb-sm-0">CricSpecial List</div>
@@ -26,7 +21,7 @@
                     </form>
                 </div>
                 <div class="nav row gx-4 ms-auto flex-nowrap d-flex mb-4 mb-sm-0 order-1 order-sm-2">
-                    <a class="btn btn-xs btn-success px-2 py-1" href="{{ route('cricspecial.create') }}">Create</a> 
+                    <a class="btn btn-xs btn-success px-2 py-1" href="{{ route('cricspecial.create') }}">Create</a>
                 </div>
             </div>
             <div class="card-body p-0">
