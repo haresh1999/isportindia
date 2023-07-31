@@ -359,7 +359,9 @@
 })
 
 $('#select_season_val').change(function(){
-    window.location.href = "{{ route('article.create') }}?cid="+$(this).val()+'&category='+localStorage.getItem("category");
+    if (localStorage.getItem("category") == 'fantasy') {
+        window.location.href = "{{ route('article.create') }}?cid="+$(this).val()+'&category='+localStorage.getItem("category");
+    }
 })
 </script>
 @endsection
