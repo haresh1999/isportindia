@@ -71,13 +71,13 @@ class CricSpecialController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CricSpecial  $cricSpecial
+     * @param  \App\Models\CricSpecial  $cricspecial
      * @return \Illuminate\Http\Response
      */
-    public function edit(CricSpecial $cricSpecial)
+    public function edit(CricSpecial $cricspecial)
     {
-        $res = $cricSpecial;
-
+        $res = $cricspecial;
+        
         return view('admin.cricspecial.edit', compact('res'));
     }
 
@@ -85,13 +85,13 @@ class CricSpecialController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CricSpecial  $cricSpecial
+     * @param  \App\Models\CricSpecial  $cricspecial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CricSpecial $cricSpecial)
+    public function update(Request $request, CricSpecial $cricspecial)
     {
         $input = $request->validate([
-            'title' => 'required|max:255|unique:cric_specials,title,' . $cricSpecial->id,
+            'title' => 'required|max:255|unique:cric_specials,title,' . $cricspecial->id,
             'short_description' => 'required',
             'description' => 'required',
             'status' => 'required',
@@ -106,10 +106,10 @@ class CricSpecialController extends Controller
 
             $input['img'] = uploadImage($input['img'], 'cricspecial');
 
-            deleteImage($cricSpecial->img);
+            deleteImage($cricspecial->img);
         }
 
-        $cricSpecial->update($input);
+        $cricspecial->update($input);
 
         return redirect()
             ->route('cricspecial')
@@ -119,12 +119,12 @@ class CricSpecialController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CricSpecial  $cricSpecial
+     * @param  \App\Models\CricSpecial  $cricspecial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CricSpecial $cricSpecial)
+    public function destroy(CricSpecial $cricspecial)
     {
-        $cricSpecial->delete();
+        $cricspecial->delete();
 
         return redirect()
             ->route('cricspecial')

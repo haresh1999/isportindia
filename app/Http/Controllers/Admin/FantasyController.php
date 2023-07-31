@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\Article;
 use App\Models\Fantasy;
 use Illuminate\Http\Request;
 
@@ -105,9 +105,16 @@ class FantasyController extends Controller
      * @param  \App\Models\Fantasy  $Fantasy
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fantasy $Fantasy)
+    public function destroy(Fantasy $fantasy)
     {
-        $Fantasy->delete();
+        if (Article::where('fantasy_id',$fantasy->id)->exists()) {
+            
+            return redirect()
+                ->back()
+                ->with('fantasy.error', 'There is some article availables in this fantasy can not delete it!');
+        }
+
+        $fantasy->delete();
 
         return redirect()
             ->route('fantasy')

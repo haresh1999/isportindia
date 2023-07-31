@@ -2083,7 +2083,7 @@
                         margin: 0px;
                         padding: 100% 0px 0px;
                       "></span>
-          <img alt="team" sizes="100vw" src="./images/country/country_flag.webp" decoding="async" data-nimg="responsive"
+          <img alt="team" sizes="100vw" src="{{ $rank['teams']['odis'][$i]['logo_url'] }}" decoding="async" data-nimg="responsive"
             style="
                         position: absolute;
                         inset: 0px;

@@ -8,15 +8,12 @@
 
 @section('content')
 <div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-7 px-xl-7">
-    <div class="page-head">
-        <div class="h3 mb-4 mb-xl-5">New Fantasy</div>
-    </div>
-    <div class="page-body pb-4 pb-xl-6">
+    <div class="page-body pb-4 pb-xl-6" style="max-width: 100% !important">
         <div class="row g-0">
-            <div class="col-lg-8 col-12 pe-lg-2">
+            <div class="col-lg-12 col-12 pe-lg-2">
                 <div class="card mb-2 p-4 p-sm-5">
                     <div class="card-head d-flex align-items-center justify-content-between mb-5 mb-sm-6">
-                        <div class="title title-color green">Add Fantasy</div><a class="btn-stroke btn-small"
+                        <div class="title title-color green">Create Fantasy</div><a class="btn-stroke btn-small"
                             href="{{route('fantasy')}}">
                             <svg class="icon icon-arrow-left me-1">
                                 <use xlink:href="#icon-arrow-left"></use>
@@ -29,7 +26,8 @@
                             <div class="row">
 
                                 <div class="col-md-12 mt-4">
-                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Name of Website or App
+                                    <div class="caption d-flex align-items-center mb-3 text-reset fs-8">Name of Website
+                                        or App
                                         <div class="info-tooltip ms-1" data-bs-toggle="tooltip"
                                             title="Maximum 100 characters">
                                             <svg class="icon icon-info">
@@ -86,7 +84,8 @@
                                     <span class="text-red">{{$message}}</span>
                                     @enderror
                                     <select class="select select-wide" name="status">
-                                        <option {{ old('stauts')==1 ? 'selected' : '' }} selected value="1">Active</option>
+                                        <option {{ old('stauts')==1 ? 'selected' : '' }} selected value="1">Active
+                                        </option>
                                         <option {{ old('stauts')==2 ? 'selected' : '' }} value="2">InActive</option>
                                     </select>
                                 </div>

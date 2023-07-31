@@ -4,10 +4,7 @@
 
 @section('content')
 <div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-7 px-xl-7">
-    <div class="page-head">
-        <div class="h3 mb-4 mb-xl-5">CricSpecial List</div>
-    </div>
-    <div class="page-body pb-4 pb-xl-6">
+    <div class="page-body pb-4 pb-xl-6" style="max-width: 100% !important">
         @if (Session::has('cricspecial.success'))
         <div class="alert alert-green">{{ Session::get('cricspecial.success') }}</div>
         @endif
@@ -16,7 +13,7 @@
         @endif
         <div class="card mb-2 p-4 p-sm-5">
             <div class="card-head d-flex flex-wrap align-items-center justify-content-between mb-2 mb-sm-7">
-                <div class="title title-color purple me-5 mb-4 mb-sm-0">CricSpecial</div>
+                <div class="title title-color purple me-5 mb-4 mb-sm-0">CricSpecial List</div>
                 <div class="search-input input-group me-sm-5 mb-3 mb-sm-0 order-2 order-sm-1">
                     <button class="input-group-text transparent">
                         <svg class="icon icon-search">
@@ -28,18 +25,9 @@
                             placeholder="Search product" name="search" value="{{ Request::get('search') }}">
                     </form>
                 </div>
-                {{-- <div class="nav row gx-4 ms-auto flex-nowrap d-flex mb-4 mb-sm-0 order-1 order-sm-2">
-                    <div class="btn-sort active col mx-2" data-bs-target="#tab-list" data-bs-toggle="tab">
-                        <svg class="icon icon-list">
-                            <use xlink:href="#icon-list"></use>
-                        </svg>
-                    </div>
-                    <div class="btn-sort col mx-2" data-bs-target="#tab-grid" data-bs-toggle="tab">
-                        <svg class="icon icon-grid">
-                            <use xlink:href="#icon-grid"></use>
-                        </svg>
-                    </div>
-                </div> --}}
+                <div class="nav row gx-4 ms-auto flex-nowrap d-flex mb-4 mb-sm-0 order-1 order-sm-2">
+                    <a class="btn btn-xs btn-success px-2 py-1" href="{{ route('cricspecial.create') }}">Create</a> 
+                </div>
             </div>
             <div class="card-body p-0">
                 <div class="drafts tab-content">

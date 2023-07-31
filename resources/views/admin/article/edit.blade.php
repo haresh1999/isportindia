@@ -8,15 +8,12 @@
 
 @section('content')
 <div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-7 px-xl-7">
-    <div class="page-head">
-        <div class="h3 mb-4 mb-xl-5">Edit Article</div>
-    </div>
-    <div class="page-body pb-4 pb-xl-6">
+    <div class="page-body pb-4 pb-xl-6" style="max-width: 100% !important">
         <div class="row g-0">
-            <div class="col-lg-8 col-12 pe-lg-2">
+            <div class="col-lg-12 col-12 pe-lg-2">
                 <div class="card mb-2 p-4 p-sm-5">
                     <div class="card-head d-flex align-items-center justify-content-between mb-5 mb-sm-6">
-                        <div class="title title-color green">Edit Articles & News</div><a class="btn-stroke btn-small"
+                        <div class="title title-color green">Edit Article</div><a class="btn-stroke btn-small"
                             href="{{route('article')}}">
                             <svg class="icon icon-arrow-left me-1">
                                 <use xlink:href="#icon-arrow-left"></use>

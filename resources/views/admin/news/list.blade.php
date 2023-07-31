@@ -4,16 +4,16 @@
 
 @section('content')
 <div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-7 px-xl-7">
-    <div class="page-head">
-        <div class="h3 mb-4 mb-xl-5">News List</div>
-    </div>
-    <div class="page-body pb-4 pb-xl-6">
+    <div class="page-body pb-4 pb-xl-6" style="max-width: 100% !important">
         @if (Session::has('news.success'))
         <div class="alert alert-green">{{ Session::get('news.success') }}</div>
         @endif
+        @if (Session::has('news.error'))
+        <div class="alert alert-danger">{{ Session::get('news.error') }}</div>
+        @endif
         <div class="card mb-2 p-4 p-sm-5">
             <div class="card-head d-flex flex-wrap align-items-center justify-content-between mb-2 mb-sm-7">
-                <div class="title title-color purple me-5 mb-4 mb-sm-0">Article</div>
+                <div class="title title-color purple me-5 mb-4 mb-sm-0">News List</div>
                 <div class="search-input input-group me-sm-5 mb-3 mb-sm-0 order-2 order-sm-1">
                     <button class="input-group-text transparent">
                         <svg class="icon icon-search">
@@ -24,6 +24,9 @@
                         <input class="form-control input-small input-action rounded-2" type="text"
                             placeholder="Search product" name="search" value="{{ Request::get('search') }}">
                     </form>
+                </div>
+                <div class="nav row gx-4 ms-auto flex-nowrap d-flex mb-4 mb-sm-0 order-1 order-sm-2">
+                    <a class="btn btn-xs btn-success px-2 py-1" href="{{ route('news.create') }}">Create</a>
                 </div>
             </div>
             <div class="card-body p-0">

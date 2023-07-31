@@ -8,15 +8,12 @@
 
 @section('content')
 <div class="page pt-5 px-4 pt-sm-6 px-sm-5 pt-xl-7 px-xl-7">
-    <div class="page-head">
-        <div class="h3 mb-4 mb-xl-5">Edit News</div>
-    </div>
-    <div class="page-body pb-4 pb-xl-6">
+    <div class="page-body pb-4 pb-xl-6" style="max-width: 100% !important">
         <div class="row g-0">
-            <div class="col-lg-8 col-12 pe-lg-2">
+            <div class="col-lg-12 col-12 pe-lg-2">
                 <div class="card mb-2 p-4 p-sm-5">
                     <div class="card-head d-flex align-items-center justify-content-between mb-5 mb-sm-6">
-                        <div class="title title-color green">Update News</div><a class="btn-stroke btn-small"
+                        <div class="title title-color green">Edit News</div><a class="btn-stroke btn-small"
                             href="{{route('news')}}">
                             <svg class="icon icon-arrow-left me-1">
                                 <use xlink:href="#icon-arrow-left"></use>
@@ -42,9 +39,11 @@
                                     @enderror
                                     <select class="select select-wide" name="type">
                                         <option value="" selected disabled>Select type</option>
-                                        <option {{ old('type',$news->type)=='highlighter' ? 'selected' : '' }} value="highlighter">
+                                        <option {{ old('type',$news->type)=='highlighter' ? 'selected' : '' }}
+                                            value="highlighter">
                                             Highlighter</option>
-                                        <option {{ old('type',$news->type)=='normal' ? 'selected' : '' }} value="normal">Normal
+                                        <option {{ old('type',$news->type)=='normal' ? 'selected' : '' }}
+                                            value="normal">Normal
                                         </option>
                                     </select>
                                 </div>
@@ -64,7 +63,8 @@
                                     <select class="select select-wide" name="cid">
                                         <option value="" selected disabled>Select Seasons</option>
                                         @foreach (getSeasons(10) as $val)
-                                        <option {{ old('cid',$news->cid)==$val['cid'] ? 'selected' : '' }} value="{{$val['cid']}}">
+                                        <option {{ old('cid',$news->cid)==$val['cid'] ? 'selected' : '' }}
+                                            value="{{$val['cid']}}">
                                             {{$val['title']}}</option>
                                         @endforeach
                                     </select>
