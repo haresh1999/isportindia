@@ -707,7 +707,7 @@
                                     class="style_article__IayJx style_articleGrid__LHxgp undefined flex-sm-column align-items-top style_mobileSmall__SYPwG d-flex light-bg br-lg c-transition"
                                     id="{{$new->id}}"><a
                                         class="style_postimg__ftSiV style_postimg__pbfkX d-block mb-0 mb-sm-2 overflow-hidden br-md position-relative a-transition"
-                                        href="{{route('post.details',$new->slug)}}"><span
+                                        href="{{route('news.details',$new->slug)}}"><span
                                             style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                 style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
                                                 alt="Team India ODI."
@@ -716,7 +716,7 @@
                                                 style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
                                     <div class="d-flex flex-column flex-grow-1">
                                         <h4 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                href="{{route('post.details',$new->slug)}}">{{ $new->title }}</a></h4>
+                                                href="{{route('news.details',$new->slug)}}">{{ $new->title }}</a></h4>
                                         <div
                                             class="style_articleInfo__WqisT style_articleInfo__LJyqf text-muted d-flex mt-auto">
                                             <span class="d-flex align-items-center"><span
@@ -747,7 +747,7 @@
                                     <div class="gx-2 gx-md-3 row">
                                         <div class="col-sm-3 col-12"><a
                                                 class="style_postimg__ftSiV mb-2 mb-sm-0 d-block br-md overflow-hidden position-relative a-transition"
-                                                href="{{route('post.details',[$new->slug])}}"><span
+                                                href="{{route('news.details',[$new->slug])}}"><span
                                                     style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                         style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
                                                         alt="David Warner"
@@ -759,7 +759,7 @@
                                         <div class="d-flex flex-column justify-content-between col-sm-9 col-12">
                                             <div>
                                                 <h3 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                        href="{{route('post.details',[$new->slug])}}">{!! $new->title
+                                                        href="{{route('news.details',[$new->slug])}}">{!! $new->title
                                                         !!}</a></h3>
                                                 <p class="d-none d-sm-block">{!! $new->short_description !!}</p>
                                             </div>
