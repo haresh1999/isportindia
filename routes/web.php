@@ -26,6 +26,8 @@ use App\Http\Controllers\Admin\{
 |
 */
 
+// dd(getCurrentMatches());
+
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('score-card/{match_id}', [HomeController::class, 'scoreCard'])->name('score.card');
 
