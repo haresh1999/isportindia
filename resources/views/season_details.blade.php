@@ -355,8 +355,8 @@
                                     <div
                                         class="style_playerCard__X2o3g light-bg text-center br-lg mx-auto overflow-hidden">
                                         <a href="#">
-                                            <p class="style_title__rkxfw p-2 font-semi">{{
-                                                str_replace(Str::upper($rankKey),'_',' ') }}</p>
+                                            <p class="style_title__rkxfw p-2 font-semi" style="font-size:12px">{{
+                                                str_replace('_',' ',Str::upper($rankKey)) }}</p>
                                         </a>
                                         <p class="big-text"><b class="text-uppercase"><a
                                                     href="/cricket-players/yashasvi-jaiswal/">{{$rank['stats'][0]['player']['title']}}</a>
@@ -803,15 +803,30 @@
                         <h4 class="text-uppercase">fixtures</h4>
                         <form class="d-flex align-items-center mb-3" action="{{ route('season.details',$cId) }}"
                             method="get">
-                            <div class="style_filter__C0s78 fixuture_selects_cont flex-grow-1 row">
-                                        <select class="col" name="team" id="team">
+
+
+                            <div class="col" style="margin-right:10px">
+                                <div class="form_formGroup__0jaCW mb-0">
+                                    <div class="dropdown">
+                                        <select
+                                            class="col style_selectNative__gg_ys style_formControl__3Z2Uk style_formSelect__UYPE5 br-sm"
+                                            name="team" id="team">
                                             <option value="" selected>ALL Team</option>
                                             @foreach ($teams['teams'] as $team)
                                             <option {{ $team['tid']==Request::get('team') ? 'selected' : '' }}
                                                 value="{{ $team['tid'] }}">{{ $team['title'] }}</option>
                                             @endforeach
                                         </select>
-                                        <select class="col" name="venue" id="venue">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col" style="margin-left:10px">
+                                <div class="form_formGroup__0jaCW mb-0">
+                                    <div class="dropdown">
+                                        <select
+                                            class="col style_selectNative__gg_ys style_formControl__3Z2Uk style_formSelect__UYPE5 br-sm"
+                                            name="venue" id="venue">
                                             <option value="" selected>ALL Venue</option>
                                             @foreach ($matchs as $venue)
                                             <option {{ $venue['venue']['venue_id']==Request::get('venue') ? 'selected'
@@ -820,7 +835,10 @@
                                                 $venue['venue']['location'],$venue['venue']['country']}}</option>
                                             @endforeach
                                         </select>
+                                    </div>
+                                </div>
                             </div>
+
                             <button type="submit"
                                 class="theme-btn outline-btn small-btn ms-2 ms-md-3 btn btn-primary">Search</button>
                         </form>
@@ -1042,7 +1060,7 @@
                                     Squad</span></h4>
                             <div class="style_filterStats__pfxfP">
                                 <select
-                                    class="style_selectNative__gg_ys style_formControl__3Z2Uk style_formSelect__UYPE5 br-sm">
+                                    class="fixture style_selectNative__gg_ys style_formControl__3Z2Uk style_formSelect__UYPE5 br-sm">
                                     <option disabled="" value="">Team</option>
                                     <option {{ $type==0 ? 'selected' : '' }} value="0">{{$squads[0]['title']}}</option>
                                     <option {{ $type==1 ? 'selected' : '' }} value="1">{{$squads[1]['title']}}</option>
@@ -1052,29 +1070,29 @@
 
                         <h3 class="small-head">Batsmen</h3>
                         <div class="mb-2 mb-sm-1 row">
-                        @foreach ($bat as $bats)
-                        @include('include.players',['squad' => $bats,'title' => 'Batsmen'])
-                        @endforeach
+                            @foreach ($bat as $bats)
+                            @include('include.players',['squad' => $bats,'title' => 'Batsmen'])
+                            @endforeach
                         </div>
                         <h3 class="small-head">All Rounder</h3>
                         <div class="mb-2 mb-sm-1 row">
-                        @foreach ($all as $alls)
-                        @include('include.players',['squad' => $alls,'title' => 'All Rounder'])
-                        @endforeach
+                            @foreach ($all as $alls)
+                            @include('include.players',['squad' => $alls,'title' => 'All Rounder'])
+                            @endforeach
                         </div>
                         <h3 class="small-head">Wicket Keeper</h3>
                         <div class="mb-2 mb-sm-1 row">
-                        @foreach ($wk as $wks)
-                        @include('include.players',['squad' => $wks,'title' => 'Wicket Keeper'])
-                        @endforeach
+                            @foreach ($wk as $wks)
+                            @include('include.players',['squad' => $wks,'title' => 'Wicket Keeper'])
+                            @endforeach
                         </div>
                         <h3 class="small-head">Bowler</h3>
                         <div class="mb-2 mb-sm-1 row">
-                        @foreach ($bowl as $bowls)
-                        @include('include.players',['squad' => $bowls,'title' => 'Bowler'])
-                        @endforeach
+                            @foreach ($bowl as $bowls)
+                            @include('include.players',['squad' => $bowls,'title' => 'Bowler'])
+                            @endforeach
                         </div>
-                    
+
 
                     </div>
                     <!-- SQUAD SECTION END -->
@@ -1175,7 +1193,7 @@ const showRespectiveTabSection = (tabs_root_id, activeTabType) => {
     $(`#${tabs_root_id} .${activeTabType}-data`).addClass("show")
 }
 
-$('.style_selectNative__gg_ys').change(function(){
+$('.fixture').change(function(){
     localStorage.setItem('type','squads');
     window.location.href = "{{ route('season.details',$cId) }}?type="+$(this).val()
 })

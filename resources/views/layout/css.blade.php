@@ -32,7 +32,7 @@
   .style_arrow__bXMF0 {
     width: 26px;
     height: 60px;
-    transform: translateY(-50%);
+    transform: translateY(-50%);  
     font-size: 0;
     z-index: 5;
     background: var(--light-mode-bg);

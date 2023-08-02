@@ -23,12 +23,12 @@ function token()
 	return 'ec471071441bb2ac538a0ff901abd249';
 }
 
-function getCurrentMatches($page=30)
-{
-	$response = Http::get(config('services.api').'competitions?per_page=' . $page . '&status=fixture,live,result&token=' . token())->json();
+// function getCurrentMatches($page=30)
+// {
+// 	$response = Http::get(config('services.api').'competitions?per_page=' . $page . '&status=fixture,live,result&token=' . token())->json();
 
-	return $response['response']['items'];
-}
+// 	return $response['response']['items'];
+// }
 
 function getSeasons($page = 10)
 {
