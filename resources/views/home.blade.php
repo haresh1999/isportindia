@@ -1,34 +1,5 @@
 @extends('layout.main')
 
-@section('style')
-<style>
-  .hide {
-    display: none;
-  }
-
-  .show {
-    display: block;
-  }
-
-  .style_arrow__bXMF0 {
-    width: 26px;
-    height: 60px;
-    transform: translateY(-50%);
-    font-size: 0;
-    z-index: 5;
-    background: var(--light-mode-bg);
-    border-radius: 13px;
-    border: 3px solid var(--theme-color-light);
-    cursor: pointer;
-    position: absolute;
-  }
-
-  .style_arrow__bXMF0:active {
-    background: #E76161;
-  }
-</style>
-@endsection
-
 @section('content')
 <div style="height: auto">
   <section class="style_scorecardSlider__sPmoX scorecard-slider pt-0 overflow-hidden pb-3">

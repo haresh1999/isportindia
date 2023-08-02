@@ -22,3 +22,29 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
   integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .style_arrow__bXMF0 {
+    width: 26px;
+    height: 60px;
+    transform: translateY(-50%);
+    font-size: 0;
+    z-index: 5;
+    background: var(--light-mode-bg);
+    border-radius: 13px;
+    border: 3px solid var(--theme-color-light);
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .style_arrow__bXMF0:active {
+    background: #E76161;
+  }
+</style>
