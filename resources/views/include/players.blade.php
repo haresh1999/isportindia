@@ -1,4 +1,3 @@
-<div class="mb-2 mb-sm-1 row">
     <div class="col-md-6">
         <div class="style_searchCard__cvti1 common-box d-flex align-items-center mb-2 mb-md-3 mb-xl-4">
             <div class="style_icon__zLIjE rounded-circle overflow-hidden me-2 flex-shrink-0">
@@ -28,4 +27,3 @@
             </div>
         </div>
     </div>
-</div>

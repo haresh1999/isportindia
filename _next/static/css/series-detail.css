@@ -1071,3 +1071,13 @@ button.style_active__00skk {
 .style_searchCard__cvti1 .style_icon__zLIjE {
     width: 60px
 }
+.fixuture_selects_cont {
+    gap: 15px;
+    grid-gap: 15px;
+    padding: 0 10px;
+}
+.fixuture_selects_cont select {
+   padding-top: 6px;
+   padding-bottom: 6px;
+   border-radius: 4px;
+}
