@@ -803,21 +803,15 @@
                         <h4 class="text-uppercase">fixtures</h4>
                         <form class="d-flex align-items-center mb-3" action="{{ route('season.details',$cId) }}"
                             method="get">
-                            <div class="style_filter__C0s78 flex-grow-1 row">
-                                <div class="col">
-                                    <div class="form_formGroup__0jaCW mb-0">
-                                        <select class="" name="team" id="team">
+                            <div class="style_filter__C0s78 fixuture_selects_cont flex-grow-1 row">
+                                        <select class="col" name="team" id="team">
                                             <option value="" selected>ALL Team</option>
                                             @foreach ($teams['teams'] as $team)
                                             <option {{ $team['tid']==Request::get('team') ? 'selected' : '' }}
                                                 value="{{ $team['tid'] }}">{{ $team['title'] }}</option>
                                             @endforeach
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form_formGroup__0jaCW mb-0">
-                                        <select class="" name="venue" id="venue">
+                                        <select class="col" name="venue" id="venue">
                                             <option value="" selected>ALL Venue</option>
                                             @foreach ($matchs as $venue)
                                             <option {{ $venue['venue']['venue_id']==Request::get('venue') ? 'selected'
@@ -826,8 +820,6 @@
                                                 $venue['venue']['location'],$venue['venue']['country']}}</option>
                                             @endforeach
                                         </select>
-                                    </div>
-                                </div>
                             </div>
                             <button type="submit"
                                 class="theme-btn outline-btn small-btn ms-2 ms-md-3 btn btn-primary">Search</button>
@@ -1059,21 +1051,31 @@
                         </div>
 
                         <h3 class="small-head">Batsmen</h3>
+                        <div class="mb-2 mb-sm-1 row">
                         @foreach ($bat as $bats)
                         @include('include.players',['squad' => $bats,'title' => 'Batsmen'])
                         @endforeach
+                        </div>
                         <h3 class="small-head">All Rounder</h3>
+                        <div class="mb-2 mb-sm-1 row">
                         @foreach ($all as $alls)
                         @include('include.players',['squad' => $alls,'title' => 'All Rounder'])
                         @endforeach
+                        </div>
                         <h3 class="small-head">Wicket Keeper</h3>
+                        <div class="mb-2 mb-sm-1 row">
                         @foreach ($wk as $wks)
                         @include('include.players',['squad' => $wks,'title' => 'Wicket Keeper'])
                         @endforeach
+                        </div>
                         <h3 class="small-head">Bowler</h3>
+                        <div class="mb-2 mb-sm-1 row">
                         @foreach ($bowl as $bowls)
                         @include('include.players',['squad' => $bowls,'title' => 'Bowler'])
                         @endforeach
+                        </div>
+                    
+
                     </div>
                     <!-- SQUAD SECTION END -->
 

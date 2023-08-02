@@ -7,13 +7,11 @@
     display: none;
   }
 </style>
-<link rel="stylesheet" href="/_next/static/css/8f21a21501824ed6.css" data-n-g="" media="print"
-  onload="this.media='all'" />
-<noscript>
-  <link rel="stylesheet" href="/_next/static/css/8f21a21501824ed6.css" />
-</noscript>
+
+
 <link rel="stylesheet" href="/_next/static/css/all.css" />
 <link rel="stylesheet" href="/_next/static/css/main.css" />
+<link rel="stylesheet" href="/_next/static/css/8f21a21501824ed6.css"  />
 <link rel="stylesheet" href="/_next/static/css/score-card.css">
 <link rel="stylesheet" href="/_next/static/css/series-detail.css">
 <link rel="preload" as="font" crossorigin="anonymous" href="/_next/static/media/noto-sans.cfd97686.woff2" />
