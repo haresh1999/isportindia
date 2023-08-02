@@ -97,11 +97,22 @@ class HomeController extends Controller
     {
         $response = getMatchDetails($matchId);
 
-        $player = Http::get(config('services.api') . 'competitions/' . $response['competition']['cid'] . '/squads?token=' . token())->json();
+        $player = [];
 
-        $player = $player['response']['squads'];
+        foreach ($response['players'] as $key => $value) {
+            if ($value['nationality'] == $response['teama']['name']) {
+                $player['team_a'][] = $value;
+            }else{
+                $player['team_b'][] = $value;
+            }
+        }
+        
+        dump($response);
 
-        return view('score_card', compact('response', 'player'));
+        return view('score_card', compact(
+            'response',
+            'player'
+        ));
     }
 
     public function likesAdd(Request $request)
