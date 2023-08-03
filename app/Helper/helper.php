@@ -82,6 +82,13 @@ function getMatchDetails($matchId)
 	return $response['response'];
 }
 
+function getMatchInningDetails($matchId,$inningId)
+{
+	$response = Http::get(config('services.api') . "matches/" . $matchId . "/innings/".$inningId."/commentary?token=" . token())->json();
+
+	return $response['response'];
+}
+
 function getIccRanking()
 {
 	$response = Http::get(config('services.api') . "iccranks?token=" . token())->json();

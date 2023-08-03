@@ -97,6 +97,8 @@ class HomeController extends Controller
     {
         $response = getMatchDetails($matchId);
 
+        $current_inning = getMatchInningDetails($matchId,$response['latest_inning_number']);
+
         $player = [];
 
         foreach ($response['players'] as $key => $value) {
@@ -121,7 +123,8 @@ class HomeController extends Controller
 
         return view('score_card', compact(
             'response',
-            'player'
+            'player',
+            'current_inning'
         ));
     }
 
