@@ -389,7 +389,7 @@
                                                                 style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
                                                                 alt="{{$rank['stats'][0]['team']['title']}}"
                                                                 sizes="100vw"
-                                                                src="{{ $rank['stats'][0]['team']['logo_url'] }}"
+                                                                src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2Fjersey%2F300x300%2Findia_8cdea.png&amp;w=1900&amp;q=75"
                                                                 decoding="async" data-nimg="responsive"
                                                                 style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
                                                     </div>
@@ -404,10 +404,10 @@
                                         <p class="undefined big-text text-secondary">Runs</p>
                                         @elseif ($rankKey == 'bowling_top_wicket_takers')
                                         <p class="style_score__o8kP_ mt-2 mb-0">{{$rank['stats'][0]['wickets']}}</p>
-                                        <p class="undefined big-text text-secondary">Runs</p>
+                                        <p class="undefined big-text text-secondary">Wickets</p>
                                         @elseif ($rankKey == 'bowling_best_economy_rates')
                                         <p class="style_score__o8kP_ mt-2 mb-0">{{$rank['stats'][0]['econ']}}</p>
-                                        <p class="undefined big-text text-secondary">Runs</p>
+                                        <p class="undefined big-text text-secondary">Economy</p>
                                         @endif
                                     </div>
                                 </div>
@@ -483,9 +483,13 @@
                                                     data-nimg="responsive"
                                                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
                                         <div class="d-flex flex-column flex-grow-1">
-                                            <h4 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                    href="{{route('fantasy.details',$fantasy->slug)}}">{{
-                                                    $fantasy->title }}</a></h4>
+                                            <h4 class="small-head mb-2">
+                                                <span class="undefined undefined mb-1 badge bg-danger"><a
+                                                        href="{{route('fantasy.details',$fantasy->slug)}}">{{
+                                                        $fantasy->fantasy->name }}</a></span>
+                                            </h4>
+                                            <p class="d-none d-sm-block">{{$season['series_name']}}
+                                                {{$fantasy->fantasy->name}} Prediction</p>
                                             <div
                                                 class="style_articleInfo__WqisT style_articleInfo__LJyqf text-muted d-flex mt-auto">
                                                 <span class="d-flex align-items-center"><span

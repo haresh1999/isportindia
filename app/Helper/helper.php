@@ -77,9 +77,7 @@ function getMatch()
 
 function getMatchDetails($matchId)
 {
-	$response = Http::get(config('services.api') . "matches/" . $matchId . "/info?token=" . token())->json();
-
-	// $response = Http::get('https://rest.entitysport.com/exchange/matches/'.$matchId.'/info?token='.token())->json();
+	$response = Http::get(config('services.api') . "matches/" . $matchId . "/scorecard?token=" . token())->json();
 
 	return $response['response'];
 }
