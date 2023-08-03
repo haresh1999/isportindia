@@ -194,18 +194,26 @@
                             </svg></button>
                     </div>
                     <div
+                    id ="readMoreDataCont"
                         class="undefined false page-header_clamp__Hgm_F t-ellipsis line-clamp-3 overflow-hidden position-relative c-transition big-text">
                         <div class="style_commonContent__Aq_YG style_darkContent__s9WAF style_smallContent__1I0SW">
                             <div>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat recusandae
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat recusandae
                                     doloribus at nostrum cupiditate deleniti fugit excepturi nemo voluptatum reiciendis
-                                    animi, culpa, in saepe nesciunt modi laborum voluptates dolorem soluta?</p>
+                                    animi, culpa, in saepe nesciunt modi laborum voluptates dolorem soluta?
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat recusandae
+                                    doloribus at nostrum cupiditate deleniti fugit excepturi nemo voluptatum reiciendis
+                                    animi, culpa, in saepe nesciunt modi laborum voluptates dolorem soluta?
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat recusandae
+                                    doloribus at nostrum cupiditate deleniti fugit excepturi nemo voluptatum reiciendis
+                                    animi, culpa, in saepe nesciunt modi laborum voluptates dolorem soluta?
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="text-end"><button type="button"
-                            class="page-header_readMore__wXB_M theme-btn small-btn d-inline-flex align-item-center mt-2 mt-md-3 btn btn-primary">Read
-                            More</button></div>
+                    <div id="readMoreBtn" class="text-end"><button type="button" onclick="readMoreClickHandler(this)"
+                            class="page-header_readMore__wXB_M theme-btn small-btn d-inline-flex align-item-center mt-2 mt-md-3 btn btn-primary">Read More</button></div>
                 </section>
 
                 <div id="series_detail_tabs">
@@ -1197,5 +1205,21 @@ $('.fixture').change(function(){
     localStorage.setItem('type','squads');
     window.location.href = "{{ route('season.details',$cId) }}?type="+$(this).val()
 })
+
+const readMoreClickHandler = (button)=>{
+    let isReadMore = button.innerText == "Read More"
+    let readMoreContClass = "page-header_clamp__Hgm_F t-ellipsis line-clamp-3 overflow-hidden position-relative c-transition big-text"
+    const readMoreContRef = document.getElementById('readMoreDataCont')
+    if(!isReadMore){
+        button.innerText = "Read More"
+        readMoreContRef.className = readMoreContClass
+    }
+    else{
+        readMoreContRef.classList.remove(...readMoreContRef.classList);
+        button.innerText = "Read Less"
+    }
+}
+
+
 </script>
 @endsection
