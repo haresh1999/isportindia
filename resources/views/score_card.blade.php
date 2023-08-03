@@ -105,13 +105,13 @@
                                     <div class="style_list__lGEnK d-flex align-items-center px-1 px-xl-2"><span
                                             class="style_run__Qmv5g style_over__tb1dj h-auto text-muted rounded-pill mx-1 mx-xl-2 px-1 border-0">1<span
                                                 class="d-block">Ov</span></span><span
-                                            class="style_run__Qmv5g undefined bg-info border-info rounded-pill mx-1 mx-xl-2 px-1">1</span><span
-                                            class="style_run__Qmv5g rounded-pill mx-1 mx-xl-2 px-1">0</span><span
-                                            class="style_run__Qmv5g rounded-pill mx-1 mx-xl-2 px-1">0</span><span
-                                            class="style_run__Qmv5g undefined bg-info border-info rounded-pill mx-1 mx-xl-2 px-1">1</span><span
-                                            class="style_run__Qmv5g rounded-pill mx-1 mx-xl-2 px-1">0</span><span
-                                            class="style_run__Qmv5g undefined bg-info border-info rounded-pill mx-1 mx-xl-2 px-1">2Wd</span><span
-                                            class="style_run__Qmv5g rounded-pill mx-1 mx-xl-2 px-1">0</span>
+                                            class="style_run__Qmv5g undefined bg-info border-info rounded-pill mx-1 mx-xl-2 px-1">{{$current_inning['commentaries'][$i]['over']}}</span><span
+                                            class="style_run__Qmv5g rounded-pill mx-1 mx-xl-2 px-1">{{$current_inning['commentaries'][$i]['run']}}</span><span
+                                            class="style_run__Qmv5g rounded-pill mx-1 mx-xl-2 px-1">{{$current_inning['commentaries'][$i]['run']}}</span><span
+                                            class="style_run__Qmv5g undefined bg-info border-info rounded-pill mx-1 mx-xl-2 px-1">{{$current_inning['commentaries'][$i]['run']}}</span><span
+                                            class="style_run__Qmv5g rounded-pill mx-1 mx-xl-2 px-1">{{$current_inning['commentaries'][$i]['run']}}</span><span
+                                            class="style_run__Qmv5g undefined bg-info border-info rounded-pill mx-1 mx-xl-2 px-1">{{$current_inning['commentaries'][$i]['run']}}</span><span
+                                            class="style_run__Qmv5g rounded-pill mx-1 mx-xl-2 px-1">{{$current_inning['commentaries'][$i]['run']}}</span>
                                     </div>
                             </div>
                             @endfor

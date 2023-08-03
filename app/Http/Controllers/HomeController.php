@@ -99,6 +99,8 @@ class HomeController extends Controller
 
         $current_inning = getMatchInningDetails($matchId,$response['latest_inning_number']);
 
+        dd($current_inning);    
+
         $player = [];
 
         foreach ($response['players'] as $key => $value) {
