@@ -101,13 +101,23 @@ class HomeController extends Controller
 
         foreach ($response['players'] as $key => $value) {
             if ($value['nationality'] == $response['teama']['name']) {
-                $player['team_a'][] = $value;
-            }else{
-                $player['team_b'][] = $value;
+
+                if ($value['role'] == 'squad') {
+                    $player['team_a_squad'][] = $value;
+                } else {
+                    $player['team_a'][] = $value;
+                }
+            } else {
+
+                if ($value['role'] == 'squad') {
+
+                    $player['team_b_squad'][] = $value;
+                } else {
+
+                    $player['team_b'][] = $value;
+                }
             }
         }
-        
-        dump($response);
 
         return view('score_card', compact(
             'response',
