@@ -974,7 +974,7 @@
                     <!-- STATS SECTION START -->
                     <div class="style_seriesHome__Jnsnk stats-data hide tabs-data">
                         <div class="mt-4 gx-2 gx-md-3 row">
-                            @foreach ($states['stat_types'] as $statesKey => $state)
+                            @foreach ($states['stat_types'] as $state)
                             <div class="col-xl-4 col-lg-6 col-md-6">
                                 <div class="table-responsive">
                                     <table
@@ -988,9 +988,9 @@
                                             <tr>
                                                 <td class=" align-top">
                                                     <div class="d-flex flex-column">
-                                                        @foreach ($state['types'] as $stateTypes)
+                                                        @foreach ($state['types'] as $statesKey => $stateTypes)
                                                         <a class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="#">{{$stateTypes}}</a>
+                                                            href="{{route('state.details',[$cId,$statesKey])}}">{{$stateTypes}}</a>
                                                         @endforeach
                                                     </div>
                                                 </td>

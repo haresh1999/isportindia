@@ -292,7 +292,6 @@ class HomeController extends Controller
             ->limit(request()->has('per_page') ? request()->get('per_page') : 5)
             ->get();
 
-
         return view('season_details', compact(
             'matchs',
             'response',
@@ -325,5 +324,16 @@ class HomeController extends Controller
         $article->increment('views', 1);
 
         return view('fantasy_details', compact('article'));
+    }
+
+    public function stateDetails($cId,$slug)
+    {
+        $matchs = getSeasonsDetails($cId);
+
+        $season['series_name'] = $matchs[0]['short_title'];
+        $season['title'] = $matchs[0]['title'];
+        $season['season'] = $matchs[0]['competition']['season'];
+
+        return view('state_details',compact('matchs','season','slug'));
     }
 }

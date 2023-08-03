@@ -36,7 +36,7 @@ Route::get('post-details/{slug}', [HomeController::class, 'postDetails'])->name(
 Route::get('cricspecial-details/{slug}', [HomeController::class, 'cricspecialDetails'])->name('cricspecial.details');
 Route::get('news/{slug}', [HomeController::class, 'newsDetails'])->name('news.details');
 Route::get('fantasy/{slug}', [HomeController::class, 'fantasyDetails'])->name('fantasy.details');
-
+Route::get('state-details/{cid}/{slug}',[HomeController::class,'stateDetails'])->name('state.details');
 // SEASON 
 Route::get('season/{cid}', [HomeController::class, 'seasonDetails'])->name('season.details');
 
