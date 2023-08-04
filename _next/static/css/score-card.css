@@ -979,7 +979,7 @@ hr {
     }
 }
 
-@media(min-width: 992px){
+@media(min-width: 992px)and (max-width:1400px) {
     .common-sidebar:not(.bt-width) {
         width: calc(310px + var(--bs-gutter-x)*1)
     }
@@ -1796,7 +1796,7 @@ table.dark tbody td {
 .nav-pills .nav-link {
     padding: 7px;
     border-radius: 2em;
-    background: var(--bs-white);
+    background: var(--theme-bg);
     font-size: 13px;
     line-height: 18px;
     font-weight: 700;
@@ -2822,7 +2822,121 @@ input[type=number] {
     max-height: unset !important;
     width: auto !important;
     max-width: unset !important;
-    margin-left: -79px !important;
+    margin-left: -58px !important;
+}
+.register_btn{
+    background: white !important;
+    color: var(--theme-color-light) !important;
+    outline: 1px solid var(--theme-color-light) !important;
 }
 
+/* NOW ADDED */
+.style_item__g1PsB {
+    padding: 12px
+}
 
+.style_head__Fqbtu {
+    border-bottom: 1px solid var(--theme-bg)
+}
+
+.style_content__ggGPw span:not(:first-child) {
+    margin-left: 3px
+}
+
+.style_scorecardTable__4bErc table {
+    margin: 0 0 8px
+}
+
+.style_scorecardTable__4bErc table td,.style_scorecardTable__4bErc table th {
+    width: 66px;
+    max-width: 66px
+}
+
+.style_scorecardTable__4bErc table td:first-child,.style_scorecardTable__4bErc table th:first-child {
+    text-align: left;
+    width: inherit;
+    max-width: 100px
+}
+
+.style_scorecardTable__4bErc table td:last-child,.style_scorecardTable__4bErc table th:last-child {
+    width: 70px;
+    max-width: 70px
+}
+
+.style_batterName__PG3_C {
+    min-width: 45%;
+    max-width: 45%
+}
+
+@media(max-width: 1199px) {
+    .style_scorecardTable__4bErc table td,.style_scorecardTable__4bErc table th {
+        width:54px;
+        max-width: 54px
+    }
+
+    .style_scorecardTable__4bErc table td:last-child,.style_scorecardTable__4bErc table th:last-child {
+        width: 70px;
+        max-width: 70px
+    }
+}
+
+@media(max-width: 767px) {
+    .style_scorecardTable__4bErc table {
+        font-weight:500
+    }
+
+    .style_scorecardTable__4bErc table td,.style_scorecardTable__4bErc table th {
+        width: 44px;
+        max-width: 44px
+    }
+
+    .style_scorecardTable__4bErc table td:first-child,.style_scorecardTable__4bErc table th:first-child {
+        overflow: visible
+    }
+
+    .style_scorecardTable__4bErc table td:last-child,.style_scorecardTable__4bErc table th:last-child {
+        width: 58px;
+        max-width: 58px
+    }
+
+    .style_scorecardTable__4bErc table td {
+        vertical-align: top
+    }
+
+    .style_scorecardTable__4bErc table .style_subText__tojVi {
+        min-width: calc(100vw - 32px);
+        font-weight: 400
+    }
+
+    .style_scorecardTable__4bErc table svg {
+        width: 20px;
+        height: 20px
+    }
+
+    .style_batterName__PG3_C {
+        min-width: 100%;
+        max-width: 100%
+    }
+}
+
+@media(max-width: 575px) {
+    .style_scorecardTable__4bErc table {
+        font-size:13px;
+        line-height: 20px
+    }
+
+    .style_scorecardTable__4bErc table td,.style_scorecardTable__4bErc table th {
+        padding: 6px 8px;
+        width: 36px;
+        max-width: 36px
+    }
+
+    .style_scorecardTable__4bErc table .style_subText__tojVi {
+        font-size: 12px;
+        line-height: 17px
+    }
+}
+
+.style_subText__tojVi.text-secondary {
+    font-weight: 400;
+}
