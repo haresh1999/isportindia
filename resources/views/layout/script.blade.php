@@ -50,7 +50,6 @@ function scrollContent(direction) {
     container.scrollLeft + container.clientWidth >= container.scrollWidth - 300
       ? "none"
       : "block";
-
 }
 
 const accordionClickHandler = (ele) => {

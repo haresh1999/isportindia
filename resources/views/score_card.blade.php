@@ -101,32 +101,57 @@
                                 class="style_arrow__bXMF0 style_prev__wdbiv light-bg position-absolute top-50 start-0">Prev</button>
                             <div id="c-slider" class="style_inner__csGhV slider-track d-flex undefined" id="c-slider"
                                 style="gap: 0px;">
+
+                                @foreach ($ball_by_balls as $over => $ball_by_ball)
                                 <div>
                                     <div class="style_list__lGEnK d-flex align-items-center px-1 px-xl-2">
-                                        @php $count = count($current_inning['commentaries']) @endphp
-                                        @for ($i = $count; $i > ($count - 30); $i--)
-                                        @if (isset($current_inning['commentaries'][$i]))
-                                        @php $ball = $current_inning['commentaries'][$i] @endphp
-                                        @if (! isset($ball['event_id']))
                                         <span
                                             class="style_run__Qmv5g style_over__tb1dj h-auto text-muted rounded-pill mx-1 mx-xl-2 px-1 border-0">{{
-                                            $ball['over'] }}
+                                            $over }}
                                             <span class="d-block">Ov</span>
                                         </span>
+
+                                        @foreach ($ball_by_ball as $bbb)
+                                        @if ($bbb['event'] == 'wicket')
+                                        <span
+                                            class="style_run__Qmv5g undefined bg-danger border-danger text-white rounded-pill mx-1 mx-xl-2 px-1">W</span>
+                                        @elseif($bbb['event'] == 'ball')
+                                        @if ($bbb['run'] == 0)
+                                        <span class="style_run__Qmv5g rounded-pill mx-1 mx-xl-2 px-1">0</span>
+                                        @elseif(in_array($bbb['run'],[1,2,3,4,5,6]) && $bbb['four'] == false &&
+                                        $bbb['six'] == false)
+                                        @if ($bbb['wideball'])
+                                        <span
+                                            class="style_run__Qmv5g undefined bg-info border-info rounded-pill mx-1 mx-xl-2 px-1">{{$bbb['run']}}Wd</span>
+                                        @elseif($bbb['noball'])
+                                        <span
+                                            class="style_run__Qmv5g undefined bg-info border-info rounded-pill mx-1 mx-xl-2 px-1">{{$bbb['bye_run']}}Nb</span>
+                                        @elseif($bbb['bye_run'] != 0)
+                                        <span
+                                            class="style_run__Qmv5g undefined bg-info border-info rounded-pill mx-1 mx-xl-2 px-1">{{$bbb['bye_run']}}b</span>
+                                        @elseif($bbb['legbye_run'] != 0)
+                                        <span
+                                            class="style_run__Qmv5g undefined bg-info border-info rounded-pill mx-1 mx-xl-2 px-1">{{$bbb['legbye_run']}}lb</span>
                                         @else
                                         <span
-                                            class="style_run__Qmv5g undefined bg-info border-info rounded-pill mx-1 mx-xl-2 px-1">
-                                            {{$ball['run']}}
-                                        </span>
+                                            class="style_run__Qmv5g undefined bg-info border-info rounded-pill mx-1 mx-xl-2 px-1">{{$bbb['run']}}</span>
+                                        @endif
+                                        @elseif($bbb['four'] == true)
+                                        <span
+                                            class="style_run__Qmv5g bg-success border-success text-white rounded-pill mx-1 mx-xl-2 px-1">4</span>
+                                        @elseif($bbb['six'] == true)
+                                        <span
+                                            class="style_run__Qmv5g style_runPrimary__rxN5p bg-primary text-white rounded-pill mx-1 mx-xl-2 px-1">6</span>
                                         @endif
                                         @endif
-                                        @endfor
+                                        @endforeach
                                     </div>
                                 </div>
+                                @endforeach
+
                             </div>
                             <div onclick="scrollContent(1)" id="scroll_1_next"
-                                class="style_arrow__bXMF0 undefined light-bg position-absolute top-50 end-0">
-                                Next</div>
+                                class="style_arrow__bXMF0 undefined light-bg position-absolute top-50 end-0">Next</div>
                         </div>
                     </div>
                 </section>
@@ -920,4 +945,12 @@
         </div>
     </div>
 </section>
+@endsection
+
+@section('script')
+<script>
+    $(function(){
+        scrollContent(-1)
+    })
+</script>
 @endsection

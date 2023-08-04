@@ -10,10 +10,10 @@ use App\Models\{
     News,
     PostLikes
 };
-
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\{
     Http,
-    DB
+    DB,
 };
 
 class HomeController extends Controller
@@ -97,7 +97,22 @@ class HomeController extends Controller
     {
         $response = getMatchDetails($matchId);
 
-        $current_inning = getMatchInningDetails($matchId,$response['latest_inning_number']);
+        $current_inning = getMatchInningDetails($matchId, $response['latest_inning_number']);
+
+        $over_balls = array_slice(array_reverse($current_inning['commentaries']), 0, 70);
+
+        $ball_by_balls = [];
+
+        foreach ($over_balls as $key => $over_ball) {
+
+            if (isset($over_ball['event_id'])) {
+                $ball_by_balls[$over_ball['over']][] = $over_ball;
+            }
+
+            if ($over_ball['event'] == 'overend' && count($ball_by_balls) == 10) {
+                break;
+            }
+        }
 
         $player = [];
 
@@ -124,7 +139,8 @@ class HomeController extends Controller
         return view('score_card', compact(
             'response',
             'player',
-            'current_inning'
+            'current_inning',
+            'ball_by_balls'
         ));
     }
 
@@ -326,7 +342,7 @@ class HomeController extends Controller
         return view('fantasy_details', compact('article'));
     }
 
-    public function stateDetails($cId,$slug)
+    public function stateDetails($cId, $slug)
     {
         $matchs = getSeasonsDetails($cId);
 
@@ -334,6 +350,6 @@ class HomeController extends Controller
         $season['title'] = $matchs[0]['title'];
         $season['season'] = $matchs[0]['competition']['season'];
 
-        return view('state_details',compact('matchs','season','slug'));
+        return view('state_details', compact('matchs', 'season', 'slug'));
     }
 }
