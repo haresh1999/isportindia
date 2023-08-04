@@ -26,21 +26,16 @@ use App\Http\Controllers\Admin\{
 |
 */
 
-// dd(getCurrentMatches());
-
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('score-card/{match_id}', [HomeController::class, 'scoreCard'])->name('score.card');
-
-// BLOG SECTION
 Route::get('post-details/{slug}', [HomeController::class, 'postDetails'])->name('post.details');
 Route::get('cricspecial-details/{slug}', [HomeController::class, 'cricspecialDetails'])->name('cricspecial.details');
 Route::get('news/{slug}', [HomeController::class, 'newsDetails'])->name('news.details');
 Route::get('fantasy/{slug}', [HomeController::class, 'fantasyDetails'])->name('fantasy.details');
 Route::get('state-details/{cid}/{slug}',[HomeController::class,'stateDetails'])->name('state.details');
-// SEASON 
 Route::get('season/{cid}', [HomeController::class, 'seasonDetails'])->name('season.details');
-
-Route::get('cricket-teams/{name}', [HomeController::class, 'cricketTeams'])->name('cricket.teams');
+Route::get('cricket-team/{t_id}',[HomeController::class,'home'])->name('teams');
+Route::get('cricket-player/{p_id}',[HomeController::class,'home'])->name('player');
 
 Route::prefix('admin')->group(function () {
 

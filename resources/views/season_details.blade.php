@@ -380,7 +380,7 @@
                                                                 style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
                                                                 alt="{{$rank['stats'][0]['player']['title']}}"
                                                                 sizes="100vw"
-                                                                src="{{$rank['stats'][0]['player']['thumb_url'] }}"
+                                                                src="{{ asset('head-placeholder.webp') }}"
                                                                 decoding="async" data-nimg="responsive"
                                                                 style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
                                                     </div>
@@ -389,7 +389,7 @@
                                                                 style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
                                                                 alt="{{$rank['stats'][0]['team']['title']}}"
                                                                 sizes="100vw"
-                                                                src="https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2Fjersey%2F300x300%2Findia_8cdea.png&amp;w=1900&amp;q=75"
+                                                                src="{{ asset('jersey-placeholder.webp') }}"
                                                                 decoding="async" data-nimg="responsive"
                                                                 style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
                                                     </div>
@@ -989,8 +989,7 @@
                                                 <td class=" align-top">
                                                     <div class="d-flex flex-column">
                                                         @foreach ($state['types'] as $statesKey => $stateTypes)
-                                                        <a class="theme-btn outline-btn small-btn outline-light mb-2"
-                                                            href="{{route('state.details',[$cId,$statesKey])}}">{{$stateTypes}}</a>
+                                                            <a class="theme-btn outline-btn small-btn outline-light mb-2" href="{{route('state.details',[$cId,$statesKey])}}">{{$stateTypes}}</a>
                                                         @endforeach
                                                     </div>
                                                 </td>

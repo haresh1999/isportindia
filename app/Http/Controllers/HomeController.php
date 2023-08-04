@@ -10,9 +10,8 @@ use App\Models\{
     News,
     PostLikes
 };
-use Illuminate\Support\Arr;
+
 use Illuminate\Support\Facades\{
-    Http,
     DB,
 };
 
@@ -342,14 +341,47 @@ class HomeController extends Controller
         return view('fantasy_details', compact('article'));
     }
 
-    public function stateDetails($cId, $slug)
+    public function stateDetails(Request $request, $cId, $slug)
     {
+        if ($request->has('slug')) {
+
+            return redirect($request->slug . '?team=' . $request->team);
+        }
+
         $matchs = getSeasonsDetails($cId);
+        $players = getSeasonStats($cId, $slug, 10);
+        $data = [];
+
+        if ($request->has('team')) {
+            foreach ($players['stats'] as $key => $value) {
+                if ($value['team']['tid'] == $request->team) {
+                    $data['stats'][] = $value;
+                }
+            }
+        }
+
+        if (!empty($data)) {
+
+            $players = $data;
+        }
+
+        $type = explode('_', $slug)[0];
+        $teams = getSeasonTeams($cId);
+        $states = getSeasonStats($cId);
 
         $season['series_name'] = $matchs[0]['short_title'];
         $season['title'] = $matchs[0]['title'];
         $season['season'] = $matchs[0]['competition']['season'];
 
-        return view('state_details', compact('matchs', 'season', 'slug'));
+        return view('state_details', compact(
+            'matchs',
+            'season',
+            'slug',
+            'players',
+            'cId',
+            'teams',
+            'states',
+            'type'
+        ));
     }
 }

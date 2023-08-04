@@ -504,7 +504,7 @@
                                 </div>
                             </section>
 
-                            <div class="style_matchInfoBlock__0lvEF common-box">
+                            {{-- <div class="style_matchInfoBlock__0lvEF common-box">
                                 <section class="common-section pb-0">
                                     <div class="style_list__LLnjJ row">
                                         <div class="col-sm-6">
@@ -522,7 +522,7 @@
                                                                 sizes="100vw"><noscript></noscript></span></span><span>Weather
                                                     </span>
                                                 </p>
-                                                <div class="big-text font-semi">Overcast Clouds</div>
+                                                <div class="big-text font-semi">{{$response['weather']['weather']}}</div>
                                             </section>
                                         </div>
                                         <div class="col-sm-6">
@@ -541,7 +541,7 @@
                                                                 srcset="/_next/static/media/pitch-icon.f758c203.svg 450w, /_next/static/media/pitch-icon.f758c203.svg 992w, /_next/static/media/pitch-icon.f758c203.svg 1200w, /_next/static/media/pitch-icon.f758c203.svg 1900w"><noscript></noscript></span></span><span>Pitch
                                                         Condition</span>
                                                 </p>
-                                                <div class="big-text font-semi">Balanced</div>
+                                                <div class="big-text font-semi">{{$response['pitch']['pitch_condition']}}</div>
                                             </section>
                                         </div>
                                         <div class="col-sm-6">
@@ -557,8 +557,7 @@
                                                                 decoding="async" data-nimg="responsive"
                                                                 style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
                                                                 sizes="100vw"
-                                                                srcset="/_next/static/media/flag-icon.542afdb5.svg 450w, /_next/static/media/flag-icon.542afdb5.svg 992w, /_next/static/media/flag-icon.542afdb5.svg 1200w, /_next/static/media/flag-icon.542afdb5.svg 1900w"><noscript></noscript></span></span><span>Avg
-                                                        1st Inning Score</span>
+                                                                srcset="/_next/static/media/flag-icon.542afdb5.svg 450w, /_next/static/media/flag-icon.542afdb5.svg 992w, /_next/static/media/flag-icon.542afdb5.svg 1200w, /_next/static/media/flag-icon.542afdb5.svg 1900w"><noscript></noscript></span></span><span>batting condition</span>
                                                 </p>
                                                 <div class="big-text font-semi">162</div>
                                             </section>
@@ -584,7 +583,8 @@
                                         </div>
                                     </div>
                                 </section>
-                            </div>
+                            </div> --}}
+                            
                             <section>
                                 <h4 class="text-uppercase">Preview</h4>
                                 <div class="common-box big-text">

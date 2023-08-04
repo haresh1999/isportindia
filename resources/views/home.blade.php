@@ -2029,7 +2029,7 @@
   <div class="undefined d-flex flex-wrap font-semi text-center justify-content-between">
     @for ($i = 0; $i < 10; $i++) <a
       class="style_item___vvSu style_itemLink__WJdkV common-box px-1 mb-2 position-relative overflow-hidden"
-      href="{{ route('cricket.teams',$rank['teams']['odis'][$i]['team']) }}">
+      href="{{ route('teams',$rank['teams']['odis'][$i]['team']) }}">
       <div class="style_flag__W_wsf position-absolute">
         <span style="
                       box-sizing: border-box;

@@ -223,182 +223,72 @@
                     <div
                         class="style_commonNav__oQmFF undefined style_stickyNav__I_pcA  undefined text-uppercase scroll-list flex-nowrap text-nowrap nav nav-pills">
 
-                        <div tabtype="home" onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="home style_item___mmv9 nav-item">
-                            <p class="nav-link tab">home</p>
+                        <div class="home style_item___mmv9 nav-item">
+                            <a class="nav-link tab" href="{{ route('season.details',[$cId,'q' => 'home']) }}">home</a>
                         </div>
-                        <div tabtype="news" onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="news style_item___mmv9 nav-item tab">
-                            <p class="false nav-link" href="#">news</p>
+                        <div class="news style_item___mmv9 nav-item tab">
+                            <a class="false nav-link" href="{{ route('season.details',[$cId,'q' => 'news']) }}">news</a>
                         </div>
-                        <!-- <div tabtype="videos" onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="style_item___mmv9 nav-item tab"><p class="false nav-link">videos</p></div> -->
-                        <div tabtype="fixtures"
-                            onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="fixtures style_item___mmv9 nav-item tab">
-                            <p class="false nav-link tab"> fixtures</p>
+
+                        <div class="fixtures style_item___mmv9 nav-item tab">
+                            <a class="false nav-link tab"
+                                href="{{ route('season.details',[$cId,'q' => 'fixtures']) }}">fixtures</a>
                         </div>
-                        <div tabtype="stats" onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="stats style_item___mmv9 nav-item tab">
-                            <p class="false nav-link ">stats</p>
+                        <div class="stats style_item___mmv9 nav-item tab">
+                            <a class="false nav-link"
+                                href="{{ route('season.details',[$cId,'q' => 'stats']) }}">stats</a>
                         </div>
-                        <div tabtype="fantasy"
-                            onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="fantasy style_item___mmv9 nav-item tab">
-                            <p class="false nav-link tab">fantasy tips</p>
+                        <div class="fantasy style_item___mmv9 nav-item tab">
+                            <a class="false nav-link tab"
+                                href="{{ route('season.details',[$cId,'q' => 'fantasy']) }}">fantasy tips</a>
                         </div>
-                        <div tabtype="squads" onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
-                            class="squads squads style_item___mmv9 nav-item tab">
-                            <p class="false nav-link">squads</p>
+                        <div class="squads squads style_item___mmv9 nav-item tab">
+                            <a class="false nav-link"
+                                href="{{ route('season.details',[$cId,'q' => 'squads']) }}">squads</a>
                         </div>
                     </div>
                     <!-- MOST RUNS SECTION START -->
                     <div class="undefined d-md-flex justify-content-between align-items-center mb-2">
-                        <h4 class="text-uppercase mb-1 mb-md-0">WI vs IND&nbsp;Most Runs</h4>
-                        <div class="style_filters__b6d9E ms-auto me-1">
-                            <div class="dropdown">
-                                <div class="style_selectContainer__4Iui4 position-relative"><input placeholder="TEST"
-                                        readonly=""
-                                        class="style_formControl__3Z2Uk style_formSelect__UYPE5     br-sm style_formControl__aLMXT form-control">
-                                </div>
-                                <div x-placement="bottom-start"
-                                    class="style_dropdownMenu__MZdP3 common-dropdown br-sm p-0 overflow-auto dropdown-menu">
-                                    <a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w style_active__yKud9 dropdown-item"
-                                        role="button" tabindex="0">TEST</a></div>
-                            </div>
-                        </div>
-                        <div class="style_filterStats__pfxfP">
-                            <ul class="d-none">
-                                <li><a href="/west-indies-vs-india/stats/batting-most-runs/">Most Runs</a></li>
-                                <li><a href="/west-indies-vs-india/stats/batting-most-fours/">Most Fours</a></li>
-                                <li><a href="/west-indies-vs-india/stats/batting-most-sixes/">Most Sixes</a></li>
-                                <li><a href="/west-indies-vs-india/stats/batting-most-run50/">Most Fifties</a></li>
-                                <li><a href="/west-indies-vs-india/stats/batting-most-centuries/">Most Centuries</a>
-                                </li>
-                                <li><a href="/west-indies-vs-india/stats/batting-most-run4-innings/">Most Fours
-                                        (Innings)</a>
-                                </li>
-                                <li><a href="/west-indies-vs-india/stats/batting-most-run6-innings/">Most Sixes
-                                        (Innings)</a>
-                                </li>
-                                <li><a href="/west-indies-vs-india/stats/batting-most-runs-innings/">Highest Individual
-                                        Score</a></li>
-                                <li><a href="/west-indies-vs-india/stats/batting-highest-strikerate/">Highest Strike
-                                        Rates</a>
-                                </li>
-                                <li><a href="/west-indies-vs-india/stats/batting-highest-average/">Highest Average</a>
-                                </li>
-                                <li><a href="/west-indies-vs-india/stats/batting-highest-strikerate-innings/">Highest
-                                        Strike
-                                        Rates (Innings)</a></li>
-                                <li><a href="/west-indies-vs-india/stats/bowling-top-wicket-takers/">Top Wicket
-                                        Takers</a></li>
-                                <li><a href="/west-indies-vs-india/stats/bowling-four-wickets/">Four Wickets</a></li>
-                                <li><a href="/west-indies-vs-india/stats/bowling-five-wickets/">Five Wickets</a></li>
-                                <li><a href="/west-indies-vs-india/stats/bowling-maidens/">Maidens</a></li>
-                                <li><a href="/west-indies-vs-india/stats/bowling-best-averages/">Best Averages</a></li>
-                                <li><a href="/west-indies-vs-india/stats/bowling-best-bowling-figures/">Best Bowling
-                                        Figures</a>
-                                </li>
-                                <li><a href="/west-indies-vs-india/stats/bowling-best-economy-rates/">Best Economy
-                                        Rates</a>
-                                </li>
-                                <li><a href="/west-indies-vs-india/stats/bowling-best-strike-rates/">Best Strike
-                                        Rates</a></li>
-                                <li><a href="/west-indies-vs-india/stats/bowling-most-runs-conceded-innings/">Most runs
-                                        conceded
-                                        in an innings</a></li>
-                                <li><a href="/west-indies-vs-india/stats/bowling-best-economy-rates-innings/">Best
-                                        Economy Rates
-                                        (Innings)</a></li>
-                                <li><a href="/west-indies-vs-india/stats/bowling-best-strike-rates-innings/">Best Strike
-                                        Rates
-                                        (Innings)</a></li>
-                                <li><a href="/west-indies-vs-india/stats/team-total-runs/">Total Runs</a></li>
-                                <li><a href="/west-indies-vs-india/stats/team-total-wickets/">Total Wickets</a></li>
-                                <li><a href="/west-indies-vs-india/stats/batting-most-fifties/">Most Fifties</a></li>
-                                <li><a href="/west-indies-vs-india/stats/team-total-run100/">Most Centuries</a></li>
-                            </ul>
-                            <div class="dropdown">
-                                <div class="style_selectContainer__4Iui4 position-relative"><input
-                                        placeholder="Most Runs" readonly=""
-                                        class="style_formControl__3Z2Uk style_formSelect__UYPE5     br-sm style_formControl__aLMXT form-control">
-                                </div>
-                                <div x-placement="bottom-start"
-                                    class="style_dropdownMenu__MZdP3 common-dropdown br-sm p-0 overflow-auto dropdown-menu">
-                                    <div class="style_dropdownHeader__OJfBb dropdown-header" role="heading">Bat</div><a
-                                        data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w style_active__yKud9 dropdown-item"
-                                        role="button" tabindex="0">Most Runs</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Most
-                                        Fours</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Most
-                                        Sixes</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Most
-                                        Fifties</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Most
-                                        Centuries</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Most
-                                        Fours
-                                        (Innings)</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Most
-                                        Sixes
-                                        (Innings)</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button"
-                                        tabindex="0">Highest
-                                        Individual Score</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button"
-                                        tabindex="0">Highest
-                                        Strike Rates</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button"
-                                        tabindex="0">Highest
-                                        Average</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button"
-                                        tabindex="0">Highest
-                                        Strike Rates (Innings)</a>
-                                    <div class="style_dropdownHeader__OJfBb dropdown-header" role="heading">Bowl</div><a
-                                        data-rr-ui-dropdown-item="" class="style_dropdownItem__D8P9w  dropdown-item"
-                                        role="button" tabindex="0">Top Wicket Takers</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Four
-                                        Wickets</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Five
-                                        Wickets</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button"
-                                        tabindex="0">Maidens</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Best
-                                        Averages</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Best
-                                        Bowling
-                                        Figures</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Best
-                                        Economy
-                                        Rates</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Best
-                                        Strike Rates</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Most
-                                        runs
-                                        conceded in an innings</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Best
-                                        Economy
-                                        Rates (Innings)</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Best
-                                        Strike
-                                        Rates (Innings)</a>
-                                    <div class="style_dropdownHeader__OJfBb dropdown-header" role="heading">Team</div><a
-                                        data-rr-ui-dropdown-item="" class="style_dropdownItem__D8P9w  dropdown-item"
-                                        role="button" tabindex="0">Total Runs</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button"
-                                        tabindex="0">Total
-                                        Wickets</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Most
-                                        Fifties</a><a data-rr-ui-dropdown-item=""
-                                        class="style_dropdownItem__D8P9w  dropdown-item" role="button" tabindex="0">Most
-                                        Centuries</a>
+                        <h4 class="text-uppercase mb-1 mb-md-0">{{$season['series_name']}}:&nbsp;{{str_replace('_','
+                            ',$slug) }}</h4>
+                        <form class="d-flex align-items-center" action="{{ route('state.details',[$cId,$slug]) }}"
+                            method="get">
+                            <div class="style_filters__b6d9E ms-auto me-1">
+                                <div class="dropdown">
+                                    <select
+                                        class="col style_selectNative__gg_ys style_formControl__3Z2Uk style_formSelect__UYPE5 br-sm"
+                                        name="team" id="team">
+                                        <option value="" selected>ALL Team</option>
+                                        @foreach ($teams['teams'] as $team)
+                                        <option {{ $team['tid']==Request::get('team') ? 'selected' : '' }}
+                                            value="{{ $team['tid'] }}">{{ $team['title'] }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
-                        </div>
+                            <div class="style_filterStats__pfxfP">
+                                <div class="dropdown">
+                                    <select
+                                        class="col style_selectNative__gg_ys style_formControl__3Z2Uk style_formSelect__UYPE5 br-sm"
+                                        name="slug">
+                                        @foreach ($states['stat_types'] as $state)
+                                        <optgroup label="{{$state['group_title']}}">
+                                            @foreach ($state['types'] as $statesKey => $stateTypes)
+                                            <option {{ $statesKey==$slug ? 'selected' : '' }}
+                                                value="{{ route('state.details',[$cId,$statesKey]) }}">{{$stateTypes}}
+                                            </option>
+                                            @endforeach
+                                        </optgroup>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit"
+                                class="theme-btn outline-btn small-btn ms-2 ms-md-3 btn btn-primary">Search</button>
+                        </form>
                     </div>
+
+                    @if ($type == 'batting')
 
                     <div class="style_stats__QtK5R">
                         <div class="table-responsive">
@@ -421,204 +311,122 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="">
-                                        <td>1</td>
-                                        <td><a class="theme-text" href="/cricket-players/yashasvi-jaiswal/">Yashasvi
-                                                Jaiswal</a>
+                                    @foreach ($players['stats'] as $key => $player)
+                                    <tr>
+                                        <td>{{++$key}}</td>
+                                        <td>
+                                            <a class="theme-text"
+                                                href="{{route('player',$player['player']['pid'])}}">{{$player['player']['title']
+                                                }}</a>
                                         </td>
-                                        <td class=""><a class="theme-text"
-                                                href="/cricket-teams/india/"><span>IND</span></a>
+                                        <td class="">
+                                            <a class="theme-text"
+                                                href="{{route('teams',$player['team']['tid'])}}"><span>{{$player['team']['title']}}</span></a>
                                         </td>
-                                        <td class="style_highLight__aNeRp">266</td>
-                                        <td class="">2</td>
-                                        <td class="">491</td>
-                                        <td class="">88.67</td>
-                                        <td class="">171</td>
-                                        <td class="">54.18</td>
-                                        <td class="">29</td>
-                                        <td class="">3</td>
-                                        <td class="">1</td>
-                                        <td class="">1</td>
+                                        <td class="style_highLight__aNeRp">{{$player['runs']}}</td>
+                                        <td class="">{{$player['matches']}}</td>
+                                        <td class="">{{$player['balls']}}</td>
+                                        <td class="">{{$player['average']}}</td>
+                                        <td class="">{{$player['highest']}}</td>
+                                        <td class="">{{$player['strike']}}</td>
+                                        <td class="">{{$player['run4']}}</td>
+                                        <td class="">{{$player['run6']}}</td>
+                                        <td class="">{{$player['run100']}}</td>
+                                        <td class="">{{$player['run50']}}</td>
                                     </tr>
-                                    <tr class="">
-                                        <td>2</td>
-                                        <td><a class="theme-text" href="/cricket-players/rohit-sharma/">Rohit Sharma</a>
-                                        </td>
-                                        <td class=""><a class="theme-text"
-                                                href="/cricket-teams/india/"><span>IND</span></a>
-                                        </td>
-                                        <td class="style_highLight__aNeRp">240</td>
-                                        <td class="">2</td>
-                                        <td class="">408</td>
-                                        <td class="">80</td>
-                                        <td class="">103</td>
-                                        <td class="">58.82</td>
-                                        <td class="">24</td>
-                                        <td class="">7</td>
-                                        <td class="">1</td>
-                                        <td class="">2</td>
-                                    </tr>
-                                    <tr class="">
-                                        <td>3</td>
-                                        <td><a class="theme-text" href="/cricket-players/virat-kohli/">Virat Kohli</a>
-                                        </td>
-                                        <td class=""><a class="theme-text"
-                                                href="/cricket-teams/india/"><span>IND</span></a>
-                                        </td>
-                                        <td class="style_highLight__aNeRp">197</td>
-                                        <td class="">2</td>
-                                        <td class="">388</td>
-                                        <td class="">98.5</td>
-                                        <td class="">121</td>
-                                        <td class="">50.77</td>
-                                        <td class="">16</td>
-                                        <td class="">--</td>
-                                        <td class="">1</td>
-                                        <td class="">1</td>
-                                    </tr>
-                                    <tr class="">
-                                        <td>4</td>
-                                        <td><a class="theme-text" href="/cricket-players/kraigg-brathwaite/">Kraigg
-                                                Brathwaite</a></td>
-                                        <td class=""><a class="theme-text"
-                                                href="/cricket-teams/west-indies/"><span>WI</span></a></td>
-                                        <td class="style_highLight__aNeRp">130</td>
-                                        <td class="">2</td>
-                                        <td class="">380</td>
-                                        <td class="">32.5</td>
-                                        <td class="">75</td>
-                                        <td class="">34.21</td>
-                                        <td class="">13</td>
-                                        <td class="">1</td>
-                                        <td class="">--</td>
-                                        <td class="">1</td>
-                                    </tr>
-                                    <tr class="">
-                                        <td>5</td>
-                                        <td><a class="theme-text" href="/cricket-players/alick-athanaze/">Alick
-                                                Athanaze</a>
-                                        </td>
-                                        <td class=""><a class="theme-text"
-                                                href="/cricket-teams/west-indies/"><span>WI</span></a></td>
-                                        <td class="style_highLight__aNeRp">112</td>
-                                        <td class="">2</td>
-                                        <td class="">258</td>
-                                        <td class="">37.33</td>
-                                        <td class="">47</td>
-                                        <td class="">43.41</td>
-                                        <td class="">14</td>
-                                        <td class="">1</td>
-                                        <td class="">--</td>
-                                        <td class="">--</td>
-                                    </tr>
-
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
 
                     </div>
-
-                    <!-- MOST RUNS SECTION END -->
-
-
-                    <!-- TOP WICKET SECTION START -->
-                    <h4>Top wicket section</h4>
-                    <table class="numbered undefined undefined text-center font-semi text-nowrap table">
-                        <thead>
-                            <tr>
-                                <th class="">No</th>
-                                <th class="">Bowler</th>
-                                <th class="">Team</th>
-                                <th class="">Wkts</th>
-                                <th class="">Mat</th>
-                                <th class="">Ovs</th>
-                                <th class="">BBI</th>
-                                <th class="">Balls</th>
-                                <th class="">Avg</th>
-                                <th class="">Ecn</th>
-                                <th class="">Runs</th>
-                                <th class="">4-Fers</th>
-                                <th class="">5-Fers</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="">
-                                <td>1</td>
-                                <td><a class="theme-text" href="/cricket-players/ravichandran-ashwin/">Ravichandran
-                                        Ashwin</a>
-                                </td>
-                                <td class=""><a class="theme-text" href="/cricket-teams/india/"><span>IND</span></a>
-                                </td>
-                                <td class="style_highLight__aNeRp">15</td>
-                                <td class="">2</td>
-                                <td class="">90</td>
-                                <td class="">7/71</td>
-                                <td class="">540</td>
-                                <td class="">15</td>
-                                <td class="">2.5</td>
-                                <td class="">225</td>
-                                <td class="">--</td>
-                                <td class="">--</td>
-                            </tr>
-                            <tr class="">
-                                <td>2</td>
-                                <td><a class="theme-text" href="/cricket-players/ravindra-jadeja/">Ravindra Jadeja</a>
-                                </td>
-                                <td class=""><a class="theme-text" href="/cricket-teams/india/"><span>IND</span></a>
-                                </td>
-                                <td class="style_highLight__aNeRp">7</td>
-                                <td class="">2</td>
-                                <td class="">65</td>
-                                <td class="">3/26</td>
-                                <td class="">390</td>
-                                <td class="">15.86</td>
-                                <td class="">1.71</td>
-                                <td class="">111</td>
-                                <td class="">--</td>
-                                <td class="">--</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                    <!-- TOP WICKET SECTION END -->
-
-
-                    <!-- TOTAL RUNS SECTION START -->
-                    <h4>Total runs Section</h4>
-                    <div class="table-responsive">
-                        <table class="numbered undefined undefined text-center font-semi text-nowrap table">
-                            <thead>
-                                <tr>
-                                    <th class="">No</th>
-                                    <th class="">Team</th>
-                                    <th class="">Runs</th>
-                                    <th class="">100s</th>
-                                    <th class="">50s</th>
-                                    <th class="">Wkts</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="">
-                                    <td>1</td>
-                                    <td><a class="theme-text" href="/cricket-teams/india/">India</a></td>
-                                    <td class="style_highLight__aNeRp">1040</td>
-                                    <td class="">3</td>
-                                    <td class="">7</td>
-                                    <td class="">32</td>
-                                </tr>
-                                <tr class="">
-                                    <td>2</td>
-                                    <td><a class="theme-text" href="/cricket-teams/west-indies/">West Indies</a></td>
-                                    <td class="style_highLight__aNeRp">611</td>
-                                    <td class="">--</td>
-                                    <td class="">1</td>
-                                    <td class="">17</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    @elseif ($type == 'bowling')
+                    <div class="style_stats__QtK5R">
+                        <div class="table-responsive">
+                            <table class="numbered undefined undefined text-center font-semi text-nowrap table">
+                                <thead>
+                                    <tr>
+                                        <th class="">No</th>
+                                        <th class="">Bowler</th>
+                                        <th class="">Team</th>
+                                        <th class="">Wkts</th>
+                                        <th class="">Mat</th>
+                                        <th class="">Ovs</th>
+                                        <th class="">BBI</th>
+                                        <th class="">Balls</th>
+                                        <th class="">Avg</th>
+                                        <th class="">Ecn</th>
+                                        <th class="">Runs</th>
+                                        <th class="">4-Fers</th>
+                                        <th class="">5-Fers</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($players['stats'] as $key1 => $player)
+                                    <tr class="">
+                                        <td>{{++$key1}}</td>
+                                        <td>
+                                            <a class="theme-text"
+                                                href="{{route('player',$player['player']['pid'])}}">{{$player['player']['title']
+                                                }}</a>
+                                        </td>
+                                        <td class="">
+                                            <a class="theme-text"
+                                                href="{{route('teams',$player['team']['tid'])}}"><span>{{$player['team']['title']}}</span></a>
+                                        </td>
+                                        <td class="style_highLight__aNeRp">{{$player['wickets']}}</td>
+                                        <td class="">{{$player['matches']}}</td>
+                                        <td class="">{{$player['overs']}}</td>
+                                        <td class="">{{$player['bestinning']}}</td>
+                                        <td class="">{{$player['balls']}}</td>
+                                        <td class="">{{$player['average']}}</td>
+                                        <td class="">{{$player['econ']}}</td>
+                                        <td class="">{{$player['runs']}}</td>
+                                        <td class="">{{$player['wicket4i']}}</td>
+                                        <td class="">{{$player['wicket5i']}}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <!-- TOTAL RUNS SECTION END -->
-                    <div class="table-footer-note xsmall-text mt-n1">Last Updated On Aug 02, 2023, 23:30 IST</div>
+
+                    @elseif ($type == 'team')
+                    <div class="style_stats__QtK5R">
+                        <div class="table-responsive">
+
+                            <table class="numbered undefined undefined text-center font-semi text-nowrap table">
+                                <thead>
+                                    <tr>
+                                        <th class="">No</th>
+                                        <th class="">Team</th>
+                                        <th class="">Runs</th>
+                                        <th class="">100s</th>
+                                        <th class="">50s</th>
+                                        <th class="">Wkts</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($players['stats'] as $key2 => $player)
+                                    <tr class="">
+                                        <td>{{++$key2}}</td>
+                                        <td>
+                                            <a class="theme-text"
+                                                href="{{route('teams',$player['team']['tid'])}}">{{$player['team']['title']}}</a>
+                                        </td>
+                                        <td class="style_highLight__aNeRp">{{$player['runs']}}</td>
+                                        <td class="">{{$player['run100']}}</td>
+                                        <td class="">{{$player['run50']}}</td>
+                                        <td class="">{{$player['wickets']}}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    @endif
+                    {{-- <div class="table-footer-note xsmall-text mt-n1">Last Updated On Aug 02, 2023, 23:30 IST</div>
+                    --}}
                     <p class="mt-1"><b>Inns:</b> Innings, <b>Avg:</b> Average, <b>SR:</b> Strike Rate, <b>H.S:</b>
                         Highest
                         Score, <b>Wkts:</b> Wickets, <b>Ovs:</b> Overs, <b>4-Fers:</b> Four Wicket Haul, <b>5-Fers:</b>
