@@ -217,8 +217,7 @@
                 </section>
 
                 <div id="series_detail_tabs">
-                    <div
-                        class="style_commonNav__oQmFF undefined style_stickyNav__I_pcA  undefined text-uppercase scroll-list flex-nowrap text-nowrap nav nav-pills">
+                    <div class="style_commonNav__oQmFF undefined style_stickyNav__I_pcA  undefined text-uppercase scroll-list flex-nowrap text-nowrap nav nav-pills">
 
                         <div tabtype="home" onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
                             class="home style_item___mmv9 nav-item">
@@ -1175,7 +1174,7 @@
 
 @section('script')
 <script>
-    $(function(){
+$(function(){
     if ("{{Request::has('q')}}") {
         
         var tab = "{{Request::get('q')}}";
@@ -1223,7 +1222,5 @@ const readMoreClickHandler = (button)=>{
         button.innerText = "Read Less"
     }
 }
-
-
 </script>
 @endsection
