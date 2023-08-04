@@ -181,24 +181,24 @@
                                 <p class="nav-link tab">Scorecard</p>
                         </div>
                         
-                        <div tabtype="standings" onclick="tabclickHandler(this,'scorecard_detail_tabs','style_active__nlf9x')" class="standings style_item___mmv9 nav-item">
+                        {{-- <div tabtype="standings" onclick="tabclickHandler(this,'scorecard_detail_tabs','style_active__nlf9x')" class="standings style_item___mmv9 nav-item">
                                 <p class="nav-link tab">Standings</p>
-                        </div>
+                        </div> --}}
 
                         <div tabtype="overs" onclick="tabclickHandler(this,'scorecard_detail_tabs','style_active__nlf9x')" class="overs style_item___mmv9 nav-item">
                                 <p class="nav-link tab">Overs</p>
                         </div>
 
-                        <div tabtype="news" onclick="tabclickHandler(this,'scorecard_detail_tabs','style_active__nlf9x')" class="news style_item___mmv9 nav-item">
-                                <p class="nav-link tab">News</p>
+                        <div class="news style_item___mmv9 nav-item">
+                            <a class="nav-link tab" href="{{ route('season.details',[$response['competition']['cid'],'q' => 'stats']) }}">News</a>
                         </div>
                         
-                        <div tabtype="stats" onclick="tabclickHandler(this,'scorecard_detail_tabs','style_active__nlf9x')" class="stats style_item___mmv9 nav-item">
-                                <p class="nav-link tab">Stats</p>
+                        <div class="stats style_item___mmv9 nav-item">
+                            <a class="nav-link tab" href="{{ route('season.details',[$response['competition']['cid'],'q' => 'stats']) }}">Stats</a>
                         </div>
                         
-                        <div tabtype="fantasy_tips" onclick="tabclickHandler(this,'scorecard_detail_tabs','style_active__nlf9x')" class="fantasy_tips style_item___mmv9 nav-item">
-                                <p class="nav-link tab">Fantasy Tips</p>
+                        <div class="fantasy_tips style_item___mmv9 nav-item">
+                            <a class="nav-link tab" href="{{ route('season.details',[$response['competition']['cid'],'q' => 'fantasy']) }}">Fantasy Tips</a>
                         </div>
                         
                         <div tabtype="upcoming" onclick="tabclickHandler(this,'scorecard_detail_tabs','style_active__nlf9x')" class="upcoming style_item___mmv9 nav-item">
@@ -939,24 +939,12 @@
                         </section>
                     </div>
 
-                    <div class="style_seriesHome__Jnsnk standings-data tabs-data">
+                    {{-- <div class="style_seriesHome__Jnsnk standings-data tabs-data">
                         standings
-                    </div>
+                    </div> --}}
 
                     <div class="style_seriesHome__Jnsnk overs-data tabs-data">
                         overs
-                    </div>
-
-                    <div class="style_seriesHome__Jnsnk news-data tabs-data">
-                        news
-                    </div>
-
-                    <div class="style_seriesHome__Jnsnk stats-data tabs-data">
-                        stats
-                    </div>
-
-                    <div class="style_seriesHome__Jnsnk fantasy_tips-data tabs-data">
-                        fantasy_tips
                     </div>
 
                     <div class="style_seriesHome__Jnsnk upcoming-data tabs-data">
