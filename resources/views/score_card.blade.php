@@ -279,8 +279,7 @@
                                                                             <span
                                                                                 class="d-block d-sm-none">{{$bat['name']}}</span>
                                                                             <span class="ps-1">
-                                                                                @if
-                                                                                (in_array($bat['role'],['bat','wkbat']))
+                                                                                @if(in_array($bat['role'],['bat','wkbat']))
                                                                                 <span
                                                                                     class="d-flex text-center text-light xsmall-text">
                                                                                     <span class="style_icon__hTxaO">
