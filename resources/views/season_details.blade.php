@@ -193,8 +193,7 @@
                                 </g>
                             </svg></button>
                     </div>
-                    <div
-                    id ="readMoreDataCont"
+                    <div id="readMoreDataCont"
                         class="undefined false page-header_clamp__Hgm_F t-ellipsis line-clamp-3 overflow-hidden position-relative c-transition big-text">
                         <div class="style_commonContent__Aq_YG style_darkContent__s9WAF style_smallContent__1I0SW">
                             <div>
@@ -213,11 +212,13 @@
                         </div>
                     </div>
                     <div id="readMoreBtn" class="text-end"><button type="button" onclick="readMoreClickHandler(this)"
-                            class="page-header_readMore__wXB_M theme-btn small-btn d-inline-flex align-item-center mt-2 mt-md-3 btn btn-primary">Read More</button></div>
+                            class="page-header_readMore__wXB_M theme-btn small-btn d-inline-flex align-item-center mt-2 mt-md-3 btn btn-primary">Read
+                            More</button></div>
                 </section>
 
                 <div id="series_detail_tabs">
-                    <div class="style_commonNav__oQmFF undefined style_stickyNav__I_pcA  undefined text-uppercase scroll-list flex-nowrap text-nowrap nav nav-pills">
+                    <div
+                        class="style_commonNav__oQmFF undefined style_stickyNav__I_pcA  undefined text-uppercase scroll-list flex-nowrap text-nowrap nav nav-pills">
 
                         <div tabtype="home" onclick="tabclickHandler(this,'series_detail_tabs','style_active__nlf9x')"
                             class="home style_item___mmv9 nav-item">
@@ -353,9 +354,9 @@
                                     News &gt;</a></div>
                             @endif
                         </section>
-
+                        <p></p>
                         <h4 class="text-uppercase">Top Rankings</h4>
-                        <section class="common-section">
+                        <section class="common-section" style="padding-top: 0">
                             <div class="flex-nowrap scroll-list row">
                                 @foreach ($ranking as $rankKey => $rank)
                                 <div class="col-xl-3 col-auto">
@@ -415,7 +416,7 @@
                         </section>
 
                         <h4 class="text-uppercase">Fantasy Articles</h4>
-                        <section>
+                        <section style="padding-top: 0">
                             <div class="row">
                                 @foreach ($farticles as $fantasy)
                                 @if ($loop->first)
@@ -1175,18 +1176,21 @@
 @section('script')
 <script>
 $(function(){
+
     if ("{{Request::has('q')}}") {
-        
+
         var tab = "{{Request::get('q')}}";
+        
     }else{
         var tab = localStorage.getItem('type',"{{Request::get('q')}}");
     }
 
     if (tab != null) {
         
+        $('.'+tab).addClass('style_active__nlf9x')
         $('.'+tab).click()
     }else{
-
+        $('.home p').addClass('style_active__nlf9x')
         $('.home p').click()
     }
 })
