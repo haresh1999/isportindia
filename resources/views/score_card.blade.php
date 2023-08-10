@@ -1035,7 +1035,7 @@
 
 @section('script')
 <script>
-    $(function(){
+$(function(){
     scrollContent(-1)
 })
 
