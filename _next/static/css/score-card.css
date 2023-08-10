@@ -1796,7 +1796,7 @@ table.dark tbody td {
 .nav-pills .nav-link {
     padding: 7px;
     border-radius: 2em;
-    background: var(--theme-bg);
+    background: #fff;
     font-size: 13px;
     line-height: 18px;
     font-weight: 700;
