@@ -230,11 +230,11 @@
       {{-- ARTICLE NEWS --}}
 
       <div id="article_tabs" class="style_centerContent__xrgF5 col-lg-6">
-        <div class="style_articleTab__eD_8W text-uppercase equal-width-nav mb-3 mb-md-4 overflow-hidden nav nav-pills">
+        <div class="style_articleTab__eD_8W light-bg text-uppercase equal-width-nav mb-3 mb-md-4 overflow-hidden nav nav-pills" >
           <div class="nav-item">
             <button type="button" onclick="tabclickHandler(this,'article_tabs','style_active__SJTCU')"
               tabtype="Articles"
-              class="style_navLink__OPMT9 style_active__SJTCU w-100 nav-link position-relative rounded-0 d-flex align-items-center justify-content-center btn btn-primary">
+              class="Articles style_navLink__OPMT9 w-100 nav-link position-relative rounded-0 d-flex align-items-center justify-content-center btn btn-primary">
               <span class="style_icon__Q0gNi me-1 me-lg-2 my-1"><span style="
                       box-sizing: border-box;
                       display: block;
@@ -286,7 +286,7 @@
           </div>
           <div class="nav-item">
             <button type="button" tabtype="Fantacy" onclick="tabclickHandler(this,'article_tabs','style_active__SJTCU')"
-              class="style_navLink__OPMT9 false nav-link position-relative rounded-0 d-flex align-items-center justify-content-center w-100 btn btn-primary">
+              class="Fantacy style_navLink__OPMT9 false nav-link position-relative rounded-0 d-flex align-items-center justify-content-center w-100 btn btn-primary">
               <span class="style_icon__Q0gNi me-1 me-lg-2 my-1"><span style="
                       box-sizing: border-box;
                       display: block;
@@ -338,7 +338,7 @@
           </div>
           <div class="nav-item">
             <button type="button" tabtype="Videos" onclick="tabclickHandler(this,'article_tabs','style_active__SJTCU')"
-              class="style_navLink__OPMT9 false nav-link position-relative rounded-0 d-flex align-items-center justify-content-center w-100 btn btn-primary">
+              class="Videos style_navLink__OPMT9 false nav-link position-relative rounded-0 d-flex align-items-center justify-content-center w-100 btn btn-primary">
               <span class="style_icon__Q0gNi me-1 me-lg-2 my-1"><span style="
                       box-sizing: border-box;
                       display: block;
@@ -2180,8 +2180,19 @@ const categoryClickHandler = (category) => {
 
     const showRespectiveTabSection = (tabs_root_id,activeTabType) => {
         $(`#${tabs_root_id} .tabs-data`).removeClass("show").addClass('hide');
-        console.log(activeTabType)
+        localStorage.setItem('news_type',activeTabType);
         $(`#${tabs_root_id} .${activeTabType}-data`).addClass("show")
     }
+</script>
+
+<script>
+var n_type = localStorage.getItem('news_type');
+
+if (n_type == null) {
+  $('.Articles').click();
+}
+else{
+  $('.'+n_type).click();
+}
 </script>
 @endsection

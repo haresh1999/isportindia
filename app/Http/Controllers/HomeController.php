@@ -13,6 +13,7 @@ use App\Models\{
 
 use Illuminate\Support\Facades\{
     DB,
+    Session,
 };
 
 class HomeController extends Controller
@@ -257,6 +258,8 @@ class HomeController extends Controller
         $response = getSeasonsDetails($cId);
         $matchs = $response;
 
+        $venues = collect(array_column($matchs, 'venue'))->unique('venue_id');
+
         $filter = [];
 
         foreach ($response as $key => $venue) {
@@ -287,9 +290,15 @@ class HomeController extends Controller
         $season['title'] = $response[0]['title'];
         $season['season'] = $response[0]['competition']['season'];
 
+        $news = News::where('status', 1)
+            ->where('cid', $cId)
+            ->select('title', 'created_at', 'id', 'img', 'slug', 'short_description', 'min', 'type');
+
         $articles = Article::where('status', 1)
             ->where('cid', $cId)
             ->whereNull('fantasy_id')
+            ->select('title', 'created_at', 'id', 'img', 'slug', 'short_description', 'min', 'type')
+            ->union($news)
             ->latest()
             ->limit(request()->has('per_page') ? request()->get('per_page') : 5)
             ->get();
@@ -301,16 +310,19 @@ class HomeController extends Controller
             ->limit(5)
             ->get();
 
-        $news = News::where('status', 1)
-            ->where('cid', $cId)
-            ->latest()
-            ->limit(request()->has('per_page') ? request()->get('per_page') : 5)
-            ->get();
+        $tab = true;
+        
+        if (Session::get('c_id') == $cId) {
+            
+            $tab = false;
+        }
 
+        session()->put('c_id',$cId);
+        
         return view('season_details', compact(
             'matchs',
             'response',
-            'news',
+            'venues',
             'squads',
             'bat',
             'bowl',
@@ -323,7 +335,8 @@ class HomeController extends Controller
             'ranking',
             'states',
             'season',
-            'teams'
+            'teams',
+            'tab'
         ));
     }
 

@@ -252,6 +252,7 @@
 
                     <!-- HOME SECTION START -->
                     <div class="style_seriesHome__Jnsnk home-data tabs-data">
+                        @if ($articles->isNotEmpty())
                         <h4 class="text-uppercase">Latest Article</h4>
                         <section>
                             <div class="row">
@@ -355,6 +356,9 @@
                             @endif
                         </section>
                         <p></p>
+                        @endif
+
+                        @if (! empty($ranking))
                         <h4 class="text-uppercase">Top Rankings</h4>
                         <section class="common-section" style="padding-top: 0">
                             <div class="flex-nowrap scroll-list row">
@@ -379,8 +383,7 @@
                                                             style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                                 style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
                                                                 alt="{{$rank['stats'][0]['player']['title']}}"
-                                                                sizes="100vw"
-                                                                src="{{ asset('head-placeholder.webp') }}"
+                                                                sizes="100vw" src="{{ asset('head-placeholder.webp') }}"
                                                                 decoding="async" data-nimg="responsive"
                                                                 style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
                                                     </div>
@@ -414,7 +417,9 @@
                                 @endforeach
                             </div>
                         </section>
+                        @endif
 
+                        @if ($farticles->isNotEmpty())
                         <h4 class="text-uppercase">Fantasy Articles</h4>
                         <section style="padding-top: 0">
                             <div class="row">
@@ -518,6 +523,8 @@
                                 @endforeach
                             </div>
                         </section>
+                        @endif
+
                         {{-- <h4 class="text-uppercase">Videos</h4>
                         <section>
                             <article id="62e770814cbc935afe342263"
@@ -710,49 +717,11 @@
 
                     <!-- NEWS SECTION START -->
                     <div class="style_seriesHome__Jnsnk news-data hide tabs-data">
-                        <h4 class="text-uppercase">News</h4>
+                        @if ($articles->isNotEmpty())
+                        <h4 class="text-uppercase">Latest News</h4>
                         <div class="row">
-                            @foreach ($news as $new)
-                            @if (in_array($new->type,['highlighter']))
-                            <div id="{{$new->id}}" class="col-lg-12 col-sm-6">
-                                <article
-                                    class="style_article__IayJx style_articleGrid__LHxgp undefined flex-sm-column align-items-top style_mobileSmall__SYPwG d-flex light-bg br-lg c-transition"
-                                    id="{{$new->id}}"><a
-                                        class="style_postimg__ftSiV style_postimg__pbfkX d-block mb-0 mb-sm-2 overflow-hidden br-md position-relative a-transition"
-                                        href="{{route('news.details',$new->slug)}}"><span
-                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
-                                                alt="Team India ODI."
-                                                sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
-                                                src="{{getImageUrl($new->img)}}" decoding="async" data-nimg="responsive"
-                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
-                                    <div class="d-flex flex-column flex-grow-1">
-                                        <h4 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
-                                                href="{{route('news.details',$new->slug)}}">{{ $new->title }}</a></h4>
-                                        <div
-                                            class="style_articleInfo__WqisT style_articleInfo__LJyqf text-muted d-flex mt-auto">
-                                            <span class="d-flex align-items-center"><span
-                                                    class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
-                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                            alt="Calender" sizes="100vw"
-                                                            src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
-                                                            decoding="async" data-nimg="responsive"
-                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{Carbon\Carbon::parse($new->created_at)->format('d
-                                                M Y')}}</span><span class="d-flex align-items-center"><span
-                                                    class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
-                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
-                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                            alt="Clock" sizes="100vw"
-                                                            src="https://www.crictracker.com/_next/static/media/clock-icon.c7a46c6e.svg"
-                                                            decoding="async" data-nimg="responsive"
-                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{$new->min}}
-                                                Min</span>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                            @else
+                            @foreach ($articles as $new)
+                            @if ($loop->first)
                             <div id="{{$new->id}}" class="col-12">
                                 <article id="{{$new->id}}"
                                     class="style_article__IayJx style_articleSmall__SMJc6 undefined light-bg br-lg c-transition">
@@ -797,10 +766,62 @@
                                     </div>
                                 </article>
                             </div>
-
+                            @else
+                            <div id="{{$new->id}}" class="col-lg-4 col-sm-6">
+                                <article
+                                    class="style_article__IayJx style_articleGrid__LHxgp undefined flex-sm-column align-items-top style_mobileSmall__SYPwG d-flex light-bg br-lg c-transition"
+                                    id="{{$new->id}}"><a
+                                        class="style_postimg__ftSiV style_postimg__pbfkX d-block mb-0 mb-sm-2 overflow-hidden br-md position-relative a-transition"
+                                        href="{{route('news.details',$new->slug)}}"><span
+                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 62.5% 0px 0px;"></span><img
+                                                alt="Team India ODI."
+                                                sizes="(max-width: 767px) 120px, (max-width: 991px) 180px, (max-width: 1190px) 200px, 240px"
+                                                src="{{getImageUrl($new->img)}}" decoding="async" data-nimg="responsive"
+                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
+                                    <div class="d-flex flex-column flex-grow-1">
+                                        <h4 class="small-head mb-2"><a class="overflow-hidden line-clamp-3"
+                                                href="{{route('news.details',$new->slug)}}">{{ $new->title }}</a></h4>
+                                        <div
+                                            class="style_articleInfo__WqisT style_articleInfo__LJyqf text-muted d-flex mt-auto">
+                                            <span class="d-flex align-items-center"><span
+                                                    class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                                            alt="Calender" sizes="100vw"
+                                                            src="https://www.crictracker.com/_next/static/media/calender-icon.23e624a9.svg"
+                                                            decoding="async" data-nimg="responsive"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{Carbon\Carbon::parse($new->created_at)->format('d
+                                                M Y')}}</span><span class="d-flex align-items-center"><span
+                                                    class="style_icon__Ukkjh style_icon__h3wFw d-block"><span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                                            alt="Clock" sizes="100vw"
+                                                            src="https://www.crictracker.com/_next/static/media/clock-icon.c7a46c6e.svg"
+                                                            decoding="async" data-nimg="responsive"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></span>{{$new->min}}
+                                                Min</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
                             @endif
                             @endforeach
                         </div>
+                        @else
+                        <div class="undefined my-2 my-md-3  text-center">
+                            <h3 class="text-capitalize">No Data Found</h3>
+                            <div class="style_artwork__XRPij mx-auto mb-2"><span
+                                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 88.75% 0px 0px;"></span><img
+                                        alt="user" src="{{asset('no-data.d23a138b.svg')}}" decoding="async"
+                                        data-nimg="responsive"
+                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                        sizes="100vw"><noscript></noscript></span>
+                            </div>
+                        </div>
+                        @endif
+
                     </div>
                     <!-- NEWS SECTION END -->
 
@@ -840,11 +861,8 @@
                                             class="col style_selectNative__gg_ys style_formControl__3Z2Uk style_formSelect__UYPE5 br-sm"
                                             name="venue" id="venue">
                                             <option value="" selected>ALL Venue</option>
-                                            @foreach ($matchs as $venue)
-                                            <option {{ $venue['venue']['venue_id']==Request::get('venue') ? 'selected'
-                                                : '' }} value="{{ $venue['venue']['venue_id'] }}">
-                                                {{$venue['venue']['name'],
-                                                $venue['venue']['location'],$venue['venue']['country']}}</option>
+                                            @foreach ($venues as $venue)
+                                                <option {{ $venue['venue_id'] == Request::get('venue') ? 'selected' : '' }} value="{{ $venue['venue_id'] }}">{{$venue['name'],$venue['location'],$venue['country']}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -989,7 +1007,8 @@
                                                 <td class=" align-top">
                                                     <div class="d-flex flex-column">
                                                         @foreach ($state['types'] as $statesKey => $stateTypes)
-                                                            <a class="theme-btn outline-btn small-btn outline-light mb-2" href="{{route('state.details',[$cId,$statesKey])}}">{{$stateTypes}}</a>
+                                                        <a class="theme-btn outline-btn small-btn outline-light mb-2"
+                                                            href="{{route('state.details',[$cId,$statesKey])}}">{{$stateTypes}}</a>
                                                         @endforeach
                                                     </div>
                                                 </td>
@@ -1006,6 +1025,7 @@
 
                     <!-- FANTACY SECTION START -->
                     <div class="style_seriesHome__Jnsnk fantasy-data hide tabs-data">
+                        @if ($farticles->isNotEmpty())
                         <div class="undefined mt-4" id="648c1c46d66cffc597f2a49d">
                             @foreach ($farticles as $f_match)
                             @php $m_details = getMatchDetails($f_match->match_id); @endphp
@@ -1060,6 +1080,19 @@
                             </div>
                             @endforeach
                         </div>
+                        @else
+                        <div class="undefined my-2 my-md-3  text-center">
+                            <h3 class="text-capitalize">No Data Found</h3>
+                            <div class="style_artwork__XRPij mx-auto mb-2"><span
+                                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 88.75% 0px 0px;"></span><img
+                                        alt="user" src="{{asset('no-data.d23a138b.svg')}}" decoding="async"
+                                        data-nimg="responsive"
+                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                        sizes="100vw"><noscript></noscript></span>
+                            </div>
+                        </div>
+                        @endif
                     </div>
                     <!-- FANTACY SECTION END -->
 
@@ -1173,8 +1206,13 @@
 @endsection
 
 @section('script')
+@if ($tab)
 <script>
-$(function(){
+localStorage.removeItem("type");
+</script>
+@endif
+<script>
+    $(function(){
 
     if ("{{Request::has('q')}}") {
 

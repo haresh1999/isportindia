@@ -25,7 +25,7 @@
             data-nimg="responsive" style="
                 position: absolute;
                 top: 0;
-                left: 0;
+                left: -20px;
                 bottom: 0;
                 right: 0;
                 padding: 0;
