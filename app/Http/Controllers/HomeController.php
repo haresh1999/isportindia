@@ -311,14 +311,14 @@ class HomeController extends Controller
             ->get();
 
         $tab = true;
-        
+
         if (Session::get('c_id') == $cId) {
-            
+
             $tab = false;
         }
 
-        session()->put('c_id',$cId);
-        
+        session()->put('c_id', $cId);
+
         return view('season_details', compact(
             'matchs',
             'response',

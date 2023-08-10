@@ -82,9 +82,9 @@ function getMatchDetails($matchId)
 	return $response['response'];
 }
 
-function getMatchInningDetails($matchId,$inningId)
+function getMatchInningDetails($matchId, $inningId)
 {
-	$response = Http::get(config('services.api') . "matches/" . $matchId . "/innings/".$inningId."/commentary?token=" . token())->json();
+	$response = Http::get(config('services.api') . "matches/" . $matchId . "/innings/" . $inningId . "/commentary?token=" . token())->json();
 
 	return $response['response'];
 }
@@ -106,6 +106,20 @@ function getCompetitionsMatches($matchId, $ppage = 1)
 	$response = Http::get(config('services.api') . "competitions/" . $matchId . "/matches?&per_page=" . $ppage . "&token=" . token())->json();
 
 	return $response['response']['items'][0];
+}
+
+function getUpComingMatch($cId){
+
+	$response = Http::get(config('services.api') . "competitions/" . $cId . "/matches?status=2&token=" . token())->json();
+
+	return $response;
+}
+
+function getCompletedMatch($cId){
+
+	$response = Http::get(config('services.api') . "competitions/" . $cId . "/matches?status=2&token=" . token())->json();
+
+	return $response;
 }
 
 function uploadImage($image, $upath = '', $prefix = '')
@@ -165,30 +179,17 @@ function ordinal($number)
 		return $number . $ends[$number % 10];
 }
 
-function responseMessage($name){
-
-	switch ($name) {
-		case (Session::has($name.'.success')):
-			return '<div class="alert alert-green">'.Session::get($name.'.success').'</div>';
-			break;
-		case (Session::has($name.'.warning')):
-			return '<div class="alert alert-warning">'.Session::get($name.'.warning').'</div>';
-			break;
-		case (Session::has($name.'.danger')):
-			return '<div class="alert alert-warning">'.Session::get($name.'.danger').'</div>';
-			break;
-	}
-}
-
-function previous_route()
+function responseMessage($name)
 {
-	$previousRequest = app('request')->create(app('url')->previous());
-
-	try {
-		$routeName = app('router')->getRoutes()->match($previousRequest)->getName();
-	} catch (NotFoundHttpException $exception) {
-		return null;
+	switch ($name) {
+		case (Session::has($name . '.success')):
+			return '<div class="alert alert-green">' . Session::get($name . '.success') . '</div>';
+			break;
+		case (Session::has($name . '.warning')):
+			return '<div class="alert alert-warning">' . Session::get($name . '.warning') . '</div>';
+			break;
+		case (Session::has($name . '.danger')):
+			return '<div class="alert alert-warning">' . Session::get($name . '.danger') . '</div>';
+			break;
 	}
-
-	return $routeName;
 }
