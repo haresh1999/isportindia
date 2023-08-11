@@ -228,7 +228,7 @@
 
                     </div>
 
-                    {{-- COMMENTORY --}}
+                    {{-- commentary --}}
                     <div class="style_seriesHome__Jnsnk commentary-data tabs-data hide">
                         <h3 class="text-uppercase small-head mx-2 mt-md-3">Inning {{$response['live_inning_number']}}
                         </h3>
@@ -1231,7 +1231,110 @@
                     </div>
 
                     <div class="style_seriesHome__Jnsnk results-data tabs-data hide">
-                        results
+                        @foreach ($results as $result)
+                        <div class="style_fixturesList__BfccH mb-3 ">
+                            <div class="style_fixturesItem__aBs0G common-box mb-2 p-md-3 br-md style_scheduled__xS_WG">
+                                <div
+                                    class="style_head__9u_y_ mb-md-2 pb-md-2 d-flex flex-column flex-md-row xsmall-text">
+                                    <p class="style_matchTime__L9427 mb-2 pb-2 mb-md-0 pb-md-0 font-semi">
+                                        {{Carbon\Carbon::parse($result['date_start'])->format('d M Y, D, h:i: A')}} IST
+                                    </p>
+                                    <div
+                                        class="undefined d-flex align-items-center justify-content-between flex-grow-1">
+                                        <p class="d-flex align-items-start style_matchStatus__r9UVQ text-primary"><span
+                                                class="d-inline-flex align-items-center me-1 ">Result |</span>
+                                            {{ $result['status_note'] }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="style_content__OMegF d-flex flex-column flex-md-row align-items-center">
+                                    <div class="style_infoList__GrEIP d-flex flex-wrap flex-md-column xsmall-text">
+                                        <p class="font-semi text-dark"><span
+                                                class="text-capitalize">{{$result['format_str']}}</span> -
+                                            {{$result['subtitle']}}</p>
+                                        <p class="text-muted">{{$result['venue']['name']}}</p>
+                                    </div>
+                                    <div class="style_teams__hQsmA mt-2 mt-md-0 font-semi flex-grow-1">
+                                        <div
+                                            class="style_team__SeosN d-flex align-items-center justify-content-between mt-1 mb-2 mb-md-3">
+                                            <div class="style_name__O798i d-flex align-items-center">
+                                                <div class="style_icon__ECf4T flex-shrink-0"><span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                                            alt="West Indies"
+                                                            sizes="(max-width: 767px) 40px, (max-width: 991px) 40px, (max-width: 1190px) 200px, 40px"
+                                                            src="{{ $result['teama']['thumb_url'] }}" decoding="async"
+                                                            data-nimg="responsive"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                                                </div>
+                                                <p>
+                                                    {{$result['teama']['name']}}
+                                                    @if ($result['teama']['team_id'] ==
+                                                    $result['winning_team_id'])
+                                                    <span class="style_winner__P6fXE ms-2 d-inline-block"><svg
+                                                            width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+
+                                                            <g id="cup-icon" stroke="none" stroke-width="1" fill="none"
+                                                                fill-rule="evenodd">
+                                                                <path
+                                                                    d="M19,5 L17,5 L17,3 L7,3 L7,5 L5,5 C3.9,5 3,5.9 3,7 L3,8 C3,10.55 4.92,12.63 7.39,12.94 C8.02,14.44 9.37,15.57 11,15.9 L11,19 L7,19 L7,21 L17,21 L17,19 L13,19 L13,15.9 C14.63,15.57 15.98,14.44 16.61,12.94 C19.08,12.63 21,10.55 21,8 L21,7 C21,5.9 20.1,5 19,5 Z M5,8 L5,7 L7,7 L7,10.82 C5.84,10.4 5,9.3 5,8 Z M19,8 C19,9.3 18.16,10.4 17,10.82 L17,7 L19,7 L19,8 Z"
+                                                                    id="Shape" fill="#0E3778" fill-rule="nonzero">
+                                                                </path>
+                                                            </g>
+                                                        </svg></span>
+                                                    @endif
+                                                </p>
+                                            </div>
+                                            <p class="undefined">{{ $result['teama']['scores_full'] }}</p>
+                                        </div>
+                                        <div
+                                            class="style_team__SeosN d-flex align-items-center justify-content-between mb-1">
+                                            <div class="style_name__O798i d-flex align-items-center">
+                                                <div class="style_icon__ECf4T flex-shrink-0"><span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                                            alt="India"
+                                                            sizes="(max-width: 767px) 40px, (max-width: 991px) 40px, (max-width: 1190px) 200px, 40px"
+                                                            src="{{$result['teamb']['thumb_url']}}" decoding="async"
+                                                            data-nimg="responsive"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                                                </div>
+                                                <p>{{$result['teamb']['name']}}
+                                                    @if ($result['teamb']['team_id'] ==
+                                                    $result['winning_team_id'])
+                                                    <span class="style_winner__P6fXE ms-2 d-inline-block"><svg
+                                                            width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+
+                                                            <g id="cup-icon" stroke="none" stroke-width="1" fill="none"
+                                                                fill-rule="evenodd">
+                                                                <path
+                                                                    d="M19,5 L17,5 L17,3 L7,3 L7,5 L5,5 C3.9,5 3,5.9 3,7 L3,8 C3,10.55 4.92,12.63 7.39,12.94 C8.02,14.44 9.37,15.57 11,15.9 L11,19 L7,19 L7,21 L17,21 L17,19 L13,19 L13,15.9 C14.63,15.57 15.98,14.44 16.61,12.94 C19.08,12.63 21,10.55 21,8 L21,7 C21,5.9 20.1,5 19,5 Z M5,8 L5,7 L7,7 L7,10.82 C5.84,10.4 5,9.3 5,8 Z M19,8 C19,9.3 18.16,10.4 17,10.82 L17,7 L19,7 L19,8 Z"
+                                                                    id="Shape" fill="#0E3778" fill-rule="nonzero">
+                                                                </path>
+                                                            </g>
+                                                        </svg></span>
+                                                </p>
+                                                @endif
+                                            </div>
+                                            <p class="undefined">{{$result['teamb']['scores_full']}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="style_infoList__GrEIP d-none d-md-block font-semi xsmall-text">
+                                        <p><a
+                                                href="{{route('score.card',[$result['match_id'],'q' => 'scorecard'])}}">Scorecard</a>
+                                        </p>
+                                        <p><a href="{{route('score.card',[$result['match_id'],'q' => 'commentary'])}}">Full
+                                                Commentary</a></p>
+                                        <p><a
+                                                href="{{ route('season.details',[$response['competition']['cid'],'q' => 'news']) }}">News</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
 
                 </div>

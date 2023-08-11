@@ -111,17 +111,16 @@ function getCompetitionsMatches($matchId, $ppage = 1)
 function getUpComingMatch($cId)
 {
 
-	$response = Http::get(config('services.api') . "competitions/" . $cId . "/matches?status=2&token=" . token())->json();
+	$response = Http::get(config('services.api') . "competitions/" . $cId . "/matches?status=1&token=" . token())->json();
 
 	return $response;
 }
 
 function getCompletedMatch($cId)
 {
-
 	$response = Http::get(config('services.api') . "competitions/" . $cId . "/matches?status=2&token=" . token())->json();
 
-	return $response;
+	return $response['response']['items'];
 }
 
 function uploadImage($image, $upath = '', $prefix = '')

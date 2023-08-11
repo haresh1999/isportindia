@@ -972,8 +972,8 @@
                                             </div>
                                         </div>
                                         <div class="style_infoList__GrEIP d-none d-md-block font-semi xsmall-text">
-                                            <p><a href="{{route('score.card',$fixtures['match_id'])}}">Scorecard</a></p>
-                                            <p><a href="{{route('score.card',[$fixtures['match_id'],'type' => 'commentory'])}}">Full Commentary</a></p>
+                                            <p><a href="{{route('score.card',[$fixtures['match_id'],'q' => 'scorecard'])}}">Scorecard</a></p>
+                                            <p><a href="{{route('score.card',[$fixtures['match_id'],'q' => 'commentary'])}}">Full Commentary</a></p>
                                             <p><a href="{{ route('season.details',[$cId,'q' => 'news']) }}">News</a></p>
                                         </div>
                                     </div>

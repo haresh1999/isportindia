@@ -140,12 +140,15 @@ class HomeController extends Controller
             }
         }
 
+        $results = getCompletedMatch($response['competition']['cid']);
+
         return view('score_card', compact(
             'response',
             'player',
             'current_inning',
             'ball_by_balls',
-            'players'
+            'players',
+            'results'
         ));
     }
 
