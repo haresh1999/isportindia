@@ -141,6 +141,7 @@ class HomeController extends Controller
         }
 
         $results = getCompletedMatch($response['competition']['cid']);
+        $upcomings = getUpComingMatch($response['competition']['cid']);
 
         return view('score_card', compact(
             'response',
@@ -148,7 +149,8 @@ class HomeController extends Controller
             'current_inning',
             'ball_by_balls',
             'players',
-            'results'
+            'results',
+            'upcomings'
         ));
     }
 

@@ -1161,12 +1161,16 @@
                     </div>
 
                     <div class="style_seriesHome__Jnsnk upcoming-data tabs-data hide">
+                        @if (! empty($upcomings))
+                        @foreach ($upcomings as $upcoming)
                         <div class="style_fixturesList__BfccH mb-3 ">
                             <div class="style_fixturesItem__aBs0G common-box mb-2 p-md-3 br-md style_scheduled__xS_WG">
                                 <div
                                     class="style_head__9u_y_ mb-md-2 pb-md-2 d-flex flex-column flex-md-row xsmall-text">
-                                    <p class="style_matchTime__L9427 mb-2 pb-2 mb-md-0 pb-md-0 font-semi">12 Aug 2023,
-                                        Sat, 2:30 PM IST</p>
+                                    <p class="style_matchTime__L9427 mb-2 pb-2 mb-md-0 pb-md-0 font-semi">
+                                        {{Carbon\Carbon::parse($upcoming['date_start'])->format('d M Y, D, h:i: A')}}
+                                        IST
+                                    </p>
                                     <div
                                         class="undefined d-flex align-items-center justify-content-between flex-grow-1">
                                         <p class="d-flex align-items-start style_matchStatus__r9UVQ text-primary"><span
@@ -1176,9 +1180,10 @@
                                 </div>
                                 <div class="style_content__OMegF d-flex flex-column flex-md-row align-items-center">
                                     <div class="style_infoList__GrEIP d-flex flex-wrap flex-md-column xsmall-text">
-                                        <p class="font-semi text-dark"><span class="text-capitalize">lista</span> -
-                                            Match 13</p>
-                                        <p class="text-muted">TBA</p>
+                                        <p class="font-semi text-dark"><span
+                                                class="text-capitalize">{{$upcoming['format_str']}}</span> -
+                                            {{$upcoming['subtitle']}}</p>
+                                        <p class="text-muted">{{$upcoming['venue']['name']}}</p>
                                     </div>
                                     <div class="style_teams__hQsmA mt-2 mt-md-0 font-semi flex-grow-1">
                                         <div
@@ -1187,16 +1192,14 @@
                                                 <div class="style_icon__ECf4T flex-shrink-0"><span
                                                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                             style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                            alt="Jersey Under-19s"
+                                                            alt="West Indies"
                                                             sizes="(max-width: 767px) 40px, (max-width: 991px) 40px, (max-width: 1190px) 200px, 40px"
-                                                            srcset="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fjer-cr1%402x_1e59.png&amp;w=40&amp;q=75 40w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fjer-cr1%402x_1e59.png&amp;w=80&amp;q=75 80w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fjer-cr1%402x_1e59.png&amp;w=120&amp;q=75 120w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fjer-cr1%402x_1e59.png&amp;w=240&amp;q=75 240w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fjer-cr1%402x_1e59.png&amp;w=450&amp;q=75 450w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fjer-cr1%402x_1e59.png&amp;w=992&amp;q=75 992w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fjer-cr1%402x_1e59.png&amp;w=1200&amp;q=75 1200w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fjer-cr1%402x_1e59.png&amp;w=1900&amp;q=75 1900w"
-                                                            src="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fjer-cr1%402x_1e59.png&amp;w=1900&amp;q=75"
-                                                            decoding="async" data-nimg="responsive"
+                                                            src="{{ $upcoming['teama']['thumb_url'] }}" decoding="async"
+                                                            data-nimg="responsive"
                                                             style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
                                                 </div>
-                                                <p>Jersey Under-19s</p>
                                             </div>
-                                            <p class="undefined"></p>
+                                            <p class="undefined">{{ $upcoming['teama']['scores_full'] }}</p>
                                         </div>
                                         <div
                                             class="style_team__SeosN d-flex align-items-center justify-content-between mb-1">
@@ -1204,33 +1207,47 @@
                                                 <div class="style_icon__ECf4T flex-shrink-0"><span
                                                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                             style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
-                                                            alt="Guernsey Under-19s"
+                                                            alt="India"
                                                             sizes="(max-width: 767px) 40px, (max-width: 991px) 40px, (max-width: 1190px) 200px, 40px"
-                                                            srcset="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fguernsey_7f2f.png&amp;w=40&amp;q=75 40w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fguernsey_7f2f.png&amp;w=80&amp;q=75 80w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fguernsey_7f2f.png&amp;w=120&amp;q=75 120w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fguernsey_7f2f.png&amp;w=240&amp;q=75 240w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fguernsey_7f2f.png&amp;w=450&amp;q=75 450w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fguernsey_7f2f.png&amp;w=992&amp;q=75 992w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fguernsey_7f2f.png&amp;w=1200&amp;q=75 1200w, /_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fguernsey_7f2f.png&amp;w=1900&amp;q=75 1900w"
-                                                            src="/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fteam%2FthumbUrl%2Fguernsey_7f2f.png&amp;w=1900&amp;q=75"
-                                                            decoding="async" data-nimg="responsive"
+                                                            src="{{$upcoming['teamb']['thumb_url']}}" decoding="async"
+                                                            data-nimg="responsive"
                                                             style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
                                                 </div>
-                                                <p>Guernsey Under-19s</p>
                                             </div>
-                                            <p class="undefined"></p>
+                                            <p class="undefined">{{$upcoming['teamb']['scores_full']}}</p>
                                         </div>
                                         <div
                                             class="style_upcoming__jECAo ct-border text-center position-absolute top-50 translate-middle-y">
                                             Match Yet To Start</div>
                                     </div>
                                     <div class="style_infoList__GrEIP d-none d-md-block font-semi xsmall-text">
-                                        <p><a
-                                                href="/live-scores/jer19-vs-gue19-match-13-lista--icc-under-19-mens-cwc-europe-qualifier-12-aug-2023/">Overview</a>
+                                        <p><a href="{{route('score.card',$result['match_id'])}}">Overview</a>
                                         </p>
-                                        <p><a href="/icc-under-19-mens-cwc-europe-qualifier/news/">News</a></p>
+                                        <p><a
+                                                href="{{ route('season.details',[$response['competition']['cid'],'q' => 'news']) }}">News</a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+                        @else
+                        <div class="undefined my-2 my-md-3  text-center">
+                            <h3 class="text-capitalize">No Data Found</h3>
+                            <div class="style_artwork__XRPij mx-auto mb-2"><span
+                                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 88.75% 0px 0px;"></span><img
+                                        alt="user" src="{{asset('no-data.d23a138b.svg')}}" decoding="async"
+                                        data-nimg="responsive"
+                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                        sizes="100vw"><noscript></noscript></span>
+                            </div>
+                        </div>
+                        @endif
                     </div>
 
                     <div class="style_seriesHome__Jnsnk results-data tabs-data hide">
+                        @if (! empty($results))
                         @foreach ($results as $result)
                         <div class="style_fixturesList__BfccH mb-3 ">
                             <div class="style_fixturesItem__aBs0G common-box mb-2 p-md-3 br-md style_scheduled__xS_WG">
@@ -1335,6 +1352,20 @@
                             </div>
                         </div>
                         @endforeach
+                        @else
+                        <div class="undefined my-2 my-md-3  text-center">
+                            <h3 class="text-capitalize">No Data Found</h3>
+                            <div class="style_artwork__XRPij mx-auto mb-2"><span
+                                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 88.75% 0px 0px;"></span><img
+                                        alt="user" src="{{asset('no-data.d23a138b.svg')}}" decoding="async"
+                                        data-nimg="responsive"
+                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                        sizes="100vw"><noscript></noscript></span>
+                            </div>
+                        </div>
+                        @endif
+
                     </div>
 
                 </div>
