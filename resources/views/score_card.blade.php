@@ -200,7 +200,7 @@
 
                         <div class="news style_item___mmv9 nav-item">
                             <a class="nav-link tab"
-                                href="{{ route('season.details',[$response['competition']['cid'],'q' => 'stats']) }}">News</a>
+                                href="{{ route('season.details',[$response['competition']['cid'],'q' => 'news']) }}">News</a>
                         </div>
 
                         <div class="stats style_item___mmv9 nav-item">
@@ -282,6 +282,12 @@
                         </div>
                         @endforeach
                         @endforeach
+                        @if (count($ball_by_balls) >= 5)
+                        <div class="text-center my-3">
+                            <a href="{{ route('score.card',[$response['match_id'],'per_page' => (5 * ((count($ball_by_balls) / 5) + 1))]) }}"
+                                class="theme-btn btn btn-primary">Load more</a>
+                        </div>
+                        @endif
                     </div>
 
                     {{-- SCORE CARD --}}
@@ -1046,7 +1052,109 @@
                     </div> --}}
 
                     <div class="style_seriesHome__Jnsnk overs-data tabs-data hide">
-                        overs
+                        <div class="style_navTab__jw64y text-uppercase flex-nowrap text-nowrap false  nav nav-pills">
+                            <div class="style_item___mmv9 nav-item"><a class="active pe-none nav-link">BHM Inning</a>
+                            </div>
+                            <div class="style_item___mmv9 nav-item"><a class=" nav-link">WEL Inning</a></div>
+                        </div>
+
+                        @foreach ($ball_by_balls as $bbb_over_no => $ball_by_ball_over)
+                        <section class="style_overList__iTy1f" id="{{$bbb_over_no}}">
+                            <div class="undefined common-box d-flex align-items-center px-2 py-3 p-sm-3 p-xl-4 mb-3">
+                                <div class="style_over__EPITa text-center">
+                                    <p class="undefined mb-2 font-semi">{{$bbb_over_no}} Over</p>
+                                    <div class="style_overRun__J5zLD fw-bold br-sm">
+                                        {{array_sum(array_column($ball_by_ball_over,'run'))}} Runs</div>
+                                </div>
+                                <div class="style_details___kWfu">
+                                    <p><span class="font-semi mb-2"></span> <span class="font-semi"></span><span
+                                            class="font-semi">
+                                            @foreach ($ball_by_ball_over[0]['bowlers'] as $bowler)
+                                            {{ $bowler['bowler_id'] }},
+                                            @endforeach
+                                            To
+                                            @foreach ($ball_by_ball_over[0]['batsmen'] as $bats)
+                                            {{ $bats['batsman_id'] }},
+                                            @endforeach
+                                        </span></p>
+                                    <div class="undefined d-flex scroll-list text-center font-semi">
+                                        @foreach (array_reverse($ball_by_ball_over) as $bbb_over)
+                                        @if ($bbb_over['event'] == 'wicket')
+                                        <div class="style_ball__N4zxZ " style="margin-right: 0">
+                                            <div
+                                                class="style_run__4Wv7_ rounded-pill bg-danger border-danger text-white">
+                                                W</div>
+                                            <span>{{$bbb_over_no}}.{{ $bbb_over['ball'] }}</span>
+                                        </div>
+                                        @elseif($bbb_over['event'] == 'ball')
+                                        @if ($bbb_over['run'] == 0)
+                                        <div class="style_ball__N4zxZ " style="margin-right: 0">
+                                            <div class="style_run__4Wv7_ rounded-pill">0</div>
+                                            <span>{{$bbb_over_no}}.{{ $bbb_over['ball'] }}</span>
+                                        </div>
+                                        @elseif(in_array($bbb_over['run'],[1,2,3,4,5,6]) && $bbb_over['four'] == false
+                                        &&
+                                        $bbb_over['six'] == false)
+                                        @if ($bbb_over['wideball'])
+                                        <div class="style_ball__N4zxZ " style="margin-right: 0">
+                                            <div class="style_run__4Wv7_ undefined bg-info border-info rounded-pill">
+                                                {{$bbb_over['run']}}Wd</div>
+                                            <span>{{$bbb_over_no}}.{{ $bbb_over['ball'] }}</span>
+                                        </div>
+                                        @elseif($bbb_over['noball'])
+                                        <div class="style_ball__N4zxZ " style="margin-right: 0">
+                                            <div class="style_run__4Wv7_ undefined bg-info border-info rounded-pill">
+                                                {{$bbb_over['bye_run']}}Nb</div>
+                                            <span>{{$bbb_over_no}}.{{ $bbb_over['ball'] }}</span>
+                                        </div>
+                                        @elseif($bbb_over['bye_run'] != 0)
+                                        <div class="style_ball__N4zxZ " style="margin-right: 0">
+                                            <div class="style_run__4Wv7_ undefined bg-info border-info rounded-pill">
+                                                {{$bbb_over['bye_run']}}b</div>
+                                            <span>{{$bbb_over_no}}.{{ $bbb_over['ball'] }}</span>
+                                        </div>
+                                        @elseif($bbb_over['legbye_run'] != 0)
+                                        <div class="style_ball__N4zxZ " style="margin-right: 0">
+                                            <div class="style_run__4Wv7_ undefined bg-info border-info rounded-pill">
+                                                {{$bbb_over['legbye_run']}}lb</div>
+                                            <span>{{$bbb_over_no}}.{{ $bbb_over['ball'] }}</span>
+                                        </div>
+                                        @else
+                                        <div class="style_ball__N4zxZ " style="margin-right: 0">
+                                            <div class="style_run__4Wv7_ undefined bg-info border-info rounded-pill">
+                                                {{$bbb_over['run']}}</div>
+                                            <span>{{$bbb_over_no}}.{{ $bbb_over['ball'] }}</span>
+                                        </div>
+                                        @endif
+                                        @elseif($bbb_over['four'] == true)
+                                        <div class="style_ball__N4zxZ " style="margin-right: 0">
+                                            <div
+                                                class="style_run__4Wv7_ bg-success border-success text-white rounded-pill">
+                                                4
+                                            </div>
+                                            <span>{{$bbb_over_no}}.{{ $bbb_over['ball'] }}</span>
+                                        </div>
+                                        @elseif($bbb_over['six'] == true)
+                                        <div class="style_ball__N4zxZ " style="margin-right: 0">
+                                            <div
+                                                class="style_run__4Wv7_ style_runPrimary__rxN5p bg-primary text-white rounded-pill">
+                                                6</div> <span>{{$bbb_over_no}}.{{ $bbb_over['ball'] }}</span>
+                                        </div>
+                                        @endif
+                                        @endif
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        @endforeach
+
+                        @if (count($ball_by_balls) >= 5)
+                        <div class="text-center my-3">
+                            <a href="{{ route('score.card',[$response['match_id'],'per_page' => (5 * ((count($ball_by_balls) / 5) + 1))]) }}"
+                                class="theme-btn btn btn-primary">Load more</a>
+                        </div>
+                        @endif
                     </div>
 
                     <div class="style_seriesHome__Jnsnk upcoming-data tabs-data hide">
@@ -1155,7 +1263,7 @@
 
 @section('script')
 <script>
-$(function(){
+    $(function(){
     scrollContent(-1)
 
     if ("{{Request::has('q')}}") {

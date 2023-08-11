@@ -2965,3 +2965,40 @@ input[type=number] {
 .rounded-pill {
     border-radius: 50rem!important;
 }
+
+.style_navTab__jw64y {
+    margin: 0px -3px 16px;
+    padding: 6px;
+    background: var(--light-mode-bg);
+    border-radius: 2em;
+}
+
+.style_navTab__jw64y > * {
+    width: 25%;
+}
+
+.style_overList__iTy1f .style_over__EPITa {
+    width: 140px;
+}
+
+.style_overList__iTy1f .style_overRun__J5zLD {
+    padding: 7px 9px;
+    background: rgb(50, 56, 66);
+    color: rgb(255, 255, 255);
+}
+
+.style_overList__iTy1f .style_details___kWfu {
+    width: calc(100% - 164px);
+    margin-left: 24px;
+    padding-left: 24px;
+    border-left: 1px solid rgb(222, 223, 227);
+}
+
+.scroll-list {
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+.style_overList__iTy1f .style_ball__N4zxZ {
+    margin-right: 24px;
+}

@@ -93,13 +93,15 @@ class HomeController extends Controller
         return view('cricspecial_details', compact('res'));
     }
 
-    public function scoreCard($matchId)
+    public function scoreCard(Request $request, $matchId)
     {
         $response = getMatchDetails($matchId);
 
         $current_inning = getMatchInningDetails($matchId, $response['latest_inning_number']);
 
-        $over_balls = array_slice(array_reverse($current_inning['commentaries']), 0, 40);
+        $over_balls = array_slice(array_reverse($current_inning['commentaries']), 0, $request->has('per_page') ? (($request->per_page / 5) *  40) : 40);
+
+        $over = $request->has('per_page') ? $request->per_page : 5;
 
         $ball_by_balls = [];
 
@@ -109,7 +111,7 @@ class HomeController extends Controller
                 $ball_by_balls[$over_ball['over']][] = $over_ball;
             }
 
-            if ($over_ball['event'] == 'overend' && count($ball_by_balls) == 5) {
+            if ($over_ball['event'] == 'overend' && count($ball_by_balls) == $over) {
                 break;
             }
         }

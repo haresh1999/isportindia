@@ -32,10 +32,10 @@ Route::get('post-details/{slug}', [HomeController::class, 'postDetails'])->name(
 Route::get('cricspecial-details/{slug}', [HomeController::class, 'cricspecialDetails'])->name('cricspecial.details');
 Route::get('news/{slug}', [HomeController::class, 'newsDetails'])->name('news.details');
 Route::get('fantasy/{slug}', [HomeController::class, 'fantasyDetails'])->name('fantasy.details');
-Route::get('state-details/{cid}/{slug}',[HomeController::class,'stateDetails'])->name('state.details');
+Route::get('state-details/{cid}/{slug}', [HomeController::class, 'stateDetails'])->name('state.details');
 Route::get('season/{cid}', [HomeController::class, 'seasonDetails'])->name('season.details');
-Route::get('cricket-team/{t_id}',[HomeController::class,'home'])->name('teams');
-Route::get('cricket-player/{p_id}',[HomeController::class,'home'])->name('player');
+Route::get('cricket-team/{t_id}', [HomeController::class, 'home'])->name('teams');
+Route::get('cricket-player/{p_id}', [HomeController::class, 'home'])->name('player');
 
 Route::prefix('admin')->group(function () {
 
@@ -78,6 +78,6 @@ Route::prefix('admin')->group(function () {
     });
 });
 
-Route::fallback(function(){
+Route::fallback(function () {
     return redirect()->route('home');
 });
