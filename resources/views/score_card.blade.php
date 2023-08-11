@@ -182,7 +182,7 @@
 
                         <div tabtype="scorecard"
                             onclick="tabclickHandler(this,'scorecard_detail_tabs','style_active__nlf9x')"
-                            class="scorecard style_item___mmv9 nav-item style_active__nlf9x">
+                            class="scorecard style_item___mmv9 nav-item ">
                             <p class="nav-link tab">Scorecard</p>
                         </div>
 
@@ -230,7 +230,58 @@
 
                     {{-- COMMENTORY --}}
                     <div class="style_seriesHome__Jnsnk commentary-data tabs-data hide">
-                        COMMENTORY
+                        <h3 class="text-uppercase small-head mx-2 mt-md-3">Inning {{$response['live_inning_number']}}
+                        </h3>
+                        @foreach ($ball_by_balls as $ov => $ball_by_ball_c)
+                        @foreach ($ball_by_ball_c as $bbb_c)
+                        <div id="{{ $bbb_c['event_id'] }}" class="0">
+                            <div class="style_item__Pg6Ww common-box d-flex align-items-center rounded-0"
+                                id="{{$bbb_c['event_id']}}">
+                                <div
+                                    class="style_ball__MV725 d-flex flex-column flex-md-row-reverse align-items-center text-center">
+                                    @if ($bbb_c['event'] == 'wicket')
+                                    <div class="style_run__4Wv7_ rounded-pill bg-danger border-danger text-white">W
+                                    </div>
+                                    @elseif($bbb_c['event'] == 'ball')
+                                    @if ($bbb_c['run'] == 0)
+                                    <div class="style_run__4Wv7_ rounded-pill">0</div>
+                                    @elseif(in_array($bbb_c['run'],[1,2,3,4,5,6]) && $bbb_c['four'] == false &&
+                                    $bbb_c['six'] == false)
+                                    @if ($bbb_c['wideball'])
+                                    <div class="style_run__4Wv7_ undefined bg-info border-info rounded-pill">
+                                        {{$bbb_c['run']}}Wd</div>
+                                    @elseif($bbb_c['noball'])
+                                    <div class="style_run__4Wv7_ undefined bg-info border-info rounded-pill">
+                                        {{$bbb_c['bye_run']}}Nb</div>
+                                    @elseif($bbb_c['bye_run'] != 0)
+                                    <div class="style_run__4Wv7_ undefined bg-info border-info rounded-pill">
+                                        {{$bbb_c['bye_run']}}b</div>
+                                    @elseif($bbb_c['legbye_run'] != 0)
+                                    <div class="style_run__4Wv7_ undefined bg-info border-info rounded-pill">
+                                        {{$bbb_c['legbye_run']}}lb</div>
+                                    @else
+                                    <div class="style_run__4Wv7_ undefined bg-info border-info rounded-pill">
+                                        {{$bbb_c['run']}}</div>
+                                    @endif
+                                    @elseif($bbb_c['four'] == true)
+                                    <div class="style_run__4Wv7_ bg-success border-success text-white rounded-pill">4
+                                    </div>
+                                    @elseif($bbb_c['six'] == true)
+                                    <div
+                                        class="style_run__4Wv7_ style_runPrimary__rxN5p bg-primary text-white rounded-pill">
+                                        6</div>
+                                    @endif
+                                    @endif
+                                    <span class="style_ballNo__h505W fw-bold">{{$ov}}.{{$bbb_c['ball']}}</span>
+                                </div>
+                                <p class="mb-0">
+                                    {{ $bbb_c['commentary'] }}
+                                    <b></b>
+                                </p>
+                            </div>
+                        </div>
+                        @endforeach
+                        @endforeach
                     </div>
 
                     {{-- SCORE CARD --}}
@@ -1104,8 +1155,23 @@
 
 @section('script')
 <script>
-    $(function(){
+$(function(){
     scrollContent(-1)
+
+    if ("{{Request::has('q')}}") {
+        var tab = "{{Request::get('q')}}";
+    }else{
+        var tab = localStorage.getItem('score_card_type',"{{Request::get('q')}}");
+    }
+
+    if (tab != null) {
+
+        $('.'+tab).addClass('style_active__nlf9x')
+        $('.'+tab).click()
+    }else{
+        $('.scorecard').addClass('style_active__nlf9x')
+        $('.scorecard').click()
+    }
 })
 
 const tabclickHandler = (clickTab, tabs_root_id, active_class) => {
@@ -1117,7 +1183,7 @@ const tabclickHandler = (clickTab, tabs_root_id, active_class) => {
 }
 
 const showRespectiveTabSection = (tabs_root_id, activeTabType) => {
-    localStorage.setItem('type',activeTabType);
+    localStorage.setItem('score_card_type',activeTabType);
     $(`#${tabs_root_id} .tabs-data`).removeClass("show").addClass('hide');
     $(`#${tabs_root_id} .${activeTabType}-data`).addClass("show")
 }

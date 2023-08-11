@@ -2940,3 +2940,28 @@ input[type=number] {
 .style_subText__tojVi.text-secondary {
     font-weight: 400;
 }
+
+.style_item__Pg6Ww {
+    margin-bottom: 1px;
+    padding: 12px;
+}
+
+.common-box {
+    /* margin-bottom: 24px; */
+    padding: 16px;
+    background: var(--light-mode-bg);
+    border-radius: 16px;
+}
+
+.style_run__4Wv7_ {
+    margin: 0 12px;
+    padding: 0 3px;
+    min-width: 32px;
+    height: 32px;
+    line-height: 30px;
+    border: 1px solid #a7acb4;
+}
+
+.rounded-pill {
+    border-radius: 50rem!important;
+}

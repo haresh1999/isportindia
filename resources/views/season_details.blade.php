@@ -1208,7 +1208,7 @@ localStorage.removeItem("type");
 </script>
 @endif
 <script>
-    $(function(){
+$(function(){
 
     if ("{{Request::has('q')}}") {
 

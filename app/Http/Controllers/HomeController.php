@@ -99,7 +99,7 @@ class HomeController extends Controller
 
         $current_inning = getMatchInningDetails($matchId, $response['latest_inning_number']);
 
-        $over_balls = array_slice(array_reverse($current_inning['commentaries']), 0, 70);
+        $over_balls = array_slice(array_reverse($current_inning['commentaries']), 0, 40);
 
         $ball_by_balls = [];
 
@@ -109,7 +109,7 @@ class HomeController extends Controller
                 $ball_by_balls[$over_ball['over']][] = $over_ball;
             }
 
-            if ($over_ball['event'] == 'overend' && count($ball_by_balls) == 10) {
+            if ($over_ball['event'] == 'overend' && count($ball_by_balls) == 5) {
                 break;
             }
         }
