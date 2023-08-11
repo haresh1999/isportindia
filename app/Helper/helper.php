@@ -30,7 +30,7 @@ function token()
 // 	return $response['response']['items'];
 // }
 
-function getSeasons($page = 10)
+function getSeasons($page = 5)
 {
 	$url = 'seasons/2021/competitions';
 

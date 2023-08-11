@@ -60,7 +60,7 @@
                                     @enderror
                                     <select class="select select-wide" name="cid">
                                         <option value="" selected disabled>Select Seasons</option>
-                                        @foreach (getSeasons(10) as $val)
+                                        @foreach (getSeasons() as $val)
                                         <option {{ old('cid')==$val['cid'] ? 'selected' : '' }} value="{{$val['cid']}}">
                                             {{$val['title']}}</option>
                                         @endforeach
