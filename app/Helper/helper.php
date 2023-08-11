@@ -108,14 +108,16 @@ function getCompetitionsMatches($matchId, $ppage = 1)
 	return $response['response']['items'][0];
 }
 
-function getUpComingMatch($cId){
+function getUpComingMatch($cId)
+{
 
 	$response = Http::get(config('services.api') . "competitions/" . $cId . "/matches?status=2&token=" . token())->json();
 
 	return $response;
 }
 
-function getCompletedMatch($cId){
+function getCompletedMatch($cId)
+{
 
 	$response = Http::get(config('services.api') . "competitions/" . $cId . "/matches?status=2&token=" . token())->json();
 

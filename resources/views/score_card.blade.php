@@ -1070,11 +1070,14 @@
                                     <p><span class="font-semi mb-2"></span> <span class="font-semi"></span><span
                                             class="font-semi">
                                             @foreach ($ball_by_ball_over[0]['bowlers'] as $bowler)
-                                            {{ $bowler['bowler_id'] }},
+                                            {{$players->where('pid',$bowler['bowler_id'])->value('title')}}
                                             @endforeach
                                             To
                                             @foreach ($ball_by_ball_over[0]['batsmen'] as $bats)
-                                            {{ $bats['batsman_id'] }},
+                                            {{$players->where('pid',$bats['batsman_id'])->value('title')}}
+                                            @if (! $loop->last)
+                                            ,
+                                            @endif
                                             @endforeach
                                         </span></p>
                                     <div class="undefined d-flex scroll-list text-center font-semi">

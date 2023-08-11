@@ -99,6 +99,8 @@ class HomeController extends Controller
 
         $current_inning = getMatchInningDetails($matchId, $response['latest_inning_number']);
 
+        $players = collect($current_inning['players']);
+
         $over_balls = array_slice(array_reverse($current_inning['commentaries']), 0, $request->has('per_page') ? (($request->per_page / 5) *  40) : 40);
 
         $over = $request->has('per_page') ? $request->per_page : 5;
@@ -142,7 +144,8 @@ class HomeController extends Controller
             'response',
             'player',
             'current_inning',
-            'ball_by_balls'
+            'ball_by_balls',
+            'players'
         ));
     }
 
