@@ -142,6 +142,15 @@ class HomeController extends Controller
 
         $results = getCompletedMatch($response['competition']['cid']);
         $upcomings = getUpComingMatch($response['competition']['cid']);
+        
+        $tab = true;
+
+        if (Session::get('m_id') == $matchId) {
+
+            $tab = false;
+        }
+
+        session()->put('m_id', $matchId);
 
         return view('score_card', compact(
             'response',
@@ -150,7 +159,8 @@ class HomeController extends Controller
             'ball_by_balls',
             'players',
             'results',
-            'upcomings'
+            'upcomings',
+            'tab'
         ));
     }
 

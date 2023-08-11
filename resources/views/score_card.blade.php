@@ -1399,6 +1399,11 @@
 @endsection
 
 @section('script')
+@if ($tab)
+<script>
+localStorage.removeItem("score_card_type");
+</script>
+@endif
 <script>
     $(function(){
     scrollContent(-1)
