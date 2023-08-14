@@ -1188,7 +1188,7 @@
                                     <div class="style_teams__hQsmA mt-2 mt-md-0 font-semi flex-grow-1">
                                         <div
                                             class="style_team__SeosN d-flex align-items-center justify-content-between mt-1 mb-2 mb-md-3">
-                                            <div class="style_name__O798i d-flex align-items-center">
+                                            <div class="d-flex align-items-center">
                                                 <div class="style_icon__ECf4T flex-shrink-0"><span
                                                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                             style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
@@ -1203,7 +1203,7 @@
                                         </div>
                                         <div
                                             class="style_team__SeosN d-flex align-items-center justify-content-between mb-1">
-                                            <div class="style_name__O798i d-flex align-items-center">
+                                            <div class="d-flex align-items-center">
                                                 <div class="style_icon__ECf4T flex-shrink-0"><span
                                                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                             style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
@@ -1274,7 +1274,7 @@
                                     <div class="style_teams__hQsmA mt-2 mt-md-0 font-semi flex-grow-1">
                                         <div
                                             class="style_team__SeosN d-flex align-items-center justify-content-between mt-1 mb-2 mb-md-3">
-                                            <div class="style_name__O798i d-flex align-items-center">
+                                            <div class="d-flex align-items-center">
                                                 <div class="style_icon__ECf4T flex-shrink-0"><span
                                                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                             style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
@@ -1307,7 +1307,7 @@
                                         </div>
                                         <div
                                             class="style_team__SeosN d-flex align-items-center justify-content-between mb-1">
-                                            <div class="style_name__O798i d-flex align-items-center">
+                                            <div class="d-flex align-items-center">
                                                 <div class="style_icon__ECf4T flex-shrink-0"><span
                                                         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
                                                             style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img

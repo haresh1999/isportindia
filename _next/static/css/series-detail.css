@@ -598,7 +598,8 @@ button.style_active__00skk {
 
 .style_fixturesItem__aBs0G p,
 .style_fixturesList__BfccH:last-child {
-    margin-bottom: 0
+    margin-bottom: 0;
+    margin-left: 5px;
 }
 
 .style_fixturesItem__aBs0G .style_head__9u_y_ {
